@@ -32,7 +32,9 @@ namespace Xamarin.Controls
 
 		public NativePath Path { get; private set; }
 
-		public IList<NativePoint> GetPoints ()
+	    public List<RawPoint> RawPoints = new List<RawPoint>();
+
+        public IList<NativePoint> GetPoints ()
 		{
 			return inkPoints;
 		}

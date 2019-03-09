@@ -63,7 +63,22 @@ namespace Xamarin.Controls
 			}
 		}
 
-		public NativePoint[][] Strokes
+	    public RawPoint[] RawPoints
+	    {
+	        get
+	        {
+	            if (IsBlank)
+	            {
+	                return new RawPoint[0];
+	            }
+
+	            return inkPresenter.GetStrokes()
+	                .SelectMany(s=>s.RawPoints) 
+	                .ToArray();
+	        }
+	    }
+
+        public NativePoint[][] Strokes
 		{
 			get
 			{

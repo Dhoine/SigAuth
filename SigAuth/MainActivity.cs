@@ -29,6 +29,7 @@ namespace SigAuth
             btnSave.Click += delegate
             {
                 points = signatureView.Points;
+                var test = signatureView.RawPoints;
 
                 Toast.MakeText(this, "Vector signature saved to memory.", ToastLength.Short).Show();
             };

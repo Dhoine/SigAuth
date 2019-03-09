@@ -54,8 +54,9 @@ namespace Xamarin.Controls
 		public NativePoint[][] Strokes => SignaturePadCanvas.Strokes;
 
 		public NativePoint[] Points => SignaturePadCanvas.Points;
+	    public RawPoint[] RawPoints => SignaturePadCanvas.RawPoints;
 
-		public bool IsBlank => SignaturePadCanvas?.IsBlank ?? true;
+        public bool IsBlank => SignaturePadCanvas?.IsBlank ?? true;
 
 		public event EventHandler StrokeCompleted;
 

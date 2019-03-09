@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using Android.App;
@@ -65,10 +66,12 @@ namespace Xamarin.Controls
 			// obtain the location of the touch
 			float touchX = e.GetX ();
 			float touchY = e.GetY ();
+		    var timestamp = e.EventTime;
 
 			// move to the touched point
 			currentPath.Path.MoveTo (touchX, touchY);
 			currentPath.GetPoints ().Add (new System.Drawing.PointF (touchX, touchY));
+            currentPath.RawPoints.Add(new RawPoint { X = touchX, Y = touchY, TimeStamp = timestamp });
 
 			// update the dirty rectangle
 			ResetBounds (touchX, touchY);
@@ -89,6 +92,7 @@ namespace Xamarin.Controls
 			{
 				float historicalX = e.GetHistoricalX (i);
 				float historicalY = e.GetHistoricalY (i);
+			    var historicalEventTime = e.GetHistoricalEventTime(i);
 
 				if (HasMovedFarEnough (currentPath, historicalX, historicalY))
 				{
@@ -99,20 +103,22 @@ namespace Xamarin.Controls
 					// add it to the current path
 					currentPath.Path.LineTo (historicalX, historicalY);
 					currentPath.GetPoints ().Add (new System.Drawing.PointF (historicalX, historicalY));
-				}
+				    currentPath.RawPoints.Add(new RawPoint { X = historicalX, Y = historicalY, TimeStamp = historicalEventTime });
+                }
 			}
 
 			float touchX = e.GetX ();
 			float touchY = e.GetY ();
-
+		    var timestamp = e.EventTime;
 			if (HasMovedFarEnough (currentPath, touchX, touchY))
 			{
 				// add it to the current path
 				currentPath.Path.LineTo (touchX, touchY);
 				currentPath.GetPoints ().Add (new System.Drawing.PointF (touchX, touchY));
+			    currentPath.RawPoints.Add(new RawPoint{X = touchX, Y = touchY, TimeStamp = timestamp});
 
-				// update the dirty rectangle
-				UpdateBounds (touchX, touchY);
+                // update the dirty rectangle
+                UpdateBounds (touchX, touchY);
 				hasMoved = true;
 			}
 

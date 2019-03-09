@@ -48,7 +48,9 @@ namespace Xamarin.Controls
 
 			// create the new path with the old attributes
 #if __ANDROID__ || __IOS__ || WINDOWS_PHONE_APP
-			return new InkStroke (smoothedPath, smoothedPoints.ToList (), currentPath.Color, currentPath.Width);
+            var stroke = new InkStroke(smoothedPath, smoothedPoints.ToList(), currentPath.Color, currentPath.Width);
+		    stroke.RawPoints = currentPath.RawPoints;
+		    return stroke;
 #elif WINDOWS_PHONE
 			var da = currentPath.DrawingAttributes;
 			smoothedPath.DrawingAttributes = new DrawingAttributes

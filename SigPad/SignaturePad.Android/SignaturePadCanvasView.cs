@@ -82,7 +82,6 @@ namespace Xamarin.Controls
 		public void Clear ()
 		{
 			inkPresenter.Clear ();
-
 			OnCleared ();
 		}
 
