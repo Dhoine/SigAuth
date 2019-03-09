@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SigAuth", "SigAuth\SigAuth.csproj", "{B62C1C4A-9098-474B-951C-4EA98171CBDE}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignaturePad.Android", "SigPad\SignaturePad.Android\SignaturePad.Android.csproj", "{149536B0-DD26-4B87-A1C2-B22BC5AA95F4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +19,10 @@ Global
 		{B62C1C4A-9098-474B-951C-4EA98171CBDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B62C1C4A-9098-474B-951C-4EA98171CBDE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B62C1C4A-9098-474B-951C-4EA98171CBDE}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{149536B0-DD26-4B87-A1C2-B22BC5AA95F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{149536B0-DD26-4B87-A1C2-B22BC5AA95F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{149536B0-DD26-4B87-A1C2-B22BC5AA95F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{149536B0-DD26-4B87-A1C2-B22BC5AA95F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
