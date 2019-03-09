@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+
+  <metadata>
+    <id>Xamarin.Controls.SignaturePad.Forms</id>
+    <title>SignaturePad for Xamarin.Forms</title>
+    <version>$version$</version>
+    <authors>Microsoft</authors>
+    <owners>Microsoft</owners>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <licenseUrl>https://go.microsoft.com/fwlink/?linkid=874508</licenseUrl>
+    <projectUrl>https://go.microsoft.com/fwlink/?linkid=874507</projectUrl>
+    <iconUrl>https://go.microsoft.com/fwlink/?linkid=874510</iconUrl>
+    <description>Makes capturing, saving, and displaying signatures extremely simple.</description>
+    <releaseNotes>https://go.microsoft.com/fwlink/?linkid=874509</releaseNotes>
+    <copyright>© Microsoft Corporation. All rights reserved.</copyright>
+    <tags>xamarin,signature,handwriting,windows,ios,android,uwp,xamarin.forms</tags>
+    <repository url="https://go.microsoft.com/fwlink/?linkid=874507" />
+
+    <dependencies>
+      <group targetFramework="MonoAndroid">
+        <dependency id="Xamarin.Controls.SignaturePad" version="$version$" exclude="Build,Analyzers" />
+        <dependency id="Xamarin.Forms" version="2.5.0.280555" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="Xamarin.iOS">
+        <dependency id="Xamarin.Controls.SignaturePad" version="$version$" exclude="Build,Analyzers" />
+        <dependency id="Xamarin.Forms" version="2.5.0.280555" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="uap10.0">
+        <dependency id="Xamarin.Controls.SignaturePad" version="$version$" exclude="Build,Analyzers" />
+        <dependency id="Xamarin.Forms" version="2.5.0.280555" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="netstandard1.0">
+        <dependency id="Xamarin.Forms" version="2.5.0.280555" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+
+  <files>
+    <file src="output/android/SignaturePad.Forms.dll" target="lib/MonoAndroid/SignaturePad.Forms.dll" />
+    <file src="output/android/SignaturePad.Forms.xml" target="lib/MonoAndroid/SignaturePad.Forms.xml" />
+
+    <file src="output/ios/SignaturePad.Forms.dll" target="lib/Xamarin.iOS/SignaturePad.Forms.dll" />
+    <file src="output/ios/SignaturePad.Forms.xml" target="lib/Xamarin.iOS/SignaturePad.Forms.xml" />
+
+    <file src="output/uwp/SignaturePad.Forms.dll" target="lib/uap10.0/SignaturePad.Forms.dll" />
+    <file src="output/uwp/SignaturePad.Forms.xml" target="lib/uap10.0/SignaturePad.Forms.xml" />
+    <file src="output/uwp/SignaturePad.Forms.pri" target="lib/uap10.0/SignaturePad.Forms.pri" />
+
+    <file src="output/netstandard/SignaturePad.Forms.dll" target="lib/netstandard1.0/SignaturePad.Forms.dll" />
+    <file src="output/netstandard/SignaturePad.Forms.xml" target="lib/netstandard1.0/SignaturePad.Forms.xml" />
+  </files>
+
+</package>
