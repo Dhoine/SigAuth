@@ -95,6 +95,10 @@
     <PackageReference Include="Xamarin.Android.Support.Design" Version="28.0.0.1" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\IntermediateLib\IntermediateLib.csproj">
+      <Project>{802e4a0f-4349-4583-b93e-ec151ba60145}</Project>
+      <Name>IntermediateLib</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SigPad\SignaturePad.Android\SignaturePad.Android.csproj">
       <Project>{149536b0-dd26-4b87-a1c2-b22bc5aa95f4}</Project>
       <Name>SignaturePad.Android</Name>

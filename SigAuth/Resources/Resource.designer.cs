@@ -26,6 +26,1574 @@ namespace SigAuth
 		
 		public static void UpdateIdValues()
 		{
+			global::IntermediateLib.Resource.Animation.abc_fade_in = global::SigAuth.Resource.Animation.abc_fade_in;
+			global::IntermediateLib.Resource.Animation.abc_fade_out = global::SigAuth.Resource.Animation.abc_fade_out;
+			global::IntermediateLib.Resource.Animation.abc_grow_fade_in_from_bottom = global::SigAuth.Resource.Animation.abc_grow_fade_in_from_bottom;
+			global::IntermediateLib.Resource.Animation.abc_popup_enter = global::SigAuth.Resource.Animation.abc_popup_enter;
+			global::IntermediateLib.Resource.Animation.abc_popup_exit = global::SigAuth.Resource.Animation.abc_popup_exit;
+			global::IntermediateLib.Resource.Animation.abc_shrink_fade_out_from_bottom = global::SigAuth.Resource.Animation.abc_shrink_fade_out_from_bottom;
+			global::IntermediateLib.Resource.Animation.abc_slide_in_bottom = global::SigAuth.Resource.Animation.abc_slide_in_bottom;
+			global::IntermediateLib.Resource.Animation.abc_slide_in_top = global::SigAuth.Resource.Animation.abc_slide_in_top;
+			global::IntermediateLib.Resource.Animation.abc_slide_out_bottom = global::SigAuth.Resource.Animation.abc_slide_out_bottom;
+			global::IntermediateLib.Resource.Animation.abc_slide_out_top = global::SigAuth.Resource.Animation.abc_slide_out_top;
+			global::IntermediateLib.Resource.Animation.tooltip_enter = global::SigAuth.Resource.Animation.tooltip_enter;
+			global::IntermediateLib.Resource.Animation.tooltip_exit = global::SigAuth.Resource.Animation.tooltip_exit;
+			global::IntermediateLib.Resource.Attribute.actionBarDivider = global::SigAuth.Resource.Attribute.actionBarDivider;
+			global::IntermediateLib.Resource.Attribute.actionBarItemBackground = global::SigAuth.Resource.Attribute.actionBarItemBackground;
+			global::IntermediateLib.Resource.Attribute.actionBarPopupTheme = global::SigAuth.Resource.Attribute.actionBarPopupTheme;
+			global::IntermediateLib.Resource.Attribute.actionBarSize = global::SigAuth.Resource.Attribute.actionBarSize;
+			global::IntermediateLib.Resource.Attribute.actionBarSplitStyle = global::SigAuth.Resource.Attribute.actionBarSplitStyle;
+			global::IntermediateLib.Resource.Attribute.actionBarStyle = global::SigAuth.Resource.Attribute.actionBarStyle;
+			global::IntermediateLib.Resource.Attribute.actionBarTabBarStyle = global::SigAuth.Resource.Attribute.actionBarTabBarStyle;
+			global::IntermediateLib.Resource.Attribute.actionBarTabStyle = global::SigAuth.Resource.Attribute.actionBarTabStyle;
+			global::IntermediateLib.Resource.Attribute.actionBarTabTextStyle = global::SigAuth.Resource.Attribute.actionBarTabTextStyle;
+			global::IntermediateLib.Resource.Attribute.actionBarTheme = global::SigAuth.Resource.Attribute.actionBarTheme;
+			global::IntermediateLib.Resource.Attribute.actionBarWidgetTheme = global::SigAuth.Resource.Attribute.actionBarWidgetTheme;
+			global::IntermediateLib.Resource.Attribute.actionButtonStyle = global::SigAuth.Resource.Attribute.actionButtonStyle;
+			global::IntermediateLib.Resource.Attribute.actionDropDownStyle = global::SigAuth.Resource.Attribute.actionDropDownStyle;
+			global::IntermediateLib.Resource.Attribute.actionLayout = global::SigAuth.Resource.Attribute.actionLayout;
+			global::IntermediateLib.Resource.Attribute.actionMenuTextAppearance = global::SigAuth.Resource.Attribute.actionMenuTextAppearance;
+			global::IntermediateLib.Resource.Attribute.actionMenuTextColor = global::SigAuth.Resource.Attribute.actionMenuTextColor;
+			global::IntermediateLib.Resource.Attribute.actionModeBackground = global::SigAuth.Resource.Attribute.actionModeBackground;
+			global::IntermediateLib.Resource.Attribute.actionModeCloseButtonStyle = global::SigAuth.Resource.Attribute.actionModeCloseButtonStyle;
+			global::IntermediateLib.Resource.Attribute.actionModeCloseDrawable = global::SigAuth.Resource.Attribute.actionModeCloseDrawable;
+			global::IntermediateLib.Resource.Attribute.actionModeCopyDrawable = global::SigAuth.Resource.Attribute.actionModeCopyDrawable;
+			global::IntermediateLib.Resource.Attribute.actionModeCutDrawable = global::SigAuth.Resource.Attribute.actionModeCutDrawable;
+			global::IntermediateLib.Resource.Attribute.actionModeFindDrawable = global::SigAuth.Resource.Attribute.actionModeFindDrawable;
+			global::IntermediateLib.Resource.Attribute.actionModePasteDrawable = global::SigAuth.Resource.Attribute.actionModePasteDrawable;
+			global::IntermediateLib.Resource.Attribute.actionModePopupWindowStyle = global::SigAuth.Resource.Attribute.actionModePopupWindowStyle;
+			global::IntermediateLib.Resource.Attribute.actionModeSelectAllDrawable = global::SigAuth.Resource.Attribute.actionModeSelectAllDrawable;
+			global::IntermediateLib.Resource.Attribute.actionModeShareDrawable = global::SigAuth.Resource.Attribute.actionModeShareDrawable;
+			global::IntermediateLib.Resource.Attribute.actionModeSplitBackground = global::SigAuth.Resource.Attribute.actionModeSplitBackground;
+			global::IntermediateLib.Resource.Attribute.actionModeStyle = global::SigAuth.Resource.Attribute.actionModeStyle;
+			global::IntermediateLib.Resource.Attribute.actionModeWebSearchDrawable = global::SigAuth.Resource.Attribute.actionModeWebSearchDrawable;
+			global::IntermediateLib.Resource.Attribute.actionOverflowButtonStyle = global::SigAuth.Resource.Attribute.actionOverflowButtonStyle;
+			global::IntermediateLib.Resource.Attribute.actionOverflowMenuStyle = global::SigAuth.Resource.Attribute.actionOverflowMenuStyle;
+			global::IntermediateLib.Resource.Attribute.actionProviderClass = global::SigAuth.Resource.Attribute.actionProviderClass;
+			global::IntermediateLib.Resource.Attribute.actionViewClass = global::SigAuth.Resource.Attribute.actionViewClass;
+			global::IntermediateLib.Resource.Attribute.activityChooserViewStyle = global::SigAuth.Resource.Attribute.activityChooserViewStyle;
+			global::IntermediateLib.Resource.Attribute.alertDialogButtonGroupStyle = global::SigAuth.Resource.Attribute.alertDialogButtonGroupStyle;
+			global::IntermediateLib.Resource.Attribute.alertDialogCenterButtons = global::SigAuth.Resource.Attribute.alertDialogCenterButtons;
+			global::IntermediateLib.Resource.Attribute.alertDialogStyle = global::SigAuth.Resource.Attribute.alertDialogStyle;
+			global::IntermediateLib.Resource.Attribute.alertDialogTheme = global::SigAuth.Resource.Attribute.alertDialogTheme;
+			global::IntermediateLib.Resource.Attribute.allowStacking = global::SigAuth.Resource.Attribute.allowStacking;
+			global::IntermediateLib.Resource.Attribute.alpha = global::SigAuth.Resource.Attribute.alpha;
+			global::IntermediateLib.Resource.Attribute.alphabeticModifiers = global::SigAuth.Resource.Attribute.alphabeticModifiers;
+			global::IntermediateLib.Resource.Attribute.arrowHeadLength = global::SigAuth.Resource.Attribute.arrowHeadLength;
+			global::IntermediateLib.Resource.Attribute.arrowShaftLength = global::SigAuth.Resource.Attribute.arrowShaftLength;
+			global::IntermediateLib.Resource.Attribute.autoCompleteTextViewStyle = global::SigAuth.Resource.Attribute.autoCompleteTextViewStyle;
+			global::IntermediateLib.Resource.Attribute.autoSizeMaxTextSize = global::SigAuth.Resource.Attribute.autoSizeMaxTextSize;
+			global::IntermediateLib.Resource.Attribute.autoSizeMinTextSize = global::SigAuth.Resource.Attribute.autoSizeMinTextSize;
+			global::IntermediateLib.Resource.Attribute.autoSizePresetSizes = global::SigAuth.Resource.Attribute.autoSizePresetSizes;
+			global::IntermediateLib.Resource.Attribute.autoSizeStepGranularity = global::SigAuth.Resource.Attribute.autoSizeStepGranularity;
+			global::IntermediateLib.Resource.Attribute.autoSizeTextType = global::SigAuth.Resource.Attribute.autoSizeTextType;
+			global::IntermediateLib.Resource.Attribute.background = global::SigAuth.Resource.Attribute.background;
+			global::IntermediateLib.Resource.Attribute.backgroundSplit = global::SigAuth.Resource.Attribute.backgroundSplit;
+			global::IntermediateLib.Resource.Attribute.backgroundStacked = global::SigAuth.Resource.Attribute.backgroundStacked;
+			global::IntermediateLib.Resource.Attribute.backgroundTint = global::SigAuth.Resource.Attribute.backgroundTint;
+			global::IntermediateLib.Resource.Attribute.backgroundTintMode = global::SigAuth.Resource.Attribute.backgroundTintMode;
+			global::IntermediateLib.Resource.Attribute.barLength = global::SigAuth.Resource.Attribute.barLength;
+			global::IntermediateLib.Resource.Attribute.borderlessButtonStyle = global::SigAuth.Resource.Attribute.borderlessButtonStyle;
+			global::IntermediateLib.Resource.Attribute.buttonBarButtonStyle = global::SigAuth.Resource.Attribute.buttonBarButtonStyle;
+			global::IntermediateLib.Resource.Attribute.buttonBarNegativeButtonStyle = global::SigAuth.Resource.Attribute.buttonBarNegativeButtonStyle;
+			global::IntermediateLib.Resource.Attribute.buttonBarNeutralButtonStyle = global::SigAuth.Resource.Attribute.buttonBarNeutralButtonStyle;
+			global::IntermediateLib.Resource.Attribute.buttonBarPositiveButtonStyle = global::SigAuth.Resource.Attribute.buttonBarPositiveButtonStyle;
+			global::IntermediateLib.Resource.Attribute.buttonBarStyle = global::SigAuth.Resource.Attribute.buttonBarStyle;
+			global::IntermediateLib.Resource.Attribute.buttonGravity = global::SigAuth.Resource.Attribute.buttonGravity;
+			global::IntermediateLib.Resource.Attribute.buttonPanelSideLayout = global::SigAuth.Resource.Attribute.buttonPanelSideLayout;
+			global::IntermediateLib.Resource.Attribute.buttonStyle = global::SigAuth.Resource.Attribute.buttonStyle;
+			global::IntermediateLib.Resource.Attribute.buttonStyleSmall = global::SigAuth.Resource.Attribute.buttonStyleSmall;
+			global::IntermediateLib.Resource.Attribute.buttonTint = global::SigAuth.Resource.Attribute.buttonTint;
+			global::IntermediateLib.Resource.Attribute.buttonTintMode = global::SigAuth.Resource.Attribute.buttonTintMode;
+			global::IntermediateLib.Resource.Attribute.captionText = global::SigAuth.Resource.Attribute.captionText;
+			global::IntermediateLib.Resource.Attribute.captionTextColor = global::SigAuth.Resource.Attribute.captionTextColor;
+			global::IntermediateLib.Resource.Attribute.captionTextSize = global::SigAuth.Resource.Attribute.captionTextSize;
+			global::IntermediateLib.Resource.Attribute.checkboxStyle = global::SigAuth.Resource.Attribute.checkboxStyle;
+			global::IntermediateLib.Resource.Attribute.checkedTextViewStyle = global::SigAuth.Resource.Attribute.checkedTextViewStyle;
+			global::IntermediateLib.Resource.Attribute.clearLabelText = global::SigAuth.Resource.Attribute.clearLabelText;
+			global::IntermediateLib.Resource.Attribute.clearLabelTextColor = global::SigAuth.Resource.Attribute.clearLabelTextColor;
+			global::IntermediateLib.Resource.Attribute.clearLabelTextSize = global::SigAuth.Resource.Attribute.clearLabelTextSize;
+			global::IntermediateLib.Resource.Attribute.closeIcon = global::SigAuth.Resource.Attribute.closeIcon;
+			global::IntermediateLib.Resource.Attribute.closeItemLayout = global::SigAuth.Resource.Attribute.closeItemLayout;
+			global::IntermediateLib.Resource.Attribute.collapseContentDescription = global::SigAuth.Resource.Attribute.collapseContentDescription;
+			global::IntermediateLib.Resource.Attribute.collapseIcon = global::SigAuth.Resource.Attribute.collapseIcon;
+			global::IntermediateLib.Resource.Attribute.color = global::SigAuth.Resource.Attribute.color;
+			global::IntermediateLib.Resource.Attribute.colorAccent = global::SigAuth.Resource.Attribute.colorAccent;
+			global::IntermediateLib.Resource.Attribute.colorBackgroundFloating = global::SigAuth.Resource.Attribute.colorBackgroundFloating;
+			global::IntermediateLib.Resource.Attribute.colorButtonNormal = global::SigAuth.Resource.Attribute.colorButtonNormal;
+			global::IntermediateLib.Resource.Attribute.colorControlActivated = global::SigAuth.Resource.Attribute.colorControlActivated;
+			global::IntermediateLib.Resource.Attribute.colorControlHighlight = global::SigAuth.Resource.Attribute.colorControlHighlight;
+			global::IntermediateLib.Resource.Attribute.colorControlNormal = global::SigAuth.Resource.Attribute.colorControlNormal;
+			global::IntermediateLib.Resource.Attribute.colorError = global::SigAuth.Resource.Attribute.colorError;
+			global::IntermediateLib.Resource.Attribute.colorPrimary = global::SigAuth.Resource.Attribute.colorPrimary;
+			global::IntermediateLib.Resource.Attribute.colorPrimaryDark = global::SigAuth.Resource.Attribute.colorPrimaryDark;
+			global::IntermediateLib.Resource.Attribute.colorSwitchThumbNormal = global::SigAuth.Resource.Attribute.colorSwitchThumbNormal;
+			global::IntermediateLib.Resource.Attribute.commitIcon = global::SigAuth.Resource.Attribute.commitIcon;
+			global::IntermediateLib.Resource.Attribute.contentDescription = global::SigAuth.Resource.Attribute.contentDescription;
+			global::IntermediateLib.Resource.Attribute.contentInsetEnd = global::SigAuth.Resource.Attribute.contentInsetEnd;
+			global::IntermediateLib.Resource.Attribute.contentInsetEndWithActions = global::SigAuth.Resource.Attribute.contentInsetEndWithActions;
+			global::IntermediateLib.Resource.Attribute.contentInsetLeft = global::SigAuth.Resource.Attribute.contentInsetLeft;
+			global::IntermediateLib.Resource.Attribute.contentInsetRight = global::SigAuth.Resource.Attribute.contentInsetRight;
+			global::IntermediateLib.Resource.Attribute.contentInsetStart = global::SigAuth.Resource.Attribute.contentInsetStart;
+			global::IntermediateLib.Resource.Attribute.contentInsetStartWithNavigation = global::SigAuth.Resource.Attribute.contentInsetStartWithNavigation;
+			global::IntermediateLib.Resource.Attribute.controlBackground = global::SigAuth.Resource.Attribute.controlBackground;
+			global::IntermediateLib.Resource.Attribute.customNavigationLayout = global::SigAuth.Resource.Attribute.customNavigationLayout;
+			global::IntermediateLib.Resource.Attribute.defaultQueryHint = global::SigAuth.Resource.Attribute.defaultQueryHint;
+			global::IntermediateLib.Resource.Attribute.dialogPreferredPadding = global::SigAuth.Resource.Attribute.dialogPreferredPadding;
+			global::IntermediateLib.Resource.Attribute.dialogTheme = global::SigAuth.Resource.Attribute.dialogTheme;
+			global::IntermediateLib.Resource.Attribute.displayOptions = global::SigAuth.Resource.Attribute.displayOptions;
+			global::IntermediateLib.Resource.Attribute.divider = global::SigAuth.Resource.Attribute.divider;
+			global::IntermediateLib.Resource.Attribute.dividerHorizontal = global::SigAuth.Resource.Attribute.dividerHorizontal;
+			global::IntermediateLib.Resource.Attribute.dividerPadding = global::SigAuth.Resource.Attribute.dividerPadding;
+			global::IntermediateLib.Resource.Attribute.dividerVertical = global::SigAuth.Resource.Attribute.dividerVertical;
+			global::IntermediateLib.Resource.Attribute.drawableSize = global::SigAuth.Resource.Attribute.drawableSize;
+			global::IntermediateLib.Resource.Attribute.drawerArrowStyle = global::SigAuth.Resource.Attribute.drawerArrowStyle;
+			global::IntermediateLib.Resource.Attribute.dropDownListViewStyle = global::SigAuth.Resource.Attribute.dropDownListViewStyle;
+			global::IntermediateLib.Resource.Attribute.dropdownListPreferredItemHeight = global::SigAuth.Resource.Attribute.dropdownListPreferredItemHeight;
+			global::IntermediateLib.Resource.Attribute.editTextBackground = global::SigAuth.Resource.Attribute.editTextBackground;
+			global::IntermediateLib.Resource.Attribute.editTextColor = global::SigAuth.Resource.Attribute.editTextColor;
+			global::IntermediateLib.Resource.Attribute.editTextStyle = global::SigAuth.Resource.Attribute.editTextStyle;
+			global::IntermediateLib.Resource.Attribute.elevation = global::SigAuth.Resource.Attribute.elevation;
+			global::IntermediateLib.Resource.Attribute.expandActivityOverflowButtonDrawable = global::SigAuth.Resource.Attribute.expandActivityOverflowButtonDrawable;
+			global::IntermediateLib.Resource.Attribute.font = global::SigAuth.Resource.Attribute.font;
+			global::IntermediateLib.Resource.Attribute.fontFamily = global::SigAuth.Resource.Attribute.fontFamily;
+			global::IntermediateLib.Resource.Attribute.fontProviderAuthority = global::SigAuth.Resource.Attribute.fontProviderAuthority;
+			global::IntermediateLib.Resource.Attribute.fontProviderCerts = global::SigAuth.Resource.Attribute.fontProviderCerts;
+			global::IntermediateLib.Resource.Attribute.fontProviderFetchStrategy = global::SigAuth.Resource.Attribute.fontProviderFetchStrategy;
+			global::IntermediateLib.Resource.Attribute.fontProviderFetchTimeout = global::SigAuth.Resource.Attribute.fontProviderFetchTimeout;
+			global::IntermediateLib.Resource.Attribute.fontProviderPackage = global::SigAuth.Resource.Attribute.fontProviderPackage;
+			global::IntermediateLib.Resource.Attribute.fontProviderQuery = global::SigAuth.Resource.Attribute.fontProviderQuery;
+			global::IntermediateLib.Resource.Attribute.fontStyle = global::SigAuth.Resource.Attribute.fontStyle;
+			global::IntermediateLib.Resource.Attribute.fontWeight = global::SigAuth.Resource.Attribute.fontWeight;
+			global::IntermediateLib.Resource.Attribute.gapBetweenBars = global::SigAuth.Resource.Attribute.gapBetweenBars;
+			global::IntermediateLib.Resource.Attribute.goIcon = global::SigAuth.Resource.Attribute.goIcon;
+			global::IntermediateLib.Resource.Attribute.height = global::SigAuth.Resource.Attribute.height;
+			global::IntermediateLib.Resource.Attribute.hideOnContentScroll = global::SigAuth.Resource.Attribute.hideOnContentScroll;
+			global::IntermediateLib.Resource.Attribute.homeAsUpIndicator = global::SigAuth.Resource.Attribute.homeAsUpIndicator;
+			global::IntermediateLib.Resource.Attribute.homeLayout = global::SigAuth.Resource.Attribute.homeLayout;
+			global::IntermediateLib.Resource.Attribute.icon = global::SigAuth.Resource.Attribute.icon;
+			global::IntermediateLib.Resource.Attribute.iconTint = global::SigAuth.Resource.Attribute.iconTint;
+			global::IntermediateLib.Resource.Attribute.iconTintMode = global::SigAuth.Resource.Attribute.iconTintMode;
+			global::IntermediateLib.Resource.Attribute.iconifiedByDefault = global::SigAuth.Resource.Attribute.iconifiedByDefault;
+			global::IntermediateLib.Resource.Attribute.imageButtonStyle = global::SigAuth.Resource.Attribute.imageButtonStyle;
+			global::IntermediateLib.Resource.Attribute.indeterminateProgressStyle = global::SigAuth.Resource.Attribute.indeterminateProgressStyle;
+			global::IntermediateLib.Resource.Attribute.initialActivityCount = global::SigAuth.Resource.Attribute.initialActivityCount;
+			global::IntermediateLib.Resource.Attribute.isLightTheme = global::SigAuth.Resource.Attribute.isLightTheme;
+			global::IntermediateLib.Resource.Attribute.itemPadding = global::SigAuth.Resource.Attribute.itemPadding;
+			global::IntermediateLib.Resource.Attribute.layout = global::SigAuth.Resource.Attribute.layout;
+			global::IntermediateLib.Resource.Attribute.listChoiceBackgroundIndicator = global::SigAuth.Resource.Attribute.listChoiceBackgroundIndicator;
+			global::IntermediateLib.Resource.Attribute.listDividerAlertDialog = global::SigAuth.Resource.Attribute.listDividerAlertDialog;
+			global::IntermediateLib.Resource.Attribute.listItemLayout = global::SigAuth.Resource.Attribute.listItemLayout;
+			global::IntermediateLib.Resource.Attribute.listLayout = global::SigAuth.Resource.Attribute.listLayout;
+			global::IntermediateLib.Resource.Attribute.listMenuViewStyle = global::SigAuth.Resource.Attribute.listMenuViewStyle;
+			global::IntermediateLib.Resource.Attribute.listPopupWindowStyle = global::SigAuth.Resource.Attribute.listPopupWindowStyle;
+			global::IntermediateLib.Resource.Attribute.listPreferredItemHeight = global::SigAuth.Resource.Attribute.listPreferredItemHeight;
+			global::IntermediateLib.Resource.Attribute.listPreferredItemHeightLarge = global::SigAuth.Resource.Attribute.listPreferredItemHeightLarge;
+			global::IntermediateLib.Resource.Attribute.listPreferredItemHeightSmall = global::SigAuth.Resource.Attribute.listPreferredItemHeightSmall;
+			global::IntermediateLib.Resource.Attribute.listPreferredItemPaddingLeft = global::SigAuth.Resource.Attribute.listPreferredItemPaddingLeft;
+			global::IntermediateLib.Resource.Attribute.listPreferredItemPaddingRight = global::SigAuth.Resource.Attribute.listPreferredItemPaddingRight;
+			global::IntermediateLib.Resource.Attribute.logo = global::SigAuth.Resource.Attribute.logo;
+			global::IntermediateLib.Resource.Attribute.logoDescription = global::SigAuth.Resource.Attribute.logoDescription;
+			global::IntermediateLib.Resource.Attribute.maxButtonHeight = global::SigAuth.Resource.Attribute.maxButtonHeight;
+			global::IntermediateLib.Resource.Attribute.measureWithLargestChild = global::SigAuth.Resource.Attribute.measureWithLargestChild;
+			global::IntermediateLib.Resource.Attribute.multiChoiceItemLayout = global::SigAuth.Resource.Attribute.multiChoiceItemLayout;
+			global::IntermediateLib.Resource.Attribute.navigationContentDescription = global::SigAuth.Resource.Attribute.navigationContentDescription;
+			global::IntermediateLib.Resource.Attribute.navigationIcon = global::SigAuth.Resource.Attribute.navigationIcon;
+			global::IntermediateLib.Resource.Attribute.navigationMode = global::SigAuth.Resource.Attribute.navigationMode;
+			global::IntermediateLib.Resource.Attribute.numericModifiers = global::SigAuth.Resource.Attribute.numericModifiers;
+			global::IntermediateLib.Resource.Attribute.overlapAnchor = global::SigAuth.Resource.Attribute.overlapAnchor;
+			global::IntermediateLib.Resource.Attribute.paddingBottomNoButtons = global::SigAuth.Resource.Attribute.paddingBottomNoButtons;
+			global::IntermediateLib.Resource.Attribute.paddingEnd = global::SigAuth.Resource.Attribute.paddingEnd;
+			global::IntermediateLib.Resource.Attribute.paddingStart = global::SigAuth.Resource.Attribute.paddingStart;
+			global::IntermediateLib.Resource.Attribute.paddingTopNoTitle = global::SigAuth.Resource.Attribute.paddingTopNoTitle;
+			global::IntermediateLib.Resource.Attribute.panelBackground = global::SigAuth.Resource.Attribute.panelBackground;
+			global::IntermediateLib.Resource.Attribute.panelMenuListTheme = global::SigAuth.Resource.Attribute.panelMenuListTheme;
+			global::IntermediateLib.Resource.Attribute.panelMenuListWidth = global::SigAuth.Resource.Attribute.panelMenuListWidth;
+			global::IntermediateLib.Resource.Attribute.popupMenuStyle = global::SigAuth.Resource.Attribute.popupMenuStyle;
+			global::IntermediateLib.Resource.Attribute.popupTheme = global::SigAuth.Resource.Attribute.popupTheme;
+			global::IntermediateLib.Resource.Attribute.popupWindowStyle = global::SigAuth.Resource.Attribute.popupWindowStyle;
+			global::IntermediateLib.Resource.Attribute.preserveIconSpacing = global::SigAuth.Resource.Attribute.preserveIconSpacing;
+			global::IntermediateLib.Resource.Attribute.progressBarPadding = global::SigAuth.Resource.Attribute.progressBarPadding;
+			global::IntermediateLib.Resource.Attribute.progressBarStyle = global::SigAuth.Resource.Attribute.progressBarStyle;
+			global::IntermediateLib.Resource.Attribute.queryBackground = global::SigAuth.Resource.Attribute.queryBackground;
+			global::IntermediateLib.Resource.Attribute.queryHint = global::SigAuth.Resource.Attribute.queryHint;
+			global::IntermediateLib.Resource.Attribute.radioButtonStyle = global::SigAuth.Resource.Attribute.radioButtonStyle;
+			global::IntermediateLib.Resource.Attribute.ratingBarStyle = global::SigAuth.Resource.Attribute.ratingBarStyle;
+			global::IntermediateLib.Resource.Attribute.ratingBarStyleIndicator = global::SigAuth.Resource.Attribute.ratingBarStyleIndicator;
+			global::IntermediateLib.Resource.Attribute.ratingBarStyleSmall = global::SigAuth.Resource.Attribute.ratingBarStyleSmall;
+			global::IntermediateLib.Resource.Attribute.searchHintIcon = global::SigAuth.Resource.Attribute.searchHintIcon;
+			global::IntermediateLib.Resource.Attribute.searchIcon = global::SigAuth.Resource.Attribute.searchIcon;
+			global::IntermediateLib.Resource.Attribute.searchViewStyle = global::SigAuth.Resource.Attribute.searchViewStyle;
+			global::IntermediateLib.Resource.Attribute.seekBarStyle = global::SigAuth.Resource.Attribute.seekBarStyle;
+			global::IntermediateLib.Resource.Attribute.selectableItemBackground = global::SigAuth.Resource.Attribute.selectableItemBackground;
+			global::IntermediateLib.Resource.Attribute.selectableItemBackgroundBorderless = global::SigAuth.Resource.Attribute.selectableItemBackgroundBorderless;
+			global::IntermediateLib.Resource.Attribute.showAsAction = global::SigAuth.Resource.Attribute.showAsAction;
+			global::IntermediateLib.Resource.Attribute.showDividers = global::SigAuth.Resource.Attribute.showDividers;
+			global::IntermediateLib.Resource.Attribute.showText = global::SigAuth.Resource.Attribute.showText;
+			global::IntermediateLib.Resource.Attribute.showTitle = global::SigAuth.Resource.Attribute.showTitle;
+			global::IntermediateLib.Resource.Attribute.signatureLineColor = global::SigAuth.Resource.Attribute.signatureLineColor;
+			global::IntermediateLib.Resource.Attribute.signatureLineSpacing = global::SigAuth.Resource.Attribute.signatureLineSpacing;
+			global::IntermediateLib.Resource.Attribute.signatureLineWidth = global::SigAuth.Resource.Attribute.signatureLineWidth;
+			global::IntermediateLib.Resource.Attribute.signaturePromptText = global::SigAuth.Resource.Attribute.signaturePromptText;
+			global::IntermediateLib.Resource.Attribute.signaturePromptTextColor = global::SigAuth.Resource.Attribute.signaturePromptTextColor;
+			global::IntermediateLib.Resource.Attribute.signaturePromptTextSize = global::SigAuth.Resource.Attribute.signaturePromptTextSize;
+			global::IntermediateLib.Resource.Attribute.singleChoiceItemLayout = global::SigAuth.Resource.Attribute.singleChoiceItemLayout;
+			global::IntermediateLib.Resource.Attribute.spinBars = global::SigAuth.Resource.Attribute.spinBars;
+			global::IntermediateLib.Resource.Attribute.spinnerDropDownItemStyle = global::SigAuth.Resource.Attribute.spinnerDropDownItemStyle;
+			global::IntermediateLib.Resource.Attribute.spinnerStyle = global::SigAuth.Resource.Attribute.spinnerStyle;
+			global::IntermediateLib.Resource.Attribute.splitTrack = global::SigAuth.Resource.Attribute.splitTrack;
+			global::IntermediateLib.Resource.Attribute.srcCompat = global::SigAuth.Resource.Attribute.srcCompat;
+			global::IntermediateLib.Resource.Attribute.state_above_anchor = global::SigAuth.Resource.Attribute.state_above_anchor;
+			global::IntermediateLib.Resource.Attribute.strokeColor = global::SigAuth.Resource.Attribute.strokeColor;
+			global::IntermediateLib.Resource.Attribute.strokeWidth = global::SigAuth.Resource.Attribute.strokeWidth;
+			global::IntermediateLib.Resource.Attribute.subMenuArrow = global::SigAuth.Resource.Attribute.subMenuArrow;
+			global::IntermediateLib.Resource.Attribute.submitBackground = global::SigAuth.Resource.Attribute.submitBackground;
+			global::IntermediateLib.Resource.Attribute.subtitle = global::SigAuth.Resource.Attribute.subtitle;
+			global::IntermediateLib.Resource.Attribute.subtitleTextAppearance = global::SigAuth.Resource.Attribute.subtitleTextAppearance;
+			global::IntermediateLib.Resource.Attribute.subtitleTextColor = global::SigAuth.Resource.Attribute.subtitleTextColor;
+			global::IntermediateLib.Resource.Attribute.subtitleTextStyle = global::SigAuth.Resource.Attribute.subtitleTextStyle;
+			global::IntermediateLib.Resource.Attribute.suggestionRowLayout = global::SigAuth.Resource.Attribute.suggestionRowLayout;
+			global::IntermediateLib.Resource.Attribute.switchMinWidth = global::SigAuth.Resource.Attribute.switchMinWidth;
+			global::IntermediateLib.Resource.Attribute.switchPadding = global::SigAuth.Resource.Attribute.switchPadding;
+			global::IntermediateLib.Resource.Attribute.switchStyle = global::SigAuth.Resource.Attribute.switchStyle;
+			global::IntermediateLib.Resource.Attribute.switchTextAppearance = global::SigAuth.Resource.Attribute.switchTextAppearance;
+			global::IntermediateLib.Resource.Attribute.textAllCaps = global::SigAuth.Resource.Attribute.textAllCaps;
+			global::IntermediateLib.Resource.Attribute.textAppearanceLargePopupMenu = global::SigAuth.Resource.Attribute.textAppearanceLargePopupMenu;
+			global::IntermediateLib.Resource.Attribute.textAppearanceListItem = global::SigAuth.Resource.Attribute.textAppearanceListItem;
+			global::IntermediateLib.Resource.Attribute.textAppearanceListItemSecondary = global::SigAuth.Resource.Attribute.textAppearanceListItemSecondary;
+			global::IntermediateLib.Resource.Attribute.textAppearanceListItemSmall = global::SigAuth.Resource.Attribute.textAppearanceListItemSmall;
+			global::IntermediateLib.Resource.Attribute.textAppearancePopupMenuHeader = global::SigAuth.Resource.Attribute.textAppearancePopupMenuHeader;
+			global::IntermediateLib.Resource.Attribute.textAppearanceSearchResultSubtitle = global::SigAuth.Resource.Attribute.textAppearanceSearchResultSubtitle;
+			global::IntermediateLib.Resource.Attribute.textAppearanceSearchResultTitle = global::SigAuth.Resource.Attribute.textAppearanceSearchResultTitle;
+			global::IntermediateLib.Resource.Attribute.textAppearanceSmallPopupMenu = global::SigAuth.Resource.Attribute.textAppearanceSmallPopupMenu;
+			global::IntermediateLib.Resource.Attribute.textColorAlertDialogListItem = global::SigAuth.Resource.Attribute.textColorAlertDialogListItem;
+			global::IntermediateLib.Resource.Attribute.textColorSearchUrl = global::SigAuth.Resource.Attribute.textColorSearchUrl;
+			global::IntermediateLib.Resource.Attribute.theme = global::SigAuth.Resource.Attribute.theme;
+			global::IntermediateLib.Resource.Attribute.thickness = global::SigAuth.Resource.Attribute.thickness;
+			global::IntermediateLib.Resource.Attribute.thumbTextPadding = global::SigAuth.Resource.Attribute.thumbTextPadding;
+			global::IntermediateLib.Resource.Attribute.thumbTint = global::SigAuth.Resource.Attribute.thumbTint;
+			global::IntermediateLib.Resource.Attribute.thumbTintMode = global::SigAuth.Resource.Attribute.thumbTintMode;
+			global::IntermediateLib.Resource.Attribute.tickMark = global::SigAuth.Resource.Attribute.tickMark;
+			global::IntermediateLib.Resource.Attribute.tickMarkTint = global::SigAuth.Resource.Attribute.tickMarkTint;
+			global::IntermediateLib.Resource.Attribute.tickMarkTintMode = global::SigAuth.Resource.Attribute.tickMarkTintMode;
+			global::IntermediateLib.Resource.Attribute.tint = global::SigAuth.Resource.Attribute.tint;
+			global::IntermediateLib.Resource.Attribute.tintMode = global::SigAuth.Resource.Attribute.tintMode;
+			global::IntermediateLib.Resource.Attribute.title = global::SigAuth.Resource.Attribute.title;
+			global::IntermediateLib.Resource.Attribute.titleMargin = global::SigAuth.Resource.Attribute.titleMargin;
+			global::IntermediateLib.Resource.Attribute.titleMarginBottom = global::SigAuth.Resource.Attribute.titleMarginBottom;
+			global::IntermediateLib.Resource.Attribute.titleMarginEnd = global::SigAuth.Resource.Attribute.titleMarginEnd;
+			global::IntermediateLib.Resource.Attribute.titleMarginStart = global::SigAuth.Resource.Attribute.titleMarginStart;
+			global::IntermediateLib.Resource.Attribute.titleMarginTop = global::SigAuth.Resource.Attribute.titleMarginTop;
+			global::IntermediateLib.Resource.Attribute.titleMargins = global::SigAuth.Resource.Attribute.titleMargins;
+			global::IntermediateLib.Resource.Attribute.titleTextAppearance = global::SigAuth.Resource.Attribute.titleTextAppearance;
+			global::IntermediateLib.Resource.Attribute.titleTextColor = global::SigAuth.Resource.Attribute.titleTextColor;
+			global::IntermediateLib.Resource.Attribute.titleTextStyle = global::SigAuth.Resource.Attribute.titleTextStyle;
+			global::IntermediateLib.Resource.Attribute.toolbarNavigationButtonStyle = global::SigAuth.Resource.Attribute.toolbarNavigationButtonStyle;
+			global::IntermediateLib.Resource.Attribute.toolbarStyle = global::SigAuth.Resource.Attribute.toolbarStyle;
+			global::IntermediateLib.Resource.Attribute.tooltipForegroundColor = global::SigAuth.Resource.Attribute.tooltipForegroundColor;
+			global::IntermediateLib.Resource.Attribute.tooltipFrameBackground = global::SigAuth.Resource.Attribute.tooltipFrameBackground;
+			global::IntermediateLib.Resource.Attribute.tooltipText = global::SigAuth.Resource.Attribute.tooltipText;
+			global::IntermediateLib.Resource.Attribute.track = global::SigAuth.Resource.Attribute.track;
+			global::IntermediateLib.Resource.Attribute.trackTint = global::SigAuth.Resource.Attribute.trackTint;
+			global::IntermediateLib.Resource.Attribute.trackTintMode = global::SigAuth.Resource.Attribute.trackTintMode;
+			global::IntermediateLib.Resource.Attribute.voiceIcon = global::SigAuth.Resource.Attribute.voiceIcon;
+			global::IntermediateLib.Resource.Attribute.windowActionBar = global::SigAuth.Resource.Attribute.windowActionBar;
+			global::IntermediateLib.Resource.Attribute.windowActionBarOverlay = global::SigAuth.Resource.Attribute.windowActionBarOverlay;
+			global::IntermediateLib.Resource.Attribute.windowActionModeOverlay = global::SigAuth.Resource.Attribute.windowActionModeOverlay;
+			global::IntermediateLib.Resource.Attribute.windowFixedHeightMajor = global::SigAuth.Resource.Attribute.windowFixedHeightMajor;
+			global::IntermediateLib.Resource.Attribute.windowFixedHeightMinor = global::SigAuth.Resource.Attribute.windowFixedHeightMinor;
+			global::IntermediateLib.Resource.Attribute.windowFixedWidthMajor = global::SigAuth.Resource.Attribute.windowFixedWidthMajor;
+			global::IntermediateLib.Resource.Attribute.windowFixedWidthMinor = global::SigAuth.Resource.Attribute.windowFixedWidthMinor;
+			global::IntermediateLib.Resource.Attribute.windowMinWidthMajor = global::SigAuth.Resource.Attribute.windowMinWidthMajor;
+			global::IntermediateLib.Resource.Attribute.windowMinWidthMinor = global::SigAuth.Resource.Attribute.windowMinWidthMinor;
+			global::IntermediateLib.Resource.Attribute.windowNoTitle = global::SigAuth.Resource.Attribute.windowNoTitle;
+			global::IntermediateLib.Resource.Boolean.abc_action_bar_embed_tabs = global::SigAuth.Resource.Boolean.abc_action_bar_embed_tabs;
+			global::IntermediateLib.Resource.Boolean.abc_allow_stacked_button_bar = global::SigAuth.Resource.Boolean.abc_allow_stacked_button_bar;
+			global::IntermediateLib.Resource.Boolean.abc_config_actionMenuItemAllCaps = global::SigAuth.Resource.Boolean.abc_config_actionMenuItemAllCaps;
+			global::IntermediateLib.Resource.Boolean.abc_config_closeDialogWhenTouchOutside = global::SigAuth.Resource.Boolean.abc_config_closeDialogWhenTouchOutside;
+			global::IntermediateLib.Resource.Boolean.abc_config_showMenuShortcutsWhenKeyboardPresent = global::SigAuth.Resource.Boolean.abc_config_showMenuShortcutsWhenKeyboardPresent;
+			global::IntermediateLib.Resource.Color.abc_background_cache_hint_selector_material_dark = global::SigAuth.Resource.Color.abc_background_cache_hint_selector_material_dark;
+			global::IntermediateLib.Resource.Color.abc_background_cache_hint_selector_material_light = global::SigAuth.Resource.Color.abc_background_cache_hint_selector_material_light;
+			global::IntermediateLib.Resource.Color.abc_btn_colored_borderless_text_material = global::SigAuth.Resource.Color.abc_btn_colored_borderless_text_material;
+			global::IntermediateLib.Resource.Color.abc_btn_colored_text_material = global::SigAuth.Resource.Color.abc_btn_colored_text_material;
+			global::IntermediateLib.Resource.Color.abc_color_highlight_material = global::SigAuth.Resource.Color.abc_color_highlight_material;
+			global::IntermediateLib.Resource.Color.abc_hint_foreground_material_dark = global::SigAuth.Resource.Color.abc_hint_foreground_material_dark;
+			global::IntermediateLib.Resource.Color.abc_hint_foreground_material_light = global::SigAuth.Resource.Color.abc_hint_foreground_material_light;
+			global::IntermediateLib.Resource.Color.abc_input_method_navigation_guard = global::SigAuth.Resource.Color.abc_input_method_navigation_guard;
+			global::IntermediateLib.Resource.Color.abc_primary_text_disable_only_material_dark = global::SigAuth.Resource.Color.abc_primary_text_disable_only_material_dark;
+			global::IntermediateLib.Resource.Color.abc_primary_text_disable_only_material_light = global::SigAuth.Resource.Color.abc_primary_text_disable_only_material_light;
+			global::IntermediateLib.Resource.Color.abc_primary_text_material_dark = global::SigAuth.Resource.Color.abc_primary_text_material_dark;
+			global::IntermediateLib.Resource.Color.abc_primary_text_material_light = global::SigAuth.Resource.Color.abc_primary_text_material_light;
+			global::IntermediateLib.Resource.Color.abc_search_url_text = global::SigAuth.Resource.Color.abc_search_url_text;
+			global::IntermediateLib.Resource.Color.abc_search_url_text_normal = global::SigAuth.Resource.Color.abc_search_url_text_normal;
+			global::IntermediateLib.Resource.Color.abc_search_url_text_pressed = global::SigAuth.Resource.Color.abc_search_url_text_pressed;
+			global::IntermediateLib.Resource.Color.abc_search_url_text_selected = global::SigAuth.Resource.Color.abc_search_url_text_selected;
+			global::IntermediateLib.Resource.Color.abc_secondary_text_material_dark = global::SigAuth.Resource.Color.abc_secondary_text_material_dark;
+			global::IntermediateLib.Resource.Color.abc_secondary_text_material_light = global::SigAuth.Resource.Color.abc_secondary_text_material_light;
+			global::IntermediateLib.Resource.Color.abc_tint_btn_checkable = global::SigAuth.Resource.Color.abc_tint_btn_checkable;
+			global::IntermediateLib.Resource.Color.abc_tint_default = global::SigAuth.Resource.Color.abc_tint_default;
+			global::IntermediateLib.Resource.Color.abc_tint_edittext = global::SigAuth.Resource.Color.abc_tint_edittext;
+			global::IntermediateLib.Resource.Color.abc_tint_seek_thumb = global::SigAuth.Resource.Color.abc_tint_seek_thumb;
+			global::IntermediateLib.Resource.Color.abc_tint_spinner = global::SigAuth.Resource.Color.abc_tint_spinner;
+			global::IntermediateLib.Resource.Color.abc_tint_switch_track = global::SigAuth.Resource.Color.abc_tint_switch_track;
+			global::IntermediateLib.Resource.Color.accent_material_dark = global::SigAuth.Resource.Color.accent_material_dark;
+			global::IntermediateLib.Resource.Color.accent_material_light = global::SigAuth.Resource.Color.accent_material_light;
+			global::IntermediateLib.Resource.Color.background_floating_material_dark = global::SigAuth.Resource.Color.background_floating_material_dark;
+			global::IntermediateLib.Resource.Color.background_floating_material_light = global::SigAuth.Resource.Color.background_floating_material_light;
+			global::IntermediateLib.Resource.Color.background_material_dark = global::SigAuth.Resource.Color.background_material_dark;
+			global::IntermediateLib.Resource.Color.background_material_light = global::SigAuth.Resource.Color.background_material_light;
+			global::IntermediateLib.Resource.Color.bright_foreground_disabled_material_dark = global::SigAuth.Resource.Color.bright_foreground_disabled_material_dark;
+			global::IntermediateLib.Resource.Color.bright_foreground_disabled_material_light = global::SigAuth.Resource.Color.bright_foreground_disabled_material_light;
+			global::IntermediateLib.Resource.Color.bright_foreground_inverse_material_dark = global::SigAuth.Resource.Color.bright_foreground_inverse_material_dark;
+			global::IntermediateLib.Resource.Color.bright_foreground_inverse_material_light = global::SigAuth.Resource.Color.bright_foreground_inverse_material_light;
+			global::IntermediateLib.Resource.Color.bright_foreground_material_dark = global::SigAuth.Resource.Color.bright_foreground_material_dark;
+			global::IntermediateLib.Resource.Color.bright_foreground_material_light = global::SigAuth.Resource.Color.bright_foreground_material_light;
+			global::IntermediateLib.Resource.Color.button_material_dark = global::SigAuth.Resource.Color.button_material_dark;
+			global::IntermediateLib.Resource.Color.button_material_light = global::SigAuth.Resource.Color.button_material_light;
+			global::IntermediateLib.Resource.Color.dim_foreground_disabled_material_dark = global::SigAuth.Resource.Color.dim_foreground_disabled_material_dark;
+			global::IntermediateLib.Resource.Color.dim_foreground_disabled_material_light = global::SigAuth.Resource.Color.dim_foreground_disabled_material_light;
+			global::IntermediateLib.Resource.Color.dim_foreground_material_dark = global::SigAuth.Resource.Color.dim_foreground_material_dark;
+			global::IntermediateLib.Resource.Color.dim_foreground_material_light = global::SigAuth.Resource.Color.dim_foreground_material_light;
+			global::IntermediateLib.Resource.Color.error_color_material = global::SigAuth.Resource.Color.error_color_material;
+			global::IntermediateLib.Resource.Color.foreground_material_dark = global::SigAuth.Resource.Color.foreground_material_dark;
+			global::IntermediateLib.Resource.Color.foreground_material_light = global::SigAuth.Resource.Color.foreground_material_light;
+			global::IntermediateLib.Resource.Color.highlighted_text_material_dark = global::SigAuth.Resource.Color.highlighted_text_material_dark;
+			global::IntermediateLib.Resource.Color.highlighted_text_material_light = global::SigAuth.Resource.Color.highlighted_text_material_light;
+			global::IntermediateLib.Resource.Color.material_blue_grey_800 = global::SigAuth.Resource.Color.material_blue_grey_800;
+			global::IntermediateLib.Resource.Color.material_blue_grey_900 = global::SigAuth.Resource.Color.material_blue_grey_900;
+			global::IntermediateLib.Resource.Color.material_blue_grey_950 = global::SigAuth.Resource.Color.material_blue_grey_950;
+			global::IntermediateLib.Resource.Color.material_deep_teal_200 = global::SigAuth.Resource.Color.material_deep_teal_200;
+			global::IntermediateLib.Resource.Color.material_deep_teal_500 = global::SigAuth.Resource.Color.material_deep_teal_500;
+			global::IntermediateLib.Resource.Color.material_grey_100 = global::SigAuth.Resource.Color.material_grey_100;
+			global::IntermediateLib.Resource.Color.material_grey_300 = global::SigAuth.Resource.Color.material_grey_300;
+			global::IntermediateLib.Resource.Color.material_grey_50 = global::SigAuth.Resource.Color.material_grey_50;
+			global::IntermediateLib.Resource.Color.material_grey_600 = global::SigAuth.Resource.Color.material_grey_600;
+			global::IntermediateLib.Resource.Color.material_grey_800 = global::SigAuth.Resource.Color.material_grey_800;
+			global::IntermediateLib.Resource.Color.material_grey_850 = global::SigAuth.Resource.Color.material_grey_850;
+			global::IntermediateLib.Resource.Color.material_grey_900 = global::SigAuth.Resource.Color.material_grey_900;
+			global::IntermediateLib.Resource.Color.notification_action_color_filter = global::SigAuth.Resource.Color.notification_action_color_filter;
+			global::IntermediateLib.Resource.Color.notification_icon_bg_color = global::SigAuth.Resource.Color.notification_icon_bg_color;
+			global::IntermediateLib.Resource.Color.notification_material_background_media_default_color = global::SigAuth.Resource.Color.notification_material_background_media_default_color;
+			global::IntermediateLib.Resource.Color.primary_dark_material_dark = global::SigAuth.Resource.Color.primary_dark_material_dark;
+			global::IntermediateLib.Resource.Color.primary_dark_material_light = global::SigAuth.Resource.Color.primary_dark_material_light;
+			global::IntermediateLib.Resource.Color.primary_material_dark = global::SigAuth.Resource.Color.primary_material_dark;
+			global::IntermediateLib.Resource.Color.primary_material_light = global::SigAuth.Resource.Color.primary_material_light;
+			global::IntermediateLib.Resource.Color.primary_text_default_material_dark = global::SigAuth.Resource.Color.primary_text_default_material_dark;
+			global::IntermediateLib.Resource.Color.primary_text_default_material_light = global::SigAuth.Resource.Color.primary_text_default_material_light;
+			global::IntermediateLib.Resource.Color.primary_text_disabled_material_dark = global::SigAuth.Resource.Color.primary_text_disabled_material_dark;
+			global::IntermediateLib.Resource.Color.primary_text_disabled_material_light = global::SigAuth.Resource.Color.primary_text_disabled_material_light;
+			global::IntermediateLib.Resource.Color.ripple_material_dark = global::SigAuth.Resource.Color.ripple_material_dark;
+			global::IntermediateLib.Resource.Color.ripple_material_light = global::SigAuth.Resource.Color.ripple_material_light;
+			global::IntermediateLib.Resource.Color.secondary_text_default_material_dark = global::SigAuth.Resource.Color.secondary_text_default_material_dark;
+			global::IntermediateLib.Resource.Color.secondary_text_default_material_light = global::SigAuth.Resource.Color.secondary_text_default_material_light;
+			global::IntermediateLib.Resource.Color.secondary_text_disabled_material_dark = global::SigAuth.Resource.Color.secondary_text_disabled_material_dark;
+			global::IntermediateLib.Resource.Color.secondary_text_disabled_material_light = global::SigAuth.Resource.Color.secondary_text_disabled_material_light;
+			global::IntermediateLib.Resource.Color.signature_pad_dark_color = global::SigAuth.Resource.Color.signature_pad_dark_color;
+			global::IntermediateLib.Resource.Color.signature_pad_light_color = global::SigAuth.Resource.Color.signature_pad_light_color;
+			global::IntermediateLib.Resource.Color.switch_thumb_disabled_material_dark = global::SigAuth.Resource.Color.switch_thumb_disabled_material_dark;
+			global::IntermediateLib.Resource.Color.switch_thumb_disabled_material_light = global::SigAuth.Resource.Color.switch_thumb_disabled_material_light;
+			global::IntermediateLib.Resource.Color.switch_thumb_material_dark = global::SigAuth.Resource.Color.switch_thumb_material_dark;
+			global::IntermediateLib.Resource.Color.switch_thumb_material_light = global::SigAuth.Resource.Color.switch_thumb_material_light;
+			global::IntermediateLib.Resource.Color.switch_thumb_normal_material_dark = global::SigAuth.Resource.Color.switch_thumb_normal_material_dark;
+			global::IntermediateLib.Resource.Color.switch_thumb_normal_material_light = global::SigAuth.Resource.Color.switch_thumb_normal_material_light;
+			global::IntermediateLib.Resource.Color.tooltip_background_dark = global::SigAuth.Resource.Color.tooltip_background_dark;
+			global::IntermediateLib.Resource.Color.tooltip_background_light = global::SigAuth.Resource.Color.tooltip_background_light;
+			global::IntermediateLib.Resource.Dimension.abc_action_bar_content_inset_material = global::SigAuth.Resource.Dimension.abc_action_bar_content_inset_material;
+			global::IntermediateLib.Resource.Dimension.abc_action_bar_content_inset_with_nav = global::SigAuth.Resource.Dimension.abc_action_bar_content_inset_with_nav;
+			global::IntermediateLib.Resource.Dimension.abc_action_bar_default_height_material = global::SigAuth.Resource.Dimension.abc_action_bar_default_height_material;
+			global::IntermediateLib.Resource.Dimension.abc_action_bar_default_padding_end_material = global::SigAuth.Resource.Dimension.abc_action_bar_default_padding_end_material;
+			global::IntermediateLib.Resource.Dimension.abc_action_bar_default_padding_start_material = global::SigAuth.Resource.Dimension.abc_action_bar_default_padding_start_material;
+			global::IntermediateLib.Resource.Dimension.abc_action_bar_elevation_material = global::SigAuth.Resource.Dimension.abc_action_bar_elevation_material;
+			global::IntermediateLib.Resource.Dimension.abc_action_bar_icon_vertical_padding_material = global::SigAuth.Resource.Dimension.abc_action_bar_icon_vertical_padding_material;
+			global::IntermediateLib.Resource.Dimension.abc_action_bar_overflow_padding_end_material = global::SigAuth.Resource.Dimension.abc_action_bar_overflow_padding_end_material;
+			global::IntermediateLib.Resource.Dimension.abc_action_bar_overflow_padding_start_material = global::SigAuth.Resource.Dimension.abc_action_bar_overflow_padding_start_material;
+			global::IntermediateLib.Resource.Dimension.abc_action_bar_progress_bar_size = global::SigAuth.Resource.Dimension.abc_action_bar_progress_bar_size;
+			global::IntermediateLib.Resource.Dimension.abc_action_bar_stacked_max_height = global::SigAuth.Resource.Dimension.abc_action_bar_stacked_max_height;
+			global::IntermediateLib.Resource.Dimension.abc_action_bar_stacked_tab_max_width = global::SigAuth.Resource.Dimension.abc_action_bar_stacked_tab_max_width;
+			global::IntermediateLib.Resource.Dimension.abc_action_bar_subtitle_bottom_margin_material = global::SigAuth.Resource.Dimension.abc_action_bar_subtitle_bottom_margin_material;
+			global::IntermediateLib.Resource.Dimension.abc_action_bar_subtitle_top_margin_material = global::SigAuth.Resource.Dimension.abc_action_bar_subtitle_top_margin_material;
+			global::IntermediateLib.Resource.Dimension.abc_action_button_min_height_material = global::SigAuth.Resource.Dimension.abc_action_button_min_height_material;
+			global::IntermediateLib.Resource.Dimension.abc_action_button_min_width_material = global::SigAuth.Resource.Dimension.abc_action_button_min_width_material;
+			global::IntermediateLib.Resource.Dimension.abc_action_button_min_width_overflow_material = global::SigAuth.Resource.Dimension.abc_action_button_min_width_overflow_material;
+			global::IntermediateLib.Resource.Dimension.abc_alert_dialog_button_bar_height = global::SigAuth.Resource.Dimension.abc_alert_dialog_button_bar_height;
+			global::IntermediateLib.Resource.Dimension.abc_button_inset_horizontal_material = global::SigAuth.Resource.Dimension.abc_button_inset_horizontal_material;
+			global::IntermediateLib.Resource.Dimension.abc_button_inset_vertical_material = global::SigAuth.Resource.Dimension.abc_button_inset_vertical_material;
+			global::IntermediateLib.Resource.Dimension.abc_button_padding_horizontal_material = global::SigAuth.Resource.Dimension.abc_button_padding_horizontal_material;
+			global::IntermediateLib.Resource.Dimension.abc_button_padding_vertical_material = global::SigAuth.Resource.Dimension.abc_button_padding_vertical_material;
+			global::IntermediateLib.Resource.Dimension.abc_cascading_menus_min_smallest_width = global::SigAuth.Resource.Dimension.abc_cascading_menus_min_smallest_width;
+			global::IntermediateLib.Resource.Dimension.abc_config_prefDialogWidth = global::SigAuth.Resource.Dimension.abc_config_prefDialogWidth;
+			global::IntermediateLib.Resource.Dimension.abc_control_corner_material = global::SigAuth.Resource.Dimension.abc_control_corner_material;
+			global::IntermediateLib.Resource.Dimension.abc_control_inset_material = global::SigAuth.Resource.Dimension.abc_control_inset_material;
+			global::IntermediateLib.Resource.Dimension.abc_control_padding_material = global::SigAuth.Resource.Dimension.abc_control_padding_material;
+			global::IntermediateLib.Resource.Dimension.abc_dialog_fixed_height_major = global::SigAuth.Resource.Dimension.abc_dialog_fixed_height_major;
+			global::IntermediateLib.Resource.Dimension.abc_dialog_fixed_height_minor = global::SigAuth.Resource.Dimension.abc_dialog_fixed_height_minor;
+			global::IntermediateLib.Resource.Dimension.abc_dialog_fixed_width_major = global::SigAuth.Resource.Dimension.abc_dialog_fixed_width_major;
+			global::IntermediateLib.Resource.Dimension.abc_dialog_fixed_width_minor = global::SigAuth.Resource.Dimension.abc_dialog_fixed_width_minor;
+			global::IntermediateLib.Resource.Dimension.abc_dialog_list_padding_bottom_no_buttons = global::SigAuth.Resource.Dimension.abc_dialog_list_padding_bottom_no_buttons;
+			global::IntermediateLib.Resource.Dimension.abc_dialog_list_padding_top_no_title = global::SigAuth.Resource.Dimension.abc_dialog_list_padding_top_no_title;
+			global::IntermediateLib.Resource.Dimension.abc_dialog_min_width_major = global::SigAuth.Resource.Dimension.abc_dialog_min_width_major;
+			global::IntermediateLib.Resource.Dimension.abc_dialog_min_width_minor = global::SigAuth.Resource.Dimension.abc_dialog_min_width_minor;
+			global::IntermediateLib.Resource.Dimension.abc_dialog_padding_material = global::SigAuth.Resource.Dimension.abc_dialog_padding_material;
+			global::IntermediateLib.Resource.Dimension.abc_dialog_padding_top_material = global::SigAuth.Resource.Dimension.abc_dialog_padding_top_material;
+			global::IntermediateLib.Resource.Dimension.abc_dialog_title_divider_material = global::SigAuth.Resource.Dimension.abc_dialog_title_divider_material;
+			global::IntermediateLib.Resource.Dimension.abc_disabled_alpha_material_dark = global::SigAuth.Resource.Dimension.abc_disabled_alpha_material_dark;
+			global::IntermediateLib.Resource.Dimension.abc_disabled_alpha_material_light = global::SigAuth.Resource.Dimension.abc_disabled_alpha_material_light;
+			global::IntermediateLib.Resource.Dimension.abc_dropdownitem_icon_width = global::SigAuth.Resource.Dimension.abc_dropdownitem_icon_width;
+			global::IntermediateLib.Resource.Dimension.abc_dropdownitem_text_padding_left = global::SigAuth.Resource.Dimension.abc_dropdownitem_text_padding_left;
+			global::IntermediateLib.Resource.Dimension.abc_dropdownitem_text_padding_right = global::SigAuth.Resource.Dimension.abc_dropdownitem_text_padding_right;
+			global::IntermediateLib.Resource.Dimension.abc_edit_text_inset_bottom_material = global::SigAuth.Resource.Dimension.abc_edit_text_inset_bottom_material;
+			global::IntermediateLib.Resource.Dimension.abc_edit_text_inset_horizontal_material = global::SigAuth.Resource.Dimension.abc_edit_text_inset_horizontal_material;
+			global::IntermediateLib.Resource.Dimension.abc_edit_text_inset_top_material = global::SigAuth.Resource.Dimension.abc_edit_text_inset_top_material;
+			global::IntermediateLib.Resource.Dimension.abc_floating_window_z = global::SigAuth.Resource.Dimension.abc_floating_window_z;
+			global::IntermediateLib.Resource.Dimension.abc_list_item_padding_horizontal_material = global::SigAuth.Resource.Dimension.abc_list_item_padding_horizontal_material;
+			global::IntermediateLib.Resource.Dimension.abc_panel_menu_list_width = global::SigAuth.Resource.Dimension.abc_panel_menu_list_width;
+			global::IntermediateLib.Resource.Dimension.abc_progress_bar_height_material = global::SigAuth.Resource.Dimension.abc_progress_bar_height_material;
+			global::IntermediateLib.Resource.Dimension.abc_search_view_preferred_height = global::SigAuth.Resource.Dimension.abc_search_view_preferred_height;
+			global::IntermediateLib.Resource.Dimension.abc_search_view_preferred_width = global::SigAuth.Resource.Dimension.abc_search_view_preferred_width;
+			global::IntermediateLib.Resource.Dimension.abc_seekbar_track_background_height_material = global::SigAuth.Resource.Dimension.abc_seekbar_track_background_height_material;
+			global::IntermediateLib.Resource.Dimension.abc_seekbar_track_progress_height_material = global::SigAuth.Resource.Dimension.abc_seekbar_track_progress_height_material;
+			global::IntermediateLib.Resource.Dimension.abc_select_dialog_padding_start_material = global::SigAuth.Resource.Dimension.abc_select_dialog_padding_start_material;
+			global::IntermediateLib.Resource.Dimension.abc_switch_padding = global::SigAuth.Resource.Dimension.abc_switch_padding;
+			global::IntermediateLib.Resource.Dimension.abc_text_size_body_1_material = global::SigAuth.Resource.Dimension.abc_text_size_body_1_material;
+			global::IntermediateLib.Resource.Dimension.abc_text_size_body_2_material = global::SigAuth.Resource.Dimension.abc_text_size_body_2_material;
+			global::IntermediateLib.Resource.Dimension.abc_text_size_button_material = global::SigAuth.Resource.Dimension.abc_text_size_button_material;
+			global::IntermediateLib.Resource.Dimension.abc_text_size_caption_material = global::SigAuth.Resource.Dimension.abc_text_size_caption_material;
+			global::IntermediateLib.Resource.Dimension.abc_text_size_display_1_material = global::SigAuth.Resource.Dimension.abc_text_size_display_1_material;
+			global::IntermediateLib.Resource.Dimension.abc_text_size_display_2_material = global::SigAuth.Resource.Dimension.abc_text_size_display_2_material;
+			global::IntermediateLib.Resource.Dimension.abc_text_size_display_3_material = global::SigAuth.Resource.Dimension.abc_text_size_display_3_material;
+			global::IntermediateLib.Resource.Dimension.abc_text_size_display_4_material = global::SigAuth.Resource.Dimension.abc_text_size_display_4_material;
+			global::IntermediateLib.Resource.Dimension.abc_text_size_headline_material = global::SigAuth.Resource.Dimension.abc_text_size_headline_material;
+			global::IntermediateLib.Resource.Dimension.abc_text_size_large_material = global::SigAuth.Resource.Dimension.abc_text_size_large_material;
+			global::IntermediateLib.Resource.Dimension.abc_text_size_medium_material = global::SigAuth.Resource.Dimension.abc_text_size_medium_material;
+			global::IntermediateLib.Resource.Dimension.abc_text_size_menu_header_material = global::SigAuth.Resource.Dimension.abc_text_size_menu_header_material;
+			global::IntermediateLib.Resource.Dimension.abc_text_size_menu_material = global::SigAuth.Resource.Dimension.abc_text_size_menu_material;
+			global::IntermediateLib.Resource.Dimension.abc_text_size_small_material = global::SigAuth.Resource.Dimension.abc_text_size_small_material;
+			global::IntermediateLib.Resource.Dimension.abc_text_size_subhead_material = global::SigAuth.Resource.Dimension.abc_text_size_subhead_material;
+			global::IntermediateLib.Resource.Dimension.abc_text_size_subtitle_material_toolbar = global::SigAuth.Resource.Dimension.abc_text_size_subtitle_material_toolbar;
+			global::IntermediateLib.Resource.Dimension.abc_text_size_title_material = global::SigAuth.Resource.Dimension.abc_text_size_title_material;
+			global::IntermediateLib.Resource.Dimension.abc_text_size_title_material_toolbar = global::SigAuth.Resource.Dimension.abc_text_size_title_material_toolbar;
+			global::IntermediateLib.Resource.Dimension.compat_button_inset_horizontal_material = global::SigAuth.Resource.Dimension.compat_button_inset_horizontal_material;
+			global::IntermediateLib.Resource.Dimension.compat_button_inset_vertical_material = global::SigAuth.Resource.Dimension.compat_button_inset_vertical_material;
+			global::IntermediateLib.Resource.Dimension.compat_button_padding_horizontal_material = global::SigAuth.Resource.Dimension.compat_button_padding_horizontal_material;
+			global::IntermediateLib.Resource.Dimension.compat_button_padding_vertical_material = global::SigAuth.Resource.Dimension.compat_button_padding_vertical_material;
+			global::IntermediateLib.Resource.Dimension.compat_control_corner_material = global::SigAuth.Resource.Dimension.compat_control_corner_material;
+			global::IntermediateLib.Resource.Dimension.disabled_alpha_material_dark = global::SigAuth.Resource.Dimension.disabled_alpha_material_dark;
+			global::IntermediateLib.Resource.Dimension.disabled_alpha_material_light = global::SigAuth.Resource.Dimension.disabled_alpha_material_light;
+			global::IntermediateLib.Resource.Dimension.highlight_alpha_material_colored = global::SigAuth.Resource.Dimension.highlight_alpha_material_colored;
+			global::IntermediateLib.Resource.Dimension.highlight_alpha_material_dark = global::SigAuth.Resource.Dimension.highlight_alpha_material_dark;
+			global::IntermediateLib.Resource.Dimension.highlight_alpha_material_light = global::SigAuth.Resource.Dimension.highlight_alpha_material_light;
+			global::IntermediateLib.Resource.Dimension.hint_alpha_material_dark = global::SigAuth.Resource.Dimension.hint_alpha_material_dark;
+			global::IntermediateLib.Resource.Dimension.hint_alpha_material_light = global::SigAuth.Resource.Dimension.hint_alpha_material_light;
+			global::IntermediateLib.Resource.Dimension.hint_pressed_alpha_material_dark = global::SigAuth.Resource.Dimension.hint_pressed_alpha_material_dark;
+			global::IntermediateLib.Resource.Dimension.hint_pressed_alpha_material_light = global::SigAuth.Resource.Dimension.hint_pressed_alpha_material_light;
+			global::IntermediateLib.Resource.Dimension.notification_action_icon_size = global::SigAuth.Resource.Dimension.notification_action_icon_size;
+			global::IntermediateLib.Resource.Dimension.notification_action_text_size = global::SigAuth.Resource.Dimension.notification_action_text_size;
+			global::IntermediateLib.Resource.Dimension.notification_big_circle_margin = global::SigAuth.Resource.Dimension.notification_big_circle_margin;
+			global::IntermediateLib.Resource.Dimension.notification_content_margin_start = global::SigAuth.Resource.Dimension.notification_content_margin_start;
+			global::IntermediateLib.Resource.Dimension.notification_large_icon_height = global::SigAuth.Resource.Dimension.notification_large_icon_height;
+			global::IntermediateLib.Resource.Dimension.notification_large_icon_width = global::SigAuth.Resource.Dimension.notification_large_icon_width;
+			global::IntermediateLib.Resource.Dimension.notification_main_column_padding_top = global::SigAuth.Resource.Dimension.notification_main_column_padding_top;
+			global::IntermediateLib.Resource.Dimension.notification_media_narrow_margin = global::SigAuth.Resource.Dimension.notification_media_narrow_margin;
+			global::IntermediateLib.Resource.Dimension.notification_right_icon_size = global::SigAuth.Resource.Dimension.notification_right_icon_size;
+			global::IntermediateLib.Resource.Dimension.notification_right_side_padding_top = global::SigAuth.Resource.Dimension.notification_right_side_padding_top;
+			global::IntermediateLib.Resource.Dimension.notification_small_icon_background_padding = global::SigAuth.Resource.Dimension.notification_small_icon_background_padding;
+			global::IntermediateLib.Resource.Dimension.notification_small_icon_size_as_large = global::SigAuth.Resource.Dimension.notification_small_icon_size_as_large;
+			global::IntermediateLib.Resource.Dimension.notification_subtext_size = global::SigAuth.Resource.Dimension.notification_subtext_size;
+			global::IntermediateLib.Resource.Dimension.notification_top_pad = global::SigAuth.Resource.Dimension.notification_top_pad;
+			global::IntermediateLib.Resource.Dimension.notification_top_pad_large_text = global::SigAuth.Resource.Dimension.notification_top_pad_large_text;
+			global::IntermediateLib.Resource.Dimension.signature_pad_font_size = global::SigAuth.Resource.Dimension.signature_pad_font_size;
+			global::IntermediateLib.Resource.Dimension.signature_pad_line_thickness = global::SigAuth.Resource.Dimension.signature_pad_line_thickness;
+			global::IntermediateLib.Resource.Dimension.signature_pad_narrow_spacing = global::SigAuth.Resource.Dimension.signature_pad_narrow_spacing;
+			global::IntermediateLib.Resource.Dimension.signature_pad_wide_spacing = global::SigAuth.Resource.Dimension.signature_pad_wide_spacing;
+			global::IntermediateLib.Resource.Dimension.tooltip_corner_radius = global::SigAuth.Resource.Dimension.tooltip_corner_radius;
+			global::IntermediateLib.Resource.Dimension.tooltip_horizontal_padding = global::SigAuth.Resource.Dimension.tooltip_horizontal_padding;
+			global::IntermediateLib.Resource.Dimension.tooltip_margin = global::SigAuth.Resource.Dimension.tooltip_margin;
+			global::IntermediateLib.Resource.Dimension.tooltip_precise_anchor_extra_offset = global::SigAuth.Resource.Dimension.tooltip_precise_anchor_extra_offset;
+			global::IntermediateLib.Resource.Dimension.tooltip_precise_anchor_threshold = global::SigAuth.Resource.Dimension.tooltip_precise_anchor_threshold;
+			global::IntermediateLib.Resource.Dimension.tooltip_vertical_padding = global::SigAuth.Resource.Dimension.tooltip_vertical_padding;
+			global::IntermediateLib.Resource.Dimension.tooltip_y_offset_non_touch = global::SigAuth.Resource.Dimension.tooltip_y_offset_non_touch;
+			global::IntermediateLib.Resource.Dimension.tooltip_y_offset_touch = global::SigAuth.Resource.Dimension.tooltip_y_offset_touch;
+			global::IntermediateLib.Resource.Drawable.abc_ab_share_pack_mtrl_alpha = global::SigAuth.Resource.Drawable.abc_ab_share_pack_mtrl_alpha;
+			global::IntermediateLib.Resource.Drawable.abc_action_bar_item_background_material = global::SigAuth.Resource.Drawable.abc_action_bar_item_background_material;
+			global::IntermediateLib.Resource.Drawable.abc_btn_borderless_material = global::SigAuth.Resource.Drawable.abc_btn_borderless_material;
+			global::IntermediateLib.Resource.Drawable.abc_btn_check_material = global::SigAuth.Resource.Drawable.abc_btn_check_material;
+			global::IntermediateLib.Resource.Drawable.abc_btn_check_to_on_mtrl_000 = global::SigAuth.Resource.Drawable.abc_btn_check_to_on_mtrl_000;
+			global::IntermediateLib.Resource.Drawable.abc_btn_check_to_on_mtrl_015 = global::SigAuth.Resource.Drawable.abc_btn_check_to_on_mtrl_015;
+			global::IntermediateLib.Resource.Drawable.abc_btn_colored_material = global::SigAuth.Resource.Drawable.abc_btn_colored_material;
+			global::IntermediateLib.Resource.Drawable.abc_btn_default_mtrl_shape = global::SigAuth.Resource.Drawable.abc_btn_default_mtrl_shape;
+			global::IntermediateLib.Resource.Drawable.abc_btn_radio_material = global::SigAuth.Resource.Drawable.abc_btn_radio_material;
+			global::IntermediateLib.Resource.Drawable.abc_btn_radio_to_on_mtrl_000 = global::SigAuth.Resource.Drawable.abc_btn_radio_to_on_mtrl_000;
+			global::IntermediateLib.Resource.Drawable.abc_btn_radio_to_on_mtrl_015 = global::SigAuth.Resource.Drawable.abc_btn_radio_to_on_mtrl_015;
+			global::IntermediateLib.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001 = global::SigAuth.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001;
+			global::IntermediateLib.Resource.Drawable.abc_btn_switch_to_on_mtrl_00012 = global::SigAuth.Resource.Drawable.abc_btn_switch_to_on_mtrl_00012;
+			global::IntermediateLib.Resource.Drawable.abc_cab_background_internal_bg = global::SigAuth.Resource.Drawable.abc_cab_background_internal_bg;
+			global::IntermediateLib.Resource.Drawable.abc_cab_background_top_material = global::SigAuth.Resource.Drawable.abc_cab_background_top_material;
+			global::IntermediateLib.Resource.Drawable.abc_cab_background_top_mtrl_alpha = global::SigAuth.Resource.Drawable.abc_cab_background_top_mtrl_alpha;
+			global::IntermediateLib.Resource.Drawable.abc_control_background_material = global::SigAuth.Resource.Drawable.abc_control_background_material;
+			global::IntermediateLib.Resource.Drawable.abc_dialog_material_background = global::SigAuth.Resource.Drawable.abc_dialog_material_background;
+			global::IntermediateLib.Resource.Drawable.abc_edit_text_material = global::SigAuth.Resource.Drawable.abc_edit_text_material;
+			global::IntermediateLib.Resource.Drawable.abc_ic_ab_back_material = global::SigAuth.Resource.Drawable.abc_ic_ab_back_material;
+			global::IntermediateLib.Resource.Drawable.abc_ic_arrow_drop_right_black_24dp = global::SigAuth.Resource.Drawable.abc_ic_arrow_drop_right_black_24dp;
+			global::IntermediateLib.Resource.Drawable.abc_ic_clear_material = global::SigAuth.Resource.Drawable.abc_ic_clear_material;
+			global::IntermediateLib.Resource.Drawable.abc_ic_commit_search_api_mtrl_alpha = global::SigAuth.Resource.Drawable.abc_ic_commit_search_api_mtrl_alpha;
+			global::IntermediateLib.Resource.Drawable.abc_ic_go_search_api_material = global::SigAuth.Resource.Drawable.abc_ic_go_search_api_material;
+			global::IntermediateLib.Resource.Drawable.abc_ic_menu_copy_mtrl_am_alpha = global::SigAuth.Resource.Drawable.abc_ic_menu_copy_mtrl_am_alpha;
+			global::IntermediateLib.Resource.Drawable.abc_ic_menu_cut_mtrl_alpha = global::SigAuth.Resource.Drawable.abc_ic_menu_cut_mtrl_alpha;
+			global::IntermediateLib.Resource.Drawable.abc_ic_menu_overflow_material = global::SigAuth.Resource.Drawable.abc_ic_menu_overflow_material;
+			global::IntermediateLib.Resource.Drawable.abc_ic_menu_paste_mtrl_am_alpha = global::SigAuth.Resource.Drawable.abc_ic_menu_paste_mtrl_am_alpha;
+			global::IntermediateLib.Resource.Drawable.abc_ic_menu_selectall_mtrl_alpha = global::SigAuth.Resource.Drawable.abc_ic_menu_selectall_mtrl_alpha;
+			global::IntermediateLib.Resource.Drawable.abc_ic_menu_share_mtrl_alpha = global::SigAuth.Resource.Drawable.abc_ic_menu_share_mtrl_alpha;
+			global::IntermediateLib.Resource.Drawable.abc_ic_search_api_material = global::SigAuth.Resource.Drawable.abc_ic_search_api_material;
+			global::IntermediateLib.Resource.Drawable.abc_ic_star_black_16dp = global::SigAuth.Resource.Drawable.abc_ic_star_black_16dp;
+			global::IntermediateLib.Resource.Drawable.abc_ic_star_black_36dp = global::SigAuth.Resource.Drawable.abc_ic_star_black_36dp;
+			global::IntermediateLib.Resource.Drawable.abc_ic_star_black_48dp = global::SigAuth.Resource.Drawable.abc_ic_star_black_48dp;
+			global::IntermediateLib.Resource.Drawable.abc_ic_star_half_black_16dp = global::SigAuth.Resource.Drawable.abc_ic_star_half_black_16dp;
+			global::IntermediateLib.Resource.Drawable.abc_ic_star_half_black_36dp = global::SigAuth.Resource.Drawable.abc_ic_star_half_black_36dp;
+			global::IntermediateLib.Resource.Drawable.abc_ic_star_half_black_48dp = global::SigAuth.Resource.Drawable.abc_ic_star_half_black_48dp;
+			global::IntermediateLib.Resource.Drawable.abc_ic_voice_search_api_material = global::SigAuth.Resource.Drawable.abc_ic_voice_search_api_material;
+			global::IntermediateLib.Resource.Drawable.abc_item_background_holo_dark = global::SigAuth.Resource.Drawable.abc_item_background_holo_dark;
+			global::IntermediateLib.Resource.Drawable.abc_item_background_holo_light = global::SigAuth.Resource.Drawable.abc_item_background_holo_light;
+			global::IntermediateLib.Resource.Drawable.abc_list_divider_mtrl_alpha = global::SigAuth.Resource.Drawable.abc_list_divider_mtrl_alpha;
+			global::IntermediateLib.Resource.Drawable.abc_list_focused_holo = global::SigAuth.Resource.Drawable.abc_list_focused_holo;
+			global::IntermediateLib.Resource.Drawable.abc_list_longpressed_holo = global::SigAuth.Resource.Drawable.abc_list_longpressed_holo;
+			global::IntermediateLib.Resource.Drawable.abc_list_pressed_holo_dark = global::SigAuth.Resource.Drawable.abc_list_pressed_holo_dark;
+			global::IntermediateLib.Resource.Drawable.abc_list_pressed_holo_light = global::SigAuth.Resource.Drawable.abc_list_pressed_holo_light;
+			global::IntermediateLib.Resource.Drawable.abc_list_selector_background_transition_holo_dark = global::SigAuth.Resource.Drawable.abc_list_selector_background_transition_holo_dark;
+			global::IntermediateLib.Resource.Drawable.abc_list_selector_background_transition_holo_light = global::SigAuth.Resource.Drawable.abc_list_selector_background_transition_holo_light;
+			global::IntermediateLib.Resource.Drawable.abc_list_selector_disabled_holo_dark = global::SigAuth.Resource.Drawable.abc_list_selector_disabled_holo_dark;
+			global::IntermediateLib.Resource.Drawable.abc_list_selector_disabled_holo_light = global::SigAuth.Resource.Drawable.abc_list_selector_disabled_holo_light;
+			global::IntermediateLib.Resource.Drawable.abc_list_selector_holo_dark = global::SigAuth.Resource.Drawable.abc_list_selector_holo_dark;
+			global::IntermediateLib.Resource.Drawable.abc_list_selector_holo_light = global::SigAuth.Resource.Drawable.abc_list_selector_holo_light;
+			global::IntermediateLib.Resource.Drawable.abc_menu_hardkey_panel_mtrl_mult = global::SigAuth.Resource.Drawable.abc_menu_hardkey_panel_mtrl_mult;
+			global::IntermediateLib.Resource.Drawable.abc_popup_background_mtrl_mult = global::SigAuth.Resource.Drawable.abc_popup_background_mtrl_mult;
+			global::IntermediateLib.Resource.Drawable.abc_ratingbar_indicator_material = global::SigAuth.Resource.Drawable.abc_ratingbar_indicator_material;
+			global::IntermediateLib.Resource.Drawable.abc_ratingbar_material = global::SigAuth.Resource.Drawable.abc_ratingbar_material;
+			global::IntermediateLib.Resource.Drawable.abc_ratingbar_small_material = global::SigAuth.Resource.Drawable.abc_ratingbar_small_material;
+			global::IntermediateLib.Resource.Drawable.abc_scrubber_control_off_mtrl_alpha = global::SigAuth.Resource.Drawable.abc_scrubber_control_off_mtrl_alpha;
+			global::IntermediateLib.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_000 = global::SigAuth.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_000;
+			global::IntermediateLib.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_005 = global::SigAuth.Resource.Drawable.abc_scrubber_control_to_pressed_mtrl_005;
+			global::IntermediateLib.Resource.Drawable.abc_scrubber_primary_mtrl_alpha = global::SigAuth.Resource.Drawable.abc_scrubber_primary_mtrl_alpha;
+			global::IntermediateLib.Resource.Drawable.abc_scrubber_track_mtrl_alpha = global::SigAuth.Resource.Drawable.abc_scrubber_track_mtrl_alpha;
+			global::IntermediateLib.Resource.Drawable.abc_seekbar_thumb_material = global::SigAuth.Resource.Drawable.abc_seekbar_thumb_material;
+			global::IntermediateLib.Resource.Drawable.abc_seekbar_tick_mark_material = global::SigAuth.Resource.Drawable.abc_seekbar_tick_mark_material;
+			global::IntermediateLib.Resource.Drawable.abc_seekbar_track_material = global::SigAuth.Resource.Drawable.abc_seekbar_track_material;
+			global::IntermediateLib.Resource.Drawable.abc_spinner_mtrl_am_alpha = global::SigAuth.Resource.Drawable.abc_spinner_mtrl_am_alpha;
+			global::IntermediateLib.Resource.Drawable.abc_spinner_textfield_background_material = global::SigAuth.Resource.Drawable.abc_spinner_textfield_background_material;
+			global::IntermediateLib.Resource.Drawable.abc_switch_thumb_material = global::SigAuth.Resource.Drawable.abc_switch_thumb_material;
+			global::IntermediateLib.Resource.Drawable.abc_switch_track_mtrl_alpha = global::SigAuth.Resource.Drawable.abc_switch_track_mtrl_alpha;
+			global::IntermediateLib.Resource.Drawable.abc_tab_indicator_material = global::SigAuth.Resource.Drawable.abc_tab_indicator_material;
+			global::IntermediateLib.Resource.Drawable.abc_tab_indicator_mtrl_alpha = global::SigAuth.Resource.Drawable.abc_tab_indicator_mtrl_alpha;
+			global::IntermediateLib.Resource.Drawable.abc_text_cursor_material = global::SigAuth.Resource.Drawable.abc_text_cursor_material;
+			global::IntermediateLib.Resource.Drawable.abc_text_select_handle_left_mtrl_dark = global::SigAuth.Resource.Drawable.abc_text_select_handle_left_mtrl_dark;
+			global::IntermediateLib.Resource.Drawable.abc_text_select_handle_left_mtrl_light = global::SigAuth.Resource.Drawable.abc_text_select_handle_left_mtrl_light;
+			global::IntermediateLib.Resource.Drawable.abc_text_select_handle_middle_mtrl_dark = global::SigAuth.Resource.Drawable.abc_text_select_handle_middle_mtrl_dark;
+			global::IntermediateLib.Resource.Drawable.abc_text_select_handle_middle_mtrl_light = global::SigAuth.Resource.Drawable.abc_text_select_handle_middle_mtrl_light;
+			global::IntermediateLib.Resource.Drawable.abc_text_select_handle_right_mtrl_dark = global::SigAuth.Resource.Drawable.abc_text_select_handle_right_mtrl_dark;
+			global::IntermediateLib.Resource.Drawable.abc_text_select_handle_right_mtrl_light = global::SigAuth.Resource.Drawable.abc_text_select_handle_right_mtrl_light;
+			global::IntermediateLib.Resource.Drawable.abc_textfield_activated_mtrl_alpha = global::SigAuth.Resource.Drawable.abc_textfield_activated_mtrl_alpha;
+			global::IntermediateLib.Resource.Drawable.abc_textfield_default_mtrl_alpha = global::SigAuth.Resource.Drawable.abc_textfield_default_mtrl_alpha;
+			global::IntermediateLib.Resource.Drawable.abc_textfield_search_activated_mtrl_alpha = global::SigAuth.Resource.Drawable.abc_textfield_search_activated_mtrl_alpha;
+			global::IntermediateLib.Resource.Drawable.abc_textfield_search_default_mtrl_alpha = global::SigAuth.Resource.Drawable.abc_textfield_search_default_mtrl_alpha;
+			global::IntermediateLib.Resource.Drawable.abc_textfield_search_material = global::SigAuth.Resource.Drawable.abc_textfield_search_material;
+			global::IntermediateLib.Resource.Drawable.abc_vector_test = global::SigAuth.Resource.Drawable.abc_vector_test;
+			global::IntermediateLib.Resource.Drawable.notification_action_background = global::SigAuth.Resource.Drawable.notification_action_background;
+			global::IntermediateLib.Resource.Drawable.notification_bg = global::SigAuth.Resource.Drawable.notification_bg;
+			global::IntermediateLib.Resource.Drawable.notification_bg_low = global::SigAuth.Resource.Drawable.notification_bg_low;
+			global::IntermediateLib.Resource.Drawable.notification_bg_low_normal = global::SigAuth.Resource.Drawable.notification_bg_low_normal;
+			global::IntermediateLib.Resource.Drawable.notification_bg_low_pressed = global::SigAuth.Resource.Drawable.notification_bg_low_pressed;
+			global::IntermediateLib.Resource.Drawable.notification_bg_normal = global::SigAuth.Resource.Drawable.notification_bg_normal;
+			global::IntermediateLib.Resource.Drawable.notification_bg_normal_pressed = global::SigAuth.Resource.Drawable.notification_bg_normal_pressed;
+			global::IntermediateLib.Resource.Drawable.notification_icon_background = global::SigAuth.Resource.Drawable.notification_icon_background;
+			global::IntermediateLib.Resource.Drawable.notification_template_icon_bg = global::SigAuth.Resource.Drawable.notification_template_icon_bg;
+			global::IntermediateLib.Resource.Drawable.notification_template_icon_low_bg = global::SigAuth.Resource.Drawable.notification_template_icon_low_bg;
+			global::IntermediateLib.Resource.Drawable.notification_tile_bg = global::SigAuth.Resource.Drawable.notification_tile_bg;
+			global::IntermediateLib.Resource.Drawable.notify_panel_notification_icon_bg = global::SigAuth.Resource.Drawable.notify_panel_notification_icon_bg;
+			global::IntermediateLib.Resource.Drawable.signature_pad_background = global::SigAuth.Resource.Drawable.signature_pad_background;
+			global::IntermediateLib.Resource.Drawable.tooltip_frame_dark = global::SigAuth.Resource.Drawable.tooltip_frame_dark;
+			global::IntermediateLib.Resource.Drawable.tooltip_frame_light = global::SigAuth.Resource.Drawable.tooltip_frame_light;
+			global::IntermediateLib.Resource.Id.ALT = global::SigAuth.Resource.Id.ALT;
+			global::IntermediateLib.Resource.Id.CTRL = global::SigAuth.Resource.Id.CTRL;
+			global::IntermediateLib.Resource.Id.FUNCTION = global::SigAuth.Resource.Id.FUNCTION;
+			global::IntermediateLib.Resource.Id.META = global::SigAuth.Resource.Id.META;
+			global::IntermediateLib.Resource.Id.SHIFT = global::SigAuth.Resource.Id.SHIFT;
+			global::IntermediateLib.Resource.Id.SYM = global::SigAuth.Resource.Id.SYM;
+			global::IntermediateLib.Resource.Id.action0 = global::SigAuth.Resource.Id.action0;
+			global::IntermediateLib.Resource.Id.action_bar = global::SigAuth.Resource.Id.action_bar;
+			global::IntermediateLib.Resource.Id.action_bar_activity_content = global::SigAuth.Resource.Id.action_bar_activity_content;
+			global::IntermediateLib.Resource.Id.action_bar_container = global::SigAuth.Resource.Id.action_bar_container;
+			global::IntermediateLib.Resource.Id.action_bar_root = global::SigAuth.Resource.Id.action_bar_root;
+			global::IntermediateLib.Resource.Id.action_bar_spinner = global::SigAuth.Resource.Id.action_bar_spinner;
+			global::IntermediateLib.Resource.Id.action_bar_subtitle = global::SigAuth.Resource.Id.action_bar_subtitle;
+			global::IntermediateLib.Resource.Id.action_bar_title = global::SigAuth.Resource.Id.action_bar_title;
+			global::IntermediateLib.Resource.Id.action_container = global::SigAuth.Resource.Id.action_container;
+			global::IntermediateLib.Resource.Id.action_context_bar = global::SigAuth.Resource.Id.action_context_bar;
+			global::IntermediateLib.Resource.Id.action_divider = global::SigAuth.Resource.Id.action_divider;
+			global::IntermediateLib.Resource.Id.action_image = global::SigAuth.Resource.Id.action_image;
+			global::IntermediateLib.Resource.Id.action_menu_divider = global::SigAuth.Resource.Id.action_menu_divider;
+			global::IntermediateLib.Resource.Id.action_menu_presenter = global::SigAuth.Resource.Id.action_menu_presenter;
+			global::IntermediateLib.Resource.Id.action_mode_bar = global::SigAuth.Resource.Id.action_mode_bar;
+			global::IntermediateLib.Resource.Id.action_mode_bar_stub = global::SigAuth.Resource.Id.action_mode_bar_stub;
+			global::IntermediateLib.Resource.Id.action_mode_close_button = global::SigAuth.Resource.Id.action_mode_close_button;
+			global::IntermediateLib.Resource.Id.action_text = global::SigAuth.Resource.Id.action_text;
+			global::IntermediateLib.Resource.Id.actions = global::SigAuth.Resource.Id.actions;
+			global::IntermediateLib.Resource.Id.activity_chooser_view_content = global::SigAuth.Resource.Id.activity_chooser_view_content;
+			global::IntermediateLib.Resource.Id.add = global::SigAuth.Resource.Id.add;
+			global::IntermediateLib.Resource.Id.alertTitle = global::SigAuth.Resource.Id.alertTitle;
+			global::IntermediateLib.Resource.Id.always = global::SigAuth.Resource.Id.always;
+			global::IntermediateLib.Resource.Id.async = global::SigAuth.Resource.Id.async;
+			global::IntermediateLib.Resource.Id.background_image = global::SigAuth.Resource.Id.background_image;
+			global::IntermediateLib.Resource.Id.beginning = global::SigAuth.Resource.Id.beginning;
+			global::IntermediateLib.Resource.Id.blocking = global::SigAuth.Resource.Id.blocking;
+			global::IntermediateLib.Resource.Id.bottom = global::SigAuth.Resource.Id.bottom;
+			global::IntermediateLib.Resource.Id.buttonPanel = global::SigAuth.Resource.Id.buttonPanel;
+			global::IntermediateLib.Resource.Id.cancel_action = global::SigAuth.Resource.Id.cancel_action;
+			global::IntermediateLib.Resource.Id.caption = global::SigAuth.Resource.Id.caption;
+			global::IntermediateLib.Resource.Id.checkbox = global::SigAuth.Resource.Id.checkbox;
+			global::IntermediateLib.Resource.Id.chronometer = global::SigAuth.Resource.Id.chronometer;
+			global::IntermediateLib.Resource.Id.clear_label = global::SigAuth.Resource.Id.clear_label;
+			global::IntermediateLib.Resource.Id.collapseActionView = global::SigAuth.Resource.Id.collapseActionView;
+			global::IntermediateLib.Resource.Id.contentPanel = global::SigAuth.Resource.Id.contentPanel;
+			global::IntermediateLib.Resource.Id.custom = global::SigAuth.Resource.Id.custom;
+			global::IntermediateLib.Resource.Id.customPanel = global::SigAuth.Resource.Id.customPanel;
+			global::IntermediateLib.Resource.Id.decor_content_parent = global::SigAuth.Resource.Id.decor_content_parent;
+			global::IntermediateLib.Resource.Id.default_activity_button = global::SigAuth.Resource.Id.default_activity_button;
+			global::IntermediateLib.Resource.Id.disableHome = global::SigAuth.Resource.Id.disableHome;
+			global::IntermediateLib.Resource.Id.edit_query = global::SigAuth.Resource.Id.edit_query;
+			global::IntermediateLib.Resource.Id.end = global::SigAuth.Resource.Id.end;
+			global::IntermediateLib.Resource.Id.end_padder = global::SigAuth.Resource.Id.end_padder;
+			global::IntermediateLib.Resource.Id.expand_activities_button = global::SigAuth.Resource.Id.expand_activities_button;
+			global::IntermediateLib.Resource.Id.expanded_menu = global::SigAuth.Resource.Id.expanded_menu;
+			global::IntermediateLib.Resource.Id.forever = global::SigAuth.Resource.Id.forever;
+			global::IntermediateLib.Resource.Id.home = global::SigAuth.Resource.Id.home;
+			global::IntermediateLib.Resource.Id.homeAsUp = global::SigAuth.Resource.Id.homeAsUp;
+			global::IntermediateLib.Resource.Id.icon = global::SigAuth.Resource.Id.icon;
+			global::IntermediateLib.Resource.Id.icon_group = global::SigAuth.Resource.Id.icon_group;
+			global::IntermediateLib.Resource.Id.ifRoom = global::SigAuth.Resource.Id.ifRoom;
+			global::IntermediateLib.Resource.Id.image = global::SigAuth.Resource.Id.image;
+			global::IntermediateLib.Resource.Id.info = global::SigAuth.Resource.Id.info;
+			global::IntermediateLib.Resource.Id.italic = global::SigAuth.Resource.Id.italic;
+			global::IntermediateLib.Resource.Id.line1 = global::SigAuth.Resource.Id.line1;
+			global::IntermediateLib.Resource.Id.line3 = global::SigAuth.Resource.Id.line3;
+			global::IntermediateLib.Resource.Id.listMode = global::SigAuth.Resource.Id.listMode;
+			global::IntermediateLib.Resource.Id.list_item = global::SigAuth.Resource.Id.list_item;
+			global::IntermediateLib.Resource.Id.media_actions = global::SigAuth.Resource.Id.media_actions;
+			global::IntermediateLib.Resource.Id.message = global::SigAuth.Resource.Id.message;
+			global::IntermediateLib.Resource.Id.middle = global::SigAuth.Resource.Id.middle;
+			global::IntermediateLib.Resource.Id.multiply = global::SigAuth.Resource.Id.multiply;
+			global::IntermediateLib.Resource.Id.never = global::SigAuth.Resource.Id.never;
+			global::IntermediateLib.Resource.Id.none = global::SigAuth.Resource.Id.none;
+			global::IntermediateLib.Resource.Id.normal = global::SigAuth.Resource.Id.normal;
+			global::IntermediateLib.Resource.Id.notification_background = global::SigAuth.Resource.Id.notification_background;
+			global::IntermediateLib.Resource.Id.notification_main_column = global::SigAuth.Resource.Id.notification_main_column;
+			global::IntermediateLib.Resource.Id.notification_main_column_container = global::SigAuth.Resource.Id.notification_main_column_container;
+			global::IntermediateLib.Resource.Id.parentPanel = global::SigAuth.Resource.Id.parentPanel;
+			global::IntermediateLib.Resource.Id.progress_circular = global::SigAuth.Resource.Id.progress_circular;
+			global::IntermediateLib.Resource.Id.progress_horizontal = global::SigAuth.Resource.Id.progress_horizontal;
+			global::IntermediateLib.Resource.Id.radio = global::SigAuth.Resource.Id.radio;
+			global::IntermediateLib.Resource.Id.right_icon = global::SigAuth.Resource.Id.right_icon;
+			global::IntermediateLib.Resource.Id.right_side = global::SigAuth.Resource.Id.right_side;
+			global::IntermediateLib.Resource.Id.screen = global::SigAuth.Resource.Id.screen;
+			global::IntermediateLib.Resource.Id.scrollIndicatorDown = global::SigAuth.Resource.Id.scrollIndicatorDown;
+			global::IntermediateLib.Resource.Id.scrollIndicatorUp = global::SigAuth.Resource.Id.scrollIndicatorUp;
+			global::IntermediateLib.Resource.Id.scrollView = global::SigAuth.Resource.Id.scrollView;
+			global::IntermediateLib.Resource.Id.search_badge = global::SigAuth.Resource.Id.search_badge;
+			global::IntermediateLib.Resource.Id.search_bar = global::SigAuth.Resource.Id.search_bar;
+			global::IntermediateLib.Resource.Id.search_button = global::SigAuth.Resource.Id.search_button;
+			global::IntermediateLib.Resource.Id.search_close_btn = global::SigAuth.Resource.Id.search_close_btn;
+			global::IntermediateLib.Resource.Id.search_edit_frame = global::SigAuth.Resource.Id.search_edit_frame;
+			global::IntermediateLib.Resource.Id.search_go_btn = global::SigAuth.Resource.Id.search_go_btn;
+			global::IntermediateLib.Resource.Id.search_mag_icon = global::SigAuth.Resource.Id.search_mag_icon;
+			global::IntermediateLib.Resource.Id.search_plate = global::SigAuth.Resource.Id.search_plate;
+			global::IntermediateLib.Resource.Id.search_src_text = global::SigAuth.Resource.Id.search_src_text;
+			global::IntermediateLib.Resource.Id.search_voice_btn = global::SigAuth.Resource.Id.search_voice_btn;
+			global::IntermediateLib.Resource.Id.select_dialog_listview = global::SigAuth.Resource.Id.select_dialog_listview;
+			global::IntermediateLib.Resource.Id.shortcut = global::SigAuth.Resource.Id.shortcut;
+			global::IntermediateLib.Resource.Id.showCustom = global::SigAuth.Resource.Id.showCustom;
+			global::IntermediateLib.Resource.Id.showHome = global::SigAuth.Resource.Id.showHome;
+			global::IntermediateLib.Resource.Id.showTitle = global::SigAuth.Resource.Id.showTitle;
+			global::IntermediateLib.Resource.Id.signature_canvas = global::SigAuth.Resource.Id.signature_canvas;
+			global::IntermediateLib.Resource.Id.signature_line = global::SigAuth.Resource.Id.signature_line;
+			global::IntermediateLib.Resource.Id.signature_prompt = global::SigAuth.Resource.Id.signature_prompt;
+			global::IntermediateLib.Resource.Id.spacer = global::SigAuth.Resource.Id.spacer;
+			global::IntermediateLib.Resource.Id.split_action_bar = global::SigAuth.Resource.Id.split_action_bar;
+			global::IntermediateLib.Resource.Id.src_atop = global::SigAuth.Resource.Id.src_atop;
+			global::IntermediateLib.Resource.Id.src_in = global::SigAuth.Resource.Id.src_in;
+			global::IntermediateLib.Resource.Id.src_over = global::SigAuth.Resource.Id.src_over;
+			global::IntermediateLib.Resource.Id.status_bar_latest_event_content = global::SigAuth.Resource.Id.status_bar_latest_event_content;
+			global::IntermediateLib.Resource.Id.submenuarrow = global::SigAuth.Resource.Id.submenuarrow;
+			global::IntermediateLib.Resource.Id.submit_area = global::SigAuth.Resource.Id.submit_area;
+			global::IntermediateLib.Resource.Id.tabMode = global::SigAuth.Resource.Id.tabMode;
+			global::IntermediateLib.Resource.Id.tag_transition_group = global::SigAuth.Resource.Id.tag_transition_group;
+			global::IntermediateLib.Resource.Id.text = global::SigAuth.Resource.Id.text;
+			global::IntermediateLib.Resource.Id.text2 = global::SigAuth.Resource.Id.text2;
+			global::IntermediateLib.Resource.Id.textSpacerNoButtons = global::SigAuth.Resource.Id.textSpacerNoButtons;
+			global::IntermediateLib.Resource.Id.textSpacerNoTitle = global::SigAuth.Resource.Id.textSpacerNoTitle;
+			global::IntermediateLib.Resource.Id.time = global::SigAuth.Resource.Id.time;
+			global::IntermediateLib.Resource.Id.title = global::SigAuth.Resource.Id.title;
+			global::IntermediateLib.Resource.Id.titleDividerNoCustom = global::SigAuth.Resource.Id.titleDividerNoCustom;
+			global::IntermediateLib.Resource.Id.title_template = global::SigAuth.Resource.Id.title_template;
+			global::IntermediateLib.Resource.Id.top = global::SigAuth.Resource.Id.top;
+			global::IntermediateLib.Resource.Id.topPanel = global::SigAuth.Resource.Id.topPanel;
+			global::IntermediateLib.Resource.Id.uniform = global::SigAuth.Resource.Id.uniform;
+			global::IntermediateLib.Resource.Id.up = global::SigAuth.Resource.Id.up;
+			global::IntermediateLib.Resource.Id.useLogo = global::SigAuth.Resource.Id.useLogo;
+			global::IntermediateLib.Resource.Id.withText = global::SigAuth.Resource.Id.withText;
+			global::IntermediateLib.Resource.Id.wrap_content = global::SigAuth.Resource.Id.wrap_content;
+			global::IntermediateLib.Resource.Integer.abc_config_activityDefaultDur = global::SigAuth.Resource.Integer.abc_config_activityDefaultDur;
+			global::IntermediateLib.Resource.Integer.abc_config_activityShortDur = global::SigAuth.Resource.Integer.abc_config_activityShortDur;
+			global::IntermediateLib.Resource.Integer.cancel_button_image_alpha = global::SigAuth.Resource.Integer.cancel_button_image_alpha;
+			global::IntermediateLib.Resource.Integer.config_tooltipAnimTime = global::SigAuth.Resource.Integer.config_tooltipAnimTime;
+			global::IntermediateLib.Resource.Integer.status_bar_notification_info_maxnum = global::SigAuth.Resource.Integer.status_bar_notification_info_maxnum;
+			global::IntermediateLib.Resource.Layout.abc_action_bar_title_item = global::SigAuth.Resource.Layout.abc_action_bar_title_item;
+			global::IntermediateLib.Resource.Layout.abc_action_bar_up_container = global::SigAuth.Resource.Layout.abc_action_bar_up_container;
+			global::IntermediateLib.Resource.Layout.abc_action_menu_item_layout = global::SigAuth.Resource.Layout.abc_action_menu_item_layout;
+			global::IntermediateLib.Resource.Layout.abc_action_menu_layout = global::SigAuth.Resource.Layout.abc_action_menu_layout;
+			global::IntermediateLib.Resource.Layout.abc_action_mode_bar = global::SigAuth.Resource.Layout.abc_action_mode_bar;
+			global::IntermediateLib.Resource.Layout.abc_action_mode_close_item_material = global::SigAuth.Resource.Layout.abc_action_mode_close_item_material;
+			global::IntermediateLib.Resource.Layout.abc_activity_chooser_view = global::SigAuth.Resource.Layout.abc_activity_chooser_view;
+			global::IntermediateLib.Resource.Layout.abc_activity_chooser_view_list_item = global::SigAuth.Resource.Layout.abc_activity_chooser_view_list_item;
+			global::IntermediateLib.Resource.Layout.abc_alert_dialog_button_bar_material = global::SigAuth.Resource.Layout.abc_alert_dialog_button_bar_material;
+			global::IntermediateLib.Resource.Layout.abc_alert_dialog_material = global::SigAuth.Resource.Layout.abc_alert_dialog_material;
+			global::IntermediateLib.Resource.Layout.abc_alert_dialog_title_material = global::SigAuth.Resource.Layout.abc_alert_dialog_title_material;
+			global::IntermediateLib.Resource.Layout.abc_dialog_title_material = global::SigAuth.Resource.Layout.abc_dialog_title_material;
+			global::IntermediateLib.Resource.Layout.abc_expanded_menu_layout = global::SigAuth.Resource.Layout.abc_expanded_menu_layout;
+			global::IntermediateLib.Resource.Layout.abc_list_menu_item_checkbox = global::SigAuth.Resource.Layout.abc_list_menu_item_checkbox;
+			global::IntermediateLib.Resource.Layout.abc_list_menu_item_icon = global::SigAuth.Resource.Layout.abc_list_menu_item_icon;
+			global::IntermediateLib.Resource.Layout.abc_list_menu_item_layout = global::SigAuth.Resource.Layout.abc_list_menu_item_layout;
+			global::IntermediateLib.Resource.Layout.abc_list_menu_item_radio = global::SigAuth.Resource.Layout.abc_list_menu_item_radio;
+			global::IntermediateLib.Resource.Layout.abc_popup_menu_header_item_layout = global::SigAuth.Resource.Layout.abc_popup_menu_header_item_layout;
+			global::IntermediateLib.Resource.Layout.abc_popup_menu_item_layout = global::SigAuth.Resource.Layout.abc_popup_menu_item_layout;
+			global::IntermediateLib.Resource.Layout.abc_screen_content_include = global::SigAuth.Resource.Layout.abc_screen_content_include;
+			global::IntermediateLib.Resource.Layout.abc_screen_simple = global::SigAuth.Resource.Layout.abc_screen_simple;
+			global::IntermediateLib.Resource.Layout.abc_screen_simple_overlay_action_mode = global::SigAuth.Resource.Layout.abc_screen_simple_overlay_action_mode;
+			global::IntermediateLib.Resource.Layout.abc_screen_toolbar = global::SigAuth.Resource.Layout.abc_screen_toolbar;
+			global::IntermediateLib.Resource.Layout.abc_search_dropdown_item_icons_2line = global::SigAuth.Resource.Layout.abc_search_dropdown_item_icons_2line;
+			global::IntermediateLib.Resource.Layout.abc_search_view = global::SigAuth.Resource.Layout.abc_search_view;
+			global::IntermediateLib.Resource.Layout.abc_select_dialog_material = global::SigAuth.Resource.Layout.abc_select_dialog_material;
+			global::IntermediateLib.Resource.Layout.notification_action = global::SigAuth.Resource.Layout.notification_action;
+			global::IntermediateLib.Resource.Layout.notification_action_tombstone = global::SigAuth.Resource.Layout.notification_action_tombstone;
+			global::IntermediateLib.Resource.Layout.notification_media_action = global::SigAuth.Resource.Layout.notification_media_action;
+			global::IntermediateLib.Resource.Layout.notification_media_cancel_action = global::SigAuth.Resource.Layout.notification_media_cancel_action;
+			global::IntermediateLib.Resource.Layout.notification_template_big_media = global::SigAuth.Resource.Layout.notification_template_big_media;
+			global::IntermediateLib.Resource.Layout.notification_template_big_media_custom = global::SigAuth.Resource.Layout.notification_template_big_media_custom;
+			global::IntermediateLib.Resource.Layout.notification_template_big_media_narrow = global::SigAuth.Resource.Layout.notification_template_big_media_narrow;
+			global::IntermediateLib.Resource.Layout.notification_template_big_media_narrow_custom = global::SigAuth.Resource.Layout.notification_template_big_media_narrow_custom;
+			global::IntermediateLib.Resource.Layout.notification_template_custom_big = global::SigAuth.Resource.Layout.notification_template_custom_big;
+			global::IntermediateLib.Resource.Layout.notification_template_icon_group = global::SigAuth.Resource.Layout.notification_template_icon_group;
+			global::IntermediateLib.Resource.Layout.notification_template_lines_media = global::SigAuth.Resource.Layout.notification_template_lines_media;
+			global::IntermediateLib.Resource.Layout.notification_template_media = global::SigAuth.Resource.Layout.notification_template_media;
+			global::IntermediateLib.Resource.Layout.notification_template_media_custom = global::SigAuth.Resource.Layout.notification_template_media_custom;
+			global::IntermediateLib.Resource.Layout.notification_template_part_chronometer = global::SigAuth.Resource.Layout.notification_template_part_chronometer;
+			global::IntermediateLib.Resource.Layout.notification_template_part_time = global::SigAuth.Resource.Layout.notification_template_part_time;
+			global::IntermediateLib.Resource.Layout.select_dialog_item_material = global::SigAuth.Resource.Layout.select_dialog_item_material;
+			global::IntermediateLib.Resource.Layout.select_dialog_multichoice_material = global::SigAuth.Resource.Layout.select_dialog_multichoice_material;
+			global::IntermediateLib.Resource.Layout.select_dialog_singlechoice_material = global::SigAuth.Resource.Layout.select_dialog_singlechoice_material;
+			global::IntermediateLib.Resource.Layout.signature_pad_layout = global::SigAuth.Resource.Layout.signature_pad_layout;
+			global::IntermediateLib.Resource.Layout.support_simple_spinner_dropdown_item = global::SigAuth.Resource.Layout.support_simple_spinner_dropdown_item;
+			global::IntermediateLib.Resource.Layout.tooltip = global::SigAuth.Resource.Layout.tooltip;
+			global::IntermediateLib.Resource.String.abc_action_bar_home_description = global::SigAuth.Resource.String.abc_action_bar_home_description;
+			global::IntermediateLib.Resource.String.abc_action_bar_up_description = global::SigAuth.Resource.String.abc_action_bar_up_description;
+			global::IntermediateLib.Resource.String.abc_action_menu_overflow_description = global::SigAuth.Resource.String.abc_action_menu_overflow_description;
+			global::IntermediateLib.Resource.String.abc_action_mode_done = global::SigAuth.Resource.String.abc_action_mode_done;
+			global::IntermediateLib.Resource.String.abc_activity_chooser_view_see_all = global::SigAuth.Resource.String.abc_activity_chooser_view_see_all;
+			global::IntermediateLib.Resource.String.abc_activitychooserview_choose_application = global::SigAuth.Resource.String.abc_activitychooserview_choose_application;
+			global::IntermediateLib.Resource.String.abc_capital_off = global::SigAuth.Resource.String.abc_capital_off;
+			global::IntermediateLib.Resource.String.abc_capital_on = global::SigAuth.Resource.String.abc_capital_on;
+			global::IntermediateLib.Resource.String.abc_font_family_body_1_material = global::SigAuth.Resource.String.abc_font_family_body_1_material;
+			global::IntermediateLib.Resource.String.abc_font_family_body_2_material = global::SigAuth.Resource.String.abc_font_family_body_2_material;
+			global::IntermediateLib.Resource.String.abc_font_family_button_material = global::SigAuth.Resource.String.abc_font_family_button_material;
+			global::IntermediateLib.Resource.String.abc_font_family_caption_material = global::SigAuth.Resource.String.abc_font_family_caption_material;
+			global::IntermediateLib.Resource.String.abc_font_family_display_1_material = global::SigAuth.Resource.String.abc_font_family_display_1_material;
+			global::IntermediateLib.Resource.String.abc_font_family_display_2_material = global::SigAuth.Resource.String.abc_font_family_display_2_material;
+			global::IntermediateLib.Resource.String.abc_font_family_display_3_material = global::SigAuth.Resource.String.abc_font_family_display_3_material;
+			global::IntermediateLib.Resource.String.abc_font_family_display_4_material = global::SigAuth.Resource.String.abc_font_family_display_4_material;
+			global::IntermediateLib.Resource.String.abc_font_family_headline_material = global::SigAuth.Resource.String.abc_font_family_headline_material;
+			global::IntermediateLib.Resource.String.abc_font_family_menu_material = global::SigAuth.Resource.String.abc_font_family_menu_material;
+			global::IntermediateLib.Resource.String.abc_font_family_subhead_material = global::SigAuth.Resource.String.abc_font_family_subhead_material;
+			global::IntermediateLib.Resource.String.abc_font_family_title_material = global::SigAuth.Resource.String.abc_font_family_title_material;
+			global::IntermediateLib.Resource.String.abc_search_hint = global::SigAuth.Resource.String.abc_search_hint;
+			global::IntermediateLib.Resource.String.abc_searchview_description_clear = global::SigAuth.Resource.String.abc_searchview_description_clear;
+			global::IntermediateLib.Resource.String.abc_searchview_description_query = global::SigAuth.Resource.String.abc_searchview_description_query;
+			global::IntermediateLib.Resource.String.abc_searchview_description_search = global::SigAuth.Resource.String.abc_searchview_description_search;
+			global::IntermediateLib.Resource.String.abc_searchview_description_submit = global::SigAuth.Resource.String.abc_searchview_description_submit;
+			global::IntermediateLib.Resource.String.abc_searchview_description_voice = global::SigAuth.Resource.String.abc_searchview_description_voice;
+			global::IntermediateLib.Resource.String.abc_shareactionprovider_share_with = global::SigAuth.Resource.String.abc_shareactionprovider_share_with;
+			global::IntermediateLib.Resource.String.abc_shareactionprovider_share_with_application = global::SigAuth.Resource.String.abc_shareactionprovider_share_with_application;
+			global::IntermediateLib.Resource.String.abc_toolbar_collapse_description = global::SigAuth.Resource.String.abc_toolbar_collapse_description;
+			global::IntermediateLib.Resource.String.app_name = global::SigAuth.Resource.String.app_name;
+			global::IntermediateLib.Resource.String.hello = global::SigAuth.Resource.String.hello;
+			global::IntermediateLib.Resource.String.search_menu_title = global::SigAuth.Resource.String.search_menu_title;
+			global::IntermediateLib.Resource.String.signature_pad_caption_text = global::SigAuth.Resource.String.signature_pad_caption_text;
+			global::IntermediateLib.Resource.String.signature_pad_clear_label_text = global::SigAuth.Resource.String.signature_pad_clear_label_text;
+			global::IntermediateLib.Resource.String.signature_pad_prompt_text = global::SigAuth.Resource.String.signature_pad_prompt_text;
+			global::IntermediateLib.Resource.String.status_bar_notification_info_overflow = global::SigAuth.Resource.String.status_bar_notification_info_overflow;
+			global::IntermediateLib.Resource.Style.AlertDialog_AppCompat = global::SigAuth.Resource.Style.AlertDialog_AppCompat;
+			global::IntermediateLib.Resource.Style.AlertDialog_AppCompat_Light = global::SigAuth.Resource.Style.AlertDialog_AppCompat_Light;
+			global::IntermediateLib.Resource.Style.Animation_AppCompat_Dialog = global::SigAuth.Resource.Style.Animation_AppCompat_Dialog;
+			global::IntermediateLib.Resource.Style.Animation_AppCompat_DropDownUp = global::SigAuth.Resource.Style.Animation_AppCompat_DropDownUp;
+			global::IntermediateLib.Resource.Style.Animation_AppCompat_Tooltip = global::SigAuth.Resource.Style.Animation_AppCompat_Tooltip;
+			global::IntermediateLib.Resource.Style.Base_AlertDialog_AppCompat = global::SigAuth.Resource.Style.Base_AlertDialog_AppCompat;
+			global::IntermediateLib.Resource.Style.Base_AlertDialog_AppCompat_Light = global::SigAuth.Resource.Style.Base_AlertDialog_AppCompat_Light;
+			global::IntermediateLib.Resource.Style.Base_Animation_AppCompat_Dialog = global::SigAuth.Resource.Style.Base_Animation_AppCompat_Dialog;
+			global::IntermediateLib.Resource.Style.Base_Animation_AppCompat_DropDownUp = global::SigAuth.Resource.Style.Base_Animation_AppCompat_DropDownUp;
+			global::IntermediateLib.Resource.Style.Base_Animation_AppCompat_Tooltip = global::SigAuth.Resource.Style.Base_Animation_AppCompat_Tooltip;
+			global::IntermediateLib.Resource.Style.Base_DialogWindowTitle_AppCompat = global::SigAuth.Resource.Style.Base_DialogWindowTitle_AppCompat;
+			global::IntermediateLib.Resource.Style.Base_DialogWindowTitleBackground_AppCompat = global::SigAuth.Resource.Style.Base_DialogWindowTitleBackground_AppCompat;
+			global::IntermediateLib.Resource.Style.Base_TextAppearance_AppCompat = global::SigAuth.Resource.Style.Base_TextAppearance_AppCompat;
+			global::IntermediateLib.Resource.Style.Base_TextAppearance_AppCompat_Body1 = global::SigAuth.Resource.Style.Base_TextAppearance_AppCompat_Body1;
+			global::IntermediateLib.Resource.Style.Base_TextAppearance_AppCompat_Body2 = global::SigAuth.Resource.Style.Base_TextAppearance_AppCompat_Body2;
+			global::IntermediateLib.Resource.Style.Base_TextAppearance_AppCompat_Button = global::SigAuth.Resource.Style.Base_TextAppearance_AppCompat_Button;
+			global::IntermediateLib.Resource.Style.Base_TextAppearance_AppCompat_Caption = global::SigAuth.Resource.Style.Base_TextAppearance_AppCompat_Caption;
+			global::IntermediateLib.Resource.Style.Base_TextAppearance_AppCompat_Display1 = global::SigAuth.Resource.Style.Base_TextAppearance_AppCompat_Display1;
+			global::IntermediateLib.Resource.Style.Base_TextAppearance_AppCompat_Display2 = global::SigAuth.Resource.Style.Base_TextAppearance_AppCompat_Display2;
+			global::IntermediateLib.Resource.Style.Base_TextAppearance_AppCompat_Display3 = global::SigAuth.Resource.Style.Base_TextAppearance_AppCompat_Display3;
+			global::IntermediateLib.Resource.Style.Base_TextAppearance_AppCompat_Display4 = global::SigAuth.Resource.Style.Base_TextAppearance_AppCompat_Display4;
+			global::IntermediateLib.Resource.Style.Base_TextAppearance_AppCompat_Headline = global::SigAuth.Resource.Style.Base_TextAppearance_AppCompat_Headline;
+			global::IntermediateLib.Resource.Style.Base_TextAppearance_AppCompat_Inverse = global::SigAuth.Resource.Style.Base_TextAppearance_AppCompat_Inverse;
+			global::IntermediateLib.Resource.Style.Base_TextAppearance_AppCompat_Large = global::SigAuth.Resource.Style.Base_TextAppearance_AppCompat_Large;
+			global::IntermediateLib.Resource.Style.Base_TextAppearance_AppCompat_Large_Inverse = global::SigAuth.Resource.Style.Base_TextAppearance_AppCompat_Large_Inverse;
+			global::IntermediateLib.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = global::SigAuth.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large;
+			global::IntermediateLib.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = global::SigAuth.Resource.Style.Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small;
+			global::IntermediateLib.Resource.Style.Base_TextAppearance_AppCompat_Medium = global::SigAuth.Resource.Style.Base_TextAppearance_AppCompat_Medium;
+			global::IntermediateLib.Resource.Style.Base_TextAppearance_AppCompat_Medium_Inverse = global::SigAuth.Resource.Style.Base_TextAppearance_AppCompat_Medium_Inverse;
+			global::IntermediateLib.Resource.Style.Base_TextAppearance_AppCompat_Menu = global::SigAuth.Resource.Style.Base_TextAppearance_AppCompat_Menu;
+			global::IntermediateLib.Resource.Style.Base_TextAppearance_AppCompat_SearchResult = global::SigAuth.Resource.Style.Base_TextAppearance_AppCompat_SearchResult;
+			global::IntermediateLib.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Subtitle = global::SigAuth.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Subtitle;
+			global::IntermediateLib.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Title = global::SigAuth.Resource.Style.Base_TextAppearance_AppCompat_SearchResult_Title;
+			global::IntermediateLib.Resource.Style.Base_TextAppearance_AppCompat_Small = global::SigAuth.Resource.Style.Base_TextAppearance_AppCompat_Small;
+			global::IntermediateLib.Resource.Style.Base_TextAppearance_AppCompat_Small_Inverse = global::SigAuth.Resource.Style.Base_TextAppearance_AppCompat_Small_Inverse;
+			global::IntermediateLib.Resource.Style.Base_TextAppearance_AppCompat_Subhead = global::SigAuth.Resource.Style.Base_TextAppearance_AppCompat_Subhead;
+			global::IntermediateLib.Resource.Style.Base_TextAppearance_AppCompat_Subhead_Inverse = global::SigAuth.Resource.Style.Base_TextAppearance_AppCompat_Subhead_Inverse;
+			global::IntermediateLib.Resource.Style.Base_TextAppearance_AppCompat_Title = global::SigAuth.Resource.Style.Base_TextAppearance_AppCompat_Title;
+			global::IntermediateLib.Resource.Style.Base_TextAppearance_AppCompat_Title_Inverse = global::SigAuth.Resource.Style.Base_TextAppearance_AppCompat_Title_Inverse;
+			global::IntermediateLib.Resource.Style.Base_TextAppearance_AppCompat_Tooltip = global::SigAuth.Resource.Style.Base_TextAppearance_AppCompat_Tooltip;
+			global::IntermediateLib.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Menu = global::SigAuth.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Menu;
+			global::IntermediateLib.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle = global::SigAuth.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle;
+			global::IntermediateLib.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = global::SigAuth.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse;
+			global::IntermediateLib.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title = global::SigAuth.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title;
+			global::IntermediateLib.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = global::SigAuth.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse;
+			global::IntermediateLib.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle = global::SigAuth.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle;
+			global::IntermediateLib.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Title = global::SigAuth.Resource.Style.Base_TextAppearance_AppCompat_Widget_ActionMode_Title;
+			global::IntermediateLib.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button = global::SigAuth.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button;
+			global::IntermediateLib.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Borderless_Colored = global::SigAuth.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Borderless_Colored;
+			global::IntermediateLib.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Colored = global::SigAuth.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Colored;
+			global::IntermediateLib.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Inverse = global::SigAuth.Resource.Style.Base_TextAppearance_AppCompat_Widget_Button_Inverse;
+			global::IntermediateLib.Resource.Style.Base_TextAppearance_AppCompat_Widget_DropDownItem = global::SigAuth.Resource.Style.Base_TextAppearance_AppCompat_Widget_DropDownItem;
+			global::IntermediateLib.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Header = global::SigAuth.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Header;
+			global::IntermediateLib.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Large = global::SigAuth.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Large;
+			global::IntermediateLib.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small = global::SigAuth.Resource.Style.Base_TextAppearance_AppCompat_Widget_PopupMenu_Small;
+			global::IntermediateLib.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch = global::SigAuth.Resource.Style.Base_TextAppearance_AppCompat_Widget_Switch;
+			global::IntermediateLib.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem = global::SigAuth.Resource.Style.Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem;
+			global::IntermediateLib.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::SigAuth.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
+			global::IntermediateLib.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::SigAuth.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
+			global::IntermediateLib.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title = global::SigAuth.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title;
+			global::IntermediateLib.Resource.Style.Base_Theme_AppCompat = global::SigAuth.Resource.Style.Base_Theme_AppCompat;
+			global::IntermediateLib.Resource.Style.Base_Theme_AppCompat_CompactMenu = global::SigAuth.Resource.Style.Base_Theme_AppCompat_CompactMenu;
+			global::IntermediateLib.Resource.Style.Base_Theme_AppCompat_Dialog = global::SigAuth.Resource.Style.Base_Theme_AppCompat_Dialog;
+			global::IntermediateLib.Resource.Style.Base_Theme_AppCompat_Dialog_Alert = global::SigAuth.Resource.Style.Base_Theme_AppCompat_Dialog_Alert;
+			global::IntermediateLib.Resource.Style.Base_Theme_AppCompat_Dialog_FixedSize = global::SigAuth.Resource.Style.Base_Theme_AppCompat_Dialog_FixedSize;
+			global::IntermediateLib.Resource.Style.Base_Theme_AppCompat_Dialog_MinWidth = global::SigAuth.Resource.Style.Base_Theme_AppCompat_Dialog_MinWidth;
+			global::IntermediateLib.Resource.Style.Base_Theme_AppCompat_DialogWhenLarge = global::SigAuth.Resource.Style.Base_Theme_AppCompat_DialogWhenLarge;
+			global::IntermediateLib.Resource.Style.Base_Theme_AppCompat_Light = global::SigAuth.Resource.Style.Base_Theme_AppCompat_Light;
+			global::IntermediateLib.Resource.Style.Base_Theme_AppCompat_Light_DarkActionBar = global::SigAuth.Resource.Style.Base_Theme_AppCompat_Light_DarkActionBar;
+			global::IntermediateLib.Resource.Style.Base_Theme_AppCompat_Light_Dialog = global::SigAuth.Resource.Style.Base_Theme_AppCompat_Light_Dialog;
+			global::IntermediateLib.Resource.Style.Base_Theme_AppCompat_Light_Dialog_Alert = global::SigAuth.Resource.Style.Base_Theme_AppCompat_Light_Dialog_Alert;
+			global::IntermediateLib.Resource.Style.Base_Theme_AppCompat_Light_Dialog_FixedSize = global::SigAuth.Resource.Style.Base_Theme_AppCompat_Light_Dialog_FixedSize;
+			global::IntermediateLib.Resource.Style.Base_Theme_AppCompat_Light_Dialog_MinWidth = global::SigAuth.Resource.Style.Base_Theme_AppCompat_Light_Dialog_MinWidth;
+			global::IntermediateLib.Resource.Style.Base_Theme_AppCompat_Light_DialogWhenLarge = global::SigAuth.Resource.Style.Base_Theme_AppCompat_Light_DialogWhenLarge;
+			global::IntermediateLib.Resource.Style.Base_ThemeOverlay_AppCompat = global::SigAuth.Resource.Style.Base_ThemeOverlay_AppCompat;
+			global::IntermediateLib.Resource.Style.Base_ThemeOverlay_AppCompat_ActionBar = global::SigAuth.Resource.Style.Base_ThemeOverlay_AppCompat_ActionBar;
+			global::IntermediateLib.Resource.Style.Base_ThemeOverlay_AppCompat_Dark = global::SigAuth.Resource.Style.Base_ThemeOverlay_AppCompat_Dark;
+			global::IntermediateLib.Resource.Style.Base_ThemeOverlay_AppCompat_Dark_ActionBar = global::SigAuth.Resource.Style.Base_ThemeOverlay_AppCompat_Dark_ActionBar;
+			global::IntermediateLib.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog = global::SigAuth.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog;
+			global::IntermediateLib.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog_Alert = global::SigAuth.Resource.Style.Base_ThemeOverlay_AppCompat_Dialog_Alert;
+			global::IntermediateLib.Resource.Style.Base_ThemeOverlay_AppCompat_Light = global::SigAuth.Resource.Style.Base_ThemeOverlay_AppCompat_Light;
+			global::IntermediateLib.Resource.Style.Base_V11_Theme_AppCompat_Dialog = global::SigAuth.Resource.Style.Base_V11_Theme_AppCompat_Dialog;
+			global::IntermediateLib.Resource.Style.Base_V11_Theme_AppCompat_Light_Dialog = global::SigAuth.Resource.Style.Base_V11_Theme_AppCompat_Light_Dialog;
+			global::IntermediateLib.Resource.Style.Base_V11_ThemeOverlay_AppCompat_Dialog = global::SigAuth.Resource.Style.Base_V11_ThemeOverlay_AppCompat_Dialog;
+			global::IntermediateLib.Resource.Style.Base_V12_Widget_AppCompat_AutoCompleteTextView = global::SigAuth.Resource.Style.Base_V12_Widget_AppCompat_AutoCompleteTextView;
+			global::IntermediateLib.Resource.Style.Base_V12_Widget_AppCompat_EditText = global::SigAuth.Resource.Style.Base_V12_Widget_AppCompat_EditText;
+			global::IntermediateLib.Resource.Style.Base_V21_Theme_AppCompat = global::SigAuth.Resource.Style.Base_V21_Theme_AppCompat;
+			global::IntermediateLib.Resource.Style.Base_V21_Theme_AppCompat_Dialog = global::SigAuth.Resource.Style.Base_V21_Theme_AppCompat_Dialog;
+			global::IntermediateLib.Resource.Style.Base_V21_Theme_AppCompat_Light = global::SigAuth.Resource.Style.Base_V21_Theme_AppCompat_Light;
+			global::IntermediateLib.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog = global::SigAuth.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog;
+			global::IntermediateLib.Resource.Style.Base_V21_ThemeOverlay_AppCompat_Dialog = global::SigAuth.Resource.Style.Base_V21_ThemeOverlay_AppCompat_Dialog;
+			global::IntermediateLib.Resource.Style.Base_V22_Theme_AppCompat = global::SigAuth.Resource.Style.Base_V22_Theme_AppCompat;
+			global::IntermediateLib.Resource.Style.Base_V22_Theme_AppCompat_Light = global::SigAuth.Resource.Style.Base_V22_Theme_AppCompat_Light;
+			global::IntermediateLib.Resource.Style.Base_V23_Theme_AppCompat = global::SigAuth.Resource.Style.Base_V23_Theme_AppCompat;
+			global::IntermediateLib.Resource.Style.Base_V23_Theme_AppCompat_Light = global::SigAuth.Resource.Style.Base_V23_Theme_AppCompat_Light;
+			global::IntermediateLib.Resource.Style.Base_V26_Theme_AppCompat = global::SigAuth.Resource.Style.Base_V26_Theme_AppCompat;
+			global::IntermediateLib.Resource.Style.Base_V26_Theme_AppCompat_Light = global::SigAuth.Resource.Style.Base_V26_Theme_AppCompat_Light;
+			global::IntermediateLib.Resource.Style.Base_V26_Widget_AppCompat_Toolbar = global::SigAuth.Resource.Style.Base_V26_Widget_AppCompat_Toolbar;
+			global::IntermediateLib.Resource.Style.Base_V7_Theme_AppCompat = global::SigAuth.Resource.Style.Base_V7_Theme_AppCompat;
+			global::IntermediateLib.Resource.Style.Base_V7_Theme_AppCompat_Dialog = global::SigAuth.Resource.Style.Base_V7_Theme_AppCompat_Dialog;
+			global::IntermediateLib.Resource.Style.Base_V7_Theme_AppCompat_Light = global::SigAuth.Resource.Style.Base_V7_Theme_AppCompat_Light;
+			global::IntermediateLib.Resource.Style.Base_V7_Theme_AppCompat_Light_Dialog = global::SigAuth.Resource.Style.Base_V7_Theme_AppCompat_Light_Dialog;
+			global::IntermediateLib.Resource.Style.Base_V7_ThemeOverlay_AppCompat_Dialog = global::SigAuth.Resource.Style.Base_V7_ThemeOverlay_AppCompat_Dialog;
+			global::IntermediateLib.Resource.Style.Base_V7_Widget_AppCompat_AutoCompleteTextView = global::SigAuth.Resource.Style.Base_V7_Widget_AppCompat_AutoCompleteTextView;
+			global::IntermediateLib.Resource.Style.Base_V7_Widget_AppCompat_EditText = global::SigAuth.Resource.Style.Base_V7_Widget_AppCompat_EditText;
+			global::IntermediateLib.Resource.Style.Base_V7_Widget_AppCompat_Toolbar = global::SigAuth.Resource.Style.Base_V7_Widget_AppCompat_Toolbar;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_ActionBar = global::SigAuth.Resource.Style.Base_Widget_AppCompat_ActionBar;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_ActionBar_Solid = global::SigAuth.Resource.Style.Base_Widget_AppCompat_ActionBar_Solid;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_ActionBar_TabBar = global::SigAuth.Resource.Style.Base_Widget_AppCompat_ActionBar_TabBar;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_ActionBar_TabText = global::SigAuth.Resource.Style.Base_Widget_AppCompat_ActionBar_TabText;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_ActionBar_TabView = global::SigAuth.Resource.Style.Base_Widget_AppCompat_ActionBar_TabView;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_ActionButton = global::SigAuth.Resource.Style.Base_Widget_AppCompat_ActionButton;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_ActionButton_CloseMode = global::SigAuth.Resource.Style.Base_Widget_AppCompat_ActionButton_CloseMode;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_ActionButton_Overflow = global::SigAuth.Resource.Style.Base_Widget_AppCompat_ActionButton_Overflow;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_ActionMode = global::SigAuth.Resource.Style.Base_Widget_AppCompat_ActionMode;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_ActivityChooserView = global::SigAuth.Resource.Style.Base_Widget_AppCompat_ActivityChooserView;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_AutoCompleteTextView = global::SigAuth.Resource.Style.Base_Widget_AppCompat_AutoCompleteTextView;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_Button = global::SigAuth.Resource.Style.Base_Widget_AppCompat_Button;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_Button_Borderless = global::SigAuth.Resource.Style.Base_Widget_AppCompat_Button_Borderless;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_Button_Borderless_Colored = global::SigAuth.Resource.Style.Base_Widget_AppCompat_Button_Borderless_Colored;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_Button_ButtonBar_AlertDialog = global::SigAuth.Resource.Style.Base_Widget_AppCompat_Button_ButtonBar_AlertDialog;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_Button_Colored = global::SigAuth.Resource.Style.Base_Widget_AppCompat_Button_Colored;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_Button_Small = global::SigAuth.Resource.Style.Base_Widget_AppCompat_Button_Small;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_ButtonBar = global::SigAuth.Resource.Style.Base_Widget_AppCompat_ButtonBar;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_ButtonBar_AlertDialog = global::SigAuth.Resource.Style.Base_Widget_AppCompat_ButtonBar_AlertDialog;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_CompoundButton_CheckBox = global::SigAuth.Resource.Style.Base_Widget_AppCompat_CompoundButton_CheckBox;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_CompoundButton_RadioButton = global::SigAuth.Resource.Style.Base_Widget_AppCompat_CompoundButton_RadioButton;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_CompoundButton_Switch = global::SigAuth.Resource.Style.Base_Widget_AppCompat_CompoundButton_Switch;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle = global::SigAuth.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle_Common = global::SigAuth.Resource.Style.Base_Widget_AppCompat_DrawerArrowToggle_Common;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_DropDownItem_Spinner = global::SigAuth.Resource.Style.Base_Widget_AppCompat_DropDownItem_Spinner;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_EditText = global::SigAuth.Resource.Style.Base_Widget_AppCompat_EditText;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_ImageButton = global::SigAuth.Resource.Style.Base_Widget_AppCompat_ImageButton;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_Light_ActionBar = global::SigAuth.Resource.Style.Base_Widget_AppCompat_Light_ActionBar;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_Solid = global::SigAuth.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_Solid;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabBar = global::SigAuth.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabBar;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText = global::SigAuth.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse = global::SigAuth.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabView = global::SigAuth.Resource.Style.Base_Widget_AppCompat_Light_ActionBar_TabView;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu = global::SigAuth.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu_Overflow = global::SigAuth.Resource.Style.Base_Widget_AppCompat_Light_PopupMenu_Overflow;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_ListMenuView = global::SigAuth.Resource.Style.Base_Widget_AppCompat_ListMenuView;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_ListPopupWindow = global::SigAuth.Resource.Style.Base_Widget_AppCompat_ListPopupWindow;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_ListView = global::SigAuth.Resource.Style.Base_Widget_AppCompat_ListView;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_ListView_DropDown = global::SigAuth.Resource.Style.Base_Widget_AppCompat_ListView_DropDown;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_ListView_Menu = global::SigAuth.Resource.Style.Base_Widget_AppCompat_ListView_Menu;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_PopupMenu = global::SigAuth.Resource.Style.Base_Widget_AppCompat_PopupMenu;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_PopupMenu_Overflow = global::SigAuth.Resource.Style.Base_Widget_AppCompat_PopupMenu_Overflow;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_PopupWindow = global::SigAuth.Resource.Style.Base_Widget_AppCompat_PopupWindow;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_ProgressBar = global::SigAuth.Resource.Style.Base_Widget_AppCompat_ProgressBar;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_ProgressBar_Horizontal = global::SigAuth.Resource.Style.Base_Widget_AppCompat_ProgressBar_Horizontal;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_RatingBar = global::SigAuth.Resource.Style.Base_Widget_AppCompat_RatingBar;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_RatingBar_Indicator = global::SigAuth.Resource.Style.Base_Widget_AppCompat_RatingBar_Indicator;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_RatingBar_Small = global::SigAuth.Resource.Style.Base_Widget_AppCompat_RatingBar_Small;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_SearchView = global::SigAuth.Resource.Style.Base_Widget_AppCompat_SearchView;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_SearchView_ActionBar = global::SigAuth.Resource.Style.Base_Widget_AppCompat_SearchView_ActionBar;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_SeekBar = global::SigAuth.Resource.Style.Base_Widget_AppCompat_SeekBar;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_SeekBar_Discrete = global::SigAuth.Resource.Style.Base_Widget_AppCompat_SeekBar_Discrete;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_Spinner = global::SigAuth.Resource.Style.Base_Widget_AppCompat_Spinner;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined = global::SigAuth.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem = global::SigAuth.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_Toolbar = global::SigAuth.Resource.Style.Base_Widget_AppCompat_Toolbar;
+			global::IntermediateLib.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation = global::SigAuth.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation;
+			global::IntermediateLib.Resource.Style.Platform_AppCompat = global::SigAuth.Resource.Style.Platform_AppCompat;
+			global::IntermediateLib.Resource.Style.Platform_AppCompat_Light = global::SigAuth.Resource.Style.Platform_AppCompat_Light;
+			global::IntermediateLib.Resource.Style.Platform_ThemeOverlay_AppCompat = global::SigAuth.Resource.Style.Platform_ThemeOverlay_AppCompat;
+			global::IntermediateLib.Resource.Style.Platform_ThemeOverlay_AppCompat_Dark = global::SigAuth.Resource.Style.Platform_ThemeOverlay_AppCompat_Dark;
+			global::IntermediateLib.Resource.Style.Platform_ThemeOverlay_AppCompat_Light = global::SigAuth.Resource.Style.Platform_ThemeOverlay_AppCompat_Light;
+			global::IntermediateLib.Resource.Style.Platform_V11_AppCompat = global::SigAuth.Resource.Style.Platform_V11_AppCompat;
+			global::IntermediateLib.Resource.Style.Platform_V11_AppCompat_Light = global::SigAuth.Resource.Style.Platform_V11_AppCompat_Light;
+			global::IntermediateLib.Resource.Style.Platform_V14_AppCompat = global::SigAuth.Resource.Style.Platform_V14_AppCompat;
+			global::IntermediateLib.Resource.Style.Platform_V14_AppCompat_Light = global::SigAuth.Resource.Style.Platform_V14_AppCompat_Light;
+			global::IntermediateLib.Resource.Style.Platform_V21_AppCompat = global::SigAuth.Resource.Style.Platform_V21_AppCompat;
+			global::IntermediateLib.Resource.Style.Platform_V21_AppCompat_Light = global::SigAuth.Resource.Style.Platform_V21_AppCompat_Light;
+			global::IntermediateLib.Resource.Style.Platform_V25_AppCompat = global::SigAuth.Resource.Style.Platform_V25_AppCompat;
+			global::IntermediateLib.Resource.Style.Platform_V25_AppCompat_Light = global::SigAuth.Resource.Style.Platform_V25_AppCompat_Light;
+			global::IntermediateLib.Resource.Style.Platform_Widget_AppCompat_Spinner = global::SigAuth.Resource.Style.Platform_Widget_AppCompat_Spinner;
+			global::IntermediateLib.Resource.Style.RtlOverlay_DialogWindowTitle_AppCompat = global::SigAuth.Resource.Style.RtlOverlay_DialogWindowTitle_AppCompat;
+			global::IntermediateLib.Resource.Style.RtlOverlay_Widget_AppCompat_ActionBar_TitleItem = global::SigAuth.Resource.Style.RtlOverlay_Widget_AppCompat_ActionBar_TitleItem;
+			global::IntermediateLib.Resource.Style.RtlOverlay_Widget_AppCompat_DialogTitle_Icon = global::SigAuth.Resource.Style.RtlOverlay_Widget_AppCompat_DialogTitle_Icon;
+			global::IntermediateLib.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem = global::SigAuth.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem;
+			global::IntermediateLib.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup = global::SigAuth.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup;
+			global::IntermediateLib.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Text = global::SigAuth.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Text;
+			global::IntermediateLib.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown = global::SigAuth.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown;
+			global::IntermediateLib.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1 = global::SigAuth.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1;
+			global::IntermediateLib.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2 = global::SigAuth.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2;
+			global::IntermediateLib.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Query = global::SigAuth.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Query;
+			global::IntermediateLib.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text = global::SigAuth.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text;
+			global::IntermediateLib.Resource.Style.RtlOverlay_Widget_AppCompat_SearchView_MagIcon = global::SigAuth.Resource.Style.RtlOverlay_Widget_AppCompat_SearchView_MagIcon;
+			global::IntermediateLib.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton = global::SigAuth.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton;
+			global::IntermediateLib.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = global::SigAuth.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow;
+			global::IntermediateLib.Resource.Style.TextAppearance_AppCompat = global::SigAuth.Resource.Style.TextAppearance_AppCompat;
+			global::IntermediateLib.Resource.Style.TextAppearance_AppCompat_Body1 = global::SigAuth.Resource.Style.TextAppearance_AppCompat_Body1;
+			global::IntermediateLib.Resource.Style.TextAppearance_AppCompat_Body2 = global::SigAuth.Resource.Style.TextAppearance_AppCompat_Body2;
+			global::IntermediateLib.Resource.Style.TextAppearance_AppCompat_Button = global::SigAuth.Resource.Style.TextAppearance_AppCompat_Button;
+			global::IntermediateLib.Resource.Style.TextAppearance_AppCompat_Caption = global::SigAuth.Resource.Style.TextAppearance_AppCompat_Caption;
+			global::IntermediateLib.Resource.Style.TextAppearance_AppCompat_Display1 = global::SigAuth.Resource.Style.TextAppearance_AppCompat_Display1;
+			global::IntermediateLib.Resource.Style.TextAppearance_AppCompat_Display2 = global::SigAuth.Resource.Style.TextAppearance_AppCompat_Display2;
+			global::IntermediateLib.Resource.Style.TextAppearance_AppCompat_Display3 = global::SigAuth.Resource.Style.TextAppearance_AppCompat_Display3;
+			global::IntermediateLib.Resource.Style.TextAppearance_AppCompat_Display4 = global::SigAuth.Resource.Style.TextAppearance_AppCompat_Display4;
+			global::IntermediateLib.Resource.Style.TextAppearance_AppCompat_Headline = global::SigAuth.Resource.Style.TextAppearance_AppCompat_Headline;
+			global::IntermediateLib.Resource.Style.TextAppearance_AppCompat_Inverse = global::SigAuth.Resource.Style.TextAppearance_AppCompat_Inverse;
+			global::IntermediateLib.Resource.Style.TextAppearance_AppCompat_Large = global::SigAuth.Resource.Style.TextAppearance_AppCompat_Large;
+			global::IntermediateLib.Resource.Style.TextAppearance_AppCompat_Large_Inverse = global::SigAuth.Resource.Style.TextAppearance_AppCompat_Large_Inverse;
+			global::IntermediateLib.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Subtitle = global::SigAuth.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Subtitle;
+			global::IntermediateLib.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Title = global::SigAuth.Resource.Style.TextAppearance_AppCompat_Light_SearchResult_Title;
+			global::IntermediateLib.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = global::SigAuth.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Large;
+			global::IntermediateLib.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = global::SigAuth.Resource.Style.TextAppearance_AppCompat_Light_Widget_PopupMenu_Small;
+			global::IntermediateLib.Resource.Style.TextAppearance_AppCompat_Medium = global::SigAuth.Resource.Style.TextAppearance_AppCompat_Medium;
+			global::IntermediateLib.Resource.Style.TextAppearance_AppCompat_Medium_Inverse = global::SigAuth.Resource.Style.TextAppearance_AppCompat_Medium_Inverse;
+			global::IntermediateLib.Resource.Style.TextAppearance_AppCompat_Menu = global::SigAuth.Resource.Style.TextAppearance_AppCompat_Menu;
+			global::IntermediateLib.Resource.Style.TextAppearance_AppCompat_SearchResult_Subtitle = global::SigAuth.Resource.Style.TextAppearance_AppCompat_SearchResult_Subtitle;
+			global::IntermediateLib.Resource.Style.TextAppearance_AppCompat_SearchResult_Title = global::SigAuth.Resource.Style.TextAppearance_AppCompat_SearchResult_Title;
+			global::IntermediateLib.Resource.Style.TextAppearance_AppCompat_Small = global::SigAuth.Resource.Style.TextAppearance_AppCompat_Small;
+			global::IntermediateLib.Resource.Style.TextAppearance_AppCompat_Small_Inverse = global::SigAuth.Resource.Style.TextAppearance_AppCompat_Small_Inverse;
+			global::IntermediateLib.Resource.Style.TextAppearance_AppCompat_Subhead = global::SigAuth.Resource.Style.TextAppearance_AppCompat_Subhead;
+			global::IntermediateLib.Resource.Style.TextAppearance_AppCompat_Subhead_Inverse = global::SigAuth.Resource.Style.TextAppearance_AppCompat_Subhead_Inverse;
+			global::IntermediateLib.Resource.Style.TextAppearance_AppCompat_Title = global::SigAuth.Resource.Style.TextAppearance_AppCompat_Title;
+			global::IntermediateLib.Resource.Style.TextAppearance_AppCompat_Title_Inverse = global::SigAuth.Resource.Style.TextAppearance_AppCompat_Title_Inverse;
+			global::IntermediateLib.Resource.Style.TextAppearance_AppCompat_Tooltip = global::SigAuth.Resource.Style.TextAppearance_AppCompat_Tooltip;
+			global::IntermediateLib.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Menu = global::SigAuth.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Menu;
+			global::IntermediateLib.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle = global::SigAuth.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle;
+			global::IntermediateLib.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = global::SigAuth.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse;
+			global::IntermediateLib.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title = global::SigAuth.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title;
+			global::IntermediateLib.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = global::SigAuth.Resource.Style.TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse;
+			global::IntermediateLib.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle = global::SigAuth.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle;
+			global::IntermediateLib.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse = global::SigAuth.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse;
+			global::IntermediateLib.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title = global::SigAuth.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title;
+			global::IntermediateLib.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse = global::SigAuth.Resource.Style.TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse;
+			global::IntermediateLib.Resource.Style.TextAppearance_AppCompat_Widget_Button = global::SigAuth.Resource.Style.TextAppearance_AppCompat_Widget_Button;
+			global::IntermediateLib.Resource.Style.TextAppearance_AppCompat_Widget_Button_Borderless_Colored = global::SigAuth.Resource.Style.TextAppearance_AppCompat_Widget_Button_Borderless_Colored;
+			global::IntermediateLib.Resource.Style.TextAppearance_AppCompat_Widget_Button_Colored = global::SigAuth.Resource.Style.TextAppearance_AppCompat_Widget_Button_Colored;
+			global::IntermediateLib.Resource.Style.TextAppearance_AppCompat_Widget_Button_Inverse = global::SigAuth.Resource.Style.TextAppearance_AppCompat_Widget_Button_Inverse;
+			global::IntermediateLib.Resource.Style.TextAppearance_AppCompat_Widget_DropDownItem = global::SigAuth.Resource.Style.TextAppearance_AppCompat_Widget_DropDownItem;
+			global::IntermediateLib.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Header = global::SigAuth.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Header;
+			global::IntermediateLib.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Large = global::SigAuth.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Large;
+			global::IntermediateLib.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Small = global::SigAuth.Resource.Style.TextAppearance_AppCompat_Widget_PopupMenu_Small;
+			global::IntermediateLib.Resource.Style.TextAppearance_AppCompat_Widget_Switch = global::SigAuth.Resource.Style.TextAppearance_AppCompat_Widget_Switch;
+			global::IntermediateLib.Resource.Style.TextAppearance_AppCompat_Widget_TextView_SpinnerItem = global::SigAuth.Resource.Style.TextAppearance_AppCompat_Widget_TextView_SpinnerItem;
+			global::IntermediateLib.Resource.Style.TextAppearance_Compat_Notification = global::SigAuth.Resource.Style.TextAppearance_Compat_Notification;
+			global::IntermediateLib.Resource.Style.TextAppearance_Compat_Notification_Info = global::SigAuth.Resource.Style.TextAppearance_Compat_Notification_Info;
+			global::IntermediateLib.Resource.Style.TextAppearance_Compat_Notification_Info_Media = global::SigAuth.Resource.Style.TextAppearance_Compat_Notification_Info_Media;
+			global::IntermediateLib.Resource.Style.TextAppearance_Compat_Notification_Line2 = global::SigAuth.Resource.Style.TextAppearance_Compat_Notification_Line2;
+			global::IntermediateLib.Resource.Style.TextAppearance_Compat_Notification_Line2_Media = global::SigAuth.Resource.Style.TextAppearance_Compat_Notification_Line2_Media;
+			global::IntermediateLib.Resource.Style.TextAppearance_Compat_Notification_Media = global::SigAuth.Resource.Style.TextAppearance_Compat_Notification_Media;
+			global::IntermediateLib.Resource.Style.TextAppearance_Compat_Notification_Time = global::SigAuth.Resource.Style.TextAppearance_Compat_Notification_Time;
+			global::IntermediateLib.Resource.Style.TextAppearance_Compat_Notification_Time_Media = global::SigAuth.Resource.Style.TextAppearance_Compat_Notification_Time_Media;
+			global::IntermediateLib.Resource.Style.TextAppearance_Compat_Notification_Title = global::SigAuth.Resource.Style.TextAppearance_Compat_Notification_Title;
+			global::IntermediateLib.Resource.Style.TextAppearance_Compat_Notification_Title_Media = global::SigAuth.Resource.Style.TextAppearance_Compat_Notification_Title_Media;
+			global::IntermediateLib.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::SigAuth.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
+			global::IntermediateLib.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::SigAuth.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
+			global::IntermediateLib.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title = global::SigAuth.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title;
+			global::IntermediateLib.Resource.Style.Theme_AppCompat = global::SigAuth.Resource.Style.Theme_AppCompat;
+			global::IntermediateLib.Resource.Style.Theme_AppCompat_CompactMenu = global::SigAuth.Resource.Style.Theme_AppCompat_CompactMenu;
+			global::IntermediateLib.Resource.Style.Theme_AppCompat_DayNight = global::SigAuth.Resource.Style.Theme_AppCompat_DayNight;
+			global::IntermediateLib.Resource.Style.Theme_AppCompat_DayNight_DarkActionBar = global::SigAuth.Resource.Style.Theme_AppCompat_DayNight_DarkActionBar;
+			global::IntermediateLib.Resource.Style.Theme_AppCompat_DayNight_Dialog = global::SigAuth.Resource.Style.Theme_AppCompat_DayNight_Dialog;
+			global::IntermediateLib.Resource.Style.Theme_AppCompat_DayNight_Dialog_Alert = global::SigAuth.Resource.Style.Theme_AppCompat_DayNight_Dialog_Alert;
+			global::IntermediateLib.Resource.Style.Theme_AppCompat_DayNight_Dialog_MinWidth = global::SigAuth.Resource.Style.Theme_AppCompat_DayNight_Dialog_MinWidth;
+			global::IntermediateLib.Resource.Style.Theme_AppCompat_DayNight_DialogWhenLarge = global::SigAuth.Resource.Style.Theme_AppCompat_DayNight_DialogWhenLarge;
+			global::IntermediateLib.Resource.Style.Theme_AppCompat_DayNight_NoActionBar = global::SigAuth.Resource.Style.Theme_AppCompat_DayNight_NoActionBar;
+			global::IntermediateLib.Resource.Style.Theme_AppCompat_Dialog = global::SigAuth.Resource.Style.Theme_AppCompat_Dialog;
+			global::IntermediateLib.Resource.Style.Theme_AppCompat_Dialog_Alert = global::SigAuth.Resource.Style.Theme_AppCompat_Dialog_Alert;
+			global::IntermediateLib.Resource.Style.Theme_AppCompat_Dialog_MinWidth = global::SigAuth.Resource.Style.Theme_AppCompat_Dialog_MinWidth;
+			global::IntermediateLib.Resource.Style.Theme_AppCompat_DialogWhenLarge = global::SigAuth.Resource.Style.Theme_AppCompat_DialogWhenLarge;
+			global::IntermediateLib.Resource.Style.Theme_AppCompat_Light = global::SigAuth.Resource.Style.Theme_AppCompat_Light;
+			global::IntermediateLib.Resource.Style.Theme_AppCompat_Light_DarkActionBar = global::SigAuth.Resource.Style.Theme_AppCompat_Light_DarkActionBar;
+			global::IntermediateLib.Resource.Style.Theme_AppCompat_Light_Dialog = global::SigAuth.Resource.Style.Theme_AppCompat_Light_Dialog;
+			global::IntermediateLib.Resource.Style.Theme_AppCompat_Light_Dialog_Alert = global::SigAuth.Resource.Style.Theme_AppCompat_Light_Dialog_Alert;
+			global::IntermediateLib.Resource.Style.Theme_AppCompat_Light_Dialog_MinWidth = global::SigAuth.Resource.Style.Theme_AppCompat_Light_Dialog_MinWidth;
+			global::IntermediateLib.Resource.Style.Theme_AppCompat_Light_DialogWhenLarge = global::SigAuth.Resource.Style.Theme_AppCompat_Light_DialogWhenLarge;
+			global::IntermediateLib.Resource.Style.Theme_AppCompat_Light_NoActionBar = global::SigAuth.Resource.Style.Theme_AppCompat_Light_NoActionBar;
+			global::IntermediateLib.Resource.Style.Theme_AppCompat_NoActionBar = global::SigAuth.Resource.Style.Theme_AppCompat_NoActionBar;
+			global::IntermediateLib.Resource.Style.ThemeOverlay_AppCompat = global::SigAuth.Resource.Style.ThemeOverlay_AppCompat;
+			global::IntermediateLib.Resource.Style.ThemeOverlay_AppCompat_ActionBar = global::SigAuth.Resource.Style.ThemeOverlay_AppCompat_ActionBar;
+			global::IntermediateLib.Resource.Style.ThemeOverlay_AppCompat_Dark = global::SigAuth.Resource.Style.ThemeOverlay_AppCompat_Dark;
+			global::IntermediateLib.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar = global::SigAuth.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar;
+			global::IntermediateLib.Resource.Style.ThemeOverlay_AppCompat_Dialog = global::SigAuth.Resource.Style.ThemeOverlay_AppCompat_Dialog;
+			global::IntermediateLib.Resource.Style.ThemeOverlay_AppCompat_Dialog_Alert = global::SigAuth.Resource.Style.ThemeOverlay_AppCompat_Dialog_Alert;
+			global::IntermediateLib.Resource.Style.ThemeOverlay_AppCompat_Light = global::SigAuth.Resource.Style.ThemeOverlay_AppCompat_Light;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_ActionBar = global::SigAuth.Resource.Style.Widget_AppCompat_ActionBar;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_ActionBar_Solid = global::SigAuth.Resource.Style.Widget_AppCompat_ActionBar_Solid;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_ActionBar_TabBar = global::SigAuth.Resource.Style.Widget_AppCompat_ActionBar_TabBar;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_ActionBar_TabText = global::SigAuth.Resource.Style.Widget_AppCompat_ActionBar_TabText;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_ActionBar_TabView = global::SigAuth.Resource.Style.Widget_AppCompat_ActionBar_TabView;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_ActionButton = global::SigAuth.Resource.Style.Widget_AppCompat_ActionButton;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_ActionButton_CloseMode = global::SigAuth.Resource.Style.Widget_AppCompat_ActionButton_CloseMode;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_ActionButton_Overflow = global::SigAuth.Resource.Style.Widget_AppCompat_ActionButton_Overflow;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_ActionMode = global::SigAuth.Resource.Style.Widget_AppCompat_ActionMode;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_ActivityChooserView = global::SigAuth.Resource.Style.Widget_AppCompat_ActivityChooserView;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_AutoCompleteTextView = global::SigAuth.Resource.Style.Widget_AppCompat_AutoCompleteTextView;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_Button = global::SigAuth.Resource.Style.Widget_AppCompat_Button;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_Button_Borderless = global::SigAuth.Resource.Style.Widget_AppCompat_Button_Borderless;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_Button_Borderless_Colored = global::SigAuth.Resource.Style.Widget_AppCompat_Button_Borderless_Colored;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_Button_ButtonBar_AlertDialog = global::SigAuth.Resource.Style.Widget_AppCompat_Button_ButtonBar_AlertDialog;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_Button_Colored = global::SigAuth.Resource.Style.Widget_AppCompat_Button_Colored;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_Button_Small = global::SigAuth.Resource.Style.Widget_AppCompat_Button_Small;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_ButtonBar = global::SigAuth.Resource.Style.Widget_AppCompat_ButtonBar;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_ButtonBar_AlertDialog = global::SigAuth.Resource.Style.Widget_AppCompat_ButtonBar_AlertDialog;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_CompoundButton_CheckBox = global::SigAuth.Resource.Style.Widget_AppCompat_CompoundButton_CheckBox;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_CompoundButton_RadioButton = global::SigAuth.Resource.Style.Widget_AppCompat_CompoundButton_RadioButton;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_CompoundButton_Switch = global::SigAuth.Resource.Style.Widget_AppCompat_CompoundButton_Switch;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_DrawerArrowToggle = global::SigAuth.Resource.Style.Widget_AppCompat_DrawerArrowToggle;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_DropDownItem_Spinner = global::SigAuth.Resource.Style.Widget_AppCompat_DropDownItem_Spinner;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_EditText = global::SigAuth.Resource.Style.Widget_AppCompat_EditText;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_ImageButton = global::SigAuth.Resource.Style.Widget_AppCompat_ImageButton;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_Light_ActionBar = global::SigAuth.Resource.Style.Widget_AppCompat_Light_ActionBar;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid = global::SigAuth.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid_Inverse = global::SigAuth.Resource.Style.Widget_AppCompat_Light_ActionBar_Solid_Inverse;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar = global::SigAuth.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar_Inverse = global::SigAuth.Resource.Style.Widget_AppCompat_Light_ActionBar_TabBar_Inverse;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText = global::SigAuth.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText_Inverse = global::SigAuth.Resource.Style.Widget_AppCompat_Light_ActionBar_TabText_Inverse;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView = global::SigAuth.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView_Inverse = global::SigAuth.Resource.Style.Widget_AppCompat_Light_ActionBar_TabView_Inverse;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_Light_ActionButton = global::SigAuth.Resource.Style.Widget_AppCompat_Light_ActionButton;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_Light_ActionButton_CloseMode = global::SigAuth.Resource.Style.Widget_AppCompat_Light_ActionButton_CloseMode;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_Light_ActionButton_Overflow = global::SigAuth.Resource.Style.Widget_AppCompat_Light_ActionButton_Overflow;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_Light_ActionMode_Inverse = global::SigAuth.Resource.Style.Widget_AppCompat_Light_ActionMode_Inverse;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_Light_ActivityChooserView = global::SigAuth.Resource.Style.Widget_AppCompat_Light_ActivityChooserView;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_Light_AutoCompleteTextView = global::SigAuth.Resource.Style.Widget_AppCompat_Light_AutoCompleteTextView;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_Light_DropDownItem_Spinner = global::SigAuth.Resource.Style.Widget_AppCompat_Light_DropDownItem_Spinner;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_Light_ListPopupWindow = global::SigAuth.Resource.Style.Widget_AppCompat_Light_ListPopupWindow;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_Light_ListView_DropDown = global::SigAuth.Resource.Style.Widget_AppCompat_Light_ListView_DropDown;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_Light_PopupMenu = global::SigAuth.Resource.Style.Widget_AppCompat_Light_PopupMenu;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_Light_PopupMenu_Overflow = global::SigAuth.Resource.Style.Widget_AppCompat_Light_PopupMenu_Overflow;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_Light_SearchView = global::SigAuth.Resource.Style.Widget_AppCompat_Light_SearchView;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_Light_Spinner_DropDown_ActionBar = global::SigAuth.Resource.Style.Widget_AppCompat_Light_Spinner_DropDown_ActionBar;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_ListMenuView = global::SigAuth.Resource.Style.Widget_AppCompat_ListMenuView;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_ListPopupWindow = global::SigAuth.Resource.Style.Widget_AppCompat_ListPopupWindow;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_ListView = global::SigAuth.Resource.Style.Widget_AppCompat_ListView;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_ListView_DropDown = global::SigAuth.Resource.Style.Widget_AppCompat_ListView_DropDown;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_ListView_Menu = global::SigAuth.Resource.Style.Widget_AppCompat_ListView_Menu;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_PopupMenu = global::SigAuth.Resource.Style.Widget_AppCompat_PopupMenu;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_PopupMenu_Overflow = global::SigAuth.Resource.Style.Widget_AppCompat_PopupMenu_Overflow;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_PopupWindow = global::SigAuth.Resource.Style.Widget_AppCompat_PopupWindow;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_ProgressBar = global::SigAuth.Resource.Style.Widget_AppCompat_ProgressBar;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_ProgressBar_Horizontal = global::SigAuth.Resource.Style.Widget_AppCompat_ProgressBar_Horizontal;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_RatingBar = global::SigAuth.Resource.Style.Widget_AppCompat_RatingBar;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_RatingBar_Indicator = global::SigAuth.Resource.Style.Widget_AppCompat_RatingBar_Indicator;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_RatingBar_Small = global::SigAuth.Resource.Style.Widget_AppCompat_RatingBar_Small;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_SearchView = global::SigAuth.Resource.Style.Widget_AppCompat_SearchView;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_SearchView_ActionBar = global::SigAuth.Resource.Style.Widget_AppCompat_SearchView_ActionBar;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_SeekBar = global::SigAuth.Resource.Style.Widget_AppCompat_SeekBar;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_SeekBar_Discrete = global::SigAuth.Resource.Style.Widget_AppCompat_SeekBar_Discrete;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_Spinner = global::SigAuth.Resource.Style.Widget_AppCompat_Spinner;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_Spinner_DropDown = global::SigAuth.Resource.Style.Widget_AppCompat_Spinner_DropDown;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar = global::SigAuth.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_Spinner_Underlined = global::SigAuth.Resource.Style.Widget_AppCompat_Spinner_Underlined;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_TextView_SpinnerItem = global::SigAuth.Resource.Style.Widget_AppCompat_TextView_SpinnerItem;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_Toolbar = global::SigAuth.Resource.Style.Widget_AppCompat_Toolbar;
+			global::IntermediateLib.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation = global::SigAuth.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation;
+			global::IntermediateLib.Resource.Style.Widget_Compat_NotificationActionContainer = global::SigAuth.Resource.Style.Widget_Compat_NotificationActionContainer;
+			global::IntermediateLib.Resource.Style.Widget_Compat_NotificationActionText = global::SigAuth.Resource.Style.Widget_Compat_NotificationActionText;
+			global::IntermediateLib.Resource.Styleable.ActionBar = global::SigAuth.Resource.Styleable.ActionBar;
+			global::IntermediateLib.Resource.Styleable.ActionBar_background = global::SigAuth.Resource.Styleable.ActionBar_background;
+			global::IntermediateLib.Resource.Styleable.ActionBar_backgroundSplit = global::SigAuth.Resource.Styleable.ActionBar_backgroundSplit;
+			global::IntermediateLib.Resource.Styleable.ActionBar_backgroundStacked = global::SigAuth.Resource.Styleable.ActionBar_backgroundStacked;
+			global::IntermediateLib.Resource.Styleable.ActionBar_contentInsetEnd = global::SigAuth.Resource.Styleable.ActionBar_contentInsetEnd;
+			global::IntermediateLib.Resource.Styleable.ActionBar_contentInsetEndWithActions = global::SigAuth.Resource.Styleable.ActionBar_contentInsetEndWithActions;
+			global::IntermediateLib.Resource.Styleable.ActionBar_contentInsetLeft = global::SigAuth.Resource.Styleable.ActionBar_contentInsetLeft;
+			global::IntermediateLib.Resource.Styleable.ActionBar_contentInsetRight = global::SigAuth.Resource.Styleable.ActionBar_contentInsetRight;
+			global::IntermediateLib.Resource.Styleable.ActionBar_contentInsetStart = global::SigAuth.Resource.Styleable.ActionBar_contentInsetStart;
+			global::IntermediateLib.Resource.Styleable.ActionBar_contentInsetStartWithNavigation = global::SigAuth.Resource.Styleable.ActionBar_contentInsetStartWithNavigation;
+			global::IntermediateLib.Resource.Styleable.ActionBar_customNavigationLayout = global::SigAuth.Resource.Styleable.ActionBar_customNavigationLayout;
+			global::IntermediateLib.Resource.Styleable.ActionBar_displayOptions = global::SigAuth.Resource.Styleable.ActionBar_displayOptions;
+			global::IntermediateLib.Resource.Styleable.ActionBar_divider = global::SigAuth.Resource.Styleable.ActionBar_divider;
+			global::IntermediateLib.Resource.Styleable.ActionBar_elevation = global::SigAuth.Resource.Styleable.ActionBar_elevation;
+			global::IntermediateLib.Resource.Styleable.ActionBar_height = global::SigAuth.Resource.Styleable.ActionBar_height;
+			global::IntermediateLib.Resource.Styleable.ActionBar_hideOnContentScroll = global::SigAuth.Resource.Styleable.ActionBar_hideOnContentScroll;
+			global::IntermediateLib.Resource.Styleable.ActionBar_homeAsUpIndicator = global::SigAuth.Resource.Styleable.ActionBar_homeAsUpIndicator;
+			global::IntermediateLib.Resource.Styleable.ActionBar_homeLayout = global::SigAuth.Resource.Styleable.ActionBar_homeLayout;
+			global::IntermediateLib.Resource.Styleable.ActionBar_icon = global::SigAuth.Resource.Styleable.ActionBar_icon;
+			global::IntermediateLib.Resource.Styleable.ActionBar_indeterminateProgressStyle = global::SigAuth.Resource.Styleable.ActionBar_indeterminateProgressStyle;
+			global::IntermediateLib.Resource.Styleable.ActionBar_itemPadding = global::SigAuth.Resource.Styleable.ActionBar_itemPadding;
+			global::IntermediateLib.Resource.Styleable.ActionBar_logo = global::SigAuth.Resource.Styleable.ActionBar_logo;
+			global::IntermediateLib.Resource.Styleable.ActionBar_navigationMode = global::SigAuth.Resource.Styleable.ActionBar_navigationMode;
+			global::IntermediateLib.Resource.Styleable.ActionBar_popupTheme = global::SigAuth.Resource.Styleable.ActionBar_popupTheme;
+			global::IntermediateLib.Resource.Styleable.ActionBar_progressBarPadding = global::SigAuth.Resource.Styleable.ActionBar_progressBarPadding;
+			global::IntermediateLib.Resource.Styleable.ActionBar_progressBarStyle = global::SigAuth.Resource.Styleable.ActionBar_progressBarStyle;
+			global::IntermediateLib.Resource.Styleable.ActionBar_subtitle = global::SigAuth.Resource.Styleable.ActionBar_subtitle;
+			global::IntermediateLib.Resource.Styleable.ActionBar_subtitleTextStyle = global::SigAuth.Resource.Styleable.ActionBar_subtitleTextStyle;
+			global::IntermediateLib.Resource.Styleable.ActionBar_title = global::SigAuth.Resource.Styleable.ActionBar_title;
+			global::IntermediateLib.Resource.Styleable.ActionBar_titleTextStyle = global::SigAuth.Resource.Styleable.ActionBar_titleTextStyle;
+			global::IntermediateLib.Resource.Styleable.ActionBarLayout = global::SigAuth.Resource.Styleable.ActionBarLayout;
+			global::IntermediateLib.Resource.Styleable.ActionBarLayout_android_layout_gravity = global::SigAuth.Resource.Styleable.ActionBarLayout_android_layout_gravity;
+			global::IntermediateLib.Resource.Styleable.ActionMenuItemView = global::SigAuth.Resource.Styleable.ActionMenuItemView;
+			global::IntermediateLib.Resource.Styleable.ActionMenuItemView_android_minWidth = global::SigAuth.Resource.Styleable.ActionMenuItemView_android_minWidth;
+			global::IntermediateLib.Resource.Styleable.ActionMenuView = global::SigAuth.Resource.Styleable.ActionMenuView;
+			global::IntermediateLib.Resource.Styleable.ActionMode = global::SigAuth.Resource.Styleable.ActionMode;
+			global::IntermediateLib.Resource.Styleable.ActionMode_background = global::SigAuth.Resource.Styleable.ActionMode_background;
+			global::IntermediateLib.Resource.Styleable.ActionMode_backgroundSplit = global::SigAuth.Resource.Styleable.ActionMode_backgroundSplit;
+			global::IntermediateLib.Resource.Styleable.ActionMode_closeItemLayout = global::SigAuth.Resource.Styleable.ActionMode_closeItemLayout;
+			global::IntermediateLib.Resource.Styleable.ActionMode_height = global::SigAuth.Resource.Styleable.ActionMode_height;
+			global::IntermediateLib.Resource.Styleable.ActionMode_subtitleTextStyle = global::SigAuth.Resource.Styleable.ActionMode_subtitleTextStyle;
+			global::IntermediateLib.Resource.Styleable.ActionMode_titleTextStyle = global::SigAuth.Resource.Styleable.ActionMode_titleTextStyle;
+			global::IntermediateLib.Resource.Styleable.ActivityChooserView = global::SigAuth.Resource.Styleable.ActivityChooserView;
+			global::IntermediateLib.Resource.Styleable.ActivityChooserView_expandActivityOverflowButtonDrawable = global::SigAuth.Resource.Styleable.ActivityChooserView_expandActivityOverflowButtonDrawable;
+			global::IntermediateLib.Resource.Styleable.ActivityChooserView_initialActivityCount = global::SigAuth.Resource.Styleable.ActivityChooserView_initialActivityCount;
+			global::IntermediateLib.Resource.Styleable.AlertDialog = global::SigAuth.Resource.Styleable.AlertDialog;
+			global::IntermediateLib.Resource.Styleable.AlertDialog_android_layout = global::SigAuth.Resource.Styleable.AlertDialog_android_layout;
+			global::IntermediateLib.Resource.Styleable.AlertDialog_buttonPanelSideLayout = global::SigAuth.Resource.Styleable.AlertDialog_buttonPanelSideLayout;
+			global::IntermediateLib.Resource.Styleable.AlertDialog_listItemLayout = global::SigAuth.Resource.Styleable.AlertDialog_listItemLayout;
+			global::IntermediateLib.Resource.Styleable.AlertDialog_listLayout = global::SigAuth.Resource.Styleable.AlertDialog_listLayout;
+			global::IntermediateLib.Resource.Styleable.AlertDialog_multiChoiceItemLayout = global::SigAuth.Resource.Styleable.AlertDialog_multiChoiceItemLayout;
+			global::IntermediateLib.Resource.Styleable.AlertDialog_showTitle = global::SigAuth.Resource.Styleable.AlertDialog_showTitle;
+			global::IntermediateLib.Resource.Styleable.AlertDialog_singleChoiceItemLayout = global::SigAuth.Resource.Styleable.AlertDialog_singleChoiceItemLayout;
+			global::IntermediateLib.Resource.Styleable.AppCompatImageView = global::SigAuth.Resource.Styleable.AppCompatImageView;
+			global::IntermediateLib.Resource.Styleable.AppCompatImageView_android_src = global::SigAuth.Resource.Styleable.AppCompatImageView_android_src;
+			global::IntermediateLib.Resource.Styleable.AppCompatImageView_srcCompat = global::SigAuth.Resource.Styleable.AppCompatImageView_srcCompat;
+			global::IntermediateLib.Resource.Styleable.AppCompatImageView_tint = global::SigAuth.Resource.Styleable.AppCompatImageView_tint;
+			global::IntermediateLib.Resource.Styleable.AppCompatImageView_tintMode = global::SigAuth.Resource.Styleable.AppCompatImageView_tintMode;
+			global::IntermediateLib.Resource.Styleable.AppCompatSeekBar = global::SigAuth.Resource.Styleable.AppCompatSeekBar;
+			global::IntermediateLib.Resource.Styleable.AppCompatSeekBar_android_thumb = global::SigAuth.Resource.Styleable.AppCompatSeekBar_android_thumb;
+			global::IntermediateLib.Resource.Styleable.AppCompatSeekBar_tickMark = global::SigAuth.Resource.Styleable.AppCompatSeekBar_tickMark;
+			global::IntermediateLib.Resource.Styleable.AppCompatSeekBar_tickMarkTint = global::SigAuth.Resource.Styleable.AppCompatSeekBar_tickMarkTint;
+			global::IntermediateLib.Resource.Styleable.AppCompatSeekBar_tickMarkTintMode = global::SigAuth.Resource.Styleable.AppCompatSeekBar_tickMarkTintMode;
+			global::IntermediateLib.Resource.Styleable.AppCompatTextHelper = global::SigAuth.Resource.Styleable.AppCompatTextHelper;
+			global::IntermediateLib.Resource.Styleable.AppCompatTextHelper_android_drawableBottom = global::SigAuth.Resource.Styleable.AppCompatTextHelper_android_drawableBottom;
+			global::IntermediateLib.Resource.Styleable.AppCompatTextHelper_android_drawableEnd = global::SigAuth.Resource.Styleable.AppCompatTextHelper_android_drawableEnd;
+			global::IntermediateLib.Resource.Styleable.AppCompatTextHelper_android_drawableLeft = global::SigAuth.Resource.Styleable.AppCompatTextHelper_android_drawableLeft;
+			global::IntermediateLib.Resource.Styleable.AppCompatTextHelper_android_drawableRight = global::SigAuth.Resource.Styleable.AppCompatTextHelper_android_drawableRight;
+			global::IntermediateLib.Resource.Styleable.AppCompatTextHelper_android_drawableStart = global::SigAuth.Resource.Styleable.AppCompatTextHelper_android_drawableStart;
+			global::IntermediateLib.Resource.Styleable.AppCompatTextHelper_android_drawableTop = global::SigAuth.Resource.Styleable.AppCompatTextHelper_android_drawableTop;
+			global::IntermediateLib.Resource.Styleable.AppCompatTextHelper_android_textAppearance = global::SigAuth.Resource.Styleable.AppCompatTextHelper_android_textAppearance;
+			global::IntermediateLib.Resource.Styleable.AppCompatTextView = global::SigAuth.Resource.Styleable.AppCompatTextView;
+			global::IntermediateLib.Resource.Styleable.AppCompatTextView_android_textAppearance = global::SigAuth.Resource.Styleable.AppCompatTextView_android_textAppearance;
+			global::IntermediateLib.Resource.Styleable.AppCompatTextView_autoSizeMaxTextSize = global::SigAuth.Resource.Styleable.AppCompatTextView_autoSizeMaxTextSize;
+			global::IntermediateLib.Resource.Styleable.AppCompatTextView_autoSizeMinTextSize = global::SigAuth.Resource.Styleable.AppCompatTextView_autoSizeMinTextSize;
+			global::IntermediateLib.Resource.Styleable.AppCompatTextView_autoSizePresetSizes = global::SigAuth.Resource.Styleable.AppCompatTextView_autoSizePresetSizes;
+			global::IntermediateLib.Resource.Styleable.AppCompatTextView_autoSizeStepGranularity = global::SigAuth.Resource.Styleable.AppCompatTextView_autoSizeStepGranularity;
+			global::IntermediateLib.Resource.Styleable.AppCompatTextView_autoSizeTextType = global::SigAuth.Resource.Styleable.AppCompatTextView_autoSizeTextType;
+			global::IntermediateLib.Resource.Styleable.AppCompatTextView_fontFamily = global::SigAuth.Resource.Styleable.AppCompatTextView_fontFamily;
+			global::IntermediateLib.Resource.Styleable.AppCompatTextView_textAllCaps = global::SigAuth.Resource.Styleable.AppCompatTextView_textAllCaps;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme = global::SigAuth.Resource.Styleable.AppCompatTheme;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_actionBarDivider = global::SigAuth.Resource.Styleable.AppCompatTheme_actionBarDivider;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_actionBarItemBackground = global::SigAuth.Resource.Styleable.AppCompatTheme_actionBarItemBackground;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_actionBarPopupTheme = global::SigAuth.Resource.Styleable.AppCompatTheme_actionBarPopupTheme;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_actionBarSize = global::SigAuth.Resource.Styleable.AppCompatTheme_actionBarSize;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_actionBarSplitStyle = global::SigAuth.Resource.Styleable.AppCompatTheme_actionBarSplitStyle;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_actionBarStyle = global::SigAuth.Resource.Styleable.AppCompatTheme_actionBarStyle;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_actionBarTabBarStyle = global::SigAuth.Resource.Styleable.AppCompatTheme_actionBarTabBarStyle;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_actionBarTabStyle = global::SigAuth.Resource.Styleable.AppCompatTheme_actionBarTabStyle;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_actionBarTabTextStyle = global::SigAuth.Resource.Styleable.AppCompatTheme_actionBarTabTextStyle;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_actionBarTheme = global::SigAuth.Resource.Styleable.AppCompatTheme_actionBarTheme;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_actionBarWidgetTheme = global::SigAuth.Resource.Styleable.AppCompatTheme_actionBarWidgetTheme;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_actionButtonStyle = global::SigAuth.Resource.Styleable.AppCompatTheme_actionButtonStyle;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_actionDropDownStyle = global::SigAuth.Resource.Styleable.AppCompatTheme_actionDropDownStyle;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_actionMenuTextAppearance = global::SigAuth.Resource.Styleable.AppCompatTheme_actionMenuTextAppearance;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_actionMenuTextColor = global::SigAuth.Resource.Styleable.AppCompatTheme_actionMenuTextColor;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_actionModeBackground = global::SigAuth.Resource.Styleable.AppCompatTheme_actionModeBackground;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_actionModeCloseButtonStyle = global::SigAuth.Resource.Styleable.AppCompatTheme_actionModeCloseButtonStyle;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_actionModeCloseDrawable = global::SigAuth.Resource.Styleable.AppCompatTheme_actionModeCloseDrawable;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_actionModeCopyDrawable = global::SigAuth.Resource.Styleable.AppCompatTheme_actionModeCopyDrawable;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_actionModeCutDrawable = global::SigAuth.Resource.Styleable.AppCompatTheme_actionModeCutDrawable;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_actionModeFindDrawable = global::SigAuth.Resource.Styleable.AppCompatTheme_actionModeFindDrawable;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_actionModePasteDrawable = global::SigAuth.Resource.Styleable.AppCompatTheme_actionModePasteDrawable;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_actionModePopupWindowStyle = global::SigAuth.Resource.Styleable.AppCompatTheme_actionModePopupWindowStyle;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_actionModeSelectAllDrawable = global::SigAuth.Resource.Styleable.AppCompatTheme_actionModeSelectAllDrawable;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_actionModeShareDrawable = global::SigAuth.Resource.Styleable.AppCompatTheme_actionModeShareDrawable;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_actionModeSplitBackground = global::SigAuth.Resource.Styleable.AppCompatTheme_actionModeSplitBackground;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_actionModeStyle = global::SigAuth.Resource.Styleable.AppCompatTheme_actionModeStyle;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_actionModeWebSearchDrawable = global::SigAuth.Resource.Styleable.AppCompatTheme_actionModeWebSearchDrawable;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_actionOverflowButtonStyle = global::SigAuth.Resource.Styleable.AppCompatTheme_actionOverflowButtonStyle;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_actionOverflowMenuStyle = global::SigAuth.Resource.Styleable.AppCompatTheme_actionOverflowMenuStyle;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_activityChooserViewStyle = global::SigAuth.Resource.Styleable.AppCompatTheme_activityChooserViewStyle;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_alertDialogButtonGroupStyle = global::SigAuth.Resource.Styleable.AppCompatTheme_alertDialogButtonGroupStyle;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_alertDialogCenterButtons = global::SigAuth.Resource.Styleable.AppCompatTheme_alertDialogCenterButtons;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_alertDialogStyle = global::SigAuth.Resource.Styleable.AppCompatTheme_alertDialogStyle;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_alertDialogTheme = global::SigAuth.Resource.Styleable.AppCompatTheme_alertDialogTheme;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_android_windowAnimationStyle = global::SigAuth.Resource.Styleable.AppCompatTheme_android_windowAnimationStyle;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_android_windowIsFloating = global::SigAuth.Resource.Styleable.AppCompatTheme_android_windowIsFloating;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_autoCompleteTextViewStyle = global::SigAuth.Resource.Styleable.AppCompatTheme_autoCompleteTextViewStyle;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_borderlessButtonStyle = global::SigAuth.Resource.Styleable.AppCompatTheme_borderlessButtonStyle;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_buttonBarButtonStyle = global::SigAuth.Resource.Styleable.AppCompatTheme_buttonBarButtonStyle;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_buttonBarNegativeButtonStyle = global::SigAuth.Resource.Styleable.AppCompatTheme_buttonBarNegativeButtonStyle;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_buttonBarNeutralButtonStyle = global::SigAuth.Resource.Styleable.AppCompatTheme_buttonBarNeutralButtonStyle;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_buttonBarPositiveButtonStyle = global::SigAuth.Resource.Styleable.AppCompatTheme_buttonBarPositiveButtonStyle;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_buttonBarStyle = global::SigAuth.Resource.Styleable.AppCompatTheme_buttonBarStyle;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_buttonStyle = global::SigAuth.Resource.Styleable.AppCompatTheme_buttonStyle;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_buttonStyleSmall = global::SigAuth.Resource.Styleable.AppCompatTheme_buttonStyleSmall;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_checkboxStyle = global::SigAuth.Resource.Styleable.AppCompatTheme_checkboxStyle;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_checkedTextViewStyle = global::SigAuth.Resource.Styleable.AppCompatTheme_checkedTextViewStyle;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_colorAccent = global::SigAuth.Resource.Styleable.AppCompatTheme_colorAccent;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_colorBackgroundFloating = global::SigAuth.Resource.Styleable.AppCompatTheme_colorBackgroundFloating;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_colorButtonNormal = global::SigAuth.Resource.Styleable.AppCompatTheme_colorButtonNormal;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_colorControlActivated = global::SigAuth.Resource.Styleable.AppCompatTheme_colorControlActivated;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_colorControlHighlight = global::SigAuth.Resource.Styleable.AppCompatTheme_colorControlHighlight;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_colorControlNormal = global::SigAuth.Resource.Styleable.AppCompatTheme_colorControlNormal;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_colorError = global::SigAuth.Resource.Styleable.AppCompatTheme_colorError;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_colorPrimary = global::SigAuth.Resource.Styleable.AppCompatTheme_colorPrimary;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_colorPrimaryDark = global::SigAuth.Resource.Styleable.AppCompatTheme_colorPrimaryDark;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_colorSwitchThumbNormal = global::SigAuth.Resource.Styleable.AppCompatTheme_colorSwitchThumbNormal;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_controlBackground = global::SigAuth.Resource.Styleable.AppCompatTheme_controlBackground;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_dialogPreferredPadding = global::SigAuth.Resource.Styleable.AppCompatTheme_dialogPreferredPadding;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_dialogTheme = global::SigAuth.Resource.Styleable.AppCompatTheme_dialogTheme;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_dividerHorizontal = global::SigAuth.Resource.Styleable.AppCompatTheme_dividerHorizontal;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_dividerVertical = global::SigAuth.Resource.Styleable.AppCompatTheme_dividerVertical;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_dropDownListViewStyle = global::SigAuth.Resource.Styleable.AppCompatTheme_dropDownListViewStyle;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_dropdownListPreferredItemHeight = global::SigAuth.Resource.Styleable.AppCompatTheme_dropdownListPreferredItemHeight;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_editTextBackground = global::SigAuth.Resource.Styleable.AppCompatTheme_editTextBackground;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_editTextColor = global::SigAuth.Resource.Styleable.AppCompatTheme_editTextColor;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_editTextStyle = global::SigAuth.Resource.Styleable.AppCompatTheme_editTextStyle;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_homeAsUpIndicator = global::SigAuth.Resource.Styleable.AppCompatTheme_homeAsUpIndicator;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_imageButtonStyle = global::SigAuth.Resource.Styleable.AppCompatTheme_imageButtonStyle;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_listChoiceBackgroundIndicator = global::SigAuth.Resource.Styleable.AppCompatTheme_listChoiceBackgroundIndicator;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_listDividerAlertDialog = global::SigAuth.Resource.Styleable.AppCompatTheme_listDividerAlertDialog;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_listMenuViewStyle = global::SigAuth.Resource.Styleable.AppCompatTheme_listMenuViewStyle;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_listPopupWindowStyle = global::SigAuth.Resource.Styleable.AppCompatTheme_listPopupWindowStyle;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_listPreferredItemHeight = global::SigAuth.Resource.Styleable.AppCompatTheme_listPreferredItemHeight;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_listPreferredItemHeightLarge = global::SigAuth.Resource.Styleable.AppCompatTheme_listPreferredItemHeightLarge;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_listPreferredItemHeightSmall = global::SigAuth.Resource.Styleable.AppCompatTheme_listPreferredItemHeightSmall;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingLeft = global::SigAuth.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingLeft;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingRight = global::SigAuth.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingRight;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_panelBackground = global::SigAuth.Resource.Styleable.AppCompatTheme_panelBackground;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_panelMenuListTheme = global::SigAuth.Resource.Styleable.AppCompatTheme_panelMenuListTheme;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_panelMenuListWidth = global::SigAuth.Resource.Styleable.AppCompatTheme_panelMenuListWidth;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_popupMenuStyle = global::SigAuth.Resource.Styleable.AppCompatTheme_popupMenuStyle;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_popupWindowStyle = global::SigAuth.Resource.Styleable.AppCompatTheme_popupWindowStyle;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_radioButtonStyle = global::SigAuth.Resource.Styleable.AppCompatTheme_radioButtonStyle;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_ratingBarStyle = global::SigAuth.Resource.Styleable.AppCompatTheme_ratingBarStyle;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_ratingBarStyleIndicator = global::SigAuth.Resource.Styleable.AppCompatTheme_ratingBarStyleIndicator;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_ratingBarStyleSmall = global::SigAuth.Resource.Styleable.AppCompatTheme_ratingBarStyleSmall;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_searchViewStyle = global::SigAuth.Resource.Styleable.AppCompatTheme_searchViewStyle;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_seekBarStyle = global::SigAuth.Resource.Styleable.AppCompatTheme_seekBarStyle;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_selectableItemBackground = global::SigAuth.Resource.Styleable.AppCompatTheme_selectableItemBackground;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_selectableItemBackgroundBorderless = global::SigAuth.Resource.Styleable.AppCompatTheme_selectableItemBackgroundBorderless;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_spinnerDropDownItemStyle = global::SigAuth.Resource.Styleable.AppCompatTheme_spinnerDropDownItemStyle;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_spinnerStyle = global::SigAuth.Resource.Styleable.AppCompatTheme_spinnerStyle;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_switchStyle = global::SigAuth.Resource.Styleable.AppCompatTheme_switchStyle;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_textAppearanceLargePopupMenu = global::SigAuth.Resource.Styleable.AppCompatTheme_textAppearanceLargePopupMenu;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_textAppearanceListItem = global::SigAuth.Resource.Styleable.AppCompatTheme_textAppearanceListItem;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_textAppearanceListItemSecondary = global::SigAuth.Resource.Styleable.AppCompatTheme_textAppearanceListItemSecondary;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_textAppearanceListItemSmall = global::SigAuth.Resource.Styleable.AppCompatTheme_textAppearanceListItemSmall;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_textAppearancePopupMenuHeader = global::SigAuth.Resource.Styleable.AppCompatTheme_textAppearancePopupMenuHeader;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultSubtitle = global::SigAuth.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultSubtitle;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultTitle = global::SigAuth.Resource.Styleable.AppCompatTheme_textAppearanceSearchResultTitle;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_textAppearanceSmallPopupMenu = global::SigAuth.Resource.Styleable.AppCompatTheme_textAppearanceSmallPopupMenu;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_textColorAlertDialogListItem = global::SigAuth.Resource.Styleable.AppCompatTheme_textColorAlertDialogListItem;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_textColorSearchUrl = global::SigAuth.Resource.Styleable.AppCompatTheme_textColorSearchUrl;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_toolbarNavigationButtonStyle = global::SigAuth.Resource.Styleable.AppCompatTheme_toolbarNavigationButtonStyle;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_toolbarStyle = global::SigAuth.Resource.Styleable.AppCompatTheme_toolbarStyle;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_tooltipForegroundColor = global::SigAuth.Resource.Styleable.AppCompatTheme_tooltipForegroundColor;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_tooltipFrameBackground = global::SigAuth.Resource.Styleable.AppCompatTheme_tooltipFrameBackground;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_windowActionBar = global::SigAuth.Resource.Styleable.AppCompatTheme_windowActionBar;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_windowActionBarOverlay = global::SigAuth.Resource.Styleable.AppCompatTheme_windowActionBarOverlay;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_windowActionModeOverlay = global::SigAuth.Resource.Styleable.AppCompatTheme_windowActionModeOverlay;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_windowFixedHeightMajor = global::SigAuth.Resource.Styleable.AppCompatTheme_windowFixedHeightMajor;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_windowFixedHeightMinor = global::SigAuth.Resource.Styleable.AppCompatTheme_windowFixedHeightMinor;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_windowFixedWidthMajor = global::SigAuth.Resource.Styleable.AppCompatTheme_windowFixedWidthMajor;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_windowFixedWidthMinor = global::SigAuth.Resource.Styleable.AppCompatTheme_windowFixedWidthMinor;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_windowMinWidthMajor = global::SigAuth.Resource.Styleable.AppCompatTheme_windowMinWidthMajor;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_windowMinWidthMinor = global::SigAuth.Resource.Styleable.AppCompatTheme_windowMinWidthMinor;
+			global::IntermediateLib.Resource.Styleable.AppCompatTheme_windowNoTitle = global::SigAuth.Resource.Styleable.AppCompatTheme_windowNoTitle;
+			global::IntermediateLib.Resource.Styleable.ButtonBarLayout = global::SigAuth.Resource.Styleable.ButtonBarLayout;
+			global::IntermediateLib.Resource.Styleable.ButtonBarLayout_allowStacking = global::SigAuth.Resource.Styleable.ButtonBarLayout_allowStacking;
+			global::IntermediateLib.Resource.Styleable.ColorStateListItem = global::SigAuth.Resource.Styleable.ColorStateListItem;
+			global::IntermediateLib.Resource.Styleable.ColorStateListItem_alpha = global::SigAuth.Resource.Styleable.ColorStateListItem_alpha;
+			global::IntermediateLib.Resource.Styleable.ColorStateListItem_android_alpha = global::SigAuth.Resource.Styleable.ColorStateListItem_android_alpha;
+			global::IntermediateLib.Resource.Styleable.ColorStateListItem_android_color = global::SigAuth.Resource.Styleable.ColorStateListItem_android_color;
+			global::IntermediateLib.Resource.Styleable.CompoundButton = global::SigAuth.Resource.Styleable.CompoundButton;
+			global::IntermediateLib.Resource.Styleable.CompoundButton_android_button = global::SigAuth.Resource.Styleable.CompoundButton_android_button;
+			global::IntermediateLib.Resource.Styleable.CompoundButton_buttonTint = global::SigAuth.Resource.Styleable.CompoundButton_buttonTint;
+			global::IntermediateLib.Resource.Styleable.CompoundButton_buttonTintMode = global::SigAuth.Resource.Styleable.CompoundButton_buttonTintMode;
+			global::IntermediateLib.Resource.Styleable.DrawerArrowToggle = global::SigAuth.Resource.Styleable.DrawerArrowToggle;
+			global::IntermediateLib.Resource.Styleable.DrawerArrowToggle_arrowHeadLength = global::SigAuth.Resource.Styleable.DrawerArrowToggle_arrowHeadLength;
+			global::IntermediateLib.Resource.Styleable.DrawerArrowToggle_arrowShaftLength = global::SigAuth.Resource.Styleable.DrawerArrowToggle_arrowShaftLength;
+			global::IntermediateLib.Resource.Styleable.DrawerArrowToggle_barLength = global::SigAuth.Resource.Styleable.DrawerArrowToggle_barLength;
+			global::IntermediateLib.Resource.Styleable.DrawerArrowToggle_color = global::SigAuth.Resource.Styleable.DrawerArrowToggle_color;
+			global::IntermediateLib.Resource.Styleable.DrawerArrowToggle_drawableSize = global::SigAuth.Resource.Styleable.DrawerArrowToggle_drawableSize;
+			global::IntermediateLib.Resource.Styleable.DrawerArrowToggle_gapBetweenBars = global::SigAuth.Resource.Styleable.DrawerArrowToggle_gapBetweenBars;
+			global::IntermediateLib.Resource.Styleable.DrawerArrowToggle_spinBars = global::SigAuth.Resource.Styleable.DrawerArrowToggle_spinBars;
+			global::IntermediateLib.Resource.Styleable.DrawerArrowToggle_thickness = global::SigAuth.Resource.Styleable.DrawerArrowToggle_thickness;
+			global::IntermediateLib.Resource.Styleable.FontFamily = global::SigAuth.Resource.Styleable.FontFamily;
+			global::IntermediateLib.Resource.Styleable.FontFamily_fontProviderAuthority = global::SigAuth.Resource.Styleable.FontFamily_fontProviderAuthority;
+			global::IntermediateLib.Resource.Styleable.FontFamily_fontProviderCerts = global::SigAuth.Resource.Styleable.FontFamily_fontProviderCerts;
+			global::IntermediateLib.Resource.Styleable.FontFamily_fontProviderFetchStrategy = global::SigAuth.Resource.Styleable.FontFamily_fontProviderFetchStrategy;
+			global::IntermediateLib.Resource.Styleable.FontFamily_fontProviderFetchTimeout = global::SigAuth.Resource.Styleable.FontFamily_fontProviderFetchTimeout;
+			global::IntermediateLib.Resource.Styleable.FontFamily_fontProviderPackage = global::SigAuth.Resource.Styleable.FontFamily_fontProviderPackage;
+			global::IntermediateLib.Resource.Styleable.FontFamily_fontProviderQuery = global::SigAuth.Resource.Styleable.FontFamily_fontProviderQuery;
+			global::IntermediateLib.Resource.Styleable.FontFamilyFont = global::SigAuth.Resource.Styleable.FontFamilyFont;
+			global::IntermediateLib.Resource.Styleable.FontFamilyFont_android_font = global::SigAuth.Resource.Styleable.FontFamilyFont_android_font;
+			global::IntermediateLib.Resource.Styleable.FontFamilyFont_android_fontStyle = global::SigAuth.Resource.Styleable.FontFamilyFont_android_fontStyle;
+			global::IntermediateLib.Resource.Styleable.FontFamilyFont_android_fontWeight = global::SigAuth.Resource.Styleable.FontFamilyFont_android_fontWeight;
+			global::IntermediateLib.Resource.Styleable.FontFamilyFont_font = global::SigAuth.Resource.Styleable.FontFamilyFont_font;
+			global::IntermediateLib.Resource.Styleable.FontFamilyFont_fontStyle = global::SigAuth.Resource.Styleable.FontFamilyFont_fontStyle;
+			global::IntermediateLib.Resource.Styleable.FontFamilyFont_fontWeight = global::SigAuth.Resource.Styleable.FontFamilyFont_fontWeight;
+			global::IntermediateLib.Resource.Styleable.LinearLayoutCompat = global::SigAuth.Resource.Styleable.LinearLayoutCompat;
+			global::IntermediateLib.Resource.Styleable.LinearLayoutCompat_android_baselineAligned = global::SigAuth.Resource.Styleable.LinearLayoutCompat_android_baselineAligned;
+			global::IntermediateLib.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex = global::SigAuth.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex;
+			global::IntermediateLib.Resource.Styleable.LinearLayoutCompat_android_gravity = global::SigAuth.Resource.Styleable.LinearLayoutCompat_android_gravity;
+			global::IntermediateLib.Resource.Styleable.LinearLayoutCompat_android_orientation = global::SigAuth.Resource.Styleable.LinearLayoutCompat_android_orientation;
+			global::IntermediateLib.Resource.Styleable.LinearLayoutCompat_android_weightSum = global::SigAuth.Resource.Styleable.LinearLayoutCompat_android_weightSum;
+			global::IntermediateLib.Resource.Styleable.LinearLayoutCompat_divider = global::SigAuth.Resource.Styleable.LinearLayoutCompat_divider;
+			global::IntermediateLib.Resource.Styleable.LinearLayoutCompat_dividerPadding = global::SigAuth.Resource.Styleable.LinearLayoutCompat_dividerPadding;
+			global::IntermediateLib.Resource.Styleable.LinearLayoutCompat_measureWithLargestChild = global::SigAuth.Resource.Styleable.LinearLayoutCompat_measureWithLargestChild;
+			global::IntermediateLib.Resource.Styleable.LinearLayoutCompat_showDividers = global::SigAuth.Resource.Styleable.LinearLayoutCompat_showDividers;
+			global::IntermediateLib.Resource.Styleable.LinearLayoutCompat_Layout = global::SigAuth.Resource.Styleable.LinearLayoutCompat_Layout;
+			global::IntermediateLib.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_gravity = global::SigAuth.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_gravity;
+			global::IntermediateLib.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_height = global::SigAuth.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_height;
+			global::IntermediateLib.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_weight = global::SigAuth.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_weight;
+			global::IntermediateLib.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_width = global::SigAuth.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_width;
+			global::IntermediateLib.Resource.Styleable.ListPopupWindow = global::SigAuth.Resource.Styleable.ListPopupWindow;
+			global::IntermediateLib.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset = global::SigAuth.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset;
+			global::IntermediateLib.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset = global::SigAuth.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset;
+			global::IntermediateLib.Resource.Styleable.MenuGroup = global::SigAuth.Resource.Styleable.MenuGroup;
+			global::IntermediateLib.Resource.Styleable.MenuGroup_android_checkableBehavior = global::SigAuth.Resource.Styleable.MenuGroup_android_checkableBehavior;
+			global::IntermediateLib.Resource.Styleable.MenuGroup_android_enabled = global::SigAuth.Resource.Styleable.MenuGroup_android_enabled;
+			global::IntermediateLib.Resource.Styleable.MenuGroup_android_id = global::SigAuth.Resource.Styleable.MenuGroup_android_id;
+			global::IntermediateLib.Resource.Styleable.MenuGroup_android_menuCategory = global::SigAuth.Resource.Styleable.MenuGroup_android_menuCategory;
+			global::IntermediateLib.Resource.Styleable.MenuGroup_android_orderInCategory = global::SigAuth.Resource.Styleable.MenuGroup_android_orderInCategory;
+			global::IntermediateLib.Resource.Styleable.MenuGroup_android_visible = global::SigAuth.Resource.Styleable.MenuGroup_android_visible;
+			global::IntermediateLib.Resource.Styleable.MenuItem = global::SigAuth.Resource.Styleable.MenuItem;
+			global::IntermediateLib.Resource.Styleable.MenuItem_actionLayout = global::SigAuth.Resource.Styleable.MenuItem_actionLayout;
+			global::IntermediateLib.Resource.Styleable.MenuItem_actionProviderClass = global::SigAuth.Resource.Styleable.MenuItem_actionProviderClass;
+			global::IntermediateLib.Resource.Styleable.MenuItem_actionViewClass = global::SigAuth.Resource.Styleable.MenuItem_actionViewClass;
+			global::IntermediateLib.Resource.Styleable.MenuItem_alphabeticModifiers = global::SigAuth.Resource.Styleable.MenuItem_alphabeticModifiers;
+			global::IntermediateLib.Resource.Styleable.MenuItem_android_alphabeticShortcut = global::SigAuth.Resource.Styleable.MenuItem_android_alphabeticShortcut;
+			global::IntermediateLib.Resource.Styleable.MenuItem_android_checkable = global::SigAuth.Resource.Styleable.MenuItem_android_checkable;
+			global::IntermediateLib.Resource.Styleable.MenuItem_android_checked = global::SigAuth.Resource.Styleable.MenuItem_android_checked;
+			global::IntermediateLib.Resource.Styleable.MenuItem_android_enabled = global::SigAuth.Resource.Styleable.MenuItem_android_enabled;
+			global::IntermediateLib.Resource.Styleable.MenuItem_android_icon = global::SigAuth.Resource.Styleable.MenuItem_android_icon;
+			global::IntermediateLib.Resource.Styleable.MenuItem_android_id = global::SigAuth.Resource.Styleable.MenuItem_android_id;
+			global::IntermediateLib.Resource.Styleable.MenuItem_android_menuCategory = global::SigAuth.Resource.Styleable.MenuItem_android_menuCategory;
+			global::IntermediateLib.Resource.Styleable.MenuItem_android_numericShortcut = global::SigAuth.Resource.Styleable.MenuItem_android_numericShortcut;
+			global::IntermediateLib.Resource.Styleable.MenuItem_android_onClick = global::SigAuth.Resource.Styleable.MenuItem_android_onClick;
+			global::IntermediateLib.Resource.Styleable.MenuItem_android_orderInCategory = global::SigAuth.Resource.Styleable.MenuItem_android_orderInCategory;
+			global::IntermediateLib.Resource.Styleable.MenuItem_android_title = global::SigAuth.Resource.Styleable.MenuItem_android_title;
+			global::IntermediateLib.Resource.Styleable.MenuItem_android_titleCondensed = global::SigAuth.Resource.Styleable.MenuItem_android_titleCondensed;
+			global::IntermediateLib.Resource.Styleable.MenuItem_android_visible = global::SigAuth.Resource.Styleable.MenuItem_android_visible;
+			global::IntermediateLib.Resource.Styleable.MenuItem_contentDescription = global::SigAuth.Resource.Styleable.MenuItem_contentDescription;
+			global::IntermediateLib.Resource.Styleable.MenuItem_iconTint = global::SigAuth.Resource.Styleable.MenuItem_iconTint;
+			global::IntermediateLib.Resource.Styleable.MenuItem_iconTintMode = global::SigAuth.Resource.Styleable.MenuItem_iconTintMode;
+			global::IntermediateLib.Resource.Styleable.MenuItem_numericModifiers = global::SigAuth.Resource.Styleable.MenuItem_numericModifiers;
+			global::IntermediateLib.Resource.Styleable.MenuItem_showAsAction = global::SigAuth.Resource.Styleable.MenuItem_showAsAction;
+			global::IntermediateLib.Resource.Styleable.MenuItem_tooltipText = global::SigAuth.Resource.Styleable.MenuItem_tooltipText;
+			global::IntermediateLib.Resource.Styleable.MenuView = global::SigAuth.Resource.Styleable.MenuView;
+			global::IntermediateLib.Resource.Styleable.MenuView_android_headerBackground = global::SigAuth.Resource.Styleable.MenuView_android_headerBackground;
+			global::IntermediateLib.Resource.Styleable.MenuView_android_horizontalDivider = global::SigAuth.Resource.Styleable.MenuView_android_horizontalDivider;
+			global::IntermediateLib.Resource.Styleable.MenuView_android_itemBackground = global::SigAuth.Resource.Styleable.MenuView_android_itemBackground;
+			global::IntermediateLib.Resource.Styleable.MenuView_android_itemIconDisabledAlpha = global::SigAuth.Resource.Styleable.MenuView_android_itemIconDisabledAlpha;
+			global::IntermediateLib.Resource.Styleable.MenuView_android_itemTextAppearance = global::SigAuth.Resource.Styleable.MenuView_android_itemTextAppearance;
+			global::IntermediateLib.Resource.Styleable.MenuView_android_verticalDivider = global::SigAuth.Resource.Styleable.MenuView_android_verticalDivider;
+			global::IntermediateLib.Resource.Styleable.MenuView_android_windowAnimationStyle = global::SigAuth.Resource.Styleable.MenuView_android_windowAnimationStyle;
+			global::IntermediateLib.Resource.Styleable.MenuView_preserveIconSpacing = global::SigAuth.Resource.Styleable.MenuView_preserveIconSpacing;
+			global::IntermediateLib.Resource.Styleable.MenuView_subMenuArrow = global::SigAuth.Resource.Styleable.MenuView_subMenuArrow;
+			global::IntermediateLib.Resource.Styleable.PopupWindow = global::SigAuth.Resource.Styleable.PopupWindow;
+			global::IntermediateLib.Resource.Styleable.PopupWindow_android_popupAnimationStyle = global::SigAuth.Resource.Styleable.PopupWindow_android_popupAnimationStyle;
+			global::IntermediateLib.Resource.Styleable.PopupWindow_android_popupBackground = global::SigAuth.Resource.Styleable.PopupWindow_android_popupBackground;
+			global::IntermediateLib.Resource.Styleable.PopupWindow_overlapAnchor = global::SigAuth.Resource.Styleable.PopupWindow_overlapAnchor;
+			global::IntermediateLib.Resource.Styleable.PopupWindowBackgroundState = global::SigAuth.Resource.Styleable.PopupWindowBackgroundState;
+			global::IntermediateLib.Resource.Styleable.PopupWindowBackgroundState_state_above_anchor = global::SigAuth.Resource.Styleable.PopupWindowBackgroundState_state_above_anchor;
+			global::IntermediateLib.Resource.Styleable.RecycleListView = global::SigAuth.Resource.Styleable.RecycleListView;
+			global::IntermediateLib.Resource.Styleable.RecycleListView_paddingBottomNoButtons = global::SigAuth.Resource.Styleable.RecycleListView_paddingBottomNoButtons;
+			global::IntermediateLib.Resource.Styleable.RecycleListView_paddingTopNoTitle = global::SigAuth.Resource.Styleable.RecycleListView_paddingTopNoTitle;
+			global::IntermediateLib.Resource.Styleable.SearchView = global::SigAuth.Resource.Styleable.SearchView;
+			global::IntermediateLib.Resource.Styleable.SearchView_android_focusable = global::SigAuth.Resource.Styleable.SearchView_android_focusable;
+			global::IntermediateLib.Resource.Styleable.SearchView_android_imeOptions = global::SigAuth.Resource.Styleable.SearchView_android_imeOptions;
+			global::IntermediateLib.Resource.Styleable.SearchView_android_inputType = global::SigAuth.Resource.Styleable.SearchView_android_inputType;
+			global::IntermediateLib.Resource.Styleable.SearchView_android_maxWidth = global::SigAuth.Resource.Styleable.SearchView_android_maxWidth;
+			global::IntermediateLib.Resource.Styleable.SearchView_closeIcon = global::SigAuth.Resource.Styleable.SearchView_closeIcon;
+			global::IntermediateLib.Resource.Styleable.SearchView_commitIcon = global::SigAuth.Resource.Styleable.SearchView_commitIcon;
+			global::IntermediateLib.Resource.Styleable.SearchView_defaultQueryHint = global::SigAuth.Resource.Styleable.SearchView_defaultQueryHint;
+			global::IntermediateLib.Resource.Styleable.SearchView_goIcon = global::SigAuth.Resource.Styleable.SearchView_goIcon;
+			global::IntermediateLib.Resource.Styleable.SearchView_iconifiedByDefault = global::SigAuth.Resource.Styleable.SearchView_iconifiedByDefault;
+			global::IntermediateLib.Resource.Styleable.SearchView_layout = global::SigAuth.Resource.Styleable.SearchView_layout;
+			global::IntermediateLib.Resource.Styleable.SearchView_queryBackground = global::SigAuth.Resource.Styleable.SearchView_queryBackground;
+			global::IntermediateLib.Resource.Styleable.SearchView_queryHint = global::SigAuth.Resource.Styleable.SearchView_queryHint;
+			global::IntermediateLib.Resource.Styleable.SearchView_searchHintIcon = global::SigAuth.Resource.Styleable.SearchView_searchHintIcon;
+			global::IntermediateLib.Resource.Styleable.SearchView_searchIcon = global::SigAuth.Resource.Styleable.SearchView_searchIcon;
+			global::IntermediateLib.Resource.Styleable.SearchView_submitBackground = global::SigAuth.Resource.Styleable.SearchView_submitBackground;
+			global::IntermediateLib.Resource.Styleable.SearchView_suggestionRowLayout = global::SigAuth.Resource.Styleable.SearchView_suggestionRowLayout;
+			global::IntermediateLib.Resource.Styleable.SearchView_voiceIcon = global::SigAuth.Resource.Styleable.SearchView_voiceIcon;
+			global::IntermediateLib.Resource.Styleable.SignaturePadView = global::SigAuth.Resource.Styleable.SignaturePadView;
+			global::IntermediateLib.Resource.Styleable.SignaturePadView_captionText = global::SigAuth.Resource.Styleable.SignaturePadView_captionText;
+			global::IntermediateLib.Resource.Styleable.SignaturePadView_captionTextColor = global::SigAuth.Resource.Styleable.SignaturePadView_captionTextColor;
+			global::IntermediateLib.Resource.Styleable.SignaturePadView_captionTextSize = global::SigAuth.Resource.Styleable.SignaturePadView_captionTextSize;
+			global::IntermediateLib.Resource.Styleable.SignaturePadView_clearLabelText = global::SigAuth.Resource.Styleable.SignaturePadView_clearLabelText;
+			global::IntermediateLib.Resource.Styleable.SignaturePadView_clearLabelTextColor = global::SigAuth.Resource.Styleable.SignaturePadView_clearLabelTextColor;
+			global::IntermediateLib.Resource.Styleable.SignaturePadView_clearLabelTextSize = global::SigAuth.Resource.Styleable.SignaturePadView_clearLabelTextSize;
+			global::IntermediateLib.Resource.Styleable.SignaturePadView_signatureLineColor = global::SigAuth.Resource.Styleable.SignaturePadView_signatureLineColor;
+			global::IntermediateLib.Resource.Styleable.SignaturePadView_signatureLineSpacing = global::SigAuth.Resource.Styleable.SignaturePadView_signatureLineSpacing;
+			global::IntermediateLib.Resource.Styleable.SignaturePadView_signatureLineWidth = global::SigAuth.Resource.Styleable.SignaturePadView_signatureLineWidth;
+			global::IntermediateLib.Resource.Styleable.SignaturePadView_signaturePromptText = global::SigAuth.Resource.Styleable.SignaturePadView_signaturePromptText;
+			global::IntermediateLib.Resource.Styleable.SignaturePadView_signaturePromptTextColor = global::SigAuth.Resource.Styleable.SignaturePadView_signaturePromptTextColor;
+			global::IntermediateLib.Resource.Styleable.SignaturePadView_signaturePromptTextSize = global::SigAuth.Resource.Styleable.SignaturePadView_signaturePromptTextSize;
+			global::IntermediateLib.Resource.Styleable.SignaturePadView_strokeColor = global::SigAuth.Resource.Styleable.SignaturePadView_strokeColor;
+			global::IntermediateLib.Resource.Styleable.SignaturePadView_strokeWidth = global::SigAuth.Resource.Styleable.SignaturePadView_strokeWidth;
+			global::IntermediateLib.Resource.Styleable.Spinner = global::SigAuth.Resource.Styleable.Spinner;
+			global::IntermediateLib.Resource.Styleable.Spinner_android_dropDownWidth = global::SigAuth.Resource.Styleable.Spinner_android_dropDownWidth;
+			global::IntermediateLib.Resource.Styleable.Spinner_android_entries = global::SigAuth.Resource.Styleable.Spinner_android_entries;
+			global::IntermediateLib.Resource.Styleable.Spinner_android_popupBackground = global::SigAuth.Resource.Styleable.Spinner_android_popupBackground;
+			global::IntermediateLib.Resource.Styleable.Spinner_android_prompt = global::SigAuth.Resource.Styleable.Spinner_android_prompt;
+			global::IntermediateLib.Resource.Styleable.Spinner_popupTheme = global::SigAuth.Resource.Styleable.Spinner_popupTheme;
+			global::IntermediateLib.Resource.Styleable.SwitchCompat = global::SigAuth.Resource.Styleable.SwitchCompat;
+			global::IntermediateLib.Resource.Styleable.SwitchCompat_android_textOff = global::SigAuth.Resource.Styleable.SwitchCompat_android_textOff;
+			global::IntermediateLib.Resource.Styleable.SwitchCompat_android_textOn = global::SigAuth.Resource.Styleable.SwitchCompat_android_textOn;
+			global::IntermediateLib.Resource.Styleable.SwitchCompat_android_thumb = global::SigAuth.Resource.Styleable.SwitchCompat_android_thumb;
+			global::IntermediateLib.Resource.Styleable.SwitchCompat_showText = global::SigAuth.Resource.Styleable.SwitchCompat_showText;
+			global::IntermediateLib.Resource.Styleable.SwitchCompat_splitTrack = global::SigAuth.Resource.Styleable.SwitchCompat_splitTrack;
+			global::IntermediateLib.Resource.Styleable.SwitchCompat_switchMinWidth = global::SigAuth.Resource.Styleable.SwitchCompat_switchMinWidth;
+			global::IntermediateLib.Resource.Styleable.SwitchCompat_switchPadding = global::SigAuth.Resource.Styleable.SwitchCompat_switchPadding;
+			global::IntermediateLib.Resource.Styleable.SwitchCompat_switchTextAppearance = global::SigAuth.Resource.Styleable.SwitchCompat_switchTextAppearance;
+			global::IntermediateLib.Resource.Styleable.SwitchCompat_thumbTextPadding = global::SigAuth.Resource.Styleable.SwitchCompat_thumbTextPadding;
+			global::IntermediateLib.Resource.Styleable.SwitchCompat_thumbTint = global::SigAuth.Resource.Styleable.SwitchCompat_thumbTint;
+			global::IntermediateLib.Resource.Styleable.SwitchCompat_thumbTintMode = global::SigAuth.Resource.Styleable.SwitchCompat_thumbTintMode;
+			global::IntermediateLib.Resource.Styleable.SwitchCompat_track = global::SigAuth.Resource.Styleable.SwitchCompat_track;
+			global::IntermediateLib.Resource.Styleable.SwitchCompat_trackTint = global::SigAuth.Resource.Styleable.SwitchCompat_trackTint;
+			global::IntermediateLib.Resource.Styleable.SwitchCompat_trackTintMode = global::SigAuth.Resource.Styleable.SwitchCompat_trackTintMode;
+			global::IntermediateLib.Resource.Styleable.TextAppearance = global::SigAuth.Resource.Styleable.TextAppearance;
+			global::IntermediateLib.Resource.Styleable.TextAppearance_android_fontFamily = global::SigAuth.Resource.Styleable.TextAppearance_android_fontFamily;
+			global::IntermediateLib.Resource.Styleable.TextAppearance_android_shadowColor = global::SigAuth.Resource.Styleable.TextAppearance_android_shadowColor;
+			global::IntermediateLib.Resource.Styleable.TextAppearance_android_shadowDx = global::SigAuth.Resource.Styleable.TextAppearance_android_shadowDx;
+			global::IntermediateLib.Resource.Styleable.TextAppearance_android_shadowDy = global::SigAuth.Resource.Styleable.TextAppearance_android_shadowDy;
+			global::IntermediateLib.Resource.Styleable.TextAppearance_android_shadowRadius = global::SigAuth.Resource.Styleable.TextAppearance_android_shadowRadius;
+			global::IntermediateLib.Resource.Styleable.TextAppearance_android_textColor = global::SigAuth.Resource.Styleable.TextAppearance_android_textColor;
+			global::IntermediateLib.Resource.Styleable.TextAppearance_android_textColorHint = global::SigAuth.Resource.Styleable.TextAppearance_android_textColorHint;
+			global::IntermediateLib.Resource.Styleable.TextAppearance_android_textColorLink = global::SigAuth.Resource.Styleable.TextAppearance_android_textColorLink;
+			global::IntermediateLib.Resource.Styleable.TextAppearance_android_textSize = global::SigAuth.Resource.Styleable.TextAppearance_android_textSize;
+			global::IntermediateLib.Resource.Styleable.TextAppearance_android_textStyle = global::SigAuth.Resource.Styleable.TextAppearance_android_textStyle;
+			global::IntermediateLib.Resource.Styleable.TextAppearance_android_typeface = global::SigAuth.Resource.Styleable.TextAppearance_android_typeface;
+			global::IntermediateLib.Resource.Styleable.TextAppearance_fontFamily = global::SigAuth.Resource.Styleable.TextAppearance_fontFamily;
+			global::IntermediateLib.Resource.Styleable.TextAppearance_textAllCaps = global::SigAuth.Resource.Styleable.TextAppearance_textAllCaps;
+			global::IntermediateLib.Resource.Styleable.Toolbar = global::SigAuth.Resource.Styleable.Toolbar;
+			global::IntermediateLib.Resource.Styleable.Toolbar_android_gravity = global::SigAuth.Resource.Styleable.Toolbar_android_gravity;
+			global::IntermediateLib.Resource.Styleable.Toolbar_android_minHeight = global::SigAuth.Resource.Styleable.Toolbar_android_minHeight;
+			global::IntermediateLib.Resource.Styleable.Toolbar_buttonGravity = global::SigAuth.Resource.Styleable.Toolbar_buttonGravity;
+			global::IntermediateLib.Resource.Styleable.Toolbar_collapseContentDescription = global::SigAuth.Resource.Styleable.Toolbar_collapseContentDescription;
+			global::IntermediateLib.Resource.Styleable.Toolbar_collapseIcon = global::SigAuth.Resource.Styleable.Toolbar_collapseIcon;
+			global::IntermediateLib.Resource.Styleable.Toolbar_contentInsetEnd = global::SigAuth.Resource.Styleable.Toolbar_contentInsetEnd;
+			global::IntermediateLib.Resource.Styleable.Toolbar_contentInsetEndWithActions = global::SigAuth.Resource.Styleable.Toolbar_contentInsetEndWithActions;
+			global::IntermediateLib.Resource.Styleable.Toolbar_contentInsetLeft = global::SigAuth.Resource.Styleable.Toolbar_contentInsetLeft;
+			global::IntermediateLib.Resource.Styleable.Toolbar_contentInsetRight = global::SigAuth.Resource.Styleable.Toolbar_contentInsetRight;
+			global::IntermediateLib.Resource.Styleable.Toolbar_contentInsetStart = global::SigAuth.Resource.Styleable.Toolbar_contentInsetStart;
+			global::IntermediateLib.Resource.Styleable.Toolbar_contentInsetStartWithNavigation = global::SigAuth.Resource.Styleable.Toolbar_contentInsetStartWithNavigation;
+			global::IntermediateLib.Resource.Styleable.Toolbar_logo = global::SigAuth.Resource.Styleable.Toolbar_logo;
+			global::IntermediateLib.Resource.Styleable.Toolbar_logoDescription = global::SigAuth.Resource.Styleable.Toolbar_logoDescription;
+			global::IntermediateLib.Resource.Styleable.Toolbar_maxButtonHeight = global::SigAuth.Resource.Styleable.Toolbar_maxButtonHeight;
+			global::IntermediateLib.Resource.Styleable.Toolbar_navigationContentDescription = global::SigAuth.Resource.Styleable.Toolbar_navigationContentDescription;
+			global::IntermediateLib.Resource.Styleable.Toolbar_navigationIcon = global::SigAuth.Resource.Styleable.Toolbar_navigationIcon;
+			global::IntermediateLib.Resource.Styleable.Toolbar_popupTheme = global::SigAuth.Resource.Styleable.Toolbar_popupTheme;
+			global::IntermediateLib.Resource.Styleable.Toolbar_subtitle = global::SigAuth.Resource.Styleable.Toolbar_subtitle;
+			global::IntermediateLib.Resource.Styleable.Toolbar_subtitleTextAppearance = global::SigAuth.Resource.Styleable.Toolbar_subtitleTextAppearance;
+			global::IntermediateLib.Resource.Styleable.Toolbar_subtitleTextColor = global::SigAuth.Resource.Styleable.Toolbar_subtitleTextColor;
+			global::IntermediateLib.Resource.Styleable.Toolbar_title = global::SigAuth.Resource.Styleable.Toolbar_title;
+			global::IntermediateLib.Resource.Styleable.Toolbar_titleMargin = global::SigAuth.Resource.Styleable.Toolbar_titleMargin;
+			global::IntermediateLib.Resource.Styleable.Toolbar_titleMarginBottom = global::SigAuth.Resource.Styleable.Toolbar_titleMarginBottom;
+			global::IntermediateLib.Resource.Styleable.Toolbar_titleMarginEnd = global::SigAuth.Resource.Styleable.Toolbar_titleMarginEnd;
+			global::IntermediateLib.Resource.Styleable.Toolbar_titleMarginStart = global::SigAuth.Resource.Styleable.Toolbar_titleMarginStart;
+			global::IntermediateLib.Resource.Styleable.Toolbar_titleMarginTop = global::SigAuth.Resource.Styleable.Toolbar_titleMarginTop;
+			global::IntermediateLib.Resource.Styleable.Toolbar_titleMargins = global::SigAuth.Resource.Styleable.Toolbar_titleMargins;
+			global::IntermediateLib.Resource.Styleable.Toolbar_titleTextAppearance = global::SigAuth.Resource.Styleable.Toolbar_titleTextAppearance;
+			global::IntermediateLib.Resource.Styleable.Toolbar_titleTextColor = global::SigAuth.Resource.Styleable.Toolbar_titleTextColor;
+			global::IntermediateLib.Resource.Styleable.View = global::SigAuth.Resource.Styleable.View;
+			global::IntermediateLib.Resource.Styleable.View_android_focusable = global::SigAuth.Resource.Styleable.View_android_focusable;
+			global::IntermediateLib.Resource.Styleable.View_android_theme = global::SigAuth.Resource.Styleable.View_android_theme;
+			global::IntermediateLib.Resource.Styleable.View_paddingEnd = global::SigAuth.Resource.Styleable.View_paddingEnd;
+			global::IntermediateLib.Resource.Styleable.View_paddingStart = global::SigAuth.Resource.Styleable.View_paddingStart;
+			global::IntermediateLib.Resource.Styleable.View_theme = global::SigAuth.Resource.Styleable.View_theme;
+			global::IntermediateLib.Resource.Styleable.ViewBackgroundHelper = global::SigAuth.Resource.Styleable.ViewBackgroundHelper;
+			global::IntermediateLib.Resource.Styleable.ViewBackgroundHelper_android_background = global::SigAuth.Resource.Styleable.ViewBackgroundHelper_android_background;
+			global::IntermediateLib.Resource.Styleable.ViewBackgroundHelper_backgroundTint = global::SigAuth.Resource.Styleable.ViewBackgroundHelper_backgroundTint;
+			global::IntermediateLib.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode = global::SigAuth.Resource.Styleable.ViewBackgroundHelper_backgroundTintMode;
+			global::IntermediateLib.Resource.Styleable.ViewStubCompat = global::SigAuth.Resource.Styleable.ViewStubCompat;
+			global::IntermediateLib.Resource.Styleable.ViewStubCompat_android_id = global::SigAuth.Resource.Styleable.ViewStubCompat_android_id;
+			global::IntermediateLib.Resource.Styleable.ViewStubCompat_android_inflatedId = global::SigAuth.Resource.Styleable.ViewStubCompat_android_inflatedId;
+			global::IntermediateLib.Resource.Styleable.ViewStubCompat_android_layout = global::SigAuth.Resource.Styleable.ViewStubCompat_android_layout;
 			global::Xamarin.Controls.Resource.Attribute.captionText = global::SigAuth.Resource.Attribute.captionText;
 			global::Xamarin.Controls.Resource.Attribute.captionTextColor = global::SigAuth.Resource.Attribute.captionTextColor;
 			global::Xamarin.Controls.Resource.Attribute.captionTextSize = global::SigAuth.Resource.Attribute.captionTextSize;
@@ -2451,8 +4019,8 @@ namespace SigAuth
 			// aapt resource value: 0x7f080037
 			public const int SYM = 2131230775;
 			
-			// aapt resource value: 0x7f0800a0
-			public const int action0 = 2131230880;
+			// aapt resource value: 0x7f0800a1
+			public const int action0 = 2131230881;
 			
 			// aapt resource value: 0x7f08007c
 			public const int action_bar = 2131230844;
@@ -2475,17 +4043,17 @@ namespace SigAuth
 			// aapt resource value: 0x7f08005a
 			public const int action_bar_title = 2131230810;
 			
-			// aapt resource value: 0x7f08009d
-			public const int action_container = 2131230877;
+			// aapt resource value: 0x7f08009e
+			public const int action_container = 2131230878;
 			
 			// aapt resource value: 0x7f08007d
 			public const int action_context_bar = 2131230845;
 			
-			// aapt resource value: 0x7f0800a4
-			public const int action_divider = 2131230884;
+			// aapt resource value: 0x7f0800a5
+			public const int action_divider = 2131230885;
 			
-			// aapt resource value: 0x7f08009e
-			public const int action_image = 2131230878;
+			// aapt resource value: 0x7f08009f
+			public const int action_image = 2131230879;
 			
 			// aapt resource value: 0x7f080003
 			public const int action_menu_divider = 2131230723;
@@ -2502,11 +4070,11 @@ namespace SigAuth
 			// aapt resource value: 0x7f08005c
 			public const int action_mode_close_button = 2131230812;
 			
-			// aapt resource value: 0x7f08009f
-			public const int action_text = 2131230879;
+			// aapt resource value: 0x7f0800a0
+			public const int action_text = 2131230880;
 			
-			// aapt resource value: 0x7f0800ad
-			public const int actions = 2131230893;
+			// aapt resource value: 0x7f0800ae
+			public const int actions = 2131230894;
 			
 			// aapt resource value: 0x7f08005d
 			public const int activity_chooser_view_content = 2131230813;
@@ -2529,8 +4097,8 @@ namespace SigAuth
 			// aapt resource value: 0x7f080044
 			public const int auto = 2131230788;
 			
-			// aapt resource value: 0x7f0800b0
-			public const int background_image = 2131230896;
+			// aapt resource value: 0x7f0800b1
+			public const int background_image = 2131230897;
 			
 			// aapt resource value: 0x7f08002f
 			public const int beginning = 2131230767;
@@ -2541,23 +4109,20 @@ namespace SigAuth
 			// aapt resource value: 0x7f08003d
 			public const int bottom = 2131230781;
 			
-			// aapt resource value: 0x7f08008d
-			public const int btnLoad = 2131230861;
-			
-			// aapt resource value: 0x7f08008c
-			public const int btnSave = 2131230860;
+			// aapt resource value: 0x7f08008f
+			public const int btnCheck = 2131230863;
 			
 			// aapt resource value: 0x7f08008e
-			public const int btnSaveImage = 2131230862;
+			public const int btnTeach = 2131230862;
 			
 			// aapt resource value: 0x7f080063
 			public const int buttonPanel = 2131230819;
 			
-			// aapt resource value: 0x7f0800a1
-			public const int cancel_action = 2131230881;
+			// aapt resource value: 0x7f0800a2
+			public const int cancel_action = 2131230882;
 			
-			// aapt resource value: 0x7f0800b2
-			public const int caption = 2131230898;
+			// aapt resource value: 0x7f0800b3
+			public const int caption = 2131230899;
 			
 			// aapt resource value: 0x7f080045
 			public const int center = 2131230789;
@@ -2571,11 +4136,11 @@ namespace SigAuth
 			// aapt resource value: 0x7f080073
 			public const int checkbox = 2131230835;
 			
-			// aapt resource value: 0x7f0800a9
-			public const int chronometer = 2131230889;
+			// aapt resource value: 0x7f0800aa
+			public const int chronometer = 2131230890;
 			
-			// aapt resource value: 0x7f0800b5
-			public const int clear_label = 2131230901;
+			// aapt resource value: 0x7f0800b6
+			public const int clear_label = 2131230902;
 			
 			// aapt resource value: 0x7f08004e
 			public const int clip_horizontal = 2131230798;
@@ -2586,14 +4151,14 @@ namespace SigAuth
 			// aapt resource value: 0x7f080039
 			public const int collapseActionView = 2131230777;
 			
-			// aapt resource value: 0x7f080091
-			public const int container = 2131230865;
+			// aapt resource value: 0x7f080092
+			public const int container = 2131230866;
 			
 			// aapt resource value: 0x7f080066
 			public const int contentPanel = 2131230822;
 			
-			// aapt resource value: 0x7f080092
-			public const int coordinator = 2131230866;
+			// aapt resource value: 0x7f080093
+			public const int coordinator = 2131230867;
 			
 			// aapt resource value: 0x7f08006d
 			public const int custom = 2131230829;
@@ -2607,20 +4172,20 @@ namespace SigAuth
 			// aapt resource value: 0x7f080060
 			public const int default_activity_button = 2131230816;
 			
-			// aapt resource value: 0x7f080094
-			public const int design_bottom_sheet = 2131230868;
+			// aapt resource value: 0x7f080095
+			public const int design_bottom_sheet = 2131230869;
+			
+			// aapt resource value: 0x7f08009c
+			public const int design_menu_item_action_area = 2131230876;
 			
 			// aapt resource value: 0x7f08009b
-			public const int design_menu_item_action_area = 2131230875;
+			public const int design_menu_item_action_area_stub = 2131230875;
 			
 			// aapt resource value: 0x7f08009a
-			public const int design_menu_item_action_area_stub = 2131230874;
+			public const int design_menu_item_text = 2131230874;
 			
 			// aapt resource value: 0x7f080099
-			public const int design_menu_item_text = 2131230873;
-			
-			// aapt resource value: 0x7f080098
-			public const int design_navigation_view = 2131230872;
+			public const int design_navigation_view = 2131230873;
 			
 			// aapt resource value: 0x7f080020
 			public const int disableHome = 2131230752;
@@ -2631,8 +4196,8 @@ namespace SigAuth
 			// aapt resource value: 0x7f080030
 			public const int end = 2131230768;
 			
-			// aapt resource value: 0x7f0800af
-			public const int end_padder = 2131230895;
+			// aapt resource value: 0x7f0800b0
+			public const int end_padder = 2131230896;
 			
 			// aapt resource value: 0x7f08003f
 			public const int enterAlways = 2131230783;
@@ -2676,8 +4241,8 @@ namespace SigAuth
 			// aapt resource value: 0x7f080062
 			public const int icon = 2131230818;
 			
-			// aapt resource value: 0x7f0800ae
-			public const int icon_group = 2131230894;
+			// aapt resource value: 0x7f0800af
+			public const int icon_group = 2131230895;
 			
 			// aapt resource value: 0x7f08003a
 			public const int ifRoom = 2131230778;
@@ -2685,8 +4250,8 @@ namespace SigAuth
 			// aapt resource value: 0x7f08005f
 			public const int image = 2131230815;
 			
-			// aapt resource value: 0x7f0800aa
-			public const int info = 2131230890;
+			// aapt resource value: 0x7f0800ab
+			public const int info = 2131230891;
 			
 			// aapt resource value: 0x7f080059
 			public const int italic = 2131230809;
@@ -2694,8 +4259,8 @@ namespace SigAuth
 			// aapt resource value: 0x7f080000
 			public const int item_touch_helper_previous_elevation = 2131230720;
 			
-			// aapt resource value: 0x7f080090
-			public const int largeLabel = 2131230864;
+			// aapt resource value: 0x7f080091
+			public const int largeLabel = 2131230865;
 			
 			// aapt resource value: 0x7f080049
 			public const int left = 2131230793;
@@ -2712,14 +4277,14 @@ namespace SigAuth
 			// aapt resource value: 0x7f080061
 			public const int list_item = 2131230817;
 			
-			// aapt resource value: 0x7f0800b8
-			public const int masked = 2131230904;
+			// aapt resource value: 0x7f0800b9
+			public const int masked = 2131230905;
 			
-			// aapt resource value: 0x7f0800a3
-			public const int media_actions = 2131230883;
+			// aapt resource value: 0x7f0800a4
+			public const int media_actions = 2131230884;
 			
-			// aapt resource value: 0x7f0800b6
-			public const int message = 2131230902;
+			// aapt resource value: 0x7f0800b7
+			public const int message = 2131230903;
 			
 			// aapt resource value: 0x7f080031
 			public const int middle = 2131230769;
@@ -2730,8 +4295,8 @@ namespace SigAuth
 			// aapt resource value: 0x7f080028
 			public const int multiply = 2131230760;
 			
-			// aapt resource value: 0x7f080097
-			public const int navigation_header_container = 2131230871;
+			// aapt resource value: 0x7f080098
+			public const int navigation_header_container = 2131230872;
 			
 			// aapt resource value: 0x7f08003b
 			public const int never = 2131230779;
@@ -2742,14 +4307,14 @@ namespace SigAuth
 			// aapt resource value: 0x7f08001e
 			public const int normal = 2131230750;
 			
-			// aapt resource value: 0x7f0800ac
-			public const int notification_background = 2131230892;
+			// aapt resource value: 0x7f0800ad
+			public const int notification_background = 2131230893;
+			
+			// aapt resource value: 0x7f0800a7
+			public const int notification_main_column = 2131230887;
 			
 			// aapt resource value: 0x7f0800a6
-			public const int notification_main_column = 2131230886;
-			
-			// aapt resource value: 0x7f0800a5
-			public const int notification_main_column_container = 2131230885;
+			public const int notification_main_column_container = 2131230886;
 			
 			// aapt resource value: 0x7f08004c
 			public const int parallax = 2131230796;
@@ -2775,11 +4340,11 @@ namespace SigAuth
 			// aapt resource value: 0x7f08004a
 			public const int right = 2131230794;
 			
-			// aapt resource value: 0x7f0800ab
-			public const int right_icon = 2131230891;
+			// aapt resource value: 0x7f0800ac
+			public const int right_icon = 2131230892;
 			
-			// aapt resource value: 0x7f0800a7
-			public const int right_side = 2131230887;
+			// aapt resource value: 0x7f0800a8
+			public const int right_side = 2131230888;
 			
 			// aapt resource value: 0x7f08000c
 			public const int save_image_matrix = 2131230732;
@@ -2856,23 +4421,23 @@ namespace SigAuth
 			// aapt resource value: 0x7f08008b
 			public const int signatureView = 2131230859;
 			
-			// aapt resource value: 0x7f0800b1
-			public const int signature_canvas = 2131230897;
-			
-			// aapt resource value: 0x7f0800b3
-			public const int signature_line = 2131230899;
+			// aapt resource value: 0x7f0800b2
+			public const int signature_canvas = 2131230898;
 			
 			// aapt resource value: 0x7f0800b4
-			public const int signature_prompt = 2131230900;
+			public const int signature_line = 2131230900;
 			
-			// aapt resource value: 0x7f08008f
-			public const int smallLabel = 2131230863;
+			// aapt resource value: 0x7f0800b5
+			public const int signature_prompt = 2131230901;
+			
+			// aapt resource value: 0x7f080090
+			public const int smallLabel = 2131230864;
+			
+			// aapt resource value: 0x7f080097
+			public const int snackbar_action = 2131230871;
 			
 			// aapt resource value: 0x7f080096
-			public const int snackbar_action = 2131230870;
-			
-			// aapt resource value: 0x7f080095
-			public const int snackbar_text = 2131230869;
+			public const int snackbar_text = 2131230870;
 			
 			// aapt resource value: 0x7f080043
 			public const int snap = 2131230787;
@@ -2895,8 +4460,8 @@ namespace SigAuth
 			// aapt resource value: 0x7f08004b
 			public const int start = 2131230795;
 			
-			// aapt resource value: 0x7f0800a2
-			public const int status_bar_latest_event_content = 2131230882;
+			// aapt resource value: 0x7f0800a3
+			public const int status_bar_latest_event_content = 2131230883;
 			
 			// aapt resource value: 0x7f080076
 			public const int submenuarrow = 2131230838;
@@ -2916,14 +4481,20 @@ namespace SigAuth
 			// aapt resource value: 0x7f08001b
 			public const int text2 = 2131230747;
 			
+			// aapt resource value: 0x7f08008d
+			public const int textName = 2131230861;
+			
+			// aapt resource value: 0x7f08008c
+			public const int textNumber = 2131230860;
+			
 			// aapt resource value: 0x7f08006a
 			public const int textSpacerNoButtons = 2131230826;
 			
 			// aapt resource value: 0x7f080069
 			public const int textSpacerNoTitle = 2131230825;
 			
-			// aapt resource value: 0x7f08009c
-			public const int text_input_password_toggle = 2131230876;
+			// aapt resource value: 0x7f08009d
+			public const int text_input_password_toggle = 2131230877;
 			
 			// aapt resource value: 0x7f080014
 			public const int textinput_counter = 2131230740;
@@ -2931,8 +4502,8 @@ namespace SigAuth
 			// aapt resource value: 0x7f080015
 			public const int textinput_error = 2131230741;
 			
-			// aapt resource value: 0x7f0800a8
-			public const int time = 2131230888;
+			// aapt resource value: 0x7f0800a9
+			public const int time = 2131230889;
 			
 			// aapt resource value: 0x7f08001c
 			public const int title = 2131230748;
@@ -2949,8 +4520,8 @@ namespace SigAuth
 			// aapt resource value: 0x7f08006e
 			public const int topPanel = 2131230830;
 			
-			// aapt resource value: 0x7f080093
-			public const int touch_outside = 2131230867;
+			// aapt resource value: 0x7f080094
+			public const int touch_outside = 2131230868;
 			
 			// aapt resource value: 0x7f08000f
 			public const int transition_current_scene = 2131230735;
@@ -2979,8 +4550,8 @@ namespace SigAuth
 			// aapt resource value: 0x7f080016
 			public const int view_offset_helper = 2131230742;
 			
-			// aapt resource value: 0x7f0800b7
-			public const int visible = 2131230903;
+			// aapt resource value: 0x7f0800b8
+			public const int visible = 2131230904;
 			
 			// aapt resource value: 0x7f08003c
 			public const int withText = 2131230780;
@@ -3352,11 +4923,11 @@ namespace SigAuth
 			// aapt resource value: 0x7f090010
 			public const int abc_toolbar_collapse_description = 2131296272;
 			
-			// aapt resource value: 0x7f09002b
-			public const int action_settings = 2131296299;
+			// aapt resource value: 0x7f09002c
+			public const int action_settings = 2131296300;
 			
-			// aapt resource value: 0x7f09002a
-			public const int app_name = 2131296298;
+			// aapt resource value: 0x7f09002b
+			public const int app_name = 2131296299;
 			
 			// aapt resource value: 0x7f09001e
 			public const int appbar_scrolling_view_behavior = 2131296286;
@@ -3366,6 +4937,9 @@ namespace SigAuth
 			
 			// aapt resource value: 0x7f090020
 			public const int character_counter_pattern = 2131296288;
+			
+			// aapt resource value: 0x7f09002a
+			public const int hello = 2131296298;
 			
 			// aapt resource value: 0x7f090021
 			public const int password_toggle_content_description = 2131296289;

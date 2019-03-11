@@ -4,6 +4,7 @@ using Android.App;
 using Android.OS;
 using Android.Support.V7.App;
 using Android.Widget;
+using IntermediateLib;
 using Xamarin.Controls;
 using Color = Android.Graphics.Color;
 
@@ -13,47 +14,33 @@ namespace SigAuth
     public class MainActivity : AppCompatActivity
     {
         private PointF[] points;
+        private IAppService appService;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            appService = new AppService();
             base.OnCreate(savedInstanceState);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
 
             var signatureView = FindViewById<SignaturePadView>(Resource.Id.signatureView);
 
-            var btnSave = FindViewById<Button>(Resource.Id.btnSave);
-            var btnLoad = FindViewById<Button>(Resource.Id.btnLoad);
-            var btnSaveImage = FindViewById<Button>(Resource.Id.btnSaveImage);
+            var btnTeach = FindViewById<Button>(Resource.Id.btnTeach);
+            var btnCheck = FindViewById<Button>(Resource.Id.btnCheck);
 
-            btnSave.Click += delegate
+            btnTeach.Click += delegate
             {
                 points = signatureView.Points;
                 var test = signatureView.RawPoints;
-
                 Toast.MakeText(this, "Vector signature saved to memory.", ToastLength.Short).Show();
             };
 
-            btnLoad.Click += delegate
+            btnCheck.Click += delegate
             {
                 if (points != null)
                     signatureView.LoadPoints(points);
             };
 
-            btnSaveImage.Click += async delegate
-            {
-                var path = Environment.GetExternalStoragePublicDirectory(Environment.DirectoryPictures).AbsolutePath;
-                var file = Path.Combine(path, "signature.png");
-
-                using (var bitmap =
-                    await signatureView.GetImageStreamAsync(SignatureImageFormat.Png, Color.Black, Color.White, 1f))
-                using (var dest = File.OpenWrite(file))
-                {
-                    await bitmap.CopyToAsync(dest);
-                }
-
-                Toast.MakeText(this, "Raster signature saved to the photo gallery.", ToastLength.Short).Show();
-            };
         }
     }
 }

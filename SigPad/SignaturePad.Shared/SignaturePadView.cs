@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 
@@ -57,8 +58,9 @@ namespace Xamarin.Controls
 	    public RawPoint[] RawPoints => SignaturePadCanvas.RawPoints;
 
         public bool IsBlank => SignaturePadCanvas?.IsBlank ?? true;
+	    public List<List<RawPoint>> RawStrokePoints => SignaturePadCanvas.RawStrokePoints;
 
-		public event EventHandler StrokeCompleted;
+        public event EventHandler StrokeCompleted;
 
 		public event EventHandler Cleared;
 
