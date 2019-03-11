@@ -43,6 +43,10 @@
     <AndroidResource Include="Resources\**\*.xml" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\SharedClasses\SharedClasses.csproj" />
+  </ItemGroup>
+
   <Import Project="$(MSBuildSDKExtrasTargets)" Condition="Exists('$(MSBuildSDKExtrasTargets)')" />
 
 </Project>

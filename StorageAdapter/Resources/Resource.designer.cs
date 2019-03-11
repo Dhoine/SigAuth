@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("IntermediateLib.Resource", IsApplication=false)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("StorageAdapter.Resource", IsApplication=false)]
 
-namespace IntermediateLib
+namespace StorageAdapter
 {
 	
 	

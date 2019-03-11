@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
-
+using SharedClasses;
 #if __ANDROID__
 using NativeRect = System.Drawing.RectangleF;
 using NativePoint = System.Drawing.PointF;
@@ -55,7 +55,7 @@ namespace Xamarin.Controls
 		public NativePoint[][] Strokes => SignaturePadCanvas.Strokes;
 
 		public NativePoint[] Points => SignaturePadCanvas.Points;
-	    public RawPoint[] RawPoints => SignaturePadCanvas.RawPoints;
+	    public RawPoint[][] RawPoints => SignaturePadCanvas.RawPoints;
 
         public bool IsBlank => SignaturePadCanvas?.IsBlank ?? true;
 	    public List<List<RawPoint>> RawStrokePoints => SignaturePadCanvas.RawStrokePoints;

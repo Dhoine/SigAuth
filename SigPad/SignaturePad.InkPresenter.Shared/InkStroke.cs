@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-
+using SharedClasses;
 #if __ANDROID__
 using NativePoint = System.Drawing.PointF;
 using NativeColor = Android.Graphics.Color;

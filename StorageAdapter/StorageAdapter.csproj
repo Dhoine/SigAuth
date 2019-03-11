@@ -5,13 +5,13 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{802E4A0F-4349-4583-B93E-EC151BA60145}</ProjectGuid>
+    <ProjectGuid>{B919AA7A-5376-4312-A5C3-5AC4FE79B904}</ProjectGuid>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TemplateGuid>{9ef11e43-1701-4396-8835-8392d57abb70}</TemplateGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>IntermediateLib</RootNamespace>
-    <AssemblyName>IntermediateLib</AssemblyName>
+    <RootNamespace>StorageAdapter</RootNamespace>
+    <AssemblyName>StorageAdapter</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
@@ -45,15 +45,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IAppService.cs" />
-    <Compile Include="AppService.cs" />
+    <Compile Include="IStorageAdapter.cs" />
+    <Compile Include="Models\Signature.cs" />
+    <Compile Include="Models\SignatureSample.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StorageAdapterImpl.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>12.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="sqlite-net-pcl">
+      <Version>1.5.231</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="27.0.2.1" />
   </ItemGroup>
   <ItemGroup>
@@ -66,10 +74,6 @@
     <ProjectReference Include="..\SharedClasses\SharedClasses.csproj">
       <Project>{87533713-f0da-4c5f-84af-70c8c86550d0}</Project>
       <Name>SharedClasses</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\StorageAdapter\StorageAdapter.csproj">
-      <Project>{b919aa7a-5376-4312-a5c3-5ac4fe79b904}</Project>
-      <Name>StorageAdapter</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

@@ -1,4 +1,4 @@
-﻿namespace Xamarin.Controls
+﻿namespace SharedClasses
 {
     public class RawPoint
     {

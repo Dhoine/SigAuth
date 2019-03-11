@@ -1,13 +1,16 @@
 ﻿using System;
-using Xamarin.Controls;
+using SharedClasses;
+using StorageAdapter;
+using StorageAdapter = StorageAdapter.StorageAdapterImpl;
 
 namespace IntermediateLib
 {
     public class AppService : IAppService
     {
+        private readonly IStorageAdapter _adapter = new StorageAdapterImpl();
         public bool TrainSignature(RawPoint[][] signatureStrokes, int sigId)
         {
-            throw new NotImplementedException();
+            return _adapter.SaveSignatureSample(sigId, signatureStrokes);
         }
 
         public bool CheckSignature(RawPoint[][] signatureStrokes, int sigId)
@@ -17,22 +20,32 @@ namespace IntermediateLib
 
         public bool DeleteSignature(int sigId)
         {
-            throw new NotImplementedException();
+            return _adapter.DeleteSignature(sigId);
         }
 
-        public RawPoint[][] GetSignaturePoints(int sigId, int sigNo)
+        public bool DeleteSignatureSample(int sigId, int sampleNum)
         {
-            throw new NotImplementedException();
+            return _adapter.DeleteSample(sigId, sampleNum);
+        }
+
+        public RawPoint[][] GetSignaturePoints(int sigId, int sampleNo)
+        {
+            return _adapter.GetSignatureSample(sigId, sampleNo).Sample;
         }
 
         public int[] GetSavedSignaturesIds()
         {
-            throw new NotImplementedException();
+            return _adapter.GetSignatureIds();
+        }
+
+        public int[] GetSignatureNumbersForId(int sigId)
+        {
+            return _adapter.GetSamplesNumbersForId(sigId);
         }
 
         public bool SetSignatureName(int sigId, string name)
         {
-            throw new NotImplementedException();
+            return _adapter.SetSignatureName(sigId, name);
         }
 
         public bool BuildSigModel(int sigId)

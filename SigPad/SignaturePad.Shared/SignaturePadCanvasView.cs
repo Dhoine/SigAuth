@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.IO;
-
+using SharedClasses;
 #if __ANDROID__
 using NativeRect = System.Drawing.RectangleF;
 using NativePoint = System.Drawing.PointF;
@@ -63,18 +63,17 @@ namespace Xamarin.Controls
 			}
 		}
 
-	    public RawPoint[] RawPoints
+	    public RawPoint[][] RawPoints
 	    {
 	        get
 	        {
 	            if (IsBlank)
 	            {
-	                return new RawPoint[0];
+	                return new RawPoint[0][];
 	            }
 
 	            return inkPresenter.GetStrokes()
-	                .SelectMany(s=>s.RawPoints) 
-	                .ToArray();
+	                .Select(s => s.RawPoints.ToArray()).ToArray();
 	        }
 	    }
 

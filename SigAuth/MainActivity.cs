@@ -28,10 +28,13 @@ namespace SigAuth
             var btnTeach = FindViewById<Button>(Resource.Id.btnTeach);
             var btnCheck = FindViewById<Button>(Resource.Id.btnCheck);
 
+            var editId = FindViewById<EditText>(Resource.Id.textNumber);
+            var editName = FindViewById<EditText>(Resource.Id.textName);
+
             btnTeach.Click += delegate
             {
                 points = signatureView.Points;
-                var test = signatureView.RawPoints;
+                appService.TrainSignature(signatureView.RawPoints, int.Parse(editId.Text));
                 Toast.MakeText(this, "Vector signature saved to memory.", ToastLength.Short).Show();
             };
 
