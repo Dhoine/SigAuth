@@ -12,7 +12,7 @@ namespace StorageAdapter
     public class StorageAdapterImpl : IStorageAdapter
     {
         private const string DbFileName = "signatures.db3";
-        private SQLiteConnection connection;
+        private SQLiteConnection _connection;
 
 
         public StorageAdapterImpl()
@@ -24,14 +24,14 @@ namespace StorageAdapter
         {
             try
             {
-                if (connection.Table<Signature>().All(s => s.SignatureId != sigId))
+                if (_connection.Table<Signature>().All(s => s.SignatureId != sigId))
                 {
                     var sig = new Signature { SignatureId = sigId };
-                    connection.Insert(sig);
+                    _connection.Insert(sig);
                 }
 
                 int currentNum;
-                var samples = connection.Table<SignatureSample>().Where(smp => smp.SignatureId == sigId);
+                var samples = _connection.Table<SignatureSample>().Where(smp => smp.SignatureId == sigId);
                 if (samples.Any())
                 {
                     currentNum = samples.Max((smp => smp.SampleNo)) + 1;
@@ -44,9 +44,10 @@ namespace StorageAdapter
                 var newSample = new SignatureSample
                 {
                     PointsSerialized = JsonConvert.SerializeObject(sample),
-                    SampleNo = currentNum
+                    SampleNo = currentNum,
+                    SignatureId = sigId
                 };
-                return connection.Insert(newSample) == 1;
+                return _connection.Insert(newSample) == 1;
             }
             catch (Exception e)
             {
@@ -57,37 +58,70 @@ namespace StorageAdapter
 
         public SignatureSampleDeserialized GetSignatureSample(int sigId, int sampleNo)
         {
-            throw new NotImplementedException();
+            var ret = new SignatureSampleDeserialized();
+            var smpl = _connection.Table<SignatureSample>()
+                .SingleOrDefault(sample => sample.SignatureId == sigId && sample.SampleNo == sampleNo);
+            ret.Sample = smpl == null ? null : JsonConvert.DeserializeObject<RawPoint[][]>(smpl.PointsSerialized);
+            ret.SigNum = sigId;
+            ret.SampleNo = sampleNo;
+            return ret;
         }
 
         public int[] GetSamplesNumbersForId(int sigId)
         {
-            throw new NotImplementedException();
+            var samples = _connection.Table<SignatureSample>().Where(s => s.SignatureId == sigId).Select(s => s.SampleNo);
+            return samples.ToArray();
         }
 
         public int[] GetSignatureIds()
         {
-            throw new NotImplementedException();
+            return _connection.Table<Signature>().Select(s => s.SignatureId).ToArray();
         }
 
         public bool SetSignatureName(int sigId, string name)
         {
-            throw new NotImplementedException();
+            var sig = _connection.Table<Signature>().SingleOrDefault(s => s.SignatureId == sigId);
+            if (sig == null)
+                return false;
+            sig.SignatureName = name;
+            _connection.Update(sig);
+            return true;
         }
 
         public bool DeleteSample(int sigId, int sampleNo)
         {
-            throw new NotImplementedException();
+            var sample = _connection.Table<SignatureSample>()
+                .FirstOrDefault(s => s.SampleNo == sampleNo && s.SignatureId == sigId);
+            if (sample == null)
+                return false;
+            _connection.Delete(sample);
+            return true;
         }
 
         public bool DeleteSignature(int sigId)
         {
-            throw new NotImplementedException();
+            var samples = _connection.Table<SignatureSample>()
+                .Where(s => s.SignatureId == sigId);
+            foreach (var sample in samples)
+            {
+                _connection.Delete(sample);
+            }
+
+            if (_connection.Table<Signature>().All(s => s.SignatureId != sigId)) return false;
+            _connection.Delete<Signature>(sigId);
+            return true;
+
         }
 
-        List<SignatureSampleDeserialized> IStorageAdapter.GetAllSamples(int sigId)
+        public List<SignatureSampleDeserialized> GetAllSamples(int sigId)
         {
-            throw new NotImplementedException();
+            return _connection.Table<SignatureSample>()
+                .Where(s => s.SignatureId == sigId).Select( sample => new SignatureSampleDeserialized
+                {
+                    Sample = JsonConvert.DeserializeObject<RawPoint[][]>(sample.PointsSerialized),
+                    SampleNo = sample.SampleNo,
+                    SigNum = sigId
+                }).ToList();
         }
 
         private void Init()
@@ -95,14 +129,9 @@ namespace StorageAdapter
             var dbPath = Path.Combine(
                 Environment.GetFolderPath(Environment.SpecialFolder.Personal),
                 DbFileName);
-            connection = new SQLiteConnection(dbPath);
-            connection.CreateTable<SignatureSample>();
-            connection.CreateTable<Signature>();
-        }
-
-        public List<SignatureSampleDeserialized> GetAllSamples(int sigId)
-        {
-            throw new NotImplementedException();
+            _connection = new SQLiteConnection(dbPath);
+            _connection.CreateTable<SignatureSample>();
+            _connection.CreateTable<Signature>();
         }
     }
 }
