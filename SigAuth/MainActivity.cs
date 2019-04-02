@@ -42,6 +42,7 @@ namespace SigAuth
             {
                 if (points != null)
                     signatureView.LoadPoints(points);
+                appService.CheckSignature(signatureView.RawPoints, int.Parse(editId.Text));
             };
 
         }

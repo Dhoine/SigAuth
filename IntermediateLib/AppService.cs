@@ -1,7 +1,8 @@
 ﻿using System;
+using System.Linq;
 using SharedClasses;
+using SparseDtwLib;
 using StorageAdapter;
-using StorageAdapter = StorageAdapter.StorageAdapterImpl;
 
 namespace IntermediateLib
 {
@@ -15,7 +16,9 @@ namespace IntermediateLib
 
         public bool CheckSignature(RawPoint[][] signatureStrokes, int sigId)
         {
-            throw new NotImplementedException();
+            var samples = _adapter.GetAllSamples(sigId);
+            var sparse = new SparseDtw();
+            return sparse.CheckSignature(samples, signatureStrokes);
         }
 
         public bool DeleteSignature(int sigId)

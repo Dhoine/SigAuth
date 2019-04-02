@@ -2,8 +2,9 @@
 {
     public class RawPoint
     {
-        public float X { get; set; }
-        public float Y { get; set; }
+        public double X { get; set; }
+        public double Y { get; set; }
         public long TimeStamp { get; set; }
+        public bool IsEndOfSegment { get; set; }
     }
 }

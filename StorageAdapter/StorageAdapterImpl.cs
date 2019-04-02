@@ -26,8 +26,14 @@ namespace StorageAdapter
             {
                 if (_connection.Table<Signature>().All(s => s.SignatureId != sigId))
                 {
-                    var sig = new Signature { SignatureId = sigId };
+                    var sig = new Signature { SignatureId = sigId, IsModelActual = false};
                     _connection.Insert(sig);
+                }
+                else
+                {
+                    var sig = _connection.Get<Signature>(sigId);
+                    sig.IsModelActual = false;
+                    _connection.Update(sig);
                 }
 
                 int currentNum;
@@ -90,6 +96,9 @@ namespace StorageAdapter
 
         public bool DeleteSample(int sigId, int sampleNo)
         {
+            var sig = _connection.Get<Signature>(sigId);
+            sig.IsModelActual = false;
+            _connection.Update(sig);
             var sample = _connection.Table<SignatureSample>()
                 .FirstOrDefault(s => s.SampleNo == sampleNo && s.SignatureId == sigId);
             if (sample == null)
