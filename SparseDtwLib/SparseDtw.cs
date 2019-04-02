@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Security.Cryptography.X509Certificates;
+using System.Threading.Tasks;
 using FeatureExtractor;
 using SharedClasses;
 
@@ -14,9 +16,9 @@ namespace SparseDtwLib
         private const string QDir = "qdir";
         private const string Speed = "speed";
 
-        private readonly List<string> _featureList = new List<string> { Sin, Cos, QDir, Speed };
+        private readonly List<string> _featureList = new List<string> { Sin, /*Cos, QDir,*/ Speed };
 
-        private (string, double, double) GetFeatureMinMaxAvg(string featureName,
+        private async Task<NameMinMax> GetFeatureMinMaxAvg(string featureName,
             IReadOnlyList<DtwFeatures> features)
         {
             var avgMin = 0d;
@@ -25,65 +27,79 @@ namespace SparseDtwLib
             for (var i = 0; i < features.Count; i++)
             {
                 var distances = new List<double>();
+                var tasks = new List<Task<double>>();
 
                 for (var j = 0; j < features.Count; j++)
                 {
                     if (i == j) continue;
+                    var closureI = i;
+                    var closureJ = j;
                     switch (featureName)
                     {
                         case Sin:
-                            distances.Add(CompareSequences(features[i].Sin, features[j].Sin, 0.5));
+                            
+                            tasks.Add(Task.Run(async () =>await CompareSequences(features[closureI].Sin, features[closureJ].Sin, 0.5)));
                             break;
                         case Cos:
-                            distances.Add(CompareSequences(features[i].Cos, features[j].Cos, 0.5));
+                            tasks.Add(Task.Run(async () => await CompareSequences(features[closureI].Cos, features[closureJ].Cos, 0.5)));
                             break;
                         case QDir:
-                            distances.Add(CompareSequences(features[i].QDirs, features[j].QDirs, 0.5));
+                            tasks.Add(Task.Run(async () => await CompareSequences(features[closureI].QDirs, features[closureJ].QDirs, 0.5)));
                             break;
                         case Speed:
-                            distances.Add(CompareSequences(features[i].Speeds, features[j].Speeds, 0.5));
+                            tasks.Add(Task.Run(async () => await CompareSequences(features[closureI].Speeds, features[closureJ].Speeds, 0.5)));
                             break;
                         default:
                             break;
                     }
                 }
-
+                Task.WaitAll(tasks: tasks.ToArray());
+                foreach (var task in tasks)
+                {
+                    distances.Add(task.Result);
+                }
                 avgMin += distances.Min();
                 avgMax += distances.Max();
             }
 
             avgMin /= features.Count;
-            avgMin /= features.Count;
-            return (featureName, avgMin, avgMax);
+            avgMax /= features.Count;
+            return new NameMinMax{Name = featureName, Min = avgMin, Max = avgMax};
         }
 
-        public List<(string, double, double)> BuildModel(List<SignatureSampleDeserialized> origSignature)
+        public List<NameMinMax> BuildModel(List<SignatureSampleDeserialized> origSignature)
         {
             var features = new List<DtwFeatures>();
             var extractor = new Extractor();
             
-            var model = new List<(string, double, double)>();
+            var model = new List<NameMinMax>();
             foreach (var sample in origSignature)
             {
                 features.Add(extractor.GetDTWFeatures(sample.Sample));
             }
-
+            var tasks = new List<Task<NameMinMax>>();
             foreach (var featureName in _featureList)
             {
-                model.Add(GetFeatureMinMaxAvg(featureName, features));
+                tasks.Add(GetFeatureMinMaxAvg(featureName, features));
+            }
+
+            Task.WaitAll(tasks.ToArray());
+            foreach (var task in tasks)
+            {
+                model.Add(task.Result);
             }
 
             return model;
         }
 
-        private List<(string, double, double)> GetCheckedModel(List<SignatureSampleDeserialized> origSignature,
+        private List<NameMinMax> GetCheckedModel(List<SignatureSampleDeserialized> origSignature,
             RawPoint[][] checkedSample)
         {
             var features = new List<DtwFeatures>();
             var extractor = new Extractor();
             var checkedFeatures = extractor.GetDTWFeatures(checkedSample);
 
-            var model = new List<(string, double, double)>();
+            var model = new List<NameMinMax>();
             foreach (var sample in origSignature)
             {
                 features.Add(extractor.GetDTWFeatures(sample.Sample));
@@ -92,52 +108,57 @@ namespace SparseDtwLib
             foreach (var featureName in _featureList)
             {
                 var distances = new List<double>();
-                double sMin = 0;
-                double sMax = 0;
+                var tasks = new List<Task<double>>();
                 foreach (var feature in features)
                 {
                     switch (featureName)
                     {
                         case Sin:
-                            distances.Add(CompareSequences(feature.Sin, checkedFeatures.Sin, 0.5));
+                            tasks.Add(Task.Run(async () => await CompareSequences(feature.Sin, checkedFeatures.Sin, 0.5)));
                             break;
                         case Cos:
-                            distances.Add(CompareSequences(feature.Cos, checkedFeatures.Cos, 0.5));
+                            tasks.Add(Task.Run(async () => await CompareSequences(feature.Cos, checkedFeatures.Cos, 0.5)));
                             break;
                         case QDir:
-                            distances.Add(CompareSequences(feature.QDirs, checkedFeatures.QDirs, 0.5));
+                            tasks.Add(Task.Run(async () => await CompareSequences(feature.QDirs, checkedFeatures.QDirs, 0.5)));
                             break;
                         case Speed:
-                            distances.Add(CompareSequences(feature.Speeds, checkedFeatures.Speeds, 0.5));
+                            tasks.Add(Task.Run(async () => await CompareSequences(feature.Speeds, checkedFeatures.Speeds, 0.5)));
                             break;
                         default:
                             break;
                     }
                 }
-                sMin = distances.Min();
-                sMax = distances.Max();
-                model.Add((featureName, sMin, sMax));
+
+                Task.WaitAll(tasks: tasks.ToArray());
+                foreach (var task in tasks)
+                {
+                    distances.Add(task.Result);
+                }
+                var sMin = distances.Min();
+                var sMax = distances.Max();
+                model.Add(new NameMinMax { Name = featureName, Min = sMin, Max = sMax });
             }
 
             return model;
         }
 
-        private List<(string, double, double)> GetDiffValues(List<(string, double, double)> featuresMinMax, List<(string, double, double)> checkedFeaturesMinMax)
+        private List<NameMinMax> GetDiffValues(List<NameMinMax> featuresMinMax, List<NameMinMax> checkedFeaturesMinMax)
         {
-            var res = new List<(string, double, double)>();
+            var res = new List<NameMinMax>();
             foreach (var feature in checkedFeaturesMinMax)
             {
-                var correspondingFeature = featuresMinMax.First(f => f.Item1.Equals(feature.Item1));
-                var diffMin = (feature.Item2 - correspondingFeature.Item2) / correspondingFeature.Item2;
-                var diffMax = (feature.Item3 - correspondingFeature.Item3) / correspondingFeature.Item3;
-                res.Add((feature.Item1, diffMin, diffMax));
+                var correspondingFeature = featuresMinMax.First(f => f.Name.Equals(feature.Name));
+                var diffMin = (feature.Min - correspondingFeature.Min) / correspondingFeature.Min;
+                var diffMax = (feature.Max - correspondingFeature.Max) / correspondingFeature.Max;
+                res.Add(new NameMinMax{Name = feature.Name, Min = diffMin, Max = diffMax});
             }
 
             return res;
         }
 
         public bool CheckSignature(List<SignatureSampleDeserialized> origSignature, RawPoint[][] checkedSample,
-            List<(string, double, double)> featuresMinMax = null)
+            List<NameMinMax> featuresMinMax = null)
         {
             if (featuresMinMax == null || !featuresMinMax.Any())
             {
@@ -150,12 +171,12 @@ namespace SparseDtwLib
             var total = 0d;
             foreach (var diff in diffValues)
             {
-                total += diff.Item3 + diff.Item2;
+                total += diff.Min + diff.Max;
             }
             return total < 0.06;
         }
 
-        public double CompareSequences(List<double> s, List<double> q, double res)
+        public async Task<double> CompareSequences(List<double> s, List<double> q, double res)
         {
             var SMMatrix = Enumerable.Repeat(-1d, s.Count * q.Count).ToArray();
             Array.Clear(SMMatrix,0, s.Count * q.Count);
@@ -196,18 +217,6 @@ namespace SparseDtwLib
                     SMMatrix[neighbor.Index] =
                         Helper.EucDist(s[neighbor.Index % s.Count], q[neighbor.Index / s.Count]);
                 }
-            }
-            var warpingPath = new List<int>();
-            var hop = s.Count * q.Count - 1;
-            warpingPath.Add(hop);
-            while (hop != 0)
-            {
-                var lowerNeighbors = Helper.TryGetLowerNeighbors(SMMatrix, hop, s.Count);
-                if (!lowerNeighbors.Any())
-                    break;
-                var min = lowerNeighbors.Min(n => n.Value);
-                hop = lowerNeighbors.First(n => n.Value == min).Index;
-                warpingPath.Add(hop);
             }
 
             return SMMatrix[s.Count * q.Count - 1];

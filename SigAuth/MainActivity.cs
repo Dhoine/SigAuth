@@ -33,15 +33,12 @@ namespace SigAuth
 
             btnTeach.Click += delegate
             {
-                points = signatureView.Points;
                 appService.TrainSignature(signatureView.RawPoints, int.Parse(editId.Text));
                 Toast.MakeText(this, "Vector signature saved to memory.", ToastLength.Short).Show();
             };
 
             btnCheck.Click += delegate
             {
-                if (points != null)
-                    signatureView.LoadPoints(points);
                 appService.CheckSignature(signatureView.RawPoints, int.Parse(editId.Text));
             };
 
