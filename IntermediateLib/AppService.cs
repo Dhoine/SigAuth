@@ -5,7 +5,6 @@ using EpwLib;
 using SharedClasses;
 using SparseDtwLib;
 using StorageAdapter;
-using Helper = EpwLib.Helper;
 
 namespace IntermediateLib
 {
@@ -20,17 +19,17 @@ namespace IntermediateLib
         public bool CheckSignature(List<List<RawPoint>> signatureStrokes, int sigId)
         {
             var samples = _adapter.GetAllSamples(sigId);
-            var sparse = new SparseDtw();
-            return sparse.CheckSignature(samples, signatureStrokes);
+            var sparse = new Epw();
+            return sparse.CheckSignature(samples, signatureStrokes, new List<string>{GlobalConstants.Sin, GlobalConstants.Speed}, null);
             //var sample = _adapter.GetSignatureSample(sigId, 1).Sample;
-            //var helper = new Helper();
+            //var helper = new Epw();
             ////var test = helper.SmoothPoints(signatureStrokes);
             //var test2 = helper.GetExtremePointsUnfiltered(signatureStrokes);
             //var test3 = helper.FilterExtremePoints(test2);
             ////var test4 = helper.SmoothPoints(sample);
             //var test5 = helper.GetExtremePointsUnfiltered(sample);
             //var test6 = helper.FilterExtremePoints(test5);
-            //var test7 = helper.WartExtremePoints(test3, test6);
+            //var test7 = helper.CompareSequence(test3, test6);
             return false;
         }
 

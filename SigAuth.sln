@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.329
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28729.10
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SigAuth", "SigAuth\SigAuth.csproj", "{B62C1C4A-9098-474B-951C-4EA98171CBDE}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -16,11 +16,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StorageAdapter", "StorageAd
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharedClasses", "SharedClasses\SharedClasses.csproj", "{87533713-F0DA-4C5F-84AF-70C8C86550D0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FeatureExtractor", "FeatureExtractor\FeatureExtractor.csproj", "{A9038962-4D27-4751-867C-B0A77EAFD4AE}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SparseDtwLib", "SparseDtwLib\SparseDtwLib.csproj", "{1032BBE5-D384-48CD-954C-A5F5C6C4DAB6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EpwLib", "EpwLib\EpwLib.csproj", "{3662DD83-88F7-4C88-9A5F-9705B3334169}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EpwLib", "EpwLib\EpwLib.csproj", "{3662DD83-88F7-4C88-9A5F-9705B3334169}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -50,10 +48,6 @@ Global
 		{87533713-F0DA-4C5F-84AF-70C8C86550D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87533713-F0DA-4C5F-84AF-70C8C86550D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87533713-F0DA-4C5F-84AF-70C8C86550D0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A9038962-4D27-4751-867C-B0A77EAFD4AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A9038962-4D27-4751-867C-B0A77EAFD4AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A9038962-4D27-4751-867C-B0A77EAFD4AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A9038962-4D27-4751-867C-B0A77EAFD4AE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1032BBE5-D384-48CD-954C-A5F5C6C4DAB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1032BBE5-D384-48CD-954C-A5F5C6C4DAB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1032BBE5-D384-48CD-954C-A5F5C6C4DAB6}.Release|Any CPU.ActiveCfg = Release|Any CPU

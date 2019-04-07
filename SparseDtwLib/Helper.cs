@@ -39,11 +39,6 @@ namespace SparseDtwLib
             return res;
         }
 
-        public static double EucDist(double q, double p)
-        {
-            return Math.Pow(q - p, 2);
-        }
-
         public static List<Neighbor> TryGetLowerNeighbors(double[] array, int index, int width)
         {
             var res = new List<Neighbor>();

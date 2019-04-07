@@ -4,19 +4,14 @@ using System.Linq;
 using System.Net.Http.Headers;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
-using FeatureExtractor;
 using SharedClasses;
 
 namespace SparseDtwLib
 {
     public class SparseDtw
     {
-        private const string Sin = "sin";
-        private const string Cos = "cos";
-        private const string QDir = "qdir";
-        private const string Speed = "speed";
-
-        private readonly List<string> _featureList = new List<string> { Sin, /*Cos, QDir,*/ Speed };
+        private List<string> _compareFeatureList = new List<string> { GlobalConstants.Sin, /*Cos, QDir,*/ GlobalConstants.Speed };
+        private readonly List<string> _fullFeatureList = new List<string> { GlobalConstants.Sin, GlobalConstants.Cos, GlobalConstants.QDir, GlobalConstants.Speed };
 
         private async Task<NameMinMax> GetFeatureMinMaxAvg(string featureName,
             IReadOnlyList<DtwFeatures> features)
@@ -34,24 +29,7 @@ namespace SparseDtwLib
                     if (i == j) continue;
                     var closureI = i;
                     var closureJ = j;
-                    switch (featureName)
-                    {
-                        case Sin:
-                            
-                            tasks.Add(Task.Run(async () => await CompareSequences(features[closureI].Features.Select(f => f.Sin), features[closureJ].Features.Select(f => f.Sin), 0.5)));
-                            break;
-                        case Cos:
-                            tasks.Add(Task.Run(async () => await CompareSequences(features[closureI].Features.Select(f => f.Cos), features[closureJ].Features.Select(f => f.Cos), 0.5)));
-                            break;
-                        case QDir:
-                            tasks.Add(Task.Run(async () => await CompareSequences(features[closureI].Features.Select(f => f.QDirs), features[closureJ].Features.Select(f => f.QDirs), 0.5)));
-                            break;
-                        case Speed:
-                            tasks.Add(Task.Run(async () => await CompareSequences(features[closureI].Features.Select(f => f.Speeds), features[closureJ].Features.Select(f => f.Speeds), 0.5)));
-                            break;
-                        default:
-                            break;
-                    }
+                    tasks.Add(Task.Run(async () => await CompareSequences(features[closureI].Features.Select(f => f[featureName]), features[closureJ].Features.Select(f => f[featureName]), 0.5)));
                 }
                 Task.WaitAll(tasks: tasks.ToArray());
                 foreach (var task in tasks)
@@ -70,15 +48,14 @@ namespace SparseDtwLib
         public List<NameMinMax> BuildModel(List<SignatureSampleDeserialized> origSignature)
         {
             var features = new List<DtwFeatures>();
-            var extractor = new Extractor();
             
             var model = new List<NameMinMax>();
             foreach (var sample in origSignature)
             {
-                features.Add(extractor.GetDTWFeatures(sample.Sample));
+                features.Add(GetDTWFeatures(sample.Sample));
             }
             var tasks = new List<Task<NameMinMax>>();
-            foreach (var featureName in _featureList)
+            foreach (var featureName in _fullFeatureList)
             {
                 tasks.Add(Task.Run(async () => await GetFeatureMinMaxAvg(featureName, features)));
             }
@@ -96,38 +73,21 @@ namespace SparseDtwLib
             List<List<RawPoint>> checkedSample)
         {
             var features = new List<DtwFeatures>();
-            var extractor = new Extractor();
-            var checkedFeatures = extractor.GetDTWFeatures(checkedSample);
+            var checkedFeatures = GetDTWFeatures(checkedSample);
 
             var model = new List<NameMinMax>();
             foreach (var sample in origSignature)
             {
-                features.Add(extractor.GetDTWFeatures(sample.Sample));
+                features.Add(GetDTWFeatures(sample.Sample));
             }
             
-            foreach (var featureName in _featureList)
+            foreach (var featureName in _compareFeatureList)
             {
                 var distances = new List<double>();
                 var tasks = new List<Task<double>>();
                 foreach (var feature in features)
                 {
-                    switch (featureName)
-                    {
-                        case Sin:
-                            tasks.Add(Task.Run(async () => await CompareSequences(feature.Features.Select(f => f.Sin), checkedFeatures.Features.Select(f => f.Sin), 0.5)));
-                            break;
-                        case Cos:
-                            tasks.Add(Task.Run(async () => await CompareSequences(feature.Features.Select(f => f.Cos), checkedFeatures.Features.Select(f => f.Cos), 0.5)));
-                            break;
-                        case QDir:
-                            tasks.Add(Task.Run(async () => await CompareSequences(feature.Features.Select(f => f.QDirs), checkedFeatures.Features.Select(f => f.QDirs), 0.5)));
-                            break;
-                        case Speed:
-                            tasks.Add(Task.Run(async () => await CompareSequences(feature.Features.Select(f => f.Speeds), checkedFeatures.Features.Select(f => f.Speeds), 0.5)));
-                            break;
-                        default:
-                            break;
-                    }
+                    tasks.Add(Task.Run(async () => await CompareSequences(feature.Features.Select(f => f[featureName]), checkedFeatures.Features.Select(f => f[featureName]), 0.5)));
                 }
 
                 Task.WaitAll(tasks: tasks.ToArray());
@@ -141,25 +101,15 @@ namespace SparseDtwLib
             }
 
             return model;
-        }
+        } 
 
-        private List<NameMinMax> GetDiffValues(List<NameMinMax> featuresMinMax, List<NameMinMax> checkedFeaturesMinMax)
-        {
-            var res = new List<NameMinMax>();
-            foreach (var feature in checkedFeaturesMinMax)
-            {
-                var correspondingFeature = featuresMinMax.First(f => f.Name.Equals(feature.Name));
-                var diffMin = (feature.Min - correspondingFeature.Min) / correspondingFeature.Min;
-                var diffMax = (feature.Max - correspondingFeature.Max) / correspondingFeature.Max;
-                res.Add(new NameMinMax{Name = feature.Name, Min = diffMin, Max = diffMax});
-            }
-
-            return res;
-        }
-
-        public bool CheckSignature(List<SignatureSampleDeserialized> origSignature, List<List<RawPoint>> checkedSample,
+        public bool CheckSignature(List<SignatureSampleDeserialized> origSignature, List<List<RawPoint>> checkedSample, List<string> featuresToCompare,
             List<NameMinMax> featuresMinMax = null)
         {
+            if (featuresToCompare != null && featuresToCompare.Any())
+            {
+                _compareFeatureList = featuresToCompare;
+            }
             if (featuresMinMax == null || !featuresMinMax.Any())
             {
                 featuresMinMax = BuildModel(origSignature);
@@ -167,7 +117,7 @@ namespace SparseDtwLib
 
             var model = GetCheckedModel(origSignature, checkedSample);
 
-            var diffValues = GetDiffValues(featuresMinMax, model);
+            var diffValues = FeatureFunctions.GetDiffValues(featuresMinMax, model);
             var total = 0d;
             foreach (var diff in diffValues)
             {
@@ -196,7 +146,7 @@ namespace SparseDtwLib
                 {
                     foreach (var qIndex in qIndxs)
                     {
-                        var euc = Helper.EucDist(s[sIndex], q[qIndex]);
+                        var euc = FeatureFunctions.EucDist(s[sIndex], q[qIndex]);
                         SMMatrix[s.Count * qIndex + sIndex] = euc;
                     }
                 }
@@ -217,11 +167,33 @@ namespace SparseDtwLib
                 foreach (var neighbor in upperNeighbors)
                 {
                     SMMatrix[neighbor.Index] =
-                        Helper.EucDist(s[neighbor.Index % s.Count], q[neighbor.Index / s.Count]);
+                        FeatureFunctions.EucDist(s[neighbor.Index % s.Count], q[neighbor.Index / s.Count]);
                 }
             }
 
             return SMMatrix[s.Count * q.Count - 1];
+        }
+
+        private DtwFeatures GetDTWFeatures(List<List<RawPoint>> sample)
+        {
+            var features = new DtwFeatures
+            {
+                Features = new List<PointDynamicFeatures>()
+            };
+            foreach (var stroke in sample)
+            {
+                for (var i = 1; i < stroke.Count; i++)
+                {
+                    features.Features.Add(new PointDynamicFeatures
+                    {
+                        [GlobalConstants.Sin] = FeatureFunctions.Sin(stroke[i], stroke[i - 1]),
+                        [GlobalConstants.Cos] = FeatureFunctions.Cos(stroke[i], stroke[i - 1]),
+                        [GlobalConstants.QDir] = FeatureFunctions.QDir(stroke[i], stroke[i - 1]),
+                        [GlobalConstants.Speed] = FeatureFunctions.Speed(stroke[i], stroke[i - 1])
+                    });
+                }
+            }
+            return features;
         }
     }
 }

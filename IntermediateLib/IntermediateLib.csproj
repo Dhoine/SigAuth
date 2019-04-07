@@ -67,10 +67,6 @@
       <Project>{3662dd83-88f7-4c88-9a5f-9705b3334169}</Project>
       <Name>EpwLib</Name>
     </ProjectReference>
-    <ProjectReference Include="..\FeatureExtractor\FeatureExtractor.csproj">
-      <Project>{a9038962-4d27-4751-867c-b0a77eafd4ae}</Project>
-      <Name>FeatureExtractor</Name>
-    </ProjectReference>
     <ProjectReference Include="..\SharedClasses\SharedClasses.csproj">
       <Project>{87533713-f0da-4c5f-84af-70c8c86550d0}</Project>
       <Name>SharedClasses</Name>
