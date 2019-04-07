@@ -5,6 +5,6 @@ namespace FeatureExtractor
 {
     public interface IFeatureExtractor
     {
-        DtwFeatures GetDTWFeatures(RawPoint[][] sample);
+        DtwFeatures GetDTWFeatures(List<List<RawPoint>> sample);
     }
 }

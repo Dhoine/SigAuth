@@ -7,23 +7,31 @@ namespace FeatureExtractor
 {
     public class Extractor : IFeatureExtractor
     {
-        public DtwFeatures GetDTWFeatures(RawPoint[][] sample)
+        public DtwFeatures GetDTWFeatures(List<List<RawPoint>> sample)
         {
             var features = new DtwFeatures
             {
-                Sin = new List<double>(),
-                Cos = new List<double>(),
-                QDirs = new List<double>(),
-                Speeds = new List<double>()
+                Features = new List<PointDynamicFeatures>()
+                //Sin = new List<double>(),
+                //Cos = new List<double>(),
+                //QDirs = new List<double>(),
+                //Speeds = new List<double>()
             };
             foreach (var stroke in sample)
             {
-                for (var i = 1; i < stroke.Length; i++)
+                for (var i = 1; i < stroke.Count; i++)
                 {
-                    features.Sin.Add(Sin(stroke[i], stroke[i - 1]));
-                    features.Cos.Add(Cos(stroke[i], stroke[i - 1]));
-                    features.QDirs.Add(QDir(stroke[i], stroke[i - 1]));
-                    features.Speeds.Add(Speed(stroke[i], stroke[i - 1]));
+                    features.Features.Add(new PointDynamicFeatures
+                    {
+                        Sin = Sin(stroke[i], stroke[i - 1]),
+                        Cos = Cos(stroke[i], stroke[i - 1]),
+                        QDirs = QDir(stroke[i], stroke[i - 1]),
+                        Speeds = Speed(stroke[i], stroke[i - 1])
+                    });
+                    //features.Sin.Add(Sin(stroke[i], stroke[i - 1]));
+                    //features.Cos.Add(Cos(stroke[i], stroke[i - 1]));
+                    //features.QDirs.Add(QDir(stroke[i], stroke[i - 1]));
+                    //features.Speeds.Add(Speed(stroke[i], stroke[i - 1]));
                 }
             }
             return features;

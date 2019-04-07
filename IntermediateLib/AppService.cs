@@ -1,24 +1,37 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using EpwLib;
 using SharedClasses;
 using SparseDtwLib;
 using StorageAdapter;
+using Helper = EpwLib.Helper;
 
 namespace IntermediateLib
 {
     public class AppService : IAppService
     {
         private readonly IStorageAdapter _adapter = new StorageAdapterImpl();
-        public bool TrainSignature(RawPoint[][] signatureStrokes, int sigId)
+        public bool TrainSignature(List<List<RawPoint>> signatureStrokes, int sigId)
         {
             return _adapter.SaveSignatureSample(sigId, signatureStrokes);
         }
 
-        public bool CheckSignature(RawPoint[][] signatureStrokes, int sigId)
+        public bool CheckSignature(List<List<RawPoint>> signatureStrokes, int sigId)
         {
             var samples = _adapter.GetAllSamples(sigId);
             var sparse = new SparseDtw();
             return sparse.CheckSignature(samples, signatureStrokes);
+            //var sample = _adapter.GetSignatureSample(sigId, 1).Sample;
+            //var helper = new Helper();
+            ////var test = helper.SmoothPoints(signatureStrokes);
+            //var test2 = helper.GetExtremePointsUnfiltered(signatureStrokes);
+            //var test3 = helper.FilterExtremePoints(test2);
+            ////var test4 = helper.SmoothPoints(sample);
+            //var test5 = helper.GetExtremePointsUnfiltered(sample);
+            //var test6 = helper.FilterExtremePoints(test5);
+            //var test7 = helper.WartExtremePoints(test3, test6);
+            return false;
         }
 
         public bool DeleteSignature(int sigId)
@@ -31,7 +44,7 @@ namespace IntermediateLib
             return _adapter.DeleteSample(sigId, sampleNum);
         }
 
-        public RawPoint[][] GetSignaturePoints(int sigId, int sampleNo)
+        public List<List<RawPoint>> GetSignaturePoints(int sigId, int sampleNo)
         {
             return _adapter.GetSignatureSample(sigId, sampleNo).Sample;
         }

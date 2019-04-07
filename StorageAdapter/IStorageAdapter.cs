@@ -5,7 +5,7 @@ namespace StorageAdapter
 {
     public interface IStorageAdapter
     {
-        bool SaveSignatureSample(int sigId, RawPoint[][] sample);
+        bool SaveSignatureSample(int sigId, List<List<RawPoint>> sample);
         SignatureSampleDeserialized GetSignatureSample(int sigId, int sampleNo);
         List<SignatureSampleDeserialized> GetAllSamples(int sigId);
         int[] GetSamplesNumbersForId(int sigId);

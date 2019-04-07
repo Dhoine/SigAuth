@@ -20,7 +20,7 @@ namespace StorageAdapter
             Init();
         }
 
-        public bool SaveSignatureSample(int sigId, RawPoint[][] sample)
+        public bool SaveSignatureSample(int sigId, List<List<RawPoint>> sample)
         {
             try
             {
@@ -67,7 +67,7 @@ namespace StorageAdapter
             var ret = new SignatureSampleDeserialized();
             var smpl = _connection.Table<SignatureSample>()
                 .SingleOrDefault(sample => sample.SignatureId == sigId && sample.SampleNo == sampleNo);
-            ret.Sample = smpl == null ? null : JsonConvert.DeserializeObject<RawPoint[][]>(smpl.PointsSerialized);
+            ret.Sample = smpl == null ? null : JsonConvert.DeserializeObject<List<List<RawPoint>>>(smpl.PointsSerialized);
             ret.SigNum = sigId;
             ret.SampleNo = sampleNo;
             return ret;
@@ -127,7 +127,7 @@ namespace StorageAdapter
             return _connection.Table<SignatureSample>()
                 .Where(s => s.SignatureId == sigId).Select( sample => new SignatureSampleDeserialized
                 {
-                    Sample = JsonConvert.DeserializeObject<RawPoint[][]>(sample.PointsSerialized),
+                    Sample = JsonConvert.DeserializeObject<List<List<RawPoint>>>(sample.PointsSerialized),
                     SampleNo = sample.SampleNo,
                     SigNum = sigId
                 }).ToList();

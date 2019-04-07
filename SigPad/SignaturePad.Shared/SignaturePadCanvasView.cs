@@ -63,17 +63,17 @@ namespace Xamarin.Controls
 			}
 		}
 
-	    public RawPoint[][] RawPoints
+	    public List<List<RawPoint>> RawPoints
 	    {
 	        get
 	        {
 	            if (IsBlank)
 	            {
-	                return new RawPoint[0][];
+	                return new List<List<RawPoint>>();
 	            }
 
 	            return inkPresenter.GetStrokes()
-	                .Select(s => s.RawPoints.ToArray()).ToArray();
+	                .Select(s => s.RawPoints.ToList()).ToList();
 	        }
 	    }
 
