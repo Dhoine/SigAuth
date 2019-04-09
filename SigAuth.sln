@@ -20,6 +20,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SparseDtwLib", "SparseDtwLi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EpwLib", "EpwLib\EpwLib.csproj", "{3662DD83-88F7-4C88-9A5F-9705B3334169}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixLib", "MatrixLib\MatrixLib.csproj", "{3795FD91-F502-4567-A06A-1030946BA265}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WaveletLib", "WaveletLib\WaveletLib.csproj", "{1789DAE2-6617-4BA1-956F-DC8F80DE938E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,6 +60,14 @@ Global
 		{3662DD83-88F7-4C88-9A5F-9705B3334169}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3662DD83-88F7-4C88-9A5F-9705B3334169}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3662DD83-88F7-4C88-9A5F-9705B3334169}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3795FD91-F502-4567-A06A-1030946BA265}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3795FD91-F502-4567-A06A-1030946BA265}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3795FD91-F502-4567-A06A-1030946BA265}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3795FD91-F502-4567-A06A-1030946BA265}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1789DAE2-6617-4BA1-956F-DC8F80DE938E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1789DAE2-6617-4BA1-956F-DC8F80DE938E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1789DAE2-6617-4BA1-956F-DC8F80DE938E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1789DAE2-6617-4BA1-956F-DC8F80DE938E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -146,7 +146,7 @@ namespace SparseDtwLib
                 {
                     foreach (var qIndex in qIndxs)
                     {
-                        var euc = FeatureFunctions.EucDist(s[sIndex], q[qIndex]);
+                        var euc = FeatureFunctions.SquareEucDist(s[sIndex], q[qIndex]);
                         SMMatrix[s.Count * qIndex + sIndex] = euc;
                     }
                 }
@@ -167,7 +167,7 @@ namespace SparseDtwLib
                 foreach (var neighbor in upperNeighbors)
                 {
                     SMMatrix[neighbor.Index] =
-                        FeatureFunctions.EucDist(s[neighbor.Index % s.Count], q[neighbor.Index / s.Count]);
+                        FeatureFunctions.SquareEucDist(s[neighbor.Index % s.Count], q[neighbor.Index / s.Count]);
                 }
             }
 

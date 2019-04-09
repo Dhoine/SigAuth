@@ -49,7 +49,7 @@ namespace SharedClasses
             return Math.Sqrt(Math.Pow(dy, 2) + Math.Pow(dx, 2)) / dt;
         }
 
-        public static double EucDist(double q, double p)
+        public static double SquareEucDist(double q, double p)
         {
             return Math.Pow(q - p, 2);
         }
@@ -66,6 +66,36 @@ namespace SharedClasses
             }
 
             return res;
+        }
+
+        public static List<RawPoint> NormalizeAndFlattenSample(List<List<RawPoint>> sample)
+        {
+            var maxX = sample.Select(stroke => stroke.Select(point => point.X).Max()).Max();
+            var maxY = sample.Select(stroke => stroke.Select(point => point.Y).Max()).Max();
+            var minX = sample.Select(stroke => stroke.Select(point => point.X).Max()).Max();
+            var minY = sample.Select(stroke => stroke.Select(point => point.Y).Min()).Min();
+            var res = new List<RawPoint>();
+            foreach (var stroke in sample)
+            {
+                foreach (var point in stroke)
+                {
+                    var normalizedX = (point.X - minX) / (maxX - minX);
+                    var normalizedY = (point.Y - minY) / (maxY - minY);
+                    res.Add(new RawPoint{TimeStamp = point.TimeStamp, X = normalizedX, Y = normalizedY});
+                } 
+            }
+
+            return res;
+        }
+
+        public static double[] GetXSequence(List<RawPoint> points)
+        {
+            return points.Select(p => p.X).ToArray();
+        }
+
+        public static double[] GetYSequence(List<RawPoint> points)
+        {
+            return points.Select(p => p.Y).ToArray();
         }
     }
 }

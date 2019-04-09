@@ -223,9 +223,9 @@ namespace EpwLib
 
             var finalWeight = double.MaxValue;
             var ewpMatrix = Enumerable.Repeat(-1d, sample.Count * reference.Count).ToArray();
-            ewpMatrix[0] = FeatureFunctions.EucDist(reference[0].Features[featureName], sample[0].Features[featureName]);
-            ewpMatrix[reference.Count*2] = FeatureFunctions.EucDist(reference[0].Features[featureName], sample[2].Features[featureName]);
-            ewpMatrix[2] = FeatureFunctions.EucDist(reference[2].Features[featureName], sample[0].Features[featureName]);
+            ewpMatrix[0] = FeatureFunctions.SquareEucDist(reference[0].Features[featureName], sample[0].Features[featureName]);
+            ewpMatrix[reference.Count*2] = FeatureFunctions.SquareEucDist(reference[0].Features[featureName], sample[2].Features[featureName]);
+            ewpMatrix[2] = FeatureFunctions.SquareEucDist(reference[2].Features[featureName], sample[0].Features[featureName]);
             for (var index = 0; index < ewpMatrix.Length; index++)
             {
                 var neighborWeights = new List<double>();
@@ -236,7 +236,7 @@ namespace EpwLib
                     var elem = ewpMatrix[reference.Count * (j-1) + i - 1];
                     if (elem != -1)
                     {
-                        neighborWeights.Add(elem + 0.5* FeatureFunctions.EucDist(reference[i].Features[featureName], sample[j].Features[featureName]));
+                        neighborWeights.Add(elem + 0.5* FeatureFunctions.SquareEucDist(reference[i].Features[featureName], sample[j].Features[featureName]));
                     }
                 }
 
@@ -245,10 +245,10 @@ namespace EpwLib
                     var elem = ewpMatrix[reference.Count * (j-3) + i-1];
                     if (elem != -1)
                     {
-                        var weight = elem + FeatureFunctions.EucDist(reference[i].Features[featureName], sample[j].Features[featureName]);
+                        var weight = elem + FeatureFunctions.SquareEucDist(reference[i].Features[featureName], sample[j].Features[featureName]);
                         if (j - 2 >= 0)
                         {
-                            weight += 2 * FeatureFunctions.EucDist(sample[j - 2].Features[featureName], sample[j - 1].Features[featureName]);
+                            weight += 2 * FeatureFunctions.SquareEucDist(sample[j - 2].Features[featureName], sample[j - 1].Features[featureName]);
                         }
                         neighborWeights.Add(weight);
                     }
@@ -258,10 +258,10 @@ namespace EpwLib
                     var elem = ewpMatrix[reference.Count * (j - 1) + i - 3];
                     if (elem != -1)
                     {
-                        var weight = elem + FeatureFunctions.EucDist(reference[i].Features[featureName], sample[j].Features[featureName]);
+                        var weight = elem + FeatureFunctions.SquareEucDist(reference[i].Features[featureName], sample[j].Features[featureName]);
                         if (i - 2 >= 0)
                         {
-                            weight += 2 * FeatureFunctions.EucDist(reference[i - 2].Features[featureName], reference[i - 1].Features[featureName]);
+                            weight += 2 * FeatureFunctions.SquareEucDist(reference[i - 2].Features[featureName], reference[i - 1].Features[featureName]);
                         }
                         neighborWeights.Add(weight);
                     }
