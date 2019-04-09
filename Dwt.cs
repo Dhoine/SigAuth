@@ -53,5 +53,8 @@ namespace WaveletLib
 
             return integral;
         }
+
+        
+
     }
 }
