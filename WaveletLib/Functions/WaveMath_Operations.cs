@@ -56,12 +56,25 @@ namespace WaveletStudio.Functions
         /// <returns></returns>
         public static double[] Multiply(double[] array, double scalar)
         {
-            var newArray = (double[])array.Clone();
+            var newArray = (double[]) array.Clone();
             for (var i = 0; i < newArray.Length; i++)
             {
                 newArray[i] *= scalar;
             }
+
             return newArray;
-        }   
+        }
+        /// <summary>
+        /// Gets a subarrar with the specified length
+        /// </summary>
+        /// <param name="array"></param>
+        /// <param name="length"></param>
+        /// <returns></returns>
+        public static double[] SubArray(this double[] array, int length)
+        {
+            var newArray = MemoryPool.Pool.New<double>(length, true);
+            Array.Copy(array, newArray, length > array.Length ? array.Length : length);
+            return newArray;
+        }
     }
 }

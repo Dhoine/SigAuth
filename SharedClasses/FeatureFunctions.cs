@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 
 namespace SharedClasses
 {
@@ -72,7 +73,7 @@ namespace SharedClasses
         {
             var maxX = sample.Select(stroke => stroke.Select(point => point.X).Max()).Max();
             var maxY = sample.Select(stroke => stroke.Select(point => point.Y).Max()).Max();
-            var minX = sample.Select(stroke => stroke.Select(point => point.X).Max()).Max();
+            var minX = sample.Select(stroke => stroke.Select(point => point.X).Min()).Min();
             var minY = sample.Select(stroke => stroke.Select(point => point.Y).Min()).Min();
             var res = new List<RawPoint>();
             foreach (var stroke in sample)
@@ -96,6 +97,40 @@ namespace SharedClasses
         public static double[] GetYSequence(List<RawPoint> points)
         {
             return points.Select(p => p.Y).ToArray();
+        }
+
+        public static List<double> SubtractVectors(List<double> a, List<double> b)
+        {
+            var max = a.Count > b.Count ? a.Count : b.Count;
+            var res = new List<double>();
+            for (int i = 0; i < max; i++)
+            {
+                var sum = 0d;
+                if (a.Count > i)
+                {
+                    sum += a[i];
+                }
+                if (b.Count > i)
+                {
+                    sum -= b[i];
+                }
+
+                res.Add(sum);
+
+            }
+
+            return res;
+        }
+
+        public static double EuclideanNorm(List<double> arr)
+        {
+            var sum = 0d;
+            foreach (var elem in arr)
+            {
+                sum += Math.Pow(elem, 2);
+            }
+
+            return Math.Sqrt(sum);
         }
     }
 }

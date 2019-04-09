@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -6,6 +6,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MatrixLib\MatrixLib.csproj" />
+    <ProjectReference Include="..\SharedClasses\SharedClasses.csproj" />
+    <ProjectReference Include="..\WaveletLib\WaveletStudio.csproj" />
   </ItemGroup>
 
 </Project>

@@ -63,6 +63,10 @@
     <Folder Include="Resources\drawable\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DwtSig\DwtSig.csproj">
+      <Project>{62362c3c-1738-4a8a-aac2-5fa46afc6cc1}</Project>
+      <Name>DwtSig</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EpwLib\EpwLib.csproj">
       <Project>{3662dd83-88f7-4c88-9a5f-9705b3334169}</Project>
       <Name>EpwLib</Name>

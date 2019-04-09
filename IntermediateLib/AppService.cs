@@ -19,8 +19,8 @@ namespace IntermediateLib
         public bool CheckSignature(List<List<RawPoint>> signatureStrokes, int sigId)
         {
             var samples = _adapter.GetAllSamples(sigId);
-            var sparse = new SparseDtw();
-            return sparse.CheckSignature(samples, signatureStrokes, new List<string>{GlobalConstants.Sin, GlobalConstants.Speed}, null);
+            var sparse = new DwtSig.DwtSignature();
+            return sparse.CheckSignature(samples, signatureStrokes/*, new List<string>{GlobalConstants.Sin, GlobalConstants.Speed}, null*/);
             //var sample = _adapter.GetSignatureSample(sigId, 1).Sample;
             //var helper = new Epw();
             ////var test = helper.SmoothPoints(signatureStrokes);
