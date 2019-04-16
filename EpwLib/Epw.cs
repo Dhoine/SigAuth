@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.SymbolStore;
 using System.Linq;
 using System.Threading.Tasks;
 using SharedClasses;
@@ -10,6 +11,28 @@ namespace EpwLib
     {
         private readonly List<string> _fullFeatureList = new List<string> { GlobalConstants.Sin, GlobalConstants.Cos, GlobalConstants.QDir, GlobalConstants.Speed };
         private List<string> _compareFeatureList = new List<string> {GlobalConstants.Sin, GlobalConstants.Speed};
+
+        public static List<List<RawPoint>> NormalizeSample(List<List<RawPoint>> sample)
+        {
+            var maxX = sample.Select(stroke => stroke.Select(point => point.X).Max()).Max();
+            var maxY = sample.Select(stroke => stroke.Select(point => point.Y).Max()).Max();
+            var minX = sample.Select(stroke => stroke.Select(point => point.X).Min()).Min();
+            var minY = sample.Select(stroke => stroke.Select(point => point.Y).Min()).Min();
+            var res = new List<List<RawPoint>>();
+            foreach (var stroke in sample)
+            {
+                var strokePoints = new List<RawPoint>();
+                foreach (var point in stroke)
+                {
+                    var normalizedX = (point.X - minX) / (maxX - minX);
+                    var normalizedY = (point.Y - minY) / (maxY - minY);
+                    strokePoints.Add(new RawPoint { TimeStamp = point.TimeStamp, X = normalizedX, Y = normalizedY });
+                }
+                res.Add(strokePoints);
+            }
+
+            return res;
+        }
 
         public bool CheckSignature(List<SignatureSampleDeserialized> origSignature, List<List<RawPoint>> checkedSample,
             List<string> featuresToCompare,
@@ -114,6 +137,7 @@ namespace EpwLib
             }
 
             return res;
+            return NormalizeSample(res);
         }
 
         public List<ExtremePoint> GetExtremePointsUnfiltered(List<List<RawPoint>> sample)
@@ -269,8 +293,11 @@ namespace EpwLib
 
                 if (!neighborWeights.Any()) continue;
                 ewpMatrix[index] = neighborWeights.Min();
-                finalWeight = ewpMatrix[index];
             }
+
+            var watpIndex = 0;
+            ISymbolDocumentWriter
+
 
             return finalWeight;
         }   

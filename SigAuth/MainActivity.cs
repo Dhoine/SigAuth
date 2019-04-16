@@ -13,7 +13,6 @@ namespace SigAuth
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
     {
-        private PointF[] points;
         private IAppService appService;
 
         protected override void OnCreate(Bundle savedInstanceState)

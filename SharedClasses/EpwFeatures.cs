@@ -7,6 +7,7 @@ namespace SharedClasses
     {
         public List<EpwFeature> Samples { get; set; }
         public List<NameMinMax> MinMaxFeatures { get; set; }
+        public bool IsDirty { get; set; }
     }
 
     public class EpwFeature

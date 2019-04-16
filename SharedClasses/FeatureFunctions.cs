@@ -47,6 +47,8 @@ namespace SharedClasses
             var dy = current.Y - prev.Y;
             var dx = current.X - prev.X;
             var dt = current.TimeStamp - prev.TimeStamp;
+            if (dt == 0)
+                dt = 1;
             return Math.Sqrt(Math.Pow(dy, 2) + Math.Pow(dx, 2)) / dt;
         }
 
@@ -131,6 +133,19 @@ namespace SharedClasses
             }
 
             return Math.Sqrt(sum);
+        }
+
+        public static List<double> Quantize(List<double> sequence)
+        {
+            var max = sequence.Max();
+            var min = sequence.Min();
+            var res = new List<double>();
+            foreach (var element in sequence)
+            {
+                res.Add((element - min) / (max - min));
+            }
+
+            return res;
         }
     }
 }

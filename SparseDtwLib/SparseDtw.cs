@@ -132,8 +132,8 @@ namespace SparseDtwLib
             var q = qEnumerable.ToList();
             var SMMatrix = Enumerable.Repeat(-1d, s.Count * q.Count).ToArray();
             Array.Clear(SMMatrix,0, s.Count * q.Count);
-            var sQ = Helper.Quantize(s);
-            var qQ = Helper.Quantize(q);
+            var sQ = FeatureFunctions.Quantize(s);
+            var qQ = FeatureFunctions.Quantize(q);
             var lowerBound = 0.0;
             var upperBound = res;
             while (lowerBound >= 0 && lowerBound <= 1 - res/2)
@@ -146,8 +146,8 @@ namespace SparseDtwLib
                 {
                     foreach (var qIndex in qIndxs)
                     {
-                        var euc = FeatureFunctions.SquareEucDist(s[sIndex], q[qIndex]);
-                        SMMatrix[s.Count * qIndex + sIndex] = euc;
+                        var euc = FeatureFunctions.SquareEucDist(sQ[sIndex], qQ[qIndex]);
+                        SMMatrix[sQ.Count * qIndex + sIndex] = euc;
                     }
                 }
             }
@@ -155,23 +155,23 @@ namespace SparseDtwLib
             for (var i = 0; i < SMMatrix.Length; i++)
             {
                 if (SMMatrix[i] < 0) continue;
-                var lowerNeighbors = Helper.TryGetLowerNeighbors(SMMatrix, i, s.Count);
+                var lowerNeighbors = Helper.TryGetLowerNeighbors(SMMatrix, i, sQ.Count);
                 if (lowerNeighbors.Any())
                 {
                     var min = lowerNeighbors.Min(n => n.Value);
                     SMMatrix[i] += min;
                 }
                 
-                var upperNeighbors = Helper.TryGetUpperNeighbors(SMMatrix, i, s.Count);
+                var upperNeighbors = Helper.TryGetUpperNeighbors(SMMatrix, i, sQ.Count);
                 if (upperNeighbors.Any(n => n.Value >= 0)) continue;
                 foreach (var neighbor in upperNeighbors)
                 {
                     SMMatrix[neighbor.Index] =
-                        FeatureFunctions.SquareEucDist(s[neighbor.Index % s.Count], q[neighbor.Index / s.Count]);
+                        FeatureFunctions.SquareEucDist(sQ[neighbor.Index % s.Count], qQ[neighbor.Index / s.Count]);
                 }
             }
 
-            return SMMatrix[s.Count * q.Count - 1];
+            return SMMatrix[sQ.Count * qQ.Count - 1];
         }
 
         private DtwFeatures GetDTWFeatures(List<List<RawPoint>> sample)

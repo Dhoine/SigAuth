@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using DwtSig;
 using EpwLib;
 using SharedClasses;
 using SparseDtwLib;
@@ -19,8 +20,8 @@ namespace IntermediateLib
         public bool CheckSignature(List<List<RawPoint>> signatureStrokes, int sigId)
         {
             var samples = _adapter.GetAllSamples(sigId);
-            var sparse = new DwtSig.DwtSignature();
-            return sparse.CheckSignature(samples, signatureStrokes/*, new List<string>{GlobalConstants.Sin, GlobalConstants.Speed}, null*/);
+            var sparse = new Epw();
+            return sparse.CheckSignature(samples, signatureStrokes, new List<string> { GlobalConstants.Sin, GlobalConstants.Speed }, null);
             //var sample = _adapter.GetSignatureSample(sigId, 1).Sample;
             //var helper = new Epw();
             ////var test = helper.SmoothPoints(signatureStrokes);
@@ -53,7 +54,7 @@ namespace IntermediateLib
             return _adapter.GetSignatureIds();
         }
 
-        public int[] GetSignatureNumbersForId(int sigId)
+        public int[] GetSampleNumbersForId(int sigId)
         {
             return _adapter.GetSamplesNumbersForId(sigId);
         }

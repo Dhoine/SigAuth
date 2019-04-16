@@ -7,18 +7,7 @@ namespace SparseDtwLib
 {
     public class Helper
     {
-        public static List<double> Quantize(List<double> sequence)
-        {
-            var max = sequence.Max();
-            var min = sequence.Min();
-            var res = new List<double>();
-            foreach (var element in sequence)
-            {
-                res.Add((element-min)/(max-min));
-            }
-
-            return res;
-        }
+        
 
         public static List<int> FindIndexes(List<double> sequence, double lowerBorder, double upperBorder)
         {
