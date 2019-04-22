@@ -117,6 +117,17 @@ namespace SparseDtwLib
 
             var model = GetCheckedModel(origSignature, checkedSample);
 
+            foreach (var feature in _compareFeatureList)
+            {
+                var orig = featuresMinMax.FirstOrDefault(f => f.Name == feature);
+                var ch = model.FirstOrDefault(f => f.Name == feature);
+                var avg = (ch.Max + ch.Min) / 2;
+                if (avg > orig.Max)
+                    return false;
+            }
+
+            return true;
+
             var diffValues = FeatureFunctions.GetDiffValues(featuresMinMax, model);
             var total = 0d;
             foreach (var diff in diffValues)
