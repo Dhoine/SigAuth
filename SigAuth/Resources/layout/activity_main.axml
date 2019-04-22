@@ -1,55 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout 
-	xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:app="http://schemas.android.com/apk/res-auto"
-	xmlns:tools="http://schemas.android.com/tools"
-	android:layout_width="match_parent"
-	android:layout_height="match_parent"
-	android:minWidth="25px"
-	android:minHeight="25px"
-	android:background="@color/background_floating_material_dark">
-	<xamarin.controls.SignaturePadView
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:background="@color/background_floating_material_dark">
+    <xamarin.controls.SignaturePadView
         android:id="@+id/signatureView"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_marginBottom="12dp"
         android:layout_above="@+id/textNumber"
-		app:strokeColor="@android:color/white"
+        app:strokeColor="@android:color/white"
         app:signatureLineColor="@android:color/white"
         app:captionTextColor="@android:color/white"
         app:signaturePromptTextColor="@android:color/white"
         app:clearLabelTextColor="@android:color/white" />
-	<EditText
-		android:id="@+id/textName"
-		android:hint="Signature Name"
-		android:textColorHint="@color/material_grey_600"
-		android:textColor="@color/primary_material_light"
-		android:layout_width="fill_parent"
-        android:imeOptions="actionGo"
-        android:inputType="text"
-        android:layout_height="wrap_content"
-		android:layout_above="@+id/btnTeach"/>
-	<EditText
-		android:id="@+id/textNumber"
-		android:hint="Signature №"
-		android:textColorHint="@color/material_grey_600"
-		android:textColor="@color/primary_material_light"
-		android:layout_width="fill_parent"
+    <EditText
+        android:id="@+id/textNumber"
+        android:hint="Signature №"
+        android:textColorHint="@color/material_grey_600"
+        android:textColor="@color/primary_material_light"
+        android:layout_width="fill_parent"
         android:imeOptions="actionGo"
         android:inputType="number"
         android:layout_height="wrap_content"
-		android:layout_above="@+id/textName"/>
-	<Button
+        android:layout_above="@+id/btnTeach"/>
+    <Button
         android:id="@+id/btnTeach"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Teach"
         android:layout_alignParentBottom="true"/>
     <Button
-        android:id="@+id/btnCheck"
+        android:id="@+id/btnCheckDtw"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Check Signature"
+        android:text="Dtw"
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/btnTeach"/>
+    <Button
+        android:id="@+id/btnCheckEpw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Epw"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/btnCheckDtw"/>
+    <Button
+        android:id="@+id/btnCheckDwt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dwt"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/btnCheckEpw"/>
 </RelativeLayout>

@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SharedClasses\SharedClasses.csproj" />
+    <Folder Include="Properties\" />
   </ItemGroup>
 
 </Project>

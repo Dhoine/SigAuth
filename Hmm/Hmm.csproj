@@ -5,6 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Accord.Math.Noncommercial" Version="3.8.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\cs-hidden-markov-models\cs-hidden-markov-models.csproj" />
     <ProjectReference Include="..\SharedClasses\SharedClasses.csproj" />
   </ItemGroup>
 

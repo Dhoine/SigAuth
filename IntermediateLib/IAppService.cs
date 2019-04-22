@@ -6,7 +6,7 @@ namespace IntermediateLib
     public interface IAppService
     {
         bool TrainSignature(List<List<RawPoint>> signatureStrokes, int sigId);
-        bool CheckSignature(List<List<RawPoint>> signatureStrokes, int sigId);
+        bool CheckSignature(List<List<RawPoint>> signatureStrokes, int sigId, int method);
         bool DeleteSignature(int sigId);
         bool DeleteSignatureSample(int sigId, int sampleNum);
         List<List<RawPoint>> GetSignaturePoints(int sigId, int sigNo);

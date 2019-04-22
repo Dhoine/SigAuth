@@ -10,29 +10,7 @@ namespace EpwLib
     public class Epw
     {
         private readonly List<string> _fullFeatureList = new List<string> { GlobalConstants.Sin, GlobalConstants.Cos, GlobalConstants.QDir, GlobalConstants.Speed };
-        private List<string> _compareFeatureList = new List<string> {GlobalConstants.Sin, GlobalConstants.Speed};
-
-        public static List<List<RawPoint>> NormalizeSample(List<List<RawPoint>> sample)
-        {
-            var maxX = sample.Select(stroke => stroke.Select(point => point.X).Max()).Max();
-            var maxY = sample.Select(stroke => stroke.Select(point => point.Y).Max()).Max();
-            var minX = sample.Select(stroke => stroke.Select(point => point.X).Min()).Min();
-            var minY = sample.Select(stroke => stroke.Select(point => point.Y).Min()).Min();
-            var res = new List<List<RawPoint>>();
-            foreach (var stroke in sample)
-            {
-                var strokePoints = new List<RawPoint>();
-                foreach (var point in stroke)
-                {
-                    var normalizedX = (point.X - minX) / (maxX - minX);
-                    var normalizedY = (point.Y - minY) / (maxY - minY);
-                    strokePoints.Add(new RawPoint { TimeStamp = point.TimeStamp, X = normalizedX, Y = normalizedY });
-                }
-                res.Add(strokePoints);
-            }
-
-            return res;
-        }
+        private List<string> _compareFeatureList = new List<string> { GlobalConstants.Sin, GlobalConstants.Cos, GlobalConstants.QDir, GlobalConstants.Speed };
 
         public bool CheckSignature(List<SignatureSampleDeserialized> origSignature, List<List<RawPoint>> checkedSample,
             List<string> featuresToCompare,
@@ -62,9 +40,9 @@ namespace EpwLib
             var total = 0d;
             foreach (var diff in diffValues)
             {
-                total += diff.Min + diff.Max;
+                total += diff.Max + diff.Min;
             }
-            return total < 0.06;
+            return Math.Abs(total) < 0.5;
         }
 
         private List<NameMinMax> GetCheckedModel(List<EpwFeature> modelSamples, List<ExtremePoint> checkedSample)
@@ -137,7 +115,6 @@ namespace EpwLib
             }
 
             return res;
-            return NormalizeSample(res);
         }
 
         public List<ExtremePoint> GetExtremePointsUnfiltered(List<List<RawPoint>> sample)
@@ -295,11 +272,43 @@ namespace EpwLib
                 ewpMatrix[index] = neighborWeights.Min();
             }
 
-            var watpIndex = 0;
-            ISymbolDocumentWriter
+            var staringindex = 0;
+            if (ewpMatrix[reference.Count * 2] < ewpMatrix[0] && ewpMatrix[reference.Count * 2] < ewpMatrix[2])
+            {
+                staringindex = reference.Count * 2;
+            }
+
+            if (ewpMatrix[2] < ewpMatrix[0] && ewpMatrix[2] < ewpMatrix[reference.Count * 2])
+            {
+                staringindex = 2;
+            }
+
+            var warpIndex = staringindex;
+            do
+            {
+                var next31 = warpIndex + 3 * reference.Count + 1;
+                var next11 = warpIndex + reference.Count + 1;
+                var next13 = warpIndex + reference.Count + 3;
+
+                if (next31 < ewpMatrix.Length && ewpMatrix[next31] != -1 && ewpMatrix[next31] < ewpMatrix[next11] && ewpMatrix[next31] < ewpMatrix[next13])
+                {
+                    warpIndex = next31;
+                }
+                else if(next13 < ewpMatrix.Length && ewpMatrix[next13] != -1 && ewpMatrix[next13] < ewpMatrix[next11] && (next31 >= ewpMatrix.Length || ewpMatrix[next13] < ewpMatrix[next31]))
+                {
+                    warpIndex = next13;
+                }
+                else if (next11 < ewpMatrix.Length && ewpMatrix[next11] != -1)
+                {
+                    warpIndex = next11;
+                }
+                else
+                    break;
+
+            } while (warpIndex < ewpMatrix.Length);
 
 
-            return finalWeight;
+            return ewpMatrix[warpIndex];
         }   
     }
 }

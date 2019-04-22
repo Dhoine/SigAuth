@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using DwtSig;
 using EpwLib;
+using Hmm;
 using SharedClasses;
 using SparseDtwLib;
 using StorageAdapter;
@@ -17,11 +18,27 @@ namespace IntermediateLib
             return _adapter.SaveSignatureSample(sigId, signatureStrokes);
         }
 
-        public bool CheckSignature(List<List<RawPoint>> signatureStrokes, int sigId)
+        public bool CheckSignature(List<List<RawPoint>> signatureStrokes, int sigId, int method)
         {
             var samples = _adapter.GetAllSamples(sigId);
-            var sparse = new Epw();
-            return sparse.CheckSignature(samples, signatureStrokes, new List<string> { GlobalConstants.Sin, GlobalConstants.Speed }, null);
+            if (method == 1)
+            {
+                var sparse = new SparseDtw();
+                return sparse.CheckSignature(samples, signatureStrokes, null, null);
+            }
+
+            if (method == 2)
+            {
+                var sparse = new Epw();
+                return sparse.CheckSignature(samples, signatureStrokes, null, null);
+            }
+
+            if (method == 3)
+            {
+                var sparse = new DwtSignature();
+                return sparse.CheckSignature(samples, signatureStrokes);
+            }
+
             //var sample = _adapter.GetSignatureSample(sigId, 1).Sample;
             //var helper = new Epw();
             ////var test = helper.SmoothPoints(signatureStrokes);

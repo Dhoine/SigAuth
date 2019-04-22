@@ -25,10 +25,12 @@ namespace SigAuth
             var signatureView = FindViewById<SignaturePadView>(Resource.Id.signatureView);
 
             var btnTeach = FindViewById<Button>(Resource.Id.btnTeach);
-            var btnCheck = FindViewById<Button>(Resource.Id.btnCheck);
+            var btnCheckDtw = FindViewById<Button>(Resource.Id.btnCheckDtw);
+            var btnCheckEpw = FindViewById<Button>(Resource.Id.btnCheckEpw);
+            var btnCheckDwt = FindViewById<Button>(Resource.Id.btnCheckDwt);
 
             var editId = FindViewById<EditText>(Resource.Id.textNumber);
-            var editName = FindViewById<EditText>(Resource.Id.textName);
+            //var editName = FindViewById<EditText>(Resource.Id.textName);
 
             btnTeach.Click += delegate
             {
@@ -36,9 +38,20 @@ namespace SigAuth
                 Toast.MakeText(this, "Vector signature saved to memory.", ToastLength.Short).Show();
             };
 
-            btnCheck.Click += delegate
+            btnCheckDtw.Click += delegate
             {
-                appService.CheckSignature(signatureView.RawPoints, int.Parse(editId.Text));
+                var res = appService.CheckSignature(signatureView.RawPoints, int.Parse(editId.Text),1);
+                Toast.MakeText(this, $"Result is {res}",ToastLength.Long).Show();
+            };
+            btnCheckEpw.Click += delegate
+            {
+                var res = appService.CheckSignature(signatureView.RawPoints, int.Parse(editId.Text), 2);
+                Toast.MakeText(this, $"Result is {res}", ToastLength.Long).Show();
+            };
+            btnCheckDwt.Click += delegate
+            {
+                var res = appService.CheckSignature(signatureView.RawPoints, int.Parse(editId.Text), 3);
+                Toast.MakeText(this, $"Result is {res}", ToastLength.Long).Show();
             };
 
         }

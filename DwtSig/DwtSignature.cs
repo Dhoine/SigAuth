@@ -9,26 +9,69 @@ namespace DwtSig
 {
     public class DwtSignature
     {
-        private readonly List<string> _fullFeatureList = new List<string> { GlobalConstants.Sin, GlobalConstants.Cos, GlobalConstants.QDir, GlobalConstants.Speed };
-        private List<string> _compareFeatureList = new List<string> { GlobalConstants.Sin, GlobalConstants.Speed };
         public bool CheckSignature(List<SignatureSampleDeserialized> originalSamples,
             List<List<RawPoint>> checkedSample)
         {
             var origModel = BuildModel(originalSamples);
             var checkedCoeffMatrix = CoeffMatrix(FeatureFunctions.NormalizeAndFlattenSample(checkedSample));
-            var distance = 0d;
-            foreach (var matrix in origModel.SamplesCoefficients)
+
+            double distancesMin = 0d;
+            double distancesMax = 0d;
+            for (int i = 0; i < origModel.SamplesCoefficients.Count; i++)
             {
-                for (int i = 0; i < 2; i++)
+                var distances = new List<double>();
+                for (int j = 0; j < origModel.SamplesCoefficients.Count; j++)
                 {
-                    for (int j = 0; j < 4; j++)
+                    if (i == j) continue;
+                    var matrixOne = origModel.SamplesCoefficients[i];
+                    var matrixTwo = origModel.SamplesCoefficients[j];
+                    var dst = 0d;
+                    for (int k = 0; k < 2; k++)
                     {
-                        distance += FeatureFunctions.EuclideanNorm(FeatureFunctions.SubtractVectors(matrix.GetItem(i, j),
-                            checkedCoeffMatrix.GetItem(i, j)));
+                        for (int l = 0; l < 4; l++)
+                        {
+                            dst += FeatureFunctions.EuclideanNorm(FeatureFunctions.SubtractVectors(matrixOne.GetItem(k, l),
+                                matrixTwo.GetItem(k, l)));
+                        }
                     }
+                    distances.Add(dst);
                 }
+
+                distancesMax += distances.Max();
+                distancesMin += distances.Min();
             }
-            return false;
+
+            var nminmax = new NameMinMax
+            {
+                Max = distancesMax / origModel.SamplesCoefficients.Count,
+                Min = distancesMin / origModel.SamplesCoefficients.Count,
+                Name = "coefs"
+            };
+            var comparedDistances = new List<double>();
+            for (int i = 0; i < origModel.SamplesCoefficients.Count; i++)
+            {
+                var dst = 0d;
+                    var matrixOne = origModel.SamplesCoefficients[i];
+                    
+                    for (int k = 0; k < 2; k++)
+                    {
+                        for (int l = 0; l < 4; l++)
+                        {
+                            dst += FeatureFunctions.EuclideanNorm(FeatureFunctions.SubtractVectors(matrixOne.GetItem(k, l),
+                                checkedCoeffMatrix.GetItem(k, l)));
+                        }
+                    }
+                    comparedDistances.Add(dst);
+            }
+
+            //comparedDistances /= origModel.SamplesCoefficients.Count;
+            var min = comparedDistances.Min();
+            var max = comparedDistances.Max();
+
+            var checkedMinMax = new NameMinMax {Max = max, Min = min, Name = "coefs"};
+            var diff = FeatureFunctions.GetDiffValues(new List<NameMinMax>{nminmax}, new List<NameMinMax> { checkedMinMax}).First();
+            var diffSum = diff.Min + diff.Max;
+            return diffSum < 0;
         }
 
         public DwtFeatures BuildModel(List<SignatureSampleDeserialized> samples)
