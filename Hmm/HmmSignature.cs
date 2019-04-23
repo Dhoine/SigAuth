@@ -3,6 +3,7 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Accord.IO;
 using Accord.Math;
 using HiddenMarkovModels;
 using HiddenMarkovModels.Learning.Unsupervised;
@@ -64,18 +65,18 @@ namespace Hmm
             return res;
         }
 
-        private double[][][] SplitImage(double[][] image, bool vertical = true, bool horizontal = false)
+        private double[][,] SplitImage(double[,] image, bool vertical = true, bool horizontal = false)
         {
             var xSum = 0;
             var ySum = 0;
             var count = 0;
             var xCenter = 0;
             var yCenter = 0;
-            for (int x = 0; x < image.Length; x++)
+            for (int x = 0; x < image.GetLength(0); x++)
             {
-                for (int y = 0; y < image[x].Length; y++)
+                for (int y = 0; y < image.GetLength(1); y++)
                 {
-                    if (image[x][y] != 0)
+                    if (image[x, y] != 0)
                     {
                         xSum += x;
                         ySum += y;
@@ -83,7 +84,7 @@ namespace Hmm
                     }
                 }
             }
-            var res = new double[2][][];
+            var res = new double[2][,];
             if (count == 0)
             {
                 return res;
@@ -92,62 +93,66 @@ namespace Hmm
             yCenter = ySum / count;
             if (vertical && horizontal)
             {
-                var leftPart = image.Take(xCenter).ToList();
-                var rightPart = image.Skip(xCenter).ToList();
-                var p1 = leftPart.Select(col => col.Take(yCenter).ToArray()).ToArray();
-                var p2 = rightPart.Select(col => col.Take(yCenter).ToArray()).ToArray();
-                var p3 = leftPart.Select(col => col.Skip(yCenter).ToArray()).ToArray();
-                var p4 = rightPart.Select(col => col.Skip(yCenter).ToArray()).ToArray();
+                //var leftPart = image.Take(xCenter).ToList();
+                //var rightPart = image.Skip(xCenter).ToList();
+                //var p1 = leftPart.Select(col => col.Take(yCenter).ToArray()).ToArray().ToMatrix();
+                //var p2 = rightPart.Select(col => col.Take(yCenter).ToArray()).ToArray().ToMatrix();
+                //var p3 = leftPart.Select(col => col.Skip(yCenter).ToArray()).ToArray().ToMatrix();
+                //var p4 = rightPart.Select(col => col.Skip(yCenter).ToArray()).ToArray().ToMatrix();
                 return new[]
                 {
-                    p1, p2, p3, p4
+                    image.Get(0, xCenter, 0, yCenter),
+                    image.Get(xCenter, image.GetLength(0), 0, yCenter),
+                    image.Get(0, xCenter, yCenter, image.GetLength(1)),
+                    image.Get(xCenter, image.GetLength(0), yCenter, image.GetLength(1)),
                 };
             }
             if (vertical)
             {
                 return new[]
                 {
-                    image.Take(xCenter).ToArray(),
-                    image.Skip(xCenter).ToArray()
+                    image.Get(0, xCenter, 0, image.GetLength(1)),
+                    image.Get(xCenter, image.GetLength(0),0, image.GetLength(1)),
                 };
             }
 
-            return new[]
-            {
-                image.Select(col => col.Take(yCenter).ToArray()).ToArray(),
-                image.Select(col => col.Skip(yCenter).ToArray()).ToArray(),
-            };
+            //return new[]
+            //{
+            //    image.Select(col => col.Take(yCenter).ToArray()).ToArray().ToMatrix(),
+            //    image.Select(col => col.Skip(yCenter).ToArray()).ToArray().ToMatrix(),
+            //};
+            return null;
         }
 
-        private List<double> GetFeatures(double[][] image)
+        private List<List<double>> GetFeatures(double[][] image)
         {
-            var initialHalfs = SplitImage(image);
-            var quarters = new List<double[][]>();
+            var initialHalfs = SplitImage(image.ToMatrix());
+            var quarters = new List<double[,]>();
             foreach (var half in initialHalfs)
             {
                 quarters.AddRange(SplitImage(half));
             }
 
-            var parts = new List<double[][][]>();
+            var parts = new List<double[][,]>();
             foreach (var quarter in quarters)
             {
                 var part2 = SplitImage(quarter, true, true);
                 var part3 = part2.SelectMany(i => SplitImage(i, true, true));
-                var part4 = part3.SelectMany(i => SplitImage(i, true, true));
-                parts.Add(part4.ToArray());
+                //var part4 = part3.SelectMany(i => SplitImage(i, true, true));
+                parts.Add(part3.ToArray());
             }
 
-            var coeff = new List<double>();
+            var coeff = new List<List<double>>();
             foreach (var part in parts)
             {
                 var linq = part.AsParallel().AsOrdered().Select(fr =>
                 {
                     if (fr == null) return 0;
-                    var data = fr.Flatten().Take(fr.Flatten().Length).ToArray();
+                    var data = (double[,])fr.Clone();
                     CosineTransform.DCT(data);
                     return data.Sum();
                 }).ToList();
-                coeff.AddRange(linq);
+                coeff.Add(linq);
             }
 
             //Parallel.ForEach(parts, fragmantLoop);
@@ -175,17 +180,22 @@ namespace Hmm
             var teachingSeq = new List<double[]>();
             foreach (var sample in origSignature)
             {
-                teachingSeq.Add(GetFeatures(ConvertToArray(sample.Sample)).ToArray());
+                var arr = new List<double>();
+                foreach (var feature in GetFeatures(ConvertToArray(sample.Sample)))
+                {
+                    arr.AddRange(feature);
+                }
+                teachingSeq.Add(GetFeatures(ConvertToArray(sample.Sample)).SelectMany(el => el.ToArray()).ToArray());
             }
 
             var check = ConvertToArray(checkedSample);
             var test = GetFeatures(check);
 
             Gaussian density = new Gaussian();
-            var hmm = new HiddenMarkovModel(new Ergodic(2), density);
-            var teacher = new BaumWelchLearning(hmm) { Iterations = 0, Tolerance = 0.2 };
+            var hmm = new HiddenMarkovModel(new Ergodic(4), density);
+            var teacher = new BaumWelchLearning(hmm) { Iterations = 0, Tolerance = 0.02 };
             teacher.Run(teachingSeq.ToArray());
-            double res = hmm.Evaluate(test.ToArray());
+            double res = Math.Exp(hmm.Evaluate(test.SelectMany(el => el.ToArray()).ToArray()));
             return false;
         }
     }
