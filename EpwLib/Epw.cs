@@ -36,13 +36,23 @@ namespace EpwLib
             }
 
             var checkedModel = GetCheckedModel(model.Samples, FilterExtremePoints(GetExtremePointsUnfiltered(SmoothPoints(checkedSample))));
-            var diffValues = FeatureFunctions.GetDiffValues(model.MinMaxFeatures, checkedModel);
-            var total = 0d;
-            foreach (var diff in diffValues)
+            //var diffValues = FeatureFunctions.GetDiffValues(model.MinMaxFeatures, checkedModel);
+            //var total = 0d;
+            //foreach (var diff in diffValues)
+            //{
+            //    total += diff.Max + diff.Min;
+            //}
+            //return Math.Abs(total) < 0.5;
+            foreach (var feature in _compareFeatureList)
             {
-                total += diff.Max + diff.Min;
+                var orig = model.MinMaxFeatures.FirstOrDefault(f => f.Name == feature);
+                var ch = checkedModel.FirstOrDefault(f => f.Name == feature);
+                var avg = (ch.Max + ch.Min)/2;
+                if (avg > orig.Max || avg < orig.Min)
+                    return false;
             }
-            return Math.Abs(total) < 0.5;
+
+            return true;
         }
 
         private List<NameMinMax> GetCheckedModel(List<EpwFeature> modelSamples, List<ExtremePoint> checkedSample)
@@ -181,8 +191,41 @@ namespace EpwLib
                 switch (currentPoint.Type)
                 {
                     case ExtremePointType.StartPoint:
+                        if (extremePoints[i+1].Point.Y > currentPoint.Point.Y)
+                            res.Add(new ExtremePoint
+                            {
+                                Point = extremePoints[i + 1].Point,
+                                Type = ExtremePointType.VerticalMin,
+                                Features = extremePoints[i + 1].Features
+                            });
+                        else
+                        {
+                            res.Add(new ExtremePoint
+                            {
+                                Point = extremePoints[i + 1].Point,
+                                Type = ExtremePointType.VerticalMax,
+                                Features = extremePoints[i + 1].Features
+                            });
+                        }
+                        break;
                     case ExtremePointType.EndPoint:
-                        continue;
+                        if (extremePoints[i - 1].Point.Y > currentPoint.Point.Y)
+                            res.Add(new ExtremePoint
+                            {
+                                Point = extremePoints[i - 1].Point,
+                                Type = ExtremePointType.VerticalMin,
+                                Features = extremePoints[i - 1].Features
+                            });
+                        else
+                        {
+                            res.Add(new ExtremePoint
+                            {
+                                Point = extremePoints[i - 1].Point,
+                                Type = ExtremePointType.VerticalMax,
+                                Features = extremePoints[i - 1].Features
+                            });
+                        }
+                        break;
                     case ExtremePointType.VerticalMin:
                     case ExtremePointType.VerticalMax:
                         res.Add(currentPoint);
@@ -249,7 +292,7 @@ namespace EpwLib
                         var weight = elem + FeatureFunctions.SquareEucDist(reference[i].Features[featureName], sample[j].Features[featureName]);
                         if (j - 2 >= 0)
                         {
-                            weight += 2 * FeatureFunctions.SquareEucDist(sample[j - 2].Features[featureName], sample[j - 1].Features[featureName]);
+                            //weight += 2 * FeatureFunctions.SquareEucDist(sample[j - 2].Features[featureName], sample[j - 1].Features[featureName]);
                         }
                         neighborWeights.Add(weight);
                     }

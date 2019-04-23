@@ -68,10 +68,11 @@ namespace DwtSig
             var min = comparedDistances.Min();
             var max = comparedDistances.Max();
 
-            var checkedMinMax = new NameMinMax {Max = max, Min = min, Name = "coefs"};
-            var diff = FeatureFunctions.GetDiffValues(new List<NameMinMax>{nminmax}, new List<NameMinMax> { checkedMinMax}).First();
-            var diffSum = diff.Min + diff.Max;
-            return diffSum < 0;
+            //var checkedMinMax = new NameMinMax {Max = max, Min = min, Name = "coefs"};
+            //var diff = FeatureFunctions.GetDiffValues(new List<NameMinMax>{nminmax}, new List<NameMinMax> { checkedMinMax}).First();
+            //var diffSum = diff.Min + diff.Max;
+            //return diffSum < 0;
+            return (min + max) / 2 < nminmax.Max;
         }
 
         public DwtFeatures BuildModel(List<SignatureSampleDeserialized> samples)
