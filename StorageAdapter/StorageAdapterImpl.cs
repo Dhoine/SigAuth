@@ -9,7 +9,7 @@ using StorageAdapter.Models;
 
 namespace StorageAdapter
 {
-    public class StorageAdapterImpl : IStorageAdapter
+    public class StorageAdapterImpl
     {
         private const string DbFileName = "signatures.db3";
         private SQLiteConnection _connection;
@@ -33,6 +33,7 @@ namespace StorageAdapter
                 {
                     var sig = _connection.Get<Signature>(sigId);
                     sig.IsModelActual = false;
+                    sig.Model = null;
                     _connection.Update(sig);
                 }
 
@@ -60,6 +61,22 @@ namespace StorageAdapter
                 Console.WriteLine(e);
                 return false;
             }
+        }
+
+        public SignatureModel GetModel(int sigId)
+        {
+            var model = _connection.Get<Signature>(sigId).Model;
+            if (model == null)
+                return null;
+            var sig = JsonConvert.DeserializeObject<SignatureModel>(model);
+            return sig;
+        }
+
+        public void SaveModel(int sigId, SignatureModel model)
+        {
+            var sig = _connection.Get<Signature>(sigId);
+            sig.Model = JsonConvert.SerializeObject(model);
+            _connection.Update(sig);
         }
 
         public SignatureSampleDeserialized GetSignatureSample(int sigId, int sampleNo)
@@ -92,6 +109,12 @@ namespace StorageAdapter
             sig.SignatureName = name;
             _connection.Update(sig);
             return true;
+        }
+
+        public string GetSignatureName(int sigId)
+        {
+            var sig = _connection.Table<Signature>().SingleOrDefault(s => s.SignatureId == sigId);
+            return sig?.SignatureName;
         }
 
         public bool DeleteSample(int sigId, int sampleNo)

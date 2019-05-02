@@ -7,10 +7,12 @@ using WaveletStudio.Wavelet;
 
 namespace DwtSig
 {
-    public class DwtSignature
+    public class DwtSignature : ISignatureVerification
     {
-        public bool CheckSignature(List<SignatureSampleDeserialized> originalSamples,
-            List<List<RawPoint>> checkedSample)
+        public string WaveletName { get; set; } = "db4";
+        public int Level { get; set; } = 3; 
+        public VerificationResponse CheckSignature(List<SignatureSampleDeserialized> originalSamples,
+            List<List<RawPoint>> checkedSample, SignatureModel model = null)
         {
             var origModel = BuildModel(originalSamples);
             var checkedCoeffMatrix = CoeffMatrix(FeatureFunctions.NormalizeAndFlattenSample(checkedSample));
@@ -28,7 +30,7 @@ namespace DwtSig
                     var dst = 0d;
                     for (int k = 0; k < 2; k++)
                     {
-                        for (int l = 0; l < 4; l++)
+                        for (int l = 0; l < Level+1; l++)
                         {
                             dst += FeatureFunctions.EuclideanNorm(FeatureFunctions.SubtractVectors(matrixOne.GetItem(k, l),
                                 matrixTwo.GetItem(k, l)));
@@ -55,7 +57,7 @@ namespace DwtSig
                     
                     for (int k = 0; k < 2; k++)
                     {
-                        for (int l = 0; l < 4; l++)
+                        for (int l = 0; l < Level+1; l++)
                         {
                             dst += FeatureFunctions.EuclideanNorm(FeatureFunctions.SubtractVectors(matrixOne.GetItem(k, l),
                                 checkedCoeffMatrix.GetItem(k, l)));
@@ -72,7 +74,7 @@ namespace DwtSig
             //var diff = FeatureFunctions.GetDiffValues(new List<NameMinMax>{nminmax}, new List<NameMinMax> { checkedMinMax}).First();
             //var diffSum = diff.Min + diff.Max;
             //return diffSum < 0;
-            return (min + max) / 2 < nminmax.Max;
+            return new VerificationResponse{IsGenuine = (min + max) / 2 < nminmax.Max };
         }
 
         public DwtFeatures BuildModel(List<SignatureSampleDeserialized> samples)
@@ -91,23 +93,23 @@ namespace DwtSig
             return res;
         }
 
-        private static Matrix<List<double>> CoeffMatrix(List<RawPoint> points)
+        private Matrix<List<double>> CoeffMatrix(List<RawPoint> points)
         {
             var x = FeatureFunctions.GetXSequence(points);
             var y = FeatureFunctions.GetYSequence(points);
             var signalX = new WaveletStudio.Signal(x);
             var signalY = new WaveletStudio.Signal(y);
-            var coefMatrix = new Matrix<List<double>>(4, 2);
-            var xDtw = DWT.ExecuteDWT(signalX, MotherWavelet.LoadFromName("db4"), 3);
-            var yDtw = DWT.ExecuteDWT(signalY, MotherWavelet.LoadFromName("db4"), 3);
-            for (var i = 0; i < 3; i++)
+            var coefMatrix = new Matrix<List<double>>(Level+1, 2);
+            var xDtw = DWT.ExecuteDWT(signalX, MotherWavelet.LoadFromName(WaveletName), Level);
+            var yDtw = DWT.ExecuteDWT(signalY, MotherWavelet.LoadFromName(WaveletName), Level);
+            for (var i = 0; i < Level; i++)
             {
                 coefMatrix.SetItem(0, i, xDtw[i].Details.ToList());
                 coefMatrix.SetItem(1, i, yDtw[i].Details.ToList());
             }
 
-            coefMatrix.SetItem(0, 3, xDtw[2].Approximation.ToList());
-            coefMatrix.SetItem(1, 3, xDtw[2].Approximation.ToList());
+            coefMatrix.SetItem(0, Level, xDtw[Level-1].Approximation.ToList());
+            coefMatrix.SetItem(1, Level, xDtw[Level-1].Approximation.ToList());
             return coefMatrix;
         }
     }

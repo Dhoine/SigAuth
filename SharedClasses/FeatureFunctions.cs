@@ -1,7 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
+using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.Advanced;
+using SixLabors.ImageSharp.PixelFormats;
+using SixLabors.ImageSharp.Processing;
+using SixLabors.Primitives;
 
 namespace SharedClasses
 {
@@ -147,5 +153,28 @@ namespace SharedClasses
 
             return res;
         }
+
+        public static byte[] ConvertToArray(List<List<RawPoint>> sample)
+        {
+            var minX = (int)sample.Select(s => s.Select(stroke => stroke.X).Min()).Min();
+            var maxX = (int)sample.Select(s => s.Select(stroke => stroke.X).Max()).Max();
+            var minY = (int)sample.Select(s => s.Select(stroke => stroke.Y).Min()).Min();
+            var maxY = (int)sample.Select(s => s.Select(stroke => stroke.Y).Max()).Max();
+
+            var image = new Image<Gray8>(maxX - minX + 1, maxY - minY + 1);
+            foreach (var stroke in sample)
+            {
+                var linePoints = stroke.Select(s => new PointF((float)s.X - minX, (float)s.Y - minY));
+                image.Mutate(i => i.DrawLines(new GraphicsOptions(true), new SolidBrush<Gray8>(new Gray8(255)), 2, linePoints.ToArray()));
+            }
+
+            byte[] bytes;
+            using (MemoryStream ms = new MemoryStream())
+            {
+                image.SaveAsPng(ms);
+                return ms.ToArray();
+            }
+
     }
+        }
 }

@@ -3,11 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28729.10
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SigAuth", "SigAuth\SigAuth.csproj", "{B62C1C4A-9098-474B-951C-4EA98171CBDE}"
-	ProjectSection(ProjectDependencies) = postProject
-		{802E4A0F-4349-4583-B93E-EC151BA60145} = {802E4A0F-4349-4583-B93E-EC151BA60145}
-	EndProjectSection
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignaturePad.Android", "SigPad\SignaturePad.Android\SignaturePad.Android.csproj", "{149536B0-DD26-4B87-A1C2-B22BC5AA95F4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntermediateLib", "IntermediateLib\IntermediateLib.csproj", "{802E4A0F-4349-4583-B93E-EC151BA60145}"
@@ -30,18 +25,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hmm", "Hmm\Hmm.csproj", "{C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "cs-hidden-markov-models", "cs-hidden-markov-models\cs-hidden-markov-models.csproj", "{812A4C20-2223-4093-A482-186CDDE79470}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SigAuth", "SigAuth\SigAuth.csproj", "{3B7DD86E-063E-4788-A792-54A79BF676C0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B62C1C4A-9098-474B-951C-4EA98171CBDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B62C1C4A-9098-474B-951C-4EA98171CBDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B62C1C4A-9098-474B-951C-4EA98171CBDE}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{B62C1C4A-9098-474B-951C-4EA98171CBDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B62C1C4A-9098-474B-951C-4EA98171CBDE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B62C1C4A-9098-474B-951C-4EA98171CBDE}.Release|Any CPU.Deploy.0 = Release|Any CPU
 		{149536B0-DD26-4B87-A1C2-B22BC5AA95F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{149536B0-DD26-4B87-A1C2-B22BC5AA95F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{149536B0-DD26-4B87-A1C2-B22BC5AA95F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -86,6 +77,12 @@ Global
 		{812A4C20-2223-4093-A482-186CDDE79470}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{812A4C20-2223-4093-A482-186CDDE79470}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{812A4C20-2223-4093-A482-186CDDE79470}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B7DD86E-063E-4788-A792-54A79BF676C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B7DD86E-063E-4788-A792-54A79BF676C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B7DD86E-063E-4788-A792-54A79BF676C0}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{3B7DD86E-063E-4788-A792-54A79BF676C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B7DD86E-063E-4788-A792-54A79BF676C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B7DD86E-063E-4788-A792-54A79BF676C0}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -4,13 +4,14 @@ using System.Linq;
 using System.Net.Http.Headers;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
+using Accord.MachineLearning;
 using SharedClasses;
 
 namespace SparseDtwLib
 {
-    public class SparseDtw
+    public class SparseDtw : ISignatureVerification
     {
-        private List<string> _compareFeatureList = new List<string> { GlobalConstants.Sin, /*Cos, QDir,*/ GlobalConstants.Speed };
+        public List<string> CompareFeatureList = new List<string> { GlobalConstants.Sin, /*Cos, QDir,*/ GlobalConstants.Speed };
         private readonly List<string> _fullFeatureList = new List<string> { GlobalConstants.Sin, GlobalConstants.Cos, GlobalConstants.QDir, GlobalConstants.Speed };
 
         private async Task<NameMinMax> GetFeatureMinMaxAvg(string featureName,
@@ -54,6 +55,7 @@ namespace SparseDtwLib
             {
                 features.Add(GetDTWFeatures(sample.Sample));
             }
+
             var tasks = new List<Task<NameMinMax>>();
             foreach (var featureName in _fullFeatureList)
             {
@@ -81,7 +83,7 @@ namespace SparseDtwLib
                 features.Add(GetDTWFeatures(sample.Sample));
             }
             
-            foreach (var featureName in _compareFeatureList)
+            foreach (var featureName in CompareFeatureList)
             {
                 var distances = new List<double>();
                 var tasks = new List<Task<double>>();
@@ -103,38 +105,54 @@ namespace SparseDtwLib
             return model;
         } 
 
-        public bool CheckSignature(List<SignatureSampleDeserialized> origSignature, List<List<RawPoint>> checkedSample, List<string> featuresToCompare,
-            List<NameMinMax> featuresMinMax = null)
+        public VerificationResponse CheckSignature(List<SignatureSampleDeserialized> origSignature, List<List<RawPoint>> checkedSample, SignatureModel signatureModel = null)
         {
-            if (featuresToCompare != null && featuresToCompare.Any())
+            //if (signatureModel != null && signatureModel.Any())
+            //{
+            //    CompareFeatureList = featuresToCompare;
+            //}
+            //if (signatureModel == null || !signatureModel.Any())
+            //{
+            //    signatureModel = 
+            //}
+            if (CompareFeatureList == null || !CompareFeatureList.Any())
             {
-                _compareFeatureList = featuresToCompare;
+                return new VerificationResponse { IsGenuine = false };
             }
-            if (featuresMinMax == null || !featuresMinMax.Any())
+            var features = new List<DtwFeatures>();
+
+            foreach (var sample in origSignature)
             {
-                featuresMinMax = BuildModel(origSignature);
+                features.Add(GetDTWFeatures(sample.Sample));
             }
 
-            var model = GetCheckedModel(origSignature, checkedSample);
-
-            foreach (var feature in _compareFeatureList)
+            foreach (var feature in CompareFeatureList)
             {
-                var orig = featuresMinMax.FirstOrDefault(f => f.Name == feature);
-                var ch = model.FirstOrDefault(f => f.Name == feature);
-                var avg = (ch.Max + ch.Min) / 2;
-                if (avg > orig.Max)
-                    return false;
-            }
+                int[] outputs = new int[origSignature.Count];
+                var knn = new KNearestNeighbors(origSignature.Count, new DwtComparer());
+                knn.NumberOfClasses = 1;
+                var inputs = features.Select(f => f.Features.Select(d => d.FeaturesDict[feature]).ToArray()).ToArray();
+                knn.Learn(inputs, outputs);
 
-            return true;
-
-            var diffValues = FeatureFunctions.GetDiffValues(featuresMinMax, model);
-            var total = 0d;
-            foreach (var diff in diffValues)
-            {
-                total += diff.Min + diff.Max;
+                var test = GetDTWFeatures(checkedSample);
+                var tst = knn.Scores(test.Features.Select(f => f.FeaturesDict[feature]).ToArray());
+                if (tst.First() < 2)
+                    return new VerificationResponse {IsGenuine = false};
             }
-            return total < 0.06;
+            
+            //var temp = BuildModel(origSignature);
+            //var model = GetCheckedModel(origSignature, checkedSample);
+
+            //foreach (var feature in CompareFeatureList)
+            //{
+            //    var orig = temp.FirstOrDefault(f => f.Name == feature);
+            //    var ch = model.FirstOrDefault(f => f.Name == feature);
+            //    var avg = (ch.Max + ch.Min) / 2;
+            //    if (avg > orig.Max)
+            //        return new VerificationResponse{IsGenuine = false};
+            //}
+
+            return new VerificationResponse{IsGenuine = true};
         }
 
         public async Task<double> CompareSequences(IEnumerable<double> sEnumerable, IEnumerable<double> qEnumerable, double res)

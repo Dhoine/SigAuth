@@ -3,56 +3,80 @@ using System.Collections.Generic;
 using System.Diagnostics.SymbolStore;
 using System.Linq;
 using System.Threading.Tasks;
+using Accord.MachineLearning;
+using Accord.Statistics.Analysis;
+using Accord.Statistics.Kernels;
 using SharedClasses;
 
 namespace EpwLib
 {
-    public class Epw
+    public class Epw : ISignatureVerification
     {
         private readonly List<string> _fullFeatureList = new List<string> { GlobalConstants.Sin, GlobalConstants.Cos, GlobalConstants.QDir, GlobalConstants.Speed };
-        private List<string> _compareFeatureList = new List<string> { GlobalConstants.Sin, GlobalConstants.Cos, GlobalConstants.QDir, GlobalConstants.Speed };
+        public List<string> _compareFeatureList = new List<string> { GlobalConstants.Sin, GlobalConstants.Cos, GlobalConstants.QDir, GlobalConstants.Speed };
 
-        public bool CheckSignature(List<SignatureSampleDeserialized> origSignature, List<List<RawPoint>> checkedSample,
-            List<string> featuresToCompare,
-            EpwModel model)
+        public VerificationResponse CheckSignature(List<SignatureSampleDeserialized> origSignature, List<List<RawPoint>> checkedSample,
+            SignatureModel model = null
+            )
         {
-            if (featuresToCompare != null && featuresToCompare.Any())
+            var pointsinput = new List<ExtremePoint[]>();
+            if (model == null || model.Epw == null)
             {
-                _compareFeatureList = featuresToCompare;
-            }
-            if (model == null)
-            {
-                model = new EpwModel {Samples = new List<EpwFeature>(), MinMaxFeatures = new List<NameMinMax>()};
+                model = new SignatureModel();
+                model.Epw = new EpwModel {Samples = new List<EpwFeature>(), MinMaxFeatures = new List<NameMinMax>()};
                 foreach (var sample in origSignature)
                 {
                     var points = FilterExtremePoints(GetExtremePointsUnfiltered(SmoothPoints(sample.Sample)));
-                    model.Samples.Add(new EpwFeature{ExtremePoints = points});
+                    pointsinput.Add(points.ToArray());
+                    model.Epw.Samples.Add(new EpwFeature{ExtremePoints = points});
                 }
 
-                foreach (var featureName in _fullFeatureList)
-                {
-                    model.MinMaxFeatures.Add(BuildMinMax(featureName, model.Samples));
-                }
+                //foreach (var featureName in _fullFeatureList)
+                //{
+                //    model.Epw.MinMaxFeatures.Add(BuildMinMax(featureName, model.Epw.Samples));
+                //}
             }
 
-            var checkedModel = GetCheckedModel(model.Samples, FilterExtremePoints(GetExtremePointsUnfiltered(SmoothPoints(checkedSample))));
-            //var diffValues = FeatureFunctions.GetDiffValues(model.MinMaxFeatures, checkedModel);
-            //var total = 0d;
-            //foreach (var diff in diffValues)
-            //{
-            //    total += diff.Max + diff.Min;
-            //}
-            //return Math.Abs(total) < 0.5;
+            int[] outputs = new int[origSignature.Count];
             foreach (var feature in _compareFeatureList)
             {
-                var orig = model.MinMaxFeatures.FirstOrDefault(f => f.Name == feature);
-                var ch = checkedModel.FirstOrDefault(f => f.Name == feature);
-                var avg = (ch.Max + ch.Min)/2;
-                if (avg > orig.Max || avg < orig.Min)
-                    return false;
-            }
+                var knn = new KMedoids<ExtremePoint>(2, new EpwComparer
+                {
+                    feature = feature
+                });
+                var test = FilterExtremePoints(GetExtremePointsUnfiltered(SmoothPoints(checkedSample)));
+                pointsinput.Add(test.ToArray());
+                //knn.MaxIterations = 100;
+                knn.Learn(pointsinput.ToArray());
+                
+                var score = knn.Clusters.Decide(test.ToArray());
+                //var distances = pointsinput.Select(p => knn.Score(p)).ToList();
+                //var avgScore = pointsinput.Select(p => knn.Score(p)).Sum()/origSignature.Count;
+                //if (score /avgScore < 0.5)
 
-            return true;
+                //if (tst.First() < 2)
+                   return new VerificationResponse { IsGenuine = false };
+            }
+            
+
+            //var checkedModel = GetCheckedModel(model.Epw.Samples, FilterExtremePoints(GetExtremePointsUnfiltered(SmoothPoints(checkedSample))));
+            ////var diffValues = FeatureFunctions.GetDiffValues(model.MinMaxFeatures, checkedModel);
+            ////var total = 0d;
+            ////foreach (var diff in diffValues)
+            ////{
+            ////    total += diff.Max + diff.Min;
+            ////}
+            ////return Math.Abs(total) < 0.5;
+            //foreach (var feature in _compareFeatureList)
+            //{
+            //    var orig = model.Epw.MinMaxFeatures.FirstOrDefault(f => f.Name == feature);
+            //    var ch = checkedModel.FirstOrDefault(f => f.Name == feature);
+            //    var avg = (ch.Max + ch.Min)/2;
+            //    if (avg > orig.Max)
+            //        return new VerificationResponse{IsGenuine = false};
+            //}
+
+            return new VerificationResponse { IsGenuine = true };
         }
 
         private List<NameMinMax> GetCheckedModel(List<EpwFeature> modelSamples, List<ExtremePoint> checkedSample)
@@ -132,11 +156,13 @@ namespace EpwLib
             var res = new List<ExtremePoint>();
             foreach (var stroke in sample)
             {
+                if (stroke.Count <= 1) continue;
+                var tempRes = new List<ExtremePoint>();
                 for (var i = 0; i < stroke.Count; i++)
                 {
                     if (i == 0)
                     {
-                        res.Add(new ExtremePoint{Point = stroke[i], Type = ExtremePointType.StartPoint});
+                        tempRes.Add(new ExtremePoint{Point = stroke[i], Type = ExtremePointType.StartPoint});
                         continue;
                     }
 
@@ -150,14 +176,14 @@ namespace EpwLib
 
                     if (i == stroke.Count - 1)
                     {
-                        res.Add(new ExtremePoint { Point = stroke[i], Type = ExtremePointType.EndPoint, Features = features});
+                        tempRes.Add(new ExtremePoint { Point = stroke[i], Type = ExtremePointType.EndPoint, Features = features});
                         continue;
                     }
 
                     var yExt = (stroke[i - 1].Y - stroke[i].Y) * (stroke[i].Y - stroke[i + 1].Y);
                     if (yExt < 0)
                     {
-                        res.Add(stroke[i - 1].Y < stroke[i].Y
+                        tempRes.Add(stroke[i - 1].Y < stroke[i].Y
                             ? new ExtremePoint { Point = stroke[i], Type = ExtremePointType.VerticalMax, Features = features }
                             : new ExtremePoint { Point = stroke[i], Type = ExtremePointType.VerticalMin, Features = features });
                         continue;
@@ -166,17 +192,26 @@ namespace EpwLib
                     if (yExt == 0)
                     {
                         if (stroke[i].Y < stroke[i-1].Y)
-                            res.Add(new ExtremePoint{Point = stroke[i], Type = ExtremePointType.VerticalPlateauStartMin, Features = features });
+                            tempRes.Add(new ExtremePoint{Point = stroke[i], Type = ExtremePointType.VerticalPlateauStartMin, Features = features });
                         else if (stroke[i].Y > stroke[i - 1].Y)
-                            res.Add(new ExtremePoint { Point = stroke[i], Type = ExtremePointType.VerticalPlateauStartMax, Features = features });
+                            tempRes.Add(new ExtremePoint { Point = stroke[i], Type = ExtremePointType.VerticalPlateauStartMax, Features = features });
                         else if (stroke[i].Y < stroke[i + 1].Y)
-                            res.Add(new ExtremePoint { Point = stroke[i], Type = ExtremePointType.VerticalPlateauEndMin, Features = features });
+                            tempRes.Add(new ExtremePoint { Point = stroke[i], Type = ExtremePointType.VerticalPlateauEndMin, Features = features });
                         else if (stroke[i].Y > stroke[i + 1].Y)
-                            res.Add(new ExtremePoint { Point = stroke[i], Type = ExtremePointType.VerticalPlateauEndMax, Features = features });
+                            tempRes.Add(new ExtremePoint { Point = stroke[i], Type = ExtremePointType.VerticalPlateauEndMax, Features = features });
                         continue;
                     }
 
                 }
+
+                tempRes[0].Features = new PointDynamicFeatures
+                {
+                    [GlobalConstants.Sin] = FeatureFunctions.Sin(stroke[1], stroke[0]),
+                    [GlobalConstants.Speed] = FeatureFunctions.Speed(stroke[1], stroke[0]),
+                    [GlobalConstants.Cos] = FeatureFunctions.Cos(stroke[1], stroke[0]),
+                    [GlobalConstants.QDir] = FeatureFunctions.QDir(stroke[1], stroke[0])
+                }; ;
+                res.AddRange(tempRes);
             }
 
             return res;
@@ -192,19 +227,21 @@ namespace EpwLib
                 {
                     case ExtremePointType.StartPoint:
                         if (extremePoints[i+1].Point.Y > currentPoint.Point.Y)
+                        {
                             res.Add(new ExtremePoint
                             {
-                                Point = extremePoints[i + 1].Point,
+                                Point = extremePoints[i].Point,
                                 Type = ExtremePointType.VerticalMin,
-                                Features = extremePoints[i + 1].Features
+                                Features = extremePoints[i].Features
                             });
+                        }
                         else
                         {
                             res.Add(new ExtremePoint
                             {
-                                Point = extremePoints[i + 1].Point,
+                                Point = extremePoints[i].Point,
                                 Type = ExtremePointType.VerticalMax,
-                                Features = extremePoints[i + 1].Features
+                                Features = extremePoints[i].Features
                             });
                         }
                         break;
@@ -212,17 +249,17 @@ namespace EpwLib
                         if (extremePoints[i - 1].Point.Y > currentPoint.Point.Y)
                             res.Add(new ExtremePoint
                             {
-                                Point = extremePoints[i - 1].Point,
+                                Point = extremePoints[1].Point,
                                 Type = ExtremePointType.VerticalMin,
-                                Features = extremePoints[i - 1].Features
+                                Features = extremePoints[1].Features
                             });
                         else
                         {
                             res.Add(new ExtremePoint
                             {
-                                Point = extremePoints[i - 1].Point,
+                                Point = extremePoints[i].Point,
                                 Type = ExtremePointType.VerticalMax,
-                                Features = extremePoints[i - 1].Features
+                                Features = extremePoints[i].Features
                             });
                         }
                         break;

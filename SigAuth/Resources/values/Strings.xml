@@ -1,4 +1,8 @@
 <resources>
-    <string name="app_name">Signature Authentication</string>
+    <string name="app_name">SigAuth</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_settings">Settings</string>
+    <string name="sig_num_prompt">Signature #</string>
+    <string name="sig_sample_prompt">Sample #</string>
 </resources>

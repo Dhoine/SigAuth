@@ -9,5 +9,6 @@ namespace StorageAdapter.Models
         public int SignatureId { get; set; }
         public string SignatureName { get; set; }
         public bool IsModelActual { get; set; }
+        public string Model { get; set; }
     }
 }

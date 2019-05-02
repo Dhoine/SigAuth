@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Android.App;
+using Android.Content;
 using DwtSig;
 using EpwLib;
 using Hmm;
@@ -10,45 +12,41 @@ using StorageAdapter;
 
 namespace IntermediateLib
 {
-    public class AppService : IAppService
+    [Service]
+    public class AppService
     {
-        private readonly IStorageAdapter _adapter = new StorageAdapterImpl();
+        private readonly ISharedPreferences _preferences;
+        private readonly StorageAdapterImpl _adapter = new StorageAdapterImpl();
+
+        private readonly Context _context;
+
+        public AppService(ISharedPreferences prefs)
+        {
+            _preferences = prefs;
+        }
         public bool TrainSignature(List<List<RawPoint>> signatureStrokes, int sigId)
         {
             return _adapter.SaveSignatureSample(sigId, signatureStrokes);
         }
 
-        public bool CheckSignature(List<List<RawPoint>> signatureStrokes, int sigId, int method)
+        public bool CheckSignature(List<List<RawPoint>> signatureStrokes, int sigId)
         {
             var samples = _adapter.GetAllSamples(sigId);
-            if (method == 1)
+            if (!samples.Any())
+                return false;
+            var factory = new SignatureVerificationImplFactory();
+            var impl = factory.GetSignatureVerificationImpl(_preferences);
+
+            if (impl == null) return false;
+            var oldModel = _adapter.GetModel(sigId);
+
+            var resp = impl.CheckSignature(samples, signatureStrokes, oldModel);
+            if (resp.SignatureModelUpdated)
             {
-                var sparse = new SparseDtw();
-                return sparse.CheckSignature(samples, signatureStrokes, null, null);
+                _adapter.SaveModel(sigId, resp.NewModel);
             }
 
-            if (method == 2)
-            {
-                var sparse = new Epw();
-                return sparse.CheckSignature(samples, signatureStrokes, null, null);
-            }
-
-            if (method == 3)
-            {
-                var sparse = new DwtSignature();
-                return sparse.CheckSignature(samples, signatureStrokes);
-            }
-
-            //var sample = _adapter.GetSignatureSample(sigId, 1).Sample;
-            //var helper = new Epw();
-            ////var test = helper.SmoothPoints(signatureStrokes);
-            //var test2 = helper.GetExtremePointsUnfiltered(signatureStrokes);
-            //var test3 = helper.FilterExtremePoints(test2);
-            ////var test4 = helper.SmoothPoints(sample);
-            //var test5 = helper.GetExtremePointsUnfiltered(sample);
-            //var test6 = helper.FilterExtremePoints(test5);
-            //var test7 = helper.CompareSequence(test3, test6);
-            return false;
+            return resp.IsGenuine;
         }
 
         public bool DeleteSignature(int sigId)
@@ -79,6 +77,11 @@ namespace IntermediateLib
         public bool SetSignatureName(int sigId, string name)
         {
             return _adapter.SetSignatureName(sigId, name);
+        }
+
+        public string GetSignatureName(int sigId)
+        {
+            return _adapter.GetSignatureName(sigId);
         }
 
         public bool BuildSigModel(int sigId)

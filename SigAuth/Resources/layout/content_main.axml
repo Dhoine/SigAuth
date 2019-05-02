@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:background="@color/background_floating_material_light">
+    <xamarin.controls.SignaturePadView
+        android:id="@+id/signatureView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="?attr/actionBarSize"
+        android:layout_marginBottom="12dp"
+        android:layout_above="@+id/spinner"/>
+
+        <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:textColor="@android:color/white"
+        android:text="@string/sig_num_prompt"/>
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:prompt="@string/sig_num_prompt"
+        android:textColor="@android:color/white"
+        android:layout_above="@+id/btnTeach"/>
+    <Button
+        android:id="@+id/btnTeach"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Teach"
+        android:layout_alignParentBottom="true"/>
+    <Button
+        android:id="@+id/btnCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Check"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/btnTeach"/>
+</RelativeLayout>

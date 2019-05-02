@@ -45,7 +45,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IStorageAdapter.cs" />
     <Compile Include="Models\Signature.cs" />
     <Compile Include="Models\SignatureSample.cs" />
     <Compile Include="Resources\Resource.designer.cs" />

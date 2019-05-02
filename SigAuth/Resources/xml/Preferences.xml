@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+  <ListPreference
+    android:key="verification_method"
+    android:title="Verification Method"
+    android:dialogTitle="Verification Method"
+    android:entries ="@array/verification_methods"
+    android:entryValues ="@array/verification_methods_values"
+    android:defaultValue ="1"/>
+  <PreferenceCategory
+    android:title="DTW"
+    android:key="dtw_pref_cat">
+    <MultiSelectListPreference
+    android:key="dtw_features"
+    android:title="Compared Features"
+    android:dialogTitle="Compared Features"
+    android:entries ="@array/compared_features"
+    android:entryValues ="@array/compared_features_values"
+    android:defaultValue ="@array/compared_features_default"/>
+  </PreferenceCategory>
+  <PreferenceCategory
+    android:title="EPW"
+    android:key="epw_pref_cat">
+    <MultiSelectListPreference
+    android:key="epw_features"
+    android:title="Compared Features"
+    android:dialogTitle="Compared Features"
+    android:entries ="@array/compared_features"
+    android:entryValues ="@array/compared_features_values"
+    android:defaultValue ="@array/compared_features_default"/>
+  </PreferenceCategory>
+  <PreferenceCategory
+    android:title="DWT"
+    android:key="dwt_pref_cat">
+    <ListPreference
+      android:key="wavelet_type"
+      android:title="Mother Wavelet"
+      android:dialogTitle="Mother Wavelet"
+      android:entries ="@array/wavelets_names"
+      android:entryValues ="@array/wavelets_values"
+      android:defaultValue ="db4"/>
+    <SeekBarPreference
+            android:key="wavelet_level"
+            android:title="Level of DWT"
+            android:defaultValue="3"
+            android:max="5"
+            android:min="1"/>
+  </PreferenceCategory>
+</PreferenceScreen>

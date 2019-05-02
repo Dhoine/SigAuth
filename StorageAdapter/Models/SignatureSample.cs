@@ -9,6 +9,6 @@ namespace StorageAdapter.Models
         [Indexed]
         public int SignatureId { get; set; }
         public int SampleNo { get; set; }
-        public string PointsSerialized { get; set; }
+        public string PointsSerialized { get; set; } 
     }
 }

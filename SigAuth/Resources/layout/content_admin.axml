@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:background="@color/background_floating_material_light">
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:text="@string/sig_num_prompt"
+        android:paddingTop="?attr/actionBarSize"
+        android:paddingLeft="10px"
+        android:id ="@+id/spinner_hint"/>
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:prompt="@string/sig_num_prompt"
+        android:layout_below="@+id/spinner_hint"/>
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:hint="Signature Name"
+        android:layout_below="@+id/spinner"
+        android:id="@+id/signature_name"/>
+    <Button
+        android:id="@+id/btnRename"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rename"
+        android:layout_toRightOf="@+id/signature_name"
+        android:layout_below="@+id/spinner"/>
+    <Button
+        android:id="@+id/btnDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete"
+        android:layout_toRightOf="@+id/btnRename"
+        android:layout_below="@+id/spinner"/>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:text="@string/sig_num_prompt"
+        android:layout_below="@+id/signature_name"
+        android:paddingLeft="10px"
+        android:id ="@+id/spinner_samples_hint"/>
+    <Spinner
+        android:id="@+id/spinner_samples"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:prompt="@string/sig_sample_prompt"
+        android:layout_below="@+id/spinner_samples_hint"/>
+    <Button
+        android:id="@+id/btnDeleteSample"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete"
+        android:layout_toRightOf="@+id/spinner_samples"
+        android:layout_below="@+id/signature_name"/>
+    <ImageView  
+         android:id="@+id/imageView"  
+         android:layout_width="fill_parent"  
+         android:layout_height="fill_parent"  
+         android:layout_below="@+id/spinner_samples"/> 
+</RelativeLayout>

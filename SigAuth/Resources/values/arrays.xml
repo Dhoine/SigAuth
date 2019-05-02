@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string-array name="verification_methods">
+    <item>DTW</item>
+    <item>EPW</item>
+    <item>DWT</item>
+    <item>HMM</item>
+  </string-array>
+  <string-array name="verification_methods_values">
+    <item>1</item>
+    <item>2</item>
+    <item>3</item>
+    <item>4</item>
+  </string-array>
+
+  <string-array name="compared_features">
+    <item>Sin</item>
+    <item>Cos</item>
+    <item>QDir</item>
+    <item>Speed</item>
+  </string-array>
+  <string-array name="compared_features_values">
+    <item>sin</item>
+    <item>cos</item>
+    <item>qdir</item>
+    <item>speed</item>
+  </string-array>
+
+  <string-array name="compared_features_default">
+    <item>sin</item>
+    <item>speed</item>
+  </string-array>
+  
+  <string-array name="wavelets_values">
+    <item>coif1</item>
+    <item>coif2</item>
+    <item>coif3</item>
+    <item>coif4</item>
+    <item>coif5</item>
+    <item>db2</item>
+    <item>db3</item>
+    <item>db4</item>
+    <item>db5</item>
+    <item>db6</item>
+    <item>db7</item>
+    <item>db8</item>
+    <item>db9</item>
+    <item>db10</item>
+    <item>haar</item>
+    <item>dmeyer</item>
+    <item>sym2</item>
+    <item>sym3</item>
+    <item>sym4</item>
+    <item>sym5</item>
+    <item>sym6</item>
+    <item>sym7</item>
+    <item>sym8</item>
+  </string-array>
+  <string-array name="wavelets_names">
+    <item>Coiflet 1</item>
+    <item>Coiflet 2</item>
+    <item>Coiflet 3</item>
+    <item>Coiflet 4</item>
+    <item>Coiflet 5</item>
+    <item>Daubechies 2</item>
+    <item>Daubechies 3</item>
+    <item>Daubechies 4</item>
+    <item>Daubechies 5</item>
+    <item>Daubechies 6</item>
+    <item>Daubechies 7</item>
+    <item>Daubechies 8</item>
+    <item>Daubechies 9</item>
+    <item>Daubechies 10</item>
+    <item>Haar</item>
+    <item>Discreete Meyer</item>
+    <item>Symlet 2</item>
+    <item>Symlet 3</item>
+    <item>Symlet 4</item>
+    <item>Symlet 5</item>
+    <item>Symlet 6</item>
+    <item>Symlet 7</item>
+    <item>Symlet 8</item>
+  </string-array>
+</resources>
