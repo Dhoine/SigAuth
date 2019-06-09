@@ -1,20 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
+﻿using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Preferences;
 using Android.Runtime;
 using Android.Support.Design.Widget;
 using Android.Support.V4.View;
 using Android.Support.V4.Widget;
 using Android.Support.V7.App;
 using Android.Views;
-using Android.Widget;
-using IntermediateLib;
 
 namespace SigAuth
 {
@@ -35,14 +27,13 @@ namespace SigAuth
             drawer.AddDrawerListener(toggle);
             toggle.SyncState();
 
-            NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
+            var navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
             navigationView.SetNavigationItemSelectedListener(this);
-            //FragmentManager.BeginTransaction().Replace(Resource.Id.settingsFragments, new SettingsFragment()).Commit();
         }
 
         public override void OnBackPressed()
         {
-            DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
+            var drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             if (drawer.IsDrawerOpen(GravityCompat.Start))
             {
                 drawer.CloseDrawer(GravityCompat.Start);
@@ -61,37 +52,37 @@ namespace SigAuth
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
-            int id = item.ItemId;
-            if (id == Resource.Id.action_settings)
-            {
-                return true;
-            }
-
-            return base.OnOptionsItemSelected(item);
+            var id = item.ItemId;
+            return id == Resource.Id.action_settings || base.OnOptionsItemSelected(item);
         }
 
         public bool OnNavigationItemSelected(IMenuItem item)
         {
-            int id = item.ItemId;
+            var id = item.ItemId;
 
-            if (id == Resource.Id.nav_pad)
+            switch (id)
             {
-                Intent intent = new Intent(this, typeof(MainActivity));
-                intent.AddFlags(ActivityFlags.ReorderToFront);
-                StartActivity(intent);
-            }
-            else if (id == Resource.Id.nav_admin)
-            {
-                Intent intent = new Intent(this, typeof(AdminActivity));
-                intent.AddFlags(ActivityFlags.ReorderToFront);
-                StartActivity(intent);
-            }
-            else if (id == Resource.Id.nav_settings)
-            {
+                case Resource.Id.nav_pad:
+                {
+                    Intent intent = new Intent(this, typeof(MainActivity));
+                    intent.AddFlags(ActivityFlags.ReorderToFront);
+                    StartActivity(intent);
+                    break;
+                }
 
+                case Resource.Id.nav_admin:
+                {
+                    Intent intent = new Intent(this, typeof(AdminActivity));
+                    intent.AddFlags(ActivityFlags.ReorderToFront);
+                    StartActivity(intent);
+                    break;
+                }
+
+                case Resource.Id.nav_settings:
+                    break;
             }
 
-            DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
+            var drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             drawer.CloseDrawer(GravityCompat.Start);
             return true;
         }

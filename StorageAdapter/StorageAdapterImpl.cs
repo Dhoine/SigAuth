@@ -26,14 +26,12 @@ namespace StorageAdapter
             {
                 if (_connection.Table<Signature>().All(s => s.SignatureId != sigId))
                 {
-                    var sig = new Signature {SignatureId = sigId, IsModelActual = false};
+                    var sig = new Signature {SignatureId = sigId};
                     _connection.Insert(sig);
                 }
                 else
                 {
                     var sig = _connection.Get<Signature>(sigId);
-                    sig.IsModelActual = false;
-                    sig.Model = null;
                     _connection.Update(sig);
                 }
 
@@ -59,30 +57,14 @@ namespace StorageAdapter
             }
         }
 
-        public SignatureModel GetModel(int sigId)
-        {
-            var model = _connection.Get<Signature>(sigId).Model;
-            if (model == null)
-                return null;
-            var sig = JsonConvert.DeserializeObject<SignatureModel>(model);
-            return sig;
-        }
-
-        public void SaveModel(int sigId, SignatureModel model)
-        {
-            var sig = _connection.Get<Signature>(sigId);
-            sig.Model = JsonConvert.SerializeObject(model);
-            _connection.Update(sig);
-        }
-
         public SignatureSampleDeserialized GetSignatureSample(int sigId, int sampleNo)
         {
             var ret = new SignatureSampleDeserialized();
-            var smpl = _connection.Table<SignatureSample>()
+            var sampleTable = _connection.Table<SignatureSample>()
                 .SingleOrDefault(sample => sample.SignatureId == sigId && sample.SampleNo == sampleNo);
-            ret.Sample = smpl == null
+            ret.Sample = sampleTable == null
                 ? null
-                : JsonConvert.DeserializeObject<List<List<RawPoint>>>(smpl.PointsSerialized);
+                : JsonConvert.DeserializeObject<List<List<RawPoint>>>(sampleTable.PointsSerialized);
             ret.SigNum = sigId;
             ret.SampleNo = sampleNo;
             return ret;
@@ -119,7 +101,6 @@ namespace StorageAdapter
         public bool DeleteSample(int sigId, int sampleNo)
         {
             var sig = _connection.Get<Signature>(sigId);
-            sig.IsModelActual = false;
             _connection.Update(sig);
             var sample = _connection.Table<SignatureSample>()
                 .FirstOrDefault(s => s.SampleNo == sampleNo && s.SignatureId == sigId);

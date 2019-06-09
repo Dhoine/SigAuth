@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using SharedClasses;
@@ -10,50 +11,43 @@ namespace EpwLib
         private readonly List<string> _fullFeatureList = new List<string>
             {GlobalConstants.Sin, GlobalConstants.Cos, GlobalConstants.QDir, GlobalConstants.Speed};
 
-        public List<string> _compareFeatureList = new List<string>
+        public List<string> CompareFeatureList = new List<string>
             {GlobalConstants.Sin, GlobalConstants.Cos, GlobalConstants.QDir, GlobalConstants.Speed};
 
-        public VerificationResponse CheckSignature(List<SignatureSampleDeserialized> origSignature,
-            List<List<RawPoint>> checkedSample,
-            SignatureModel model = null
+        public bool CheckSignature(List<SignatureSampleDeserialized> origSignature,
+            List<List<RawPoint>> checkedSample
         )
         {
-            var pointsinput = new List<ExtremePoint[]>();
-            if (model == null || model.Epw == null)
+            var model = new EpwModel {Samples = new List<EpwFeature>(), MinMaxFeatures = new List<NameMinMax>()};
+            foreach (var sample in origSignature)
             {
-                model = new SignatureModel();
-                model.Epw = new EpwModel {Samples = new List<EpwFeature>(), MinMaxFeatures = new List<NameMinMax>()};
-                foreach (var sample in origSignature)
-                {
-                    var points = FilterExtremePoints(GetExtremePointsUnfiltered(SmoothPoints(sample.Sample)));
-                    pointsinput.Add(points.ToArray());
-                    model.Epw.Samples.Add(new EpwFeature {ExtremePoints = points});
-                }
-
-                foreach (var featureName in _fullFeatureList)
-                    model.Epw.MinMaxFeatures.Add(BuildMinMax(featureName, model.Epw.Samples));
+                var points = FilterExtremePoints(GetExtremePointsUnfiltered(SmoothPoints(sample.Sample)));
+                model.Samples.Add(new EpwFeature {ExtremePoints = points});
             }
 
-            var checkedModel = GetCheckedModel(model.Epw.Samples,
+            foreach (var featureName in _fullFeatureList)
+                model.MinMaxFeatures.Add(BuildMinMax(featureName, model.Samples));
+
+            var checkedModel = GetCheckedModel(model.Samples,
                 FilterExtremePoints(GetExtremePointsUnfiltered(SmoothPoints(checkedSample))));
 
-            foreach (var feature in _compareFeatureList)
+            foreach (var feature in CompareFeatureList)
             {
-                var orig = model.Epw.MinMaxFeatures.FirstOrDefault(f => f.Name == feature);
+                var orig = model.MinMaxFeatures.FirstOrDefault(f => f.Name == feature);
                 var ch = checkedModel.FirstOrDefault(f => f.Name == feature);
                 var avg = (ch.Max + ch.Min) / 2;
                 if (avg > orig.Max)
-                    return new VerificationResponse {IsGenuine = false};
+                    return true;
             }
 
-            return new VerificationResponse {IsGenuine = true};
+            return true;
         }
 
         private List<NameMinMax> GetCheckedModel(List<EpwFeature> modelSamples, List<ExtremePoint> checkedSample)
         {
             var model = new List<NameMinMax>();
 
-            foreach (var featureName in _compareFeatureList)
+            foreach (var featureName in CompareFeatureList)
             {
                 var distances = new List<double>();
                 foreach (var sample in modelSamples)
@@ -74,13 +68,8 @@ namespace EpwLib
 
             for (var i = 0; i < features.Count; i++)
             {
-                var distances = new List<double>();
-
-                for (var j = 0; j < features.Count; j++)
-                {
-                    if (i == j) continue;
-                    distances.Add(CompareSequence(features[i].ExtremePoints, features[j].ExtremePoints, featureName));
-                }
+                var distances = features.Where((t, j) => i != j)
+                    .Select(t => CompareSequence(features[i].ExtremePoints, t.ExtremePoints, featureName)).ToList();
 
                 avgMin += distances.Min();
                 avgMax += distances.Max();
@@ -90,6 +79,8 @@ namespace EpwLib
             avgMax /= features.Count;
             return new NameMinMax {Name = featureName, Min = avgMin, Max = avgMax};
         }
+
+        #region PointsExtraction
 
         public List<List<RawPoint>> SmoothPoints(List<List<RawPoint>> origSample)
         {
@@ -130,7 +121,7 @@ namespace EpwLib
                 {
                     if (i == 0)
                     {
-                        tempRes.Add(new ExtremePoint {Point = stroke[i], Type = ExtremePointType.StartPoint});
+                        tempRes.Add(new ExtremePoint { Point = stroke[i], Type = ExtremePointType.StartPoint });
                         continue;
                     }
 
@@ -145,7 +136,7 @@ namespace EpwLib
                     if (i == stroke.Count - 1)
                     {
                         tempRes.Add(new ExtremePoint
-                            {Point = stroke[i], Type = ExtremePointType.EndPoint, Features = features});
+                        { Point = stroke[i], Type = ExtremePointType.EndPoint, Features = features });
                         continue;
                     }
 
@@ -154,9 +145,9 @@ namespace EpwLib
                     {
                         tempRes.Add(stroke[i - 1].Y < stroke[i].Y
                             ? new ExtremePoint
-                                {Point = stroke[i], Type = ExtremePointType.VerticalMax, Features = features}
+                            { Point = stroke[i], Type = ExtremePointType.VerticalMax, Features = features }
                             : new ExtremePoint
-                                {Point = stroke[i], Type = ExtremePointType.VerticalMin, Features = features});
+                            { Point = stroke[i], Type = ExtremePointType.VerticalMin, Features = features });
                         continue;
                     }
 
@@ -165,22 +156,30 @@ namespace EpwLib
                         if (stroke[i].Y < stroke[i - 1].Y)
                             tempRes.Add(new ExtremePoint
                             {
-                                Point = stroke[i], Type = ExtremePointType.VerticalPlateauStartMin, Features = features
+                                Point = stroke[i],
+                                Type = ExtremePointType.VerticalPlateauStartMin,
+                                Features = features
                             });
                         else if (stroke[i].Y > stroke[i - 1].Y)
                             tempRes.Add(new ExtremePoint
                             {
-                                Point = stroke[i], Type = ExtremePointType.VerticalPlateauStartMax, Features = features
+                                Point = stroke[i],
+                                Type = ExtremePointType.VerticalPlateauStartMax,
+                                Features = features
                             });
                         else if (stroke[i].Y < stroke[i + 1].Y)
                             tempRes.Add(new ExtremePoint
                             {
-                                Point = stroke[i], Type = ExtremePointType.VerticalPlateauEndMin, Features = features
+                                Point = stroke[i],
+                                Type = ExtremePointType.VerticalPlateauEndMin,
+                                Features = features
                             });
                         else if (stroke[i].Y > stroke[i + 1].Y)
                             tempRes.Add(new ExtremePoint
                             {
-                                Point = stroke[i], Type = ExtremePointType.VerticalPlateauEndMax, Features = features
+                                Point = stroke[i],
+                                Type = ExtremePointType.VerticalPlateauEndMax,
+                                Features = features
                             });
                     }
                 }
@@ -244,43 +243,48 @@ namespace EpwLib
                         res.Add(currentPoint);
                         break;
                     default:
-                    {
-                        var nextPoint = extremePoints[i + 1];
-                        switch (currentPoint.Type)
                         {
-                            case ExtremePointType.VerticalPlateauStartMax
-                                when nextPoint.Type == ExtremePointType.VerticalPlateauEndMax ||
-                                     nextPoint.Type == ExtremePointType.EndPoint:
-                                res.Add(new ExtremePoint
-                                {
-                                    Point = currentPoint.Point, Type = ExtremePointType.VerticalMax,
-                                    Features = currentPoint.Features
-                                });
-                                continue;
-                            case ExtremePointType.VerticalPlateauStartMin
-                                when nextPoint.Type == ExtremePointType.VerticalPlateauEndMin ||
-                                     nextPoint.Type == ExtremePointType.EndPoint:
-                                res.Add(new ExtremePoint
-                                {
-                                    Point = currentPoint.Point, Type = ExtremePointType.VerticalMin,
-                                    Features = currentPoint.Features
-                                });
-                                continue;
-                        }
+                            var nextPoint = extremePoints[i + 1];
+                            switch (currentPoint.Type)
+                            {
+                                case ExtremePointType.VerticalPlateauStartMax
+                                    when nextPoint.Type == ExtremePointType.VerticalPlateauEndMax ||
+                                         nextPoint.Type == ExtremePointType.EndPoint:
+                                    res.Add(new ExtremePoint
+                                    {
+                                        Point = currentPoint.Point,
+                                        Type = ExtremePointType.VerticalMax,
+                                        Features = currentPoint.Features
+                                    });
+                                    continue;
+                                case ExtremePointType.VerticalPlateauStartMin
+                                    when nextPoint.Type == ExtremePointType.VerticalPlateauEndMin ||
+                                         nextPoint.Type == ExtremePointType.EndPoint:
+                                    res.Add(new ExtremePoint
+                                    {
+                                        Point = currentPoint.Point,
+                                        Type = ExtremePointType.VerticalMin,
+                                        Features = currentPoint.Features
+                                    });
+                                    continue;
+                            }
 
-                        break;
-                    }
+                            break;
+                        }
                 }
             }
 
             return res;
         }
 
+        #endregion
+
+        #region CompareSequences
+
         public double CompareSequence(List<ExtremePoint> sample, List<ExtremePoint> reference, string featureName)
         {
             if (reference.First().Type != sample.First().Type) reference.RemoveAt(0);
 
-            var finalWeight = double.MaxValue;
             var ewpMatrix = Enumerable.Repeat(-1d, sample.Count * reference.Count).ToArray();
             ewpMatrix[0] =
                 FeatureFunctions.SquareEucDist(reference[0].Features[featureName], sample[0].Features[featureName]);
@@ -293,77 +297,91 @@ namespace EpwLib
                 var neighborWeights = new List<double>();
                 var i = index % reference.Count;
                 var j = index / reference.Count;
-                if (i - 1 >= 0 && j - 1 >= 0)
-                {
-                    var elem = ewpMatrix[reference.Count * (j - 1) + i - 1];
-                    if (elem != -1)
-                        neighborWeights.Add(elem + 0.5 *
-                                            FeatureFunctions.SquareEucDist(reference[i].Features[featureName],
-                                                sample[j].Features[featureName]));
-                }
+                Extract11Neighbor(sample, reference, featureName, i, j, ewpMatrix, neighborWeights);
 
-                if (i - 1 >= 0 && j - 3 >= 0)
-                {
-                    var elem = ewpMatrix[reference.Count * (j - 3) + i - 1];
-                    if (elem != -1)
-                    {
-                        var weight = elem + FeatureFunctions.SquareEucDist(reference[i].Features[featureName],
-                                         sample[j].Features[featureName]);
-                        if (j - 2 >= 0)
-                        {
-                            weight += 2 * FeatureFunctions.SquareEucDist(sample[j - 2].Features[featureName], sample[j - 1].Features[featureName]);
-                        }
+                Extract13Neighbor(sample, reference, featureName, i, j, ewpMatrix, neighborWeights);
 
-                        neighborWeights.Add(weight);
-                    }
-                }
-
-                if (i - 3 >= 0 && j - 1 >= 0)
-                {
-                    var elem = ewpMatrix[reference.Count * (j - 1) + i - 3];
-                    if (elem != -1)
-                    {
-                        var weight = elem + FeatureFunctions.SquareEucDist(reference[i].Features[featureName],
-                                         sample[j].Features[featureName]);
-                        if (i - 2 >= 0)
-                            weight += 2 * FeatureFunctions.SquareEucDist(reference[i - 2].Features[featureName],
-                                          reference[i - 1].Features[featureName]);
-                        neighborWeights.Add(weight);
-                    }
-                }
+                Extract31Neighbor(sample, reference, featureName, i, j, ewpMatrix, neighborWeights);
 
                 if (!neighborWeights.Any()) continue;
                 ewpMatrix[index] = neighborWeights.Min();
             }
 
-            var staringindex = 0;
+            return FindWarpingPath(reference, ewpMatrix);
+        }
+
+        private static double FindWarpingPath(ICollection reference, IReadOnlyList<double> ewpMatrix)
+        {
+            var staringIndex = 0;
             if (ewpMatrix[reference.Count * 2] < ewpMatrix[0] && ewpMatrix[reference.Count * 2] < ewpMatrix[2])
-                staringindex = reference.Count * 2;
+                staringIndex = reference.Count * 2;
 
-            if (ewpMatrix[2] < ewpMatrix[0] && ewpMatrix[2] < ewpMatrix[reference.Count * 2]) staringindex = 2;
+            if (ewpMatrix[2] < ewpMatrix[0] && ewpMatrix[2] < ewpMatrix[reference.Count * 2]) staringIndex = 2;
 
-            var warpIndex = staringindex;
+            var warpIndex = staringIndex;
             do
             {
                 var next31 = warpIndex + 3 * reference.Count + 1;
                 var next11 = warpIndex + reference.Count + 1;
                 var next13 = warpIndex + reference.Count + 3;
 
-                if (next31 < ewpMatrix.Length && ewpMatrix[next31] != -1 && ewpMatrix[next31] < ewpMatrix[next11] &&
+                if (next31 < ewpMatrix.Count && ewpMatrix[next31] >= 0 && ewpMatrix[next31] < ewpMatrix[next11] &&
                     ewpMatrix[next31] < ewpMatrix[next13])
                     warpIndex = next31;
-                else if (next13 < ewpMatrix.Length && ewpMatrix[next13] != -1 &&
+                else if (next13 < ewpMatrix.Count && ewpMatrix[next13] >= 0 &&
                          ewpMatrix[next13] < ewpMatrix[next11] &&
-                         (next31 >= ewpMatrix.Length || ewpMatrix[next13] < ewpMatrix[next31]))
+                         (next31 >= ewpMatrix.Count || ewpMatrix[next13] < ewpMatrix[next31]))
                     warpIndex = next13;
-                else if (next11 < ewpMatrix.Length && ewpMatrix[next11] != -1)
+                else if (next11 < ewpMatrix.Count && ewpMatrix[next11] >= 0)
                     warpIndex = next11;
                 else
                     break;
-            } while (warpIndex < ewpMatrix.Length);
+            } while (warpIndex < ewpMatrix.Count);
 
 
             return ewpMatrix[warpIndex];
         }
+
+        private static void Extract31Neighbor(IReadOnlyList<ExtremePoint> sample, IReadOnlyList<ExtremePoint> reference, string featureName, int i, int j, IReadOnlyList<double> ewpMatrix,
+            ICollection<double> neighborWeights)
+        {
+            if (i - 3 < 0 || j - 1 < 0) return;
+            var elem = ewpMatrix[reference.Count * (j - 1) + i - 3];
+            if (elem < 0) return;
+            var weight = elem + FeatureFunctions.SquareEucDist(reference[i].Features[featureName],
+                             sample[j].Features[featureName]);
+            if (i - 2 >= 0)
+                weight += 2 * FeatureFunctions.SquareEucDist(reference[i - 2].Features[featureName],
+                              reference[i - 1].Features[featureName]);
+            neighborWeights.Add(weight);
+        }
+
+        private static void Extract13Neighbor(IReadOnlyList<ExtremePoint> sample, IReadOnlyList<ExtremePoint> reference, string featureName, int i, int j, IReadOnlyList<double> ewpMatrix,
+            ICollection<double> neighborWeights)
+        {
+            if (i - 1 < 0 || j - 3 < 0) return;
+            var elem = ewpMatrix[reference.Count * (j - 3) + i - 1];
+            if (elem < 0) return;
+            var weight = elem + FeatureFunctions.SquareEucDist(reference[i].Features[featureName],
+                             sample[j].Features[featureName]);
+            if (j - 2 >= 0)
+                weight += 2 * FeatureFunctions.SquareEucDist(sample[j - 2].Features[featureName],
+                              sample[j - 1].Features[featureName]);
+
+            neighborWeights.Add(weight);
+        }
+
+        private static void Extract11Neighbor(List<ExtremePoint> sample, List<ExtremePoint> reference, string featureName, int i, int j, double[] ewpMatrix,
+            List<double> neighborWeights)
+        {
+            if (i - 1 < 0 || j - 1 < 0) return;
+            var elem = ewpMatrix[reference.Count * (j - 1) + i - 1];
+            if (elem >= 0)
+                neighborWeights.Add(elem + 0.5 *
+                                    FeatureFunctions.SquareEucDist(reference[i].Features[featureName],
+                                        sample[j].Features[featureName]));
+        }
+
+        #endregion
     }
 }

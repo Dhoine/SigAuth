@@ -2,7 +2,6 @@
 using Android.Content;
 using Android.OS;
 using Android.Preferences;
-using Android.Views;
 
 namespace SigAuth
 {
@@ -23,15 +22,6 @@ namespace SigAuth
             var prefs = PreferenceManager.SharedPreferences;
             prefs.RegisterOnSharedPreferenceChangeListener(this);
             NeedToInit.ForEach(pr => InitSummary(prefs, pr));
-            // Create your fragment here
-        }
-
-        public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
-        {
-            // Use this to return your custom view for this Fragment
-            // return inflater.Inflate(Resource.Layout.YourFragment, container, false);
-
-            return base.OnCreateView(inflater, container, savedInstanceState);
         }
 
         private void InitSummary(ISharedPreferences sharedPreferences, string key)

@@ -16,9 +16,8 @@ namespace Hmm
 {
     public class HmmSignature : ISignatureVerification
     {
-        public VerificationResponse CheckSignature(List<SignatureSampleDeserialized> origSignature,
-            List<List<RawPoint>> checkedSample,
-            SignatureModel model)
+        public bool CheckSignature(List<SignatureSampleDeserialized> origSignature,
+            List<List<RawPoint>> checkedSample)
         {
             var teachingSeq = new List<int[]>();
             foreach (var sample in origSignature)
@@ -41,11 +40,9 @@ namespace Hmm
 
             teacher.Learn(teachingSeq.ToArray().ToDouble());
             ;
-            var tst = hmm.Probability(test.ToArray().ToDouble().Flatten());
-            var tst2 = hmm.Generate(6);
+            var probability = hmm.Probability(test.ToArray().ToDouble().Flatten());
 
-
-            return new VerificationResponse {IsGenuine = false};
+            return probability > 0.8;
         }
 
         private byte[,] ConvertToArray(List<List<RawPoint>> sample)
@@ -112,7 +109,6 @@ namespace Hmm
             {
                 var part2 = SplitImage(quarter, true, true);
                 var part3 = part2.SelectMany(i => SplitImage(i, true, true));
-                //var part4 = part3.SelectMany(i => SplitImage(i, true, true));
                 parts.Add(part3.ToArray());
             }
 

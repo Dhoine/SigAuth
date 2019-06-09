@@ -26,7 +26,7 @@ namespace IntermediateLib
                 case 2:
                     impl = new Epw
                     {
-                        _compareFeatureList = preferences.GetStringSet("epw_features", new List<string>()).ToList()
+                        CompareFeatureList = preferences.GetStringSet("epw_features", new List<string>()).ToList()
                     };
                     break;
                 case 3:

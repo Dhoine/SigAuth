@@ -28,7 +28,7 @@ namespace SigAuth
         private int currentSigNum;
 
         private List<KeyValuePair<int, string>>
-            SignatureNumbers;
+            signatureNumbers;
 
         protected override void OnResume()
         {
@@ -81,29 +81,29 @@ namespace SigAuth
         private void ReInitSpinner(Spinner spinner)
         {
             var ids = service.GetSavedSignaturesIds();
-            SignatureNumbers = new List<KeyValuePair<int, string>>();
+            signatureNumbers = new List<KeyValuePair<int, string>>();
             var lastId = 0;
             foreach (var id in ids)
             {
                 var keyValue = new KeyValuePair<int, string>(id, $"#{id}: {service.GetSignatureName(id) ?? "Unknown"}");
-                SignatureNumbers.Add(keyValue);
+                signatureNumbers.Add(keyValue);
                 lastId = id;
             }
 
             if (ids.Any()) lastId++;
 
             var newKeyValue = new KeyValuePair<int, string>(lastId, $"#{lastId}: NEW SIGNATURE");
-            SignatureNumbers.Add(newKeyValue);
+            signatureNumbers.Add(newKeyValue);
 
             var signatureNames = new List<string>();
-            foreach (var item in SignatureNumbers)
+            foreach (var item in signatureNumbers)
                 signatureNames.Add(item.Value);
             var adapter = new ArrayAdapter<string>(this,
                 Android.Resource.Layout.SimpleSpinnerItem, signatureNames);
 
             adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
             spinner.Adapter = adapter;
-            spinner.SetSelection(SignatureNumbers.FindIndex(n => n.Key == currentSigNum));
+            spinner.SetSelection(signatureNumbers.FindIndex(n => n.Key == currentSigNum));
         }
 
         public override void OnBackPressed()
@@ -168,7 +168,7 @@ namespace SigAuth
         {
             var spinner = (Spinner) sender;
             var item = spinner.GetItemAtPosition(e.Position);
-            currentSigNum = SignatureNumbers.First(i => i.Value.Equals(item.ToString())).Key;
+            currentSigNum = signatureNumbers.First(i => i.Value.Equals(item.ToString())).Key;
         }
     }
 }

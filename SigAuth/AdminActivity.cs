@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Android.App;
 using Android.Content;
+using Android.Content.PM;
 using Android.Graphics;
 using Android.OS;
 using Android.Preferences;
@@ -15,41 +15,75 @@ using Android.Views;
 using Android.Widget;
 using IntermediateLib;
 using SharedClasses;
+using Xamarin.Essentials;
+using Toolbar = Android.Support.V7.Widget.Toolbar;
 
 namespace SigAuth
 {
-    [Activity(Label = "Admin Signatures", Theme = "@style/AppTheme.NoActionBar", LaunchMode = Android.Content.PM.LaunchMode.SingleTask)]
+    [Activity(Label = "Admin Signatures", Theme = "@style/AppTheme.NoActionBar", LaunchMode = LaunchMode.SingleTask)]
     public class AdminActivity : AppCompatActivity, NavigationView.IOnNavigationItemSelectedListener
     {
-        private AppService service;
-        private int currentSigNum = -1;
         private int currentSampleNum = -1;
+        private int currentSigNum = -1;
 
         private List<KeyValuePair<int, string>>
-            SignatureNumbers;
+            samplesNumbers;
+
+        private AppService service;
 
         private List<KeyValuePair<int, string>>
-            SamplesNumbers;
+            signatureNumbers;
+
+        public bool OnNavigationItemSelected(IMenuItem item)
+        {
+            var id = item.ItemId;
+
+            switch (id)
+            {
+                case Resource.Id.nav_pad:
+                {
+                    var intent = new Intent(this, typeof(MainActivity));
+                    intent.AddFlags(ActivityFlags.ReorderToFront);
+                    StartActivity(intent);
+                    break;
+                }
+
+                case Resource.Id.nav_admin:
+                    break;
+                case Resource.Id.nav_settings:
+                {
+                    var intent = new Intent(this, typeof(SettingsActivity));
+                    intent.AddFlags(ActivityFlags.ReorderToFront);
+                    StartActivity(intent);
+                    break;
+                }
+            }
+
+            var drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
+            drawer.CloseDrawer(GravityCompat.Start);
+            return true;
+        }
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             service = new AppService(PreferenceManager.GetDefaultSharedPreferences(this));
-            Xamarin.Essentials.Platform.Init(this, savedInstanceState);
+            Platform.Init(this, savedInstanceState);
             SetContentView(Resource.Layout.activity_admin);
-            Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
+            var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
-            DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
-            ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, Resource.String.navigation_drawer_open, Resource.String.navigation_drawer_close);
+            var drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
+            var toggle = new ActionBarDrawerToggle(this, drawer, toolbar, Resource.String.navigation_drawer_open,
+                Resource.String.navigation_drawer_close);
             drawer.AddDrawerListener(toggle);
             toggle.SyncState();
 
-            NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
+            var navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
             navigationView.SetNavigationItemSelectedListener(this);
 
-            Spinner spinner = FindViewById<Spinner>(Resource.Id.spinner);
+            var spinner = FindViewById<Spinner>(Resource.Id.spinner);
             spinner.ItemSelected += spinner_ItemSelected;
-            Spinner sampleSpinner = FindViewById<Spinner>(Resource.Id.spinner_samples);
+            var sampleSpinner = FindViewById<Spinner>(Resource.Id.spinner_samples);
             sampleSpinner.ItemSelected += samples_spinner_ItemSelected;
             ReInitSpinner(spinner);
             var renameButton = FindViewById<Button>(Resource.Id.btnRename);
@@ -98,15 +132,11 @@ namespace SigAuth
 
         public override void OnBackPressed()
         {
-            DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
+            var drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             if (drawer.IsDrawerOpen(GravityCompat.Start))
-            {
                 drawer.CloseDrawer(GravityCompat.Start);
-            }
             else
-            {
                 base.OnBackPressed();
-            }
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -117,10 +147,10 @@ namespace SigAuth
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
-            int id = item.ItemId;
+            var id = item.ItemId;
             if (id == Resource.Id.action_settings)
             {
-                Intent intent = new Intent(this, typeof(SettingsActivity));
+                var intent = new Intent(this, typeof(SettingsActivity));
                 intent.AddFlags(ActivityFlags.ReorderToFront);
                 StartActivity(intent);
             }
@@ -128,34 +158,10 @@ namespace SigAuth
             return base.OnOptionsItemSelected(item);
         }
 
-        public bool OnNavigationItemSelected(IMenuItem item)
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions,
+            [GeneratedEnum] Permission[] grantResults)
         {
-            int id = item.ItemId;
-
-            if (id == Resource.Id.nav_pad)
-            {
-                Intent intent = new Intent(this, typeof(MainActivity));
-                intent.AddFlags(ActivityFlags.ReorderToFront);
-                StartActivity(intent);
-            }
-            else if (id == Resource.Id.nav_admin)
-            {
-                
-            }
-            else if (id == Resource.Id.nav_settings)
-            {
-                Intent intent = new Intent(this, typeof(SettingsActivity));
-                intent.AddFlags(ActivityFlags.ReorderToFront);
-                StartActivity(intent);
-            }
-
-            DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
-            drawer.CloseDrawer(GravityCompat.Start);
-            return true;
-        }
-        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
-        {
-            Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+            Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
@@ -163,59 +169,57 @@ namespace SigAuth
         private void ReInitSpinner(Spinner spinner)
         {
             var ids = service.GetSavedSignaturesIds();
-            SignatureNumbers = new List<KeyValuePair<int, string>>();
-            var isEmpty = true;
+            signatureNumbers = new List<KeyValuePair<int, string>>();
             foreach (var id in ids)
             {
                 var keyValue = new KeyValuePair<int, string>(id, $"#{id}: {service.GetSignatureName(id) ?? "Unknown"}");
-                SignatureNumbers.Add(keyValue);
+                signatureNumbers.Add(keyValue);
             }
 
             if (!ids.Any())
             {
-                var newKeyValue = new KeyValuePair<int, string>(-1, $"No signatures");
-                SignatureNumbers.Add(newKeyValue);
+                var newKeyValue = new KeyValuePair<int, string>(-1, "No signatures");
+                signatureNumbers.Add(newKeyValue);
             }
 
-            
 
-            List<string> signatureNames = new List<string>();
-            foreach (var item in SignatureNumbers)
+            var signatureNames = new List<string>();
+            foreach (var item in signatureNumbers)
                 signatureNames.Add(item.Value);
             var adapter = new ArrayAdapter<string>(this,
                 Android.Resource.Layout.SimpleSpinnerItem, signatureNames);
 
             adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
             spinner.Adapter = adapter;
-            var currentPosition = SignatureNumbers.FindIndex(n => n.Key == currentSigNum);
+            var currentPosition = signatureNumbers.FindIndex(n => n.Key == currentSigNum);
             if (currentPosition == -1)
                 currentPosition = 0;
-           
+
             spinner.SetSelection(currentPosition);
             ReInitSampleSpinner();
         }
 
         private void ReInitSampleSpinner()
         {
-            Spinner sampleSpinner = FindViewById<Spinner>(Resource.Id.spinner_samples);
+            var sampleSpinner = FindViewById<Spinner>(Resource.Id.spinner_samples);
             var sampleNumbers = service.GetSampleNumbersForId(currentSigNum);
-            SamplesNumbers = new List<KeyValuePair<int, string>>();
+            samplesNumbers = new List<KeyValuePair<int, string>>();
 
 
             foreach (var id in sampleNumbers)
             {
                 var keyValue = new KeyValuePair<int, string>(id, $"{id}");
-                SamplesNumbers.Add(keyValue);
+                samplesNumbers.Add(keyValue);
             }
 
-            if (sampleNumbers == null || !sampleNumbers.Any())
+            if (!sampleNumbers.Any())
             {
-                var newKeyValue = new KeyValuePair<int, string>(-1, $"No samples");
-                SamplesNumbers.Add(newKeyValue);
+                var newKeyValue = new KeyValuePair<int, string>(-1, "No samples");
+                samplesNumbers.Add(newKeyValue);
             }
 
-            List<string> sampleNumbersArray = new List<string>();
-            foreach (var item in SamplesNumbers)
+            var sampleNumbersArray = new List<string>();
+            foreach (var item in samplesNumbers)
                 sampleNumbersArray.Add(item.Value);
 
             var sampleAdapter = new ArrayAdapter<string>(this,
@@ -223,7 +227,7 @@ namespace SigAuth
 
             sampleAdapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
             sampleSpinner.Adapter = sampleAdapter;
-            var currentSampleNumPos = SamplesNumbers.FindIndex(n => n.Key == currentSampleNum);
+            var currentSampleNumPos = samplesNumbers.FindIndex(n => n.Key == currentSampleNum);
             if (currentSampleNumPos == -1)
                 currentSampleNumPos = 0;
             sampleSpinner.SetSelection(currentSampleNumPos);
@@ -231,18 +235,18 @@ namespace SigAuth
 
         private void spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
         {
-            Spinner spinner = (Spinner)sender;
+            var spinner = (Spinner) sender;
             var item = spinner.GetItemAtPosition(e.Position);
-            currentSigNum = SignatureNumbers.First(i => i.Value.Equals(item.ToString())).Key;
+            currentSigNum = signatureNumbers.First(i => i.Value.Equals(item.ToString())).Key;
             currentSampleNum = -1;
             ReInitSampleSpinner();
         }
 
         private void samples_spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
         {
-            Spinner spinner = (Spinner)sender;
+            var spinner = (Spinner) sender;
             var item = spinner.GetItemAtPosition(e.Position);
-            currentSampleNum = SamplesNumbers.First(i => i.Value.Equals(item.ToString())).Key;
+            currentSampleNum = samplesNumbers.First(i => i.Value.Equals(item.ToString())).Key;
             if (currentSampleNum != -1)
             {
                 var imageView = FindViewById<ImageView>(Resource.Id.imageView);
@@ -250,7 +254,6 @@ namespace SigAuth
                 var imgArray = FeatureFunctions.ConvertToArray(imageArray);
                 imageView.SetImageBitmap(BitmapFactory.DecodeByteArray(imgArray, 0, imgArray.Length));
             }
-            
         }
     }
 }

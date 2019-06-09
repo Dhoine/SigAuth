@@ -43,15 +43,15 @@ namespace SparseDtwLib
             }
 
             idx = index - 1 - width;
-            if (idx >= 0 && array[idx] >= 0)
+
+            if (idx < 0 || !(array[idx] >= 0)) return res;
+
+            var lowLeftNeighbor = new Neighbor
             {
-                var lowLeftNeighbor = new Neighbor
-                {
-                    Index = idx,
-                    Value = array[idx]
-                };
-                res.Add(lowLeftNeighbor);
-            }
+                Index = idx,
+                Value = array[idx]
+            };
+            res.Add(lowLeftNeighbor);
 
             return res;
         }
@@ -82,7 +82,9 @@ namespace SparseDtwLib
             }
 
             var upperRight = index + 1 + width;
+
             if (upperRight >= array.Length) return res;
+
             var upperRightNeighbor = new Neighbor
             {
                 Index = upperRight,

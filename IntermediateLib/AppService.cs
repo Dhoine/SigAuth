@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using Android.App;
 using Android.Content;
-using DwtSig;
-using EpwLib;
-using Hmm;
 using SharedClasses;
-using SparseDtwLib;
 using StorageAdapter;
 
 namespace IntermediateLib
@@ -16,8 +10,6 @@ namespace IntermediateLib
     {
         private readonly ISharedPreferences _preferences;
         private readonly StorageAdapterImpl _adapter = new StorageAdapterImpl();
-
-        private readonly Context _context;
 
         public AppService(ISharedPreferences prefs)
         {
@@ -37,15 +29,10 @@ namespace IntermediateLib
             var impl = factory.GetSignatureVerificationImpl(_preferences);
 
             if (impl == null) return false;
-            var oldModel = _adapter.GetModel(sigId);
 
-            var resp = impl.CheckSignature(samples, signatureStrokes, oldModel);
-            if (resp.SignatureModelUpdated)
-            {
-                _adapter.SaveModel(sigId, resp.NewModel);
-            }
+            var resp = impl.CheckSignature(samples, signatureStrokes);
 
-            return resp.IsGenuine;
+            return resp;
         }
 
         public bool DeleteSignature(int sigId)
@@ -81,11 +68,6 @@ namespace IntermediateLib
         public string GetSignatureName(int sigId)
         {
             return _adapter.GetSignatureName(sigId);
-        }
-
-        public bool BuildSigModel(int sigId)
-        {
-            throw new NotImplementedException();
         }
     }
 }

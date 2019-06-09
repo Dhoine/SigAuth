@@ -4,8 +4,7 @@ namespace SharedClasses
 {
     public interface ISignatureVerification
     {
-        VerificationResponse CheckSignature(List<SignatureSampleDeserialized> origSignature,
-            List<List<RawPoint>> checkedSample,
-            SignatureModel signatureModel = null);
+        bool CheckSignature(List<SignatureSampleDeserialized> origSignature,
+            List<List<RawPoint>> checkedSample);
     }
 }

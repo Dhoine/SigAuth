@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MatrixLib\MatrixLib.csproj" />
     <ProjectReference Include="..\SharedClasses\SharedClasses.csproj" />
     <ProjectReference Include="..\WaveletLib\WaveletStudio.csproj" />
   </ItemGroup>

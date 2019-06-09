@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using MatrixLib;
 using SharedClasses;
 using WaveletStudio;
 using WaveletStudio.Wavelet;
@@ -12,8 +11,8 @@ namespace DwtSig
         public string WaveletName { get; set; } = "db4";
         public int Level { get; set; } = 3;
 
-        public VerificationResponse CheckSignature(List<SignatureSampleDeserialized> originalSamples,
-            List<List<RawPoint>> checkedSample, SignatureModel model = null)
+        public bool CheckSignature(List<SignatureSampleDeserialized> originalSamples,
+            List<List<RawPoint>> checkedSample)
         {
             var origModel = BuildModel(originalSamples);
             var checkedCoeffMatrix = CoeffMatrix(FeatureFunctions.NormalizeAndFlattenSample(checkedSample));
@@ -40,7 +39,7 @@ namespace DwtSig
                 distancesMin += distances.Min();
             }
 
-            var nminmax = new NameMinMax
+            var nMinMax = new NameMinMax
             {
                 Max = distancesMax / origModel.SamplesCoefficients.Count,
                 Min = distancesMin / origModel.SamplesCoefficients.Count,
@@ -62,7 +61,7 @@ namespace DwtSig
             var min = comparedDistances.Min();
             var max = comparedDistances.Max();
 
-            return new VerificationResponse {IsGenuine = (min + max) / 2 < nminmax.Max};
+            return (min + max) / 2 < nMinMax.Max;
         }
 
         public DwtFeatures BuildModel(List<SignatureSampleDeserialized> samples)

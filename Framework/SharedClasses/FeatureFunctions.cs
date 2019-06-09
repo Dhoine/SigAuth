@@ -27,15 +27,15 @@ namespace SharedClasses
 
         public static double QDir(RawPoint current, RawPoint prev)
         {
-            const int L = 16;
+            const int l = 16;
             var dy = current.Y - prev.Y;
             var dx = current.X - prev.X;
             var theta = Math.Atan(dy / dx);
-            if (theta < -Math.PI / 2 + Math.PI / L || theta >= 3 * Math.PI / 2 - Math.PI / L) return 1;
+            if (theta < -Math.PI / 2 + Math.PI / l || theta >= 3 * Math.PI / 2 - Math.PI / l) return 1;
 
-            for (var i = 1; i < L; i++)
-                if (-Math.PI / 2 + (2 * i - 3) * Math.PI / L <= theta &&
-                    theta < -Math.PI / 2 + (2 * i - 1) * Math.PI / L)
+            for (var i = 1; i < l; i++)
+                if (-Math.PI / 2 + (2 * i - 3) * Math.PI / l <= theta &&
+                    theta < -Math.PI / 2 + (2 * i - 1) * Math.PI / l)
                     return i;
 
             return 0;
@@ -54,21 +54,6 @@ namespace SharedClasses
         public static double SquareEucDist(double q, double p)
         {
             return Math.Pow(q - p, 2);
-        }
-
-        public static List<NameMinMax> GetDiffValues(List<NameMinMax> featuresMinMax,
-            List<NameMinMax> checkedFeaturesMinMax)
-        {
-            var res = new List<NameMinMax>();
-            foreach (var feature in checkedFeaturesMinMax)
-            {
-                var correspondingFeature = featuresMinMax.First(f => f.Name.Equals(feature.Name));
-                var diffMin = (feature.Min - correspondingFeature.Min) / correspondingFeature.Min;
-                var diffMax = (feature.Max - correspondingFeature.Max) / correspondingFeature.Max;
-                res.Add(new NameMinMax {Name = feature.Name, Min = diffMin, Max = diffMax});
-            }
-
-            return res;
         }
 
         public static List<RawPoint> NormalizeAndFlattenSample(List<List<RawPoint>> sample)
