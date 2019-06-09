@@ -26,7 +26,7 @@ namespace StorageAdapter
             {
                 if (_connection.Table<Signature>().All(s => s.SignatureId != sigId))
                 {
-                    var sig = new Signature { SignatureId = sigId, IsModelActual = false};
+                    var sig = new Signature {SignatureId = sigId, IsModelActual = false};
                     _connection.Insert(sig);
                 }
                 else
@@ -40,13 +40,9 @@ namespace StorageAdapter
                 int currentNum;
                 var samples = _connection.Table<SignatureSample>().Where(smp => smp.SignatureId == sigId);
                 if (samples.Any())
-                {
-                    currentNum = samples.Max((smp => smp.SampleNo)) + 1;
-                }
+                    currentNum = samples.Max(smp => smp.SampleNo) + 1;
                 else
-                {
                     currentNum = 0;
-                }
 
                 var newSample = new SignatureSample
                 {
@@ -84,7 +80,9 @@ namespace StorageAdapter
             var ret = new SignatureSampleDeserialized();
             var smpl = _connection.Table<SignatureSample>()
                 .SingleOrDefault(sample => sample.SignatureId == sigId && sample.SampleNo == sampleNo);
-            ret.Sample = smpl == null ? null : JsonConvert.DeserializeObject<List<List<RawPoint>>>(smpl.PointsSerialized);
+            ret.Sample = smpl == null
+                ? null
+                : JsonConvert.DeserializeObject<List<List<RawPoint>>>(smpl.PointsSerialized);
             ret.SigNum = sigId;
             ret.SampleNo = sampleNo;
             return ret;
@@ -92,7 +90,8 @@ namespace StorageAdapter
 
         public int[] GetSamplesNumbersForId(int sigId)
         {
-            var samples = _connection.Table<SignatureSample>().Where(s => s.SignatureId == sigId).Select(s => s.SampleNo);
+            var samples = _connection.Table<SignatureSample>().Where(s => s.SignatureId == sigId)
+                .Select(s => s.SampleNo);
             return samples.ToArray();
         }
 
@@ -134,21 +133,17 @@ namespace StorageAdapter
         {
             var samples = _connection.Table<SignatureSample>()
                 .Where(s => s.SignatureId == sigId);
-            foreach (var sample in samples)
-            {
-                _connection.Delete(sample);
-            }
+            foreach (var sample in samples) _connection.Delete(sample);
 
             if (_connection.Table<Signature>().All(s => s.SignatureId != sigId)) return false;
             _connection.Delete<Signature>(sigId);
             return true;
-
         }
 
         public List<SignatureSampleDeserialized> GetAllSamples(int sigId)
         {
             return _connection.Table<SignatureSample>()
-                .Where(s => s.SignatureId == sigId).Select( sample => new SignatureSampleDeserialized
+                .Where(s => s.SignatureId == sigId).Select(sample => new SignatureSampleDeserialized
                 {
                     Sample = JsonConvert.DeserializeObject<List<List<RawPoint>>>(sample.PointsSerialized),
                     SampleNo = sample.SampleNo,

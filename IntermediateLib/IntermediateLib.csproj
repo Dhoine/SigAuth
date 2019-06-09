@@ -35,6 +35,16 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Statistics|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Statistics\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>portable</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Mono.Android" />
@@ -63,28 +73,24 @@
     <Folder Include="Resources\drawable\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\cs-hidden-markov-models\cs-hidden-markov-models.csproj">
-      <Project>{812a4c20-2223-4093-a482-186cdde79470}</Project>
-      <Name>cs-hidden-markov-models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DwtSig\DwtSig.csproj">
-      <Project>{62362c3c-1738-4a8a-aac2-5fa46afc6cc1}</Project>
+    <ProjectReference Include="..\Framework\DwtSig\DwtSig.csproj">
+      <Project>{94d356cf-a790-4e09-bf2c-87a87a5738da}</Project>
       <Name>DwtSig</Name>
     </ProjectReference>
-    <ProjectReference Include="..\EpwLib\EpwLib.csproj">
-      <Project>{3662dd83-88f7-4c88-9a5f-9705b3334169}</Project>
+    <ProjectReference Include="..\Framework\EpwLib\EpwLib.csproj">
+      <Project>{8b3fa25c-c4fa-4faf-b282-1cb9326533e2}</Project>
       <Name>EpwLib</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Hmm\Hmm.csproj">
-      <Project>{c7dd5be4-5056-4cf5-a568-5088d823e317}</Project>
+    <ProjectReference Include="..\Framework\Hmm\Hmm.csproj">
+      <Project>{49fced22-3e1b-4dfa-94c1-3a256e1b120d}</Project>
       <Name>Hmm</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SharedClasses\SharedClasses.csproj">
-      <Project>{87533713-f0da-4c5f-84af-70c8c86550d0}</Project>
+    <ProjectReference Include="..\Framework\SharedClasses\SharedClasses.csproj">
+      <Project>{785ad13e-7c8e-48fb-822f-fb49f8d0605c}</Project>
       <Name>SharedClasses</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SparseDtwLib\SparseDtwLib.csproj">
-      <Project>{1032bbe5-d384-48cd-954c-a5f5c6c4dab6}</Project>
+    <ProjectReference Include="..\Framework\SparseDtwLib\SparseDtwLib.csproj">
+      <Project>{1c7119a7-bf27-4e01-94ac-1d961f9baaa4}</Project>
       <Name>SparseDtwLib</Name>
     </ProjectReference>
     <ProjectReference Include="..\StorageAdapter\StorageAdapter.csproj">

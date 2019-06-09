@@ -12,7 +12,6 @@ using StorageAdapter;
 
 namespace IntermediateLib
 {
-    [Service]
     public class AppService
     {
         private readonly ISharedPreferences _preferences;

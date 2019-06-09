@@ -50,6 +50,16 @@
     <AndroidLinkMode>SdkOnly</AndroidLinkMode>
     <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Statistics|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Statistics\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>portable</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
@@ -122,13 +132,13 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.0.1" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Framework\SharedClasses\SharedClasses.csproj">
+      <Project>{785ad13e-7c8e-48fb-822f-fb49f8d0605c}</Project>
+      <Name>SharedClasses</Name>
+    </ProjectReference>
     <ProjectReference Include="..\IntermediateLib\IntermediateLib.csproj">
       <Project>{802e4a0f-4349-4583-b93e-ec151ba60145}</Project>
       <Name>IntermediateLib</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SharedClasses\SharedClasses.csproj">
-      <Project>{87533713-f0da-4c5f-84af-70c8c86550d0}</Project>
-      <Name>SharedClasses</Name>
     </ProjectReference>
     <ProjectReference Include="..\SigPad\SignaturePad.Android\SignaturePad.Android.csproj">
       <Project>{149536b0-dd26-4b87-a1c2-b22bc5aa95f4}</Project>

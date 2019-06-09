@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using Android;
 using Android.App;
 using Android.Content;
+using Android.Content.PM;
 using Android.OS;
 using Android.Preferences;
 using Android.Runtime;
@@ -15,15 +14,18 @@ using Android.Views;
 using Android.Widget;
 using IntermediateLib;
 using Xamarin.Controls;
+using Xamarin.Essentials;
+using Toolbar = Android.Support.V7.Widget.Toolbar;
 
 namespace SigAuth
 {
-    [Activity(Label = "Signature Pad", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true, AlwaysRetainTaskState = true,
-        LaunchMode = Android.Content.PM.LaunchMode.SingleTask)]
+    [Activity(Label = "Signature Pad", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true,
+        AlwaysRetainTaskState = true,
+        LaunchMode = LaunchMode.SingleTask)]
     public class MainActivity : AppCompatActivity, NavigationView.IOnNavigationItemSelectedListener
     {
         private AppService service;
-        private int currentSigNum = 0;
+        private int currentSigNum;
 
         private List<KeyValuePair<int, string>>
             SignatureNumbers;
@@ -31,7 +33,7 @@ namespace SigAuth
         protected override void OnResume()
         {
             base.OnResume();
-            Spinner spinner = FindViewById<Spinner>(Resource.Id.spinner);
+            var spinner = FindViewById<Spinner>(Resource.Id.spinner);
             ReInitSpinner(spinner);
         }
 
@@ -40,21 +42,22 @@ namespace SigAuth
             base.OnCreate(savedInstanceState);
             PreferenceManager.SetDefaultValues(this, Resource.Xml.Preferences, false);
             service = new AppService(PreferenceManager.GetDefaultSharedPreferences(this));
-            Xamarin.Essentials.Platform.Init(this, savedInstanceState);
+            Platform.Init(this, savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
-            Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
+            var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
 
-            DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
-            ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, Resource.String.navigation_drawer_open, Resource.String.navigation_drawer_close);
+            var drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
+            var toggle = new ActionBarDrawerToggle(this, drawer, toolbar, Resource.String.navigation_drawer_open,
+                Resource.String.navigation_drawer_close);
             drawer.AddDrawerListener(toggle);
             toggle.SyncState();
 
-            NavigationView navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
+            var navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);
             navigationView.SetNavigationItemSelectedListener(this);
 
-            Spinner spinner = FindViewById<Spinner>(Resource.Id.spinner);
-            spinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
+            var spinner = FindViewById<Spinner>(Resource.Id.spinner);
+            spinner.ItemSelected += spinner_ItemSelected;
             ReInitSpinner(spinner);
 
             var signatureView = FindViewById<SignaturePadView>(Resource.Id.signatureView);
@@ -73,13 +76,12 @@ namespace SigAuth
                 Toast.MakeText(this, res.ToString(), ToastLength.Long).Show();
                 ReInitSpinner(spinner);
             };
-
         }
 
         private void ReInitSpinner(Spinner spinner)
         {
             var ids = service.GetSavedSignaturesIds();
-                SignatureNumbers = new List<KeyValuePair<int, string>>();
+            SignatureNumbers = new List<KeyValuePair<int, string>>();
             var lastId = 0;
             foreach (var id in ids)
             {
@@ -88,15 +90,12 @@ namespace SigAuth
                 lastId = id;
             }
 
-            if (ids.Any())
-            {
-                lastId++;
-            }
+            if (ids.Any()) lastId++;
 
             var newKeyValue = new KeyValuePair<int, string>(lastId, $"#{lastId}: NEW SIGNATURE");
             SignatureNumbers.Add(newKeyValue);
 
-            List<string> signatureNames = new List<string>();
+            var signatureNames = new List<string>();
             foreach (var item in SignatureNumbers)
                 signatureNames.Add(item.Value);
             var adapter = new ArrayAdapter<string>(this,
@@ -109,15 +108,11 @@ namespace SigAuth
 
         public override void OnBackPressed()
         {
-            DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
-            if(drawer.IsDrawerOpen(GravityCompat.Start))
-            {
+            var drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
+            if (drawer.IsDrawerOpen(GravityCompat.Start))
                 drawer.CloseDrawer(GravityCompat.Start);
-            }
             else
-            {
                 base.OnBackPressed();
-            }
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -128,10 +123,10 @@ namespace SigAuth
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
-            int id = item.ItemId;
+            var id = item.ItemId;
             if (id == Resource.Id.action_settings)
             {
-                Intent intent = new Intent(this, typeof(SettingsActivity));
+                var intent = new Intent(this, typeof(SettingsActivity));
                 intent.AddFlags(ActivityFlags.ReorderToFront);
                 StartActivity(intent);
             }
@@ -141,42 +136,39 @@ namespace SigAuth
 
         public bool OnNavigationItemSelected(IMenuItem item)
         {
-            int id = item.ItemId;
+            var id = item.ItemId;
 
-            if (id == Resource.Id.nav_pad)
+            if (id == Resource.Id.nav_admin)
             {
-                // Handle the camera action
-            }
-            else if (id == Resource.Id.nav_admin)
-            {
-                Intent intent = new Intent(this, typeof(AdminActivity));
+                var intent = new Intent(this, typeof(AdminActivity));
                 intent.AddFlags(ActivityFlags.ReorderToFront);
                 StartActivity(intent);
             }
             else if (id == Resource.Id.nav_settings)
             {
-                Intent intent = new Intent(this, typeof(SettingsActivity));
+                var intent = new Intent(this, typeof(SettingsActivity));
                 intent.AddFlags(ActivityFlags.ReorderToFront);
                 StartActivity(intent);
             }
 
-            DrawerLayout drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
+            var drawer = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             drawer.CloseDrawer(GravityCompat.Start);
             return true;
         }
-        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
+
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions,
+            [GeneratedEnum] Permission[] grantResults)
         {
-            Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+            Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
 
         private void spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
         {
-            Spinner spinner = (Spinner)sender;
+            var spinner = (Spinner) sender;
             var item = spinner.GetItemAtPosition(e.Position);
             currentSigNum = SignatureNumbers.First(i => i.Value.Equals(item.ToString())).Key;
         }
     }
 }
-
