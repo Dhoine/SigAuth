@@ -285,29 +285,29 @@ namespace EpwLib
         {
             if (reference.First().Type != sample.First().Type) reference.RemoveAt(0);
 
-            var ewpMatrix = Enumerable.Repeat(-1d, sample.Count * reference.Count).ToArray();
-            ewpMatrix[0] =
+            var epwMatrix = Enumerable.Repeat(-1d, sample.Count * reference.Count).ToArray();
+            epwMatrix[0] =
                 FeatureFunctions.SquareEucDist(reference[0].Features[featureName], sample[0].Features[featureName]);
-            ewpMatrix[reference.Count * 2] = FeatureFunctions.SquareEucDist(reference[0].Features[featureName],
+            epwMatrix[reference.Count * 2] = FeatureFunctions.SquareEucDist(reference[0].Features[featureName],
                 sample[2].Features[featureName]);
-            ewpMatrix[2] =
+            epwMatrix[2] =
                 FeatureFunctions.SquareEucDist(reference[2].Features[featureName], sample[0].Features[featureName]);
-            for (var index = 0; index < ewpMatrix.Length; index++)
+            for (var index = 0; index < epwMatrix.Length; index++)
             {
                 var neighborWeights = new List<double>();
                 var i = index % reference.Count;
                 var j = index / reference.Count;
-                Extract11Neighbor(sample, reference, featureName, i, j, ewpMatrix, neighborWeights);
+                Extract11Neighbor(sample, reference, featureName, i, j, epwMatrix, neighborWeights);
 
-                Extract13Neighbor(sample, reference, featureName, i, j, ewpMatrix, neighborWeights);
+                Extract13Neighbor(sample, reference, featureName, i, j, epwMatrix, neighborWeights);
 
-                Extract31Neighbor(sample, reference, featureName, i, j, ewpMatrix, neighborWeights);
+                Extract31Neighbor(sample, reference, featureName, i, j, epwMatrix, neighborWeights);
 
                 if (!neighborWeights.Any()) continue;
-                ewpMatrix[index] = neighborWeights.Min();
+                epwMatrix[index] = neighborWeights.Min();
             }
 
-            return FindWarpingPath(reference, ewpMatrix);
+            return FindWarpingPath(reference, epwMatrix);
         }
 
         private static double FindWarpingPath(ICollection reference, IReadOnlyList<double> ewpMatrix)
